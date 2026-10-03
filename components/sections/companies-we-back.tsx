@@ -21,6 +21,11 @@ export function CompaniesWeBack() {
   const lastCellRef = useRef(-1);
 
   useEffect(() => {
+    companies.forEach((company) => {
+      const image = new window.Image();
+      image.src = company.logo;
+    });
+
     const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
     if (reduceMotion.matches) return;
 
@@ -54,7 +59,7 @@ export function CompaniesWeBack() {
               return (
                 <div className="portfolio-logo-cell" key={cellIndex}>
                   <div className="portfolio-logo-flip" key={`${cellIndex}-${logoIndexes[cellIndex]}`}>
-                    <Image src={company.logo} alt={company.name} width={company.width} height={company.height} sizes="(max-width: 650px) 46vw, 290px" />
+                    <Image unoptimized src={company.logo} alt={company.name} width={company.width} height={company.height} sizes="(max-width: 650px) 46vw, 290px" />
                   </div>
                 </div>
               );
