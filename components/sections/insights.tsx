@@ -34,20 +34,26 @@ export function Insights() {
   const [isOpen, setIsOpen] = useState(false);
   const [isClosing, setIsClosing] = useState(false);
   const closeButtonRef = useRef<HTMLButtonElement>(null);
+  const closingRef = useRef(false);
+  const closeTimerRef = useRef<number | null>(null);
 
   const closeModal = useCallback(() => {
-    if (isClosing) return;
+    if (closingRef.current) return;
+    closingRef.current = true;
     setIsClosing(true);
-    window.setTimeout(() => {
+    closeTimerRef.current = window.setTimeout(() => {
       setIsOpen(false);
       setIsClosing(false);
+      closingRef.current = false;
+      closeTimerRef.current = null;
     }, 360);
-  }, [isClosing]);
+  }, []);
 
   useEffect(() => {
     if (!isOpen) return;
     const previousOverflow = document.body.style.overflow;
     document.body.style.overflow = "hidden";
+    window.dispatchEvent(new Event("exfinity:scroll-lock"));
     closeButtonRef.current?.focus();
     const closeOnEscape = (event: KeyboardEvent) => {
       if (event.key === "Escape") closeModal();
@@ -55,9 +61,16 @@ export function Insights() {
     window.addEventListener("keydown", closeOnEscape);
     return () => {
       document.body.style.overflow = previousOverflow;
+      window.dispatchEvent(new Event("exfinity:scroll-unlock"));
       window.removeEventListener("keydown", closeOnEscape);
     };
   }, [isOpen, closeModal]);
+
+  useEffect(() => () => {
+    if (closeTimerRef.current !== null) window.clearTimeout(closeTimerRef.current);
+    document.body.style.overflow = "";
+    window.dispatchEvent(new Event("exfinity:scroll-unlock"));
+  }, []);
 
   const submit = (event: FormEvent<HTMLFormElement>) => event.preventDefault();
 
@@ -75,7 +88,7 @@ export function Insights() {
               <div className="thesis-card">
                 <Image src="/insights/physical-ai-thesis.png" alt="Exfinity Physical AI Thesis report" width={374} height={315} sizes="(max-width: 900px) 100vw, 38vw" />
                 <p>A research-led view of the technologies, market shifts and emerging opportunities shaping the future of Indian deep tech and AI</p>
-                <button className="button button-primary" type="button" onClick={() => { setIsClosing(false); setIsOpen(true); }} aria-haspopup="dialog">
+                <button className="button button-primary" type="button" onClick={() => { closingRef.current = false; setIsClosing(false); setIsOpen(true); }} aria-haspopup="dialog">
                   View thesis reports <span aria-hidden="true">→</span>
                 </button>
               </div>

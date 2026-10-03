@@ -15,7 +15,16 @@ export function SmoothScroll() {
       touchMultiplier: 1,
     });
 
-    return () => lenis.destroy();
+    const stop = () => lenis.stop();
+    const start = () => lenis.start();
+    window.addEventListener("exfinity:scroll-lock", stop);
+    window.addEventListener("exfinity:scroll-unlock", start);
+
+    return () => {
+      window.removeEventListener("exfinity:scroll-lock", stop);
+      window.removeEventListener("exfinity:scroll-unlock", start);
+      lenis.destroy();
+    };
   }, []);
 
   return null;

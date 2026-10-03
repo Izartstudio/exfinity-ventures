@@ -24,7 +24,7 @@ export function PreFooter({
   ] as const;
 
   return (
-    <section className="pre-footer" aria-labelledby="pre-footer-title">
+    <section className="pre-footer" id="contact" aria-labelledby="pre-footer-title">
       <svg className="pre-footer-background" viewBox="0 0 1440 710" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
         <defs>
           <linearGradient id="prefooter-bar-gradient" x1="0" y1="0" x2="0" y2="1">

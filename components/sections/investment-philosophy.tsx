@@ -28,6 +28,7 @@ export function InvestmentPhilosophy() {
   const previousProgressRef = useRef(0);
   const [progress, setProgress] = useState(0);
   const [hasEntered, setHasEntered] = useState(false);
+  const [firstAnimationComplete, setFirstAnimationComplete] = useState(false);
   const [isScrollingDown, setIsScrollingDown] = useState(true);
 
   useEffect(() => {
@@ -45,6 +46,12 @@ export function InvestmentPhilosophy() {
     observer.observe(section);
     return () => observer.disconnect();
   }, []);
+
+  useEffect(() => {
+    if (!hasEntered || firstAnimationComplete) return;
+    const timer = window.setTimeout(() => setFirstAnimationComplete(true), 1100);
+    return () => window.clearTimeout(timer);
+  }, [hasEntered, firstAnimationComplete]);
 
   useEffect(() => {
     let frame = 0;
@@ -77,7 +84,7 @@ export function InvestmentPhilosophy() {
   const activeIndex = progress < 0.34 ? 0 : progress < 0.67 ? 1 : 2;
   const activeStep = steps[activeIndex];
 
-  return <section ref={sectionRef} className={`philosophy-scroll${hasEntered ? " is-entered" : ""}${isScrollingDown ? " is-scrolling-down" : ""}`} aria-labelledby="philosophy-title">
+  return <section ref={sectionRef} className={`philosophy-scroll${hasEntered ? " is-entered" : ""}${firstAnimationComplete ? " first-animation-complete" : ""}${isScrollingDown ? " is-scrolling-down" : ""}`} aria-labelledby="philosophy-title">
     <div className="philosophy-sticky">
       <h2 id="philosophy-title">Investment Philosophy</h2>
       <div className={`philosophy-art stage-${activeIndex + 1}`}>
