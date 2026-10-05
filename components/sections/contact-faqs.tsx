@@ -6,8 +6,28 @@ type Faq = { question: string; answer: ReactNode };
 
 const faqs: Faq[] = [
   {
+    question: "What kind of sectors does Exfinity invest in?",
+    answer: <>Three themes: AI-Powered Software (applied AI across applications, governance and silicon, plus cybersecurity); DeepTech (semiconductors and computing including quantum and photonics, energy and materials, space tech, and selective shorter-cycle life sciences); and B2B Platforms (fintech, health tech, B2B marketplaces).</>,
+  },
+  {
+    question: "When is the right time to get in touch?",
+    answer: <>We typically invest at the Seed and Series A stages, but it&apos;s never too early to reach out. We like to brainstorm with entrepreneurs and aspiring founders, and build relationships well before we invest.</>,
+  },
+  {
+    question: "What are your typical cheque sizes?",
+    answer: <>We typically invest between $0.5 Million and $4 Million, depending on the opportunity and round.</>,
+  },
+  {
+    question: "Do you lead/co-lead/participate in a round with other investors?",
+    answer: <>Yes. We are open to leading, co-leading or participating alongside other investors, depending on the structure and requirements of the round.</>,
+  },
+  {
+    question: "How do I get in touch?",
+    answer: <>You can email us at <a href="mailto:info@exfinityventures.com">info@exfinityventures.com</a>, or reach out directly to any member of our team.</>,
+  },
+  {
     question: "What does Exfinity invest in?",
-    answer: <>Early-stage (Seed to Series A) B2B startups building around Deep-Technology, AI Native softwares, and B2B Platforms. Our focus includes semiconductors, AI and computing hardware, physical AI &amp; robotics, cybersecurity, AI-native software &amp; vertical AI, and scalable enterprise platforms. We back founders building from India for global enterprises.</>,
+    answer: <>Early-stage Deep Technology, AI Native, and B2B Platforms. Our focus includes semiconductors, AI and computing hardware, physical AI and robotics, cybersecurity, AI-native software, and scalable enterprise platforms. We back founders of Indian origin across Bengaluru, the Bay Area, and Singapore, investing in companies incorporated in all three. Most of our companies engineer in India and sell globally.</>,
   },
   {
     question: "What stage and cheque size?",
@@ -15,27 +35,23 @@ const faqs: Faq[] = [
   },
   {
     question: "Do you only invest in Indian companies?",
-    answer: <>No. We invest in companies incorporated in India, the US, and Singapore. Our focus is founders of Indian origin building for global markets, supported by partners across all three geographies.</>,
+    answer: <>No. The focus is companies that build their product and technology in India while selling into both Indian and global markets. Some portfolio entities are domiciled offshore with Indian engineering bases.</>,
   },
   {
     question: "Do you invest in single-founder companies?",
-    answer: <>No. We look for founding teams with at least two co-founders who together cover the technical and commercial sides of the business. Having said that, we have also seen exceptional cases.</>,
+    answer: <>No. We look for founding teams with at least two co-founders who together cover the technical and commercial sides of the business.</>,
   },
   {
     question: "What do you offer beyond capital?",
-    answer: <ul><li>Warm CXO introductions that convert into first pilots/ customers.</li><li>We help in hiring the first core team members; critical for company building</li><li>We connect the portfolio with our VC and CVC network for uprounds and strategic investments</li><li>Provide insights on the competitor landscape and macro trends</li><li>Alongside a partner who sits on the Board, a senior team member is assigned to help the company at every stage (beyond board meetings).</li></ul>,
+    answer: <>Operator-led, hands-on support at the Investment Manager&apos;s own expense: enterprise customer introductions, senior leadership hiring, go-to-market and product strategy, governance and finance-function build-out with mandatory external audits, follow-on and growth capital introductions, and exit preparation including early acquirer mapping.</>,
   },
   {
     question: "What do you look for?",
-    answer: <>We look for complementary founding teams combining product depth with market focus, backed by early signals: a POC, a first customer, or an enterprise partnership.</>,
-  },
-  {
-    question: "Do we invest in consumer tech and D2C Brands?",
-    answer: <>No we do not invest in any consumer tech or D2C brands, we invest only in B2B &amp; Enterprise technologies</>,
+    answer: <>A technical founding team, defensible IP, a clear global market, and the ambition to build a category leader. Revenue at seed helps, though it is optional.</>,
   },
   {
     question: "How do I pitch?",
-    answer: <>Send your deck, demo, or data room to <a href="mailto:info@exfinityventures.com">info@exfinityventures.com.</a></>,
+    answer: <>Send your deck, demo, or data room to <a href="mailto:info@exfinityventures.com">info@exfinityventures.com</a>.</>,
   },
 ];
 

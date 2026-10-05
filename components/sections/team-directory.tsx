@@ -24,7 +24,7 @@ export type TeamDirectoryContent = {
 const teamDirectoryContent: TeamDirectoryContent = {
   partnersTitle: "Partners & IC Members",
   foundersTitle: "Founders & Advisors",
-  investmentTitle: "Investment Team",
+  investmentTitle: "Team",
   partners: [
     { name: "Balakrishnan V", role: "General Partner & IC Member", region: "Silicon Valley & India", image: "/team/partners/balakrishnan-v.jpg", funds: "I, II, III" },
     { name: "Chinnu Senthilkumar", role: "General Partner & IC Member", region: "Silicon Valley & India", image: "/team/partners/chinnu-senthilkumar.jpg" },

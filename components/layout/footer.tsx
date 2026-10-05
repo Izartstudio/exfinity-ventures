@@ -8,7 +8,6 @@ const linkGroups = [
   {
     title: "Quick Links",
     links: [
-      { label: "For Founders", href: "/contact" },
       { label: "The Team", href: "/team" },
       { label: "Portfolio", href: "/portfolio" },
     ],
@@ -23,9 +22,7 @@ const linkGroups = [
   {
     title: "Legal",
     links: [
-      { label: "Terms & Conditions", href: "/" },
-      { label: "Privacy Policy", href: "/" },
-      { label: "AIF Registration Details", href: "/" },
+      { label: "AIF Registration Details", href: "/aif-registration-details" },
     ],
   },
 ] as const;

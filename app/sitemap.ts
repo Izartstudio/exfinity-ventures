@@ -10,6 +10,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${siteUrl}/team`, changeFrequency: "monthly", priority: 0.8 },
     { url: `${siteUrl}/news`, changeFrequency: "weekly", priority: 0.9 },
     { url: `${siteUrl}/contact`, changeFrequency: "yearly", priority: 0.7 },
+    { url: `${siteUrl}/aif-registration-details`, changeFrequency: "yearly", priority: 0.5 },
   ];
 
   const articleRoutes: MetadataRoute.Sitemap = articles.map((article) => ({

@@ -24,20 +24,20 @@ const lightSurfaceSelector = [
   ".portfolio-section",
   ".article-hero",
   ".article-body",
+  ".aif-details",
+  ".pre-footer",
+  ".site-footer",
+  ".research-modal",
 ].join(",");
 
 export function Navbar({ theme }: { theme?: "dark" | "light" | "split" }) {
   const pathname = usePathname();
-  const effectiveTheme = theme ?? (pathname.startsWith("/news/") ? "light" : pathname.startsWith("/portfolio/") ? "split" : "dark");
+  const effectiveTheme = theme ?? (pathname.startsWith("/news/") || pathname === "/aif-registration-details" ? "light" : pathname.startsWith("/portfolio/") ? "split" : "dark");
   const [menuOpen, setMenuOpen] = useState(false);
-  const [logoVisible, setLogoVisible] = useState(true);
   const [useDarkLogo, setUseDarkLogo] = useState(effectiveTheme === "light");
-  const previousScroll = useRef(0);
   const frame = useRef<number | null>(null);
 
   useEffect(() => {
-    previousScroll.current = window.scrollY;
-
     const updateLogoTone = () => {
       const brand = document.querySelector<HTMLElement>(".brand");
       const bounds = brand?.getBoundingClientRect();
@@ -55,15 +55,7 @@ export function Navbar({ theme }: { theme?: "dark" | "light" | "split" }) {
     const onScroll = () => {
       if (frame.current !== null) return;
       frame.current = window.requestAnimationFrame(() => {
-        const currentScroll = window.scrollY;
-        const delta = currentScroll - previousScroll.current;
-
-        if (currentScroll < 24 || delta < -6) setLogoVisible(true);
-        else if (delta > 6) setLogoVisible(false);
-
         updateLogoTone();
-
-        previousScroll.current = currentScroll;
         frame.current = null;
       });
     };
@@ -100,7 +92,7 @@ export function Navbar({ theme }: { theme?: "dark" | "light" | "split" }) {
   return (
     <header className={`site-header site-header-${effectiveTheme}${menuOpen ? " is-menu-open" : ""}`}>
       <nav className="navbar container" aria-label="Primary navigation">
-        <Link className={`brand${logoVisible || menuOpen ? "" : " is-hidden"}`} href="/" aria-label="Exfinity home" onClick={closeMenu}>
+        <Link className="brand" href="/" aria-label="Exfinity home" onClick={closeMenu}>
           <Image className={`brand-logo brand-logo-light${darkLogoActive ? " is-inactive" : ""}`} src="/brand/exfinity-logo.svg" alt="" width={203} height={47} priority />
           <Image className={`brand-logo brand-logo-dark${darkLogoActive ? " is-active" : ""}`} src="/brand/exfinity-logo-dark.svg" alt="" width={203} height={47} priority />
         </Link>

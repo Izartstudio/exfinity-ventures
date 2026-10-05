@@ -6,6 +6,32 @@ import { useMemo, useState } from "react";
 import { fallbackPortfolioWall, type PortfolioCompany, type PortfolioWallData } from "@/content/portfolio";
 
 type FilterKey = "fund" | "sector" | "status";
+type PortfolioTheme = "Deep Tech" | "AI Native" | "B2B";
+
+const portfolioThemes: PortfolioTheme[] = ["Deep Tech", "AI Native", "B2B"];
+const themeByCompanyId: Record<string, PortfolioTheme> = {
+  ati: "Deep Tech",
+  maieutic: "Deep Tech",
+  chara: "Deep Tech",
+  log9: "Deep Tech",
+  "raga-ai": "AI Native",
+  awiros: "AI Native",
+  cloudsek: "AI Native",
+  moengage: "AI Native",
+  pixis: "AI Native",
+  "neural-garage": "AI Native",
+  eccentric: "AI Native",
+  qritive: "B2B",
+};
+
+function getPortfolioTheme(company: PortfolioCompany): PortfolioTheme {
+  if (themeByCompanyId[company.id]) return themeByCompanyId[company.id];
+
+  const sector = company.sector.toLowerCase();
+  if (/deep|robot|semiconductor|battery|ev tech|aerospace|material|manufactur|energy|climate|defence|life science/.test(sector)) return "Deep Tech";
+  if (/ai|saas|cyber|marketing tech|ops|generative|machine learning/.test(sector)) return "AI Native";
+  return "B2B";
+}
 
 function FilterSelect({ label, value, options, onChange }: { label: string; value: string; options: string[]; onChange: (value: string) => void }) {
   return <label className="portfolio-filter">
@@ -37,12 +63,12 @@ export function PortfolioWall({ data = fallbackPortfolioWall }: { data?: Portfol
   const [filters, setFilters] = useState<Record<FilterKey, string>>({ fund: "", sector: "", status: "" });
   const options = useMemo(() => ({
     fund: [...new Set(companies.map((company) => company.fund))],
-    sector: [...new Set(companies.map((company) => company.sector))].sort(),
+    sector: portfolioThemes,
     status: [...new Set(companies.map((company) => company.status))],
   }), [companies]);
   const filtered = companies.filter((company) =>
     (!filters.fund || company.fund === filters.fund) &&
-    (!filters.sector || company.sector === filters.sector) &&
+    (!filters.sector || getPortfolioTheme(company) === filters.sector) &&
     (!filters.status || company.status === filters.status),
   );
   const update = (key: FilterKey) => (value: string) => setFilters((current) => ({ ...current, [key]: value }));
