@@ -9,6 +9,7 @@ export function OurFounders({ founders }: { founders: HomepageFounder[] }) {
   const [active, setActive] = useState(Math.min(2, founders.length - 1));
   const [entered, setEntered] = useState(false);
   const [hasAdvanced, setHasAdvanced] = useState(false);
+  const [isHovered, setIsHovered] = useState(false);
 
   useEffect(() => {
     const section = sectionRef.current;
@@ -27,18 +28,24 @@ export function OurFounders({ founders }: { founders: HomepageFounder[] }) {
   }, []);
 
   useEffect(() => {
-    if (!entered || window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    if (!entered || isHovered || window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
     const timer = window.setInterval(() => {
       setHasAdvanced(true);
       setActive((current) => (current + 1) % founders.length);
     }, 4000);
     return () => window.clearInterval(timer);
-  }, [entered, founders.length]);
+  }, [entered, founders.length, isHovered]);
 
   const activeFounder = founders[active];
 
   return (
-    <section ref={sectionRef} className={`our-founders${entered ? " is-visible" : ""}`} aria-labelledby="founders-title">
+    <section
+      ref={sectionRef}
+      className={`our-founders${entered ? " is-visible" : ""}`}
+      aria-labelledby="founders-title"
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
+    >
       <svg className="founders-paths" viewBox="0 0 1440 900" preserveAspectRatio="xMidYMin slice" aria-hidden="true">
         <path className="founders-ellipse founders-ellipse-left" d="M0 790 A720 720 0 0 1 720 70" pathLength="1" />
         <path className="founders-ellipse founders-ellipse-right" d="M720 70 A720 720 0 0 1 1440 790" />

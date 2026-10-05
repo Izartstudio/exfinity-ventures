@@ -1,12 +1,10 @@
 import Image from "next/image";
-import { Navbar } from "@/components/layout/navbar";
 import type { Article } from "@/content/articles";
 
 export function ArticleHero({ article }: { article: Article }) {
   return (
     <header className="article-hero">
       <Image className="article-hero-mark" src="/blog/vectorbg.svg" alt="" fill priority sizes="100vw" aria-hidden="true" />
-      <Navbar theme="light" />
       <div className="article-hero-content container">
         <div className="article-hero-copy">
           <div className="article-meta"><time dateTime={new Date(article.date).toISOString()}>{article.date}</time><i aria-hidden="true" /><span>{article.category}</span></div>

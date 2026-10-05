@@ -11,7 +11,14 @@ const cards = [
     image: "/what-we-back/deeptech.png",
     copy: "Companies built on deep scientific or engineering advancements, where the barrier is physics, chemistry, or biology, not features. We invest once TRL 3–4 has been crossed and the remaining risk is commercial, backing teams that leverage India’s engineering depth to achieve the same outcomes at a fraction of Western costs.",
     themes: ["Semiconductors & Computing", "Aerospace", "Advanced Materials & Manufacturing", "Energy & Climate Tech", "Robotics & Automation", "Defence & Dual-Use Technology", "Life Sciences"],
-    companies: ["Kinara", "Ati Robotics", "Maieutic", "Chara", "Optimized Electrotech", "Str8bat"],
+    companies: [
+      { name: "Kinara", logo: "/companies/popup/kinara-provided.png" },
+      { name: "Ati Robotics", logo: "/companies/popup/ati.png" },
+      { name: "Maieutic", logo: "/companies/popup/maieutic-provided.png" },
+      { name: "Chara", logo: "/companies/popup/chara.png" },
+      { name: "Optimized Electrotech", logo: "/companies/popup/optimized-electrotech-provided.png" },
+      { name: "Str8bat", logo: "/companies/popup/str8bat-provided.png" },
+    ],
   },
   {
     id: "ai-native",
@@ -19,7 +26,14 @@ const cards = [
     image: "/what-we-back/ai-native.png",
     copy: "Companies where artificial intelligence is the product architecture, not an added feature. We partner with founders building intelligent systems that learn, adapt and create durable advantages across enterprise workflows and global markets.",
     themes: ["AI Agents & Autonomous Systems", "AI Infrastructure", "AI Developer Tools", "Data & ML Infrastructure", "AI Evals & Security", "Cybersecurity", "Vertical AI"],
-    companies: ["AI Infrastructure", "Enterprise AI", "Agentic Systems", "Data Platforms", "Vertical AI", "Developer Tools"],
+    companies: [
+      { name: "Pixis", logo: "/companies/popup/pixis.png" },
+      { name: "CloudSEK", logo: "/companies/popup/cloudsek.png" },
+      { name: "MoEngage", logo: "/companies/popup/moengage-provided.png" },
+      { name: "Locus", logo: "/companies/popup/locus.png" },
+      { name: "NeuralGarage", logo: "/companies/popup/neural-garage.png" },
+      { name: "Eccentric", logo: "/companies/popup/eccentric.png" },
+    ],
   },
   {
     id: "b2b",
@@ -27,7 +41,12 @@ const cards = [
     image: "/what-we-back/b2b-platforms.png",
     copy: "Technology-led platforms that solve complex business problems with strong product foundations and clear market insight. We back ambitious teams building scalable, defensible businesses for customers in India and around the world.",
     themes: ["Industrial Platforms", "Health Technology", "AI Native Services"],
-    companies: ["SaaS", "Industry Platforms", "Cloud Software", "Automation", "Infrastructure", "Enterprise Systems"],
+    companies: [
+      { name: "Zyla", logo: "/companies/popup/zyla.png" },
+      { name: "Autoverse", logo: "/companies/popup/autoverse.png" },
+      { name: "Credilio", logo: "/companies/popup/credilio.png" },
+      { name: "Skit", logo: "/companies/popup/skit.png" },
+    ],
   },
 ] as const;
 
@@ -107,7 +126,9 @@ export function WhatWeBack() {
             <ul className="theme-list">{active.themes.map((theme) => <li key={theme}>{theme}</li>)}</ul>
           </details>
         </div>
-        <div className="company-grid" aria-label={`${active.title} themes`}>{active.companies.map((company) => <div key={company}>{company}</div>)}</div>
+        <div className={`company-grid company-grid-${active.companies.length}`} aria-label={`${active.title} companies`}>{active.companies.map((company) => <div className="company-logo-cell" data-company={company.name.toLowerCase()} key={company.name}>
+          <Image className="company-logo-image" src={company.logo} alt={company.name} width={280} height={280} unoptimized />
+        </div>)}</div>
       </section>
     </div>}
   </>;

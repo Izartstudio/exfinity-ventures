@@ -1,7 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
 import type { ReactNode } from "react";
-import { Navbar } from "@/components/layout/navbar";
 import type { PortfolioCompany } from "@/content/portfolio";
 
 function DetailRow({ label, children }: { label: string; children: ReactNode }) {
@@ -10,7 +9,6 @@ function DetailRow({ label, children }: { label: string; children: ReactNode }) 
 
 export function CompanyDetail({ company }: { company: PortfolioCompany }) {
   return <section className="company-detail" aria-labelledby="company-detail-title">
-    <Navbar theme="split" />
     <div className="company-detail-layout">
       <div className="company-detail-visual">
         <Link className="company-back" href="/portfolio"><span aria-hidden="true">‹</span> Back to portfolio</Link>

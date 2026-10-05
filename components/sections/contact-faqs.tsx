@@ -40,7 +40,16 @@ const faqs: Faq[] = [
 ];
 
 export function ContactFaqs() {
-  const [openIndex, setOpenIndex] = useState<number | null>(0);
+  const [openIndexes, setOpenIndexes] = useState<Set<number>>(() => new Set([0]));
+
+  const toggleFaq = (index: number) => {
+    setOpenIndexes((current) => {
+      const next = new Set(current);
+      if (next.has(index)) next.delete(index);
+      else next.add(index);
+      return next;
+    });
+  };
 
   return <section className="contact-faqs" aria-labelledby="contact-faq-title">
     <div className="container">
@@ -49,9 +58,9 @@ export function ContactFaqs() {
         <h2 id="contact-faq-title">What Founders<br />Need to Know</h2>
         <div className="contact-faq-list">
           {faqs.map((faq, index) => {
-            const isOpen = openIndex === index;
+            const isOpen = openIndexes.has(index);
             return <div className={`contact-faq-item${isOpen ? " is-open" : ""}`} key={faq.question}>
-              <button type="button" aria-expanded={isOpen} aria-controls={`faq-panel-${index}`} onClick={() => setOpenIndex(isOpen ? null : index)}>
+              <button type="button" aria-expanded={isOpen} aria-controls={`faq-panel-${index}`} onClick={() => toggleFaq(index)}>
                 <span>{faq.question}</span><i aria-hidden="true" />
               </button>
               <div className="contact-faq-panel" id={`faq-panel-${index}`} role="region" aria-hidden={!isOpen}><div>{faq.answer}</div></div>

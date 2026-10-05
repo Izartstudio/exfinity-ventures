@@ -81,7 +81,10 @@ export function InvestmentPhilosophy() {
     };
   }, []);
 
-  const activeIndex = progress < 0.34 ? 0 : progress < 0.67 ? 1 : 2;
+  const activeIndex = Math.min(2, Math.floor(progress * steps.length));
+  const stateStart = activeIndex / steps.length;
+  const stateProgress = Math.min(1, Math.max(0, (progress - stateStart) * steps.length));
+  const mappedProgress = (activeIndex + stateProgress) / steps.length;
   const activeStep = steps[activeIndex];
 
   return <section ref={sectionRef} className={`philosophy-scroll${hasEntered ? " is-entered" : ""}${firstAnimationComplete ? " first-animation-complete" : ""}${isScrollingDown ? " is-scrolling-down" : ""}`} aria-labelledby="philosophy-title">
@@ -95,8 +98,10 @@ export function InvestmentPhilosophy() {
           <circle className="philosophy-circle-fill" cx="720" cy="310" r="274" />
           <path className="philosophy-circle-side" d="M 499 148 A 274 274 0 0 0 499 472" pathLength="1" />
           <path className="philosophy-circle-side" d="M 941 148 A 274 274 0 0 1 941 472" pathLength="1" />
-          <path className="philosophy-circle-cap" d="M 499 148 A 274 274 0 0 1 941 148" pathLength="1" />
-          <path className="philosophy-circle-cap" d="M 499 472 A 274 274 0 0 0 941 472" pathLength="1" />
+          <path className="philosophy-circle-cap cap-top-left" d="M 499 148 A 274 274 0 0 1 720 36" pathLength="1" />
+          <path className="philosophy-circle-cap cap-top-right" d="M 941 148 A 274 274 0 0 0 720 36" pathLength="1" />
+          <path className="philosophy-circle-cap cap-bottom-left" d="M 499 472 A 274 274 0 0 0 720 584" pathLength="1" />
+          <path className="philosophy-circle-cap cap-bottom-right" d="M 941 472 A 274 274 0 0 1 720 584" pathLength="1" />
         </svg>
         <div className="philosophy-copy" key={activeStep.number}>
           <span>{activeStep.number}</span>
@@ -105,7 +110,7 @@ export function InvestmentPhilosophy() {
         </div>
       </div>
       <div className="scroll-cue" aria-hidden="true">
-        <span className="scroll-cue-track"><i style={{ transform: `scaleY(${Math.max(0.18, progress)})` }} /></span>
+        <span className="scroll-cue-track"><i style={{ transform: `scaleY(${mappedProgress})` }} /></span>
         <span>Scroll</span>
       </div>
     </div>

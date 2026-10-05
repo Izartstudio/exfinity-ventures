@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
 import { SmoothScroll } from "@/components/motion/smooth-scroll";
+import { Navbar } from "@/components/layout/navbar";
 import { defaultDescription, siteName, siteUrl, socialImage } from "@/lib/seo";
 
 const sharpGrotesk = localFont({
@@ -111,8 +112,9 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       className={`${sharpGrotesk.variable} ${sharpGroteskCta.variable} ${interDisplayNav.variable} ${interDisplayRegular.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">
-        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify([organizationJsonLd, websiteJsonLd]) }} />
-        <SmoothScroll />{children}
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationJsonLd) }} />
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteJsonLd) }} />
+        <SmoothScroll /><Navbar />{children}
       </body>
     </html>
   );
