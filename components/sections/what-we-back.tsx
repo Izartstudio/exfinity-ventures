@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { useCallback, useEffect, useRef, useState } from "react";
 
 const cards = [
@@ -84,7 +85,7 @@ export function WhatWeBack() {
   return <>
     <section className="what-we-back" id="portfolio" aria-labelledby="what-we-back-title"><div className="container">
       <div className="section-kicker"><span>What we back</span></div>
-      <div className="section-intro"><div><h2 id="what-we-back-title">The Frontiers We Invest In</h2><p>We invest across three areas. Each demands deep expertise to build and has the potential to create durable advantage at scale.</p></div><a className="button button-primary" href="#portfolio-grid">View portfolio <span aria-hidden="true">→</span></a></div>
+      <div className="section-intro"><div><h2 id="what-we-back-title">The Frontiers We Invest In</h2><p>We invest across three areas. Each demands deep expertise to build and has the potential to create durable advantage at scale.</p></div><Link className="button button-primary" href="/portfolio">View portfolio <span aria-hidden="true">→</span></Link></div>
       <div className="backing-grid" id="portfolio-grid">{cards.map((card) => <article className={`backing-card backing-card-${card.id}`} key={card.id}><Image src={card.image} alt="" fill sizes={card.id === "b2b" ? "(max-width: 650px) 100vw, 95vw" : "(max-width: 650px) 100vw, 48vw"} /><button className="backing-toggle" type="button" onClick={() => { closingRef.current = false; setIsClosing(false); setOpenPanel("about"); setActive(card); }} aria-haspopup="dialog"><span>{card.title}</span><span className="card-cta">Read more <span aria-hidden="true">→</span></span></button></article>)}</div>
     </div></section>
 

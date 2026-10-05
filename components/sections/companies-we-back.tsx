@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 
 const companies = [
@@ -71,9 +72,9 @@ export function CompaniesWeBack() {
               From DeepTech to AI Native Softwares, these are companies we believed
               in at the earliest stage; now building for global markets
             </p>
-            <a className="button button-primary" href="/portfolio">
+            <Link className="button button-primary" href="/portfolio">
               View Portfolio <span aria-hidden="true">→</span>
-            </a>
+            </Link>
           </aside>
         </div>
       </div>

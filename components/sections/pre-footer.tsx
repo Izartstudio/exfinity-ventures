@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 type PreFooterProps = {
   title?: string;
   description?: string;
@@ -63,9 +65,9 @@ export function PreFooter({
         <h2 id="pre-footer-title">{title}</h2>
         <div className="pre-footer-rule" aria-hidden="true"><span /></div>
         <p>{description}</p>
-        <a className="button button-primary" href={ctaHref}>
+        <Link className="button button-primary" href={ctaHref}>
           {ctaLabel} <span aria-hidden="true">→</span>
-        </a>
+        </Link>
       </div>
     </section>
   );

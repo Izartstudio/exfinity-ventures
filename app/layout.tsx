@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
 import { SmoothScroll } from "@/components/motion/smooth-scroll";
+import { defaultDescription, siteName, siteUrl, socialImage } from "@/lib/seo";
 
 const sharpGrotesk = localFont({
   variable: "--font-sharp-grotesk",
@@ -28,19 +29,79 @@ const interDisplayRegular = localFont({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://exfinityventures.com"),
-  title: "Exfinity Venture Partners",
-  description:
-    "Backing global innovation across DeepTech, AI-native software and B2B platforms.",
+  metadataBase: new URL(siteUrl),
+  title: { default: siteName, template: `%s | ${siteName}` },
+  description: defaultDescription,
+  applicationName: siteName,
+  keywords: [
+    "Exfinity Venture Partners",
+    "venture capital India",
+    "DeepTech investors",
+    "AI venture capital",
+    "B2B technology investors",
+    "early stage venture capital",
+  ],
+  authors: [{ name: siteName, url: siteUrl }],
+  creator: siteName,
+  publisher: siteName,
   alternates: { canonical: "/" },
   openGraph: {
-    title: "Exfinity Venture Partners",
-    description:
-      "Backing global innovation across DeepTech, AI-native software and B2B platforms.",
+    title: siteName,
+    description: defaultDescription,
     url: "/",
+    siteName,
     type: "website",
+    locale: "en_IN",
+    images: [{ url: socialImage, alt: siteName }],
   },
-  robots: { index: true, follow: true },
+  twitter: {
+    card: "summary_large_image",
+    title: siteName,
+    description: defaultDescription,
+    images: [socialImage],
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+      "max-video-preview": -1,
+    },
+  },
+};
+
+const organizationJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "@id": `${siteUrl}/#organization`,
+  name: siteName,
+  url: siteUrl,
+  logo: `${siteUrl}/brand/exfinity-logo.svg`,
+  foundingDate: "2014",
+  email: "info@exfinityventures.com",
+  telephone: "+91-80-6847-4100",
+  sameAs: ["https://www.linkedin.com/company/exfinity-venture-partners"],
+  address: {
+    "@type": "PostalAddress",
+    streetAddress: "10, Museum Road, Shanthala Nagar, Ashok Nagar",
+    addressLocality: "Bengaluru",
+    addressRegion: "Karnataka",
+    postalCode: "560001",
+    addressCountry: "IN",
+  },
+};
+
+const websiteJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "@id": `${siteUrl}/#website`,
+  url: siteUrl,
+  name: siteName,
+  publisher: { "@id": `${siteUrl}/#organization` },
+  inLanguage: "en-IN",
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
@@ -49,7 +110,10 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       lang="en"
       className={`${sharpGrotesk.variable} ${sharpGroteskCta.variable} ${interDisplayNav.variable} ${interDisplayRegular.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col"><SmoothScroll />{children}</body>
+      <body className="min-h-full flex flex-col">
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify([organizationJsonLd, websiteJsonLd]) }} />
+        <SmoothScroll />{children}
+      </body>
     </html>
   );
 }

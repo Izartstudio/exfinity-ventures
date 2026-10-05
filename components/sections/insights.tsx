@@ -1,34 +1,9 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { FormEvent, useCallback, useEffect, useRef, useState } from "react";
-
-const articles = [
-  {
-    title: "Exfinity at Inside India 2026: Engaging with a Senior Danish Delegation",
-    image: "/insights/inside-india.png",
-    date: "Feb 28, 2026",
-    category: "Social",
-  },
-  {
-    title: "Exfinity Venture Partners Unveils ₹1,100 Crore Fund IV for Deep-Tech Investments",
-    image: "/insights/fund-four.png",
-    date: "Jan 21, 2026",
-    category: "News",
-  },
-  {
-    title: "CloudSEK Becomes First Indian-Origin Cybersecurity Company to Receive Investment from a U.S. State Fund",
-    image: "/insights/cloudsek.png",
-    date: "Jan 15, 2026",
-    category: "News",
-  },
-  {
-    title: "Exfinity at Inside India 2026: Engaging with a Senior Danish Delegation",
-    image: "/insights/inside-india.png",
-    date: "Feb 28, 2026",
-    category: "Social",
-  },
-] as const;
+import { newsItems } from "@/content/news";
 
 export function Insights() {
   const [isOpen, setIsOpen] = useState(false);
@@ -76,14 +51,14 @@ export function Insights() {
 
   return (
     <>
-      <section className="insights-section" aria-labelledby="insights-title">
+      <section className="insights-section" id="insights" aria-labelledby="insights-title">
         <div className="container">
           <div className="insights-kicker"><span aria-hidden="true" />Insights</div>
           <div className="insights-layout">
             <div className="insights-feature">
               <div className="insights-heading">
                 <h2 id="insights-title">News &amp; Insights</h2>
-                <a className="button button-outline" href="/insights">View all <span aria-hidden="true">→</span></a>
+                <Link className="button button-outline" href="/news">View all <span aria-hidden="true">→</span></Link>
               </div>
               <div className="thesis-card">
                 <Image src="/insights/physical-ai-thesis.png" alt="Exfinity Physical AI Thesis report" width={374} height={315} sizes="(max-width: 900px) 100vw, 38vw" />
@@ -95,12 +70,12 @@ export function Insights() {
             </div>
 
             <div className="insights-grid">
-              {articles.map((article, index) => (
-                <article className="insight-card" key={`${article.title}-${index}`}>
+              {newsItems.slice(0, 4).map((article) => (
+                <Link className="insight-card" href={article.slug} key={article.id} aria-label={`Read ${article.title}`}>
                   <h3>{article.title}</h3>
                   <Image src={article.image} alt="" width={200} height={200} sizes="(max-width: 650px) 80vw, 200px" />
                   <div className="insight-meta"><time>{article.date}</time><span>{article.category}</span></div>
-                </article>
+                </Link>
               ))}
             </div>
           </div>

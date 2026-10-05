@@ -1,13 +1,14 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import type { FormEvent } from "react";
 
 const linkGroups = [
   {
     title: "Quick Links",
     links: [
-      { label: "For Founders", href: "/founders" },
+      { label: "For Founders", href: "/contact" },
       { label: "The Team", href: "/team" },
       { label: "Portfolio", href: "/portfolio" },
     ],
@@ -15,16 +16,16 @@ const linkGroups = [
   {
     title: "Company",
     links: [
-      { label: "Insights", href: "/insights" },
+      { label: "Insights", href: "/news" },
       { label: "Contact Us", href: "/contact" },
     ],
   },
   {
     title: "Legal",
     links: [
-      { label: "Terms & Conditions", href: "/terms" },
-      { label: "Privacy Policy", href: "/privacy" },
-      { label: "AIF Registration Details", href: "/aif-registration" },
+      { label: "Terms & Conditions", href: "/" },
+      { label: "Privacy Policy", href: "/" },
+      { label: "AIF Registration Details", href: "/" },
     ],
   },
 ] as const;
@@ -48,7 +49,7 @@ export function Footer() {
           {linkGroups.map((group) => (
             <div key={group.title}>
               <h2>{group.title}</h2>
-              <ul>{group.links.map((link) => <li key={link.label}><a href={link.href}>{link.label}</a></li>)}</ul>
+              <ul>{group.links.map((link) => <li key={link.label}>{link.href.startsWith("/") ? <Link href={link.href}>{link.label}</Link> : <a href={link.href}>{link.label}</a>}</li>)}</ul>
             </div>
           ))}
         </nav>
@@ -64,8 +65,8 @@ export function Footer() {
             <div><strong>Email</strong><a href="mailto:info@exfinityventures.com">info@exfinityventures.com</a></div>
             <div><strong>Address</strong><span>10, Museum Rd, Shanthala Nagar, Ashok Nagar, Bengaluru, Karnataka 560001</span></div>
             <div className="footer-socials">
-              <a href="https://www.linkedin.com" aria-label="Exfinity on LinkedIn">in</a>
-              <a href="https://x.com" aria-label="Exfinity on X">𝕏</a>
+              <a href="https://www.linkedin.com/company/exfinity-venture-partners" target="_blank" rel="noreferrer" aria-label="Exfinity on LinkedIn">in</a>
+              <a href="https://x.com/ExfinityVP" target="_blank" rel="noreferrer" aria-label="Exfinity on X">𝕏</a>
             </div>
           </address>
         </div>
