@@ -1,4 +1,4 @@
-import { fallbackPortfolioWall, type PortfolioCompany, type PortfolioWallData } from "@/content/portfolio";
+import { fallbackPortfolioWall, updatedPortfolioLogos, type PortfolioCompany, type PortfolioWallData } from "@/content/portfolio";
 
 type SanityPortfolioCompany = Omit<PortfolioCompany, "id"> & { id?: string };
 type SanityPortfolioResponse = {
@@ -33,7 +33,10 @@ export async function getPortfolioWall(): Promise<PortfolioWallData> {
     const data = (await response.json()) as SanityPortfolioResponse;
     const companies = data.result?.companies
       ?.filter((company) => company.name && company.fund && company.sector && company.status)
-      .map((company, index) => ({ ...company, id: company.id || `portfolio-company-${index}` })) as PortfolioCompany[] | undefined;
+      .map((company, index) => {
+        const id = company.id || `portfolio-company-${index}`;
+        return { ...company, id, logo: updatedPortfolioLogos[id] || company.logo };
+      }) as PortfolioCompany[] | undefined;
 
     if (!companies?.length) return fallbackPortfolioWall;
     return {
@@ -73,7 +76,7 @@ export async function getPortfolioCompany(slug: string): Promise<PortfolioCompan
     const response = await fetch(url, { next: { revalidate: 300 } });
     if (!response.ok) return fallback;
     const data = (await response.json()) as { result?: PortfolioCompany };
-    return data.result?.name ? data.result : fallback;
+    return data.result?.name ? { ...data.result, logo: updatedPortfolioLogos[slug] || data.result.logo } : fallback;
   } catch {
     return fallback;
   }

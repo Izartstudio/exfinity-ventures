@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
+import Script from "next/script";
 import "./globals.css";
 import { SmoothScroll } from "@/components/motion/smooth-scroll";
 import { Navbar } from "@/components/layout/navbar";
@@ -115,6 +116,14 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationJsonLd) }} />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteJsonLd) }} />
         <SmoothScroll /><Navbar />{children}
+        <Script id="enablestack-config" strategy="beforeInteractive">
+          {`window.ENABLESTACK_CONFIG={colors:{primary:'#004de5'},icon:'default'};`}
+        </Script>
+        <Script
+          id="enablestack-widget"
+          src="https://cdn.jsdelivr.net/gh/EnableUser-Suryanshu/enablestack-widget@v2.1.0/enablestack-widget.js"
+          strategy="afterInteractive"
+        />
       </body>
     </html>
   );

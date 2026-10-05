@@ -110,8 +110,10 @@ export function InvestmentPhilosophy() {
         </div>
       </div>
       <div className="scroll-cue" aria-hidden="true">
-        <span className="scroll-cue-track"><i style={{ transform: `scaleY(${mappedProgress})` }} /></span>
-        <span>Scroll</span>
+        <span className="scroll-mouse">
+          <i className="scroll-mouse-dot" style={{ transform: `translate3d(-50%, ${mappedProgress * 22}px, 0)` }} />
+          <span className="scroll-mouse-arrow" />
+        </span>
       </div>
     </div>
   </section>;

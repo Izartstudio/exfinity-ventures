@@ -12,12 +12,12 @@ const cards = [
     copy: "Companies built on deep scientific or engineering advancements, where the barrier is physics, chemistry, or biology, not features. We invest once TRL 3–4 has been crossed and the remaining risk is commercial, backing teams that leverage India’s engineering depth to achieve the same outcomes at a fraction of Western costs.",
     themes: ["Semiconductors & Computing", "Aerospace", "Advanced Materials & Manufacturing", "Energy & Climate Tech", "Robotics & Automation", "Defence & Dual-Use Technology", "Life Sciences"],
     companies: [
-      { name: "Kinara", logo: "/companies/popup/kinara-provided.png" },
-      { name: "Ati Robotics", logo: "/companies/popup/ati.png" },
-      { name: "Maieutic", logo: "/companies/popup/maieutic-provided.png" },
-      { name: "Chara", logo: "/companies/popup/chara.png" },
-      { name: "Optimized Electrotech", logo: "/companies/popup/optimized-electrotech-provided.png" },
-      { name: "Str8bat", logo: "/companies/popup/str8bat-provided.png" },
+      { name: "Kinara", logo: "/companies/popup/kinara-provided.png", href: "/portfolio/kinara" },
+      { name: "Ati Robotics", logo: "/companies/popup/ati.png", href: "/portfolio/ati" },
+      { name: "Maieutic", logo: "/companies/popup/maieutic-provided.png", href: "/portfolio/maieutic" },
+      { name: "Chara", logo: "/companies/popup/chara.png", href: "/portfolio/chara" },
+      { name: "Optimized Electrotech", logo: "/companies/popup/optimized-electrotech-provided.png", href: "https://optimizedelectrotech.com" },
+      { name: "Str8bat", logo: "/companies/popup/str8bat-provided.png", href: "https://str8bat.com" },
     ],
   },
   {
@@ -27,12 +27,12 @@ const cards = [
     copy: "Companies where artificial intelligence is the product architecture, not an added feature. We partner with founders building intelligent systems that learn, adapt and create durable advantages across enterprise workflows and global markets.",
     themes: ["AI Agents & Autonomous Systems", "AI Infrastructure", "AI Developer Tools", "Data & ML Infrastructure", "AI Evals & Security", "Cybersecurity", "Vertical AI"],
     companies: [
-      { name: "Pixis", logo: "/companies/popup/pixis.png" },
-      { name: "CloudSEK", logo: "/companies/popup/cloudsek.png" },
-      { name: "MoEngage", logo: "/companies/popup/moengage-provided.png" },
-      { name: "Locus", logo: "/companies/popup/locus.png" },
-      { name: "NeuralGarage", logo: "/companies/popup/neural-garage.png" },
-      { name: "Eccentric", logo: "/companies/popup/eccentric.png" },
+      { name: "Pixis", logo: "/companies/popup/pixis.png", href: "/portfolio/pixis" },
+      { name: "CloudSEK", logo: "/companies/popup/cloudsek.png", href: "/portfolio/cloudsek" },
+      { name: "MoEngage", logo: "/companies/popup/moengage-provided.png", href: "/portfolio/moengage" },
+      { name: "Locus", logo: "/companies/popup/locus.png", href: "/portfolio/locus" },
+      { name: "NeuralGarage", logo: "/companies/popup/neural-garage.png", href: "/portfolio/neural-garage" },
+      { name: "Eccentric", logo: "/companies/popup/eccentric.png", href: "/portfolio/eccentric" },
     ],
   },
   {
@@ -42,10 +42,10 @@ const cards = [
     copy: "Technology-led platforms that solve complex business problems with strong product foundations and clear market insight. We back ambitious teams building scalable, defensible businesses for customers in India and around the world.",
     themes: ["Industrial Platforms", "Health Technology", "AI Native Services"],
     companies: [
-      { name: "Zyla", logo: "/companies/popup/zyla.png" },
-      { name: "Autoverse", logo: "/companies/popup/autoverse.png" },
-      { name: "Credilio", logo: "/companies/popup/credilio.png" },
-      { name: "Skit", logo: "/companies/popup/skit.png" },
+      { name: "Zyla", logo: "/companies/popup/zyla.png", href: "/portfolio/zyla-health" },
+      { name: "Autoverse", logo: "/companies/popup/autoverse.png", href: "/portfolio/autoverse" },
+      { name: "Credilio", logo: "/companies/popup/credilio.png", href: "/portfolio/credilio" },
+      { name: "Skit", logo: "/companies/popup/skit.png", href: "/portfolio/skit-ai" },
     ],
   },
 ] as const;
@@ -105,7 +105,7 @@ export function WhatWeBack() {
     <section className="what-we-back" id="portfolio" aria-labelledby="what-we-back-title"><div className="container">
       <div className="section-kicker"><span>What we back</span></div>
       <div className="section-intro"><div><h2 id="what-we-back-title">The Frontiers We Invest In</h2><p>We invest across three areas. Each demands deep expertise to build and has the potential to create durable advantage at scale.</p></div><Link className="button button-primary" href="/portfolio">View portfolio <span aria-hidden="true">→</span></Link></div>
-      <div className="backing-grid" id="portfolio-grid">{cards.map((card) => <article className={`backing-card backing-card-${card.id}`} key={card.id}><Image src={card.image} alt="" fill sizes={card.id === "b2b" ? "(max-width: 650px) 100vw, 95vw" : "(max-width: 650px) 100vw, 48vw"} /><button className="backing-toggle" type="button" onClick={() => { closingRef.current = false; setIsClosing(false); setOpenPanel("about"); setActive(card); }} aria-haspopup="dialog"><span>{card.title}</span><span className="card-cta">Read more <span aria-hidden="true">→</span></span></button></article>)}</div>
+      <div className="backing-grid" id="portfolio-grid">{cards.map((card) => <article className={`backing-card backing-card-${card.id}`} key={card.id}><Image src={card.image} alt="" fill sizes={card.id === "b2b" ? "(max-width: 650px) 100vw, 95vw" : "(max-width: 650px) 100vw, 48vw"} /><button className="backing-toggle" type="button" onClick={() => { closingRef.current = false; setIsClosing(false); setOpenPanel("about"); setActive(card); }} aria-haspopup="dialog"><span>{card.title}</span><span className="button button-light card-cta">Read more <span aria-hidden="true">→</span></span></button></article>)}</div>
     </div></section>
 
     {active && <div className={`modal-backdrop${isClosing ? " modal-closing" : ""}`} data-lenis-prevent role="presentation" onMouseDown={(event) => { if (event.target === event.currentTarget) closeModal(); }}>
@@ -126,9 +126,9 @@ export function WhatWeBack() {
             <ul className="theme-list">{active.themes.map((theme) => <li key={theme}>{theme}</li>)}</ul>
           </details>
         </div>
-        <div className={`company-grid company-grid-${active.companies.length}`} aria-label={`${active.title} companies`}>{active.companies.map((company) => <div className="company-logo-cell" data-company={company.name.toLowerCase()} key={company.name}>
+        <div className={`company-grid company-grid-${active.companies.length}`} aria-label={`${active.title} companies`}>{active.companies.map((company) => <Link className="company-logo-cell" data-company={company.name.toLowerCase()} href={company.href} key={company.name} onClick={closeModal}>
           <Image className="company-logo-image" src={company.logo} alt={company.name} width={280} height={280} unoptimized />
-        </div>)}</div>
+        </Link>)}</div>
       </section>
     </div>}
   </>;
