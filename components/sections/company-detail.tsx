@@ -64,7 +64,7 @@ export function CompanyDetail({ company }: { company: PortfolioCompany }) {
       <div className="company-detail-visual">
         <Link className="company-back" href="/portfolio"><span aria-hidden="true">‹</span> Back to portfolio</Link>
         <div className="company-detail-visual-logo">
-          {company.logo ? <Image src={company.logo} alt={company.name} width={320} height={150} unoptimized /> : <span>{company.name}</span>}
+          {company.logo ? <Image src={company.logoWhite ?? company.logo} alt={company.name} width={320} height={150} unoptimized /> : <span>{company.name}</span>}
         </div>
       </div>
       <div className="company-detail-copy">
@@ -78,6 +78,7 @@ export function CompanyDetail({ company }: { company: PortfolioCompany }) {
             {company.websiteUrl && <a href={company.websiteUrl} target="_blank" rel="noreferrer" aria-label={`${company.name} website`}><Image src="/icons/company-web.svg" alt="" width={24} height={24} /></a>}
           </div>
         </div>
+        
         {company.description && <p className="company-description">{company.description}</p>}
         <div className="company-facts-shell">
           <dl className="company-facts" ref={factsRef} tabIndex={0}>

@@ -14,7 +14,7 @@ const cards = [
     companies: [
       { name: "Kinara", logo: "/companies/popup/kinara-provided.png", href: "/portfolio/kinara" },
       { name: "Ati Robotics", logo: "/companies/popup/ati.png", href: "/portfolio/ati" },
-      { name: "Maieutic", logo: "/companies/popup/maieutic-provided.png", href: "/portfolio/maieutic" },
+      { name: "Maieutic", logo: "/companies/portfolio-provided/maieutic.svg", href: "/portfolio/maieutic" },
       { name: "Chara", logo: "/companies/popup/chara.png", href: "/portfolio/chara" },
       { name: "Optimized Electrotech", logo: "/companies/popup/optimized-electrotech-provided.png", href: "/portfolio/optimized-electrotech" },
       { name: "Str8bat", logo: "/companies/popup/str8bat-provided.png", href: "/portfolio/str8bat" },

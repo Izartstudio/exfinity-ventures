@@ -58,14 +58,15 @@ function FilterSelect({ label, value, options, onChange }: { label: string; valu
     onChange(nextValue);
     setOpen(false);
   };
+  const allLabel = label === "Status" ? "All status" : `All ${label.toLowerCase()}s`;
 
   return <div className={`portfolio-filter${open ? " is-open" : ""}`} ref={filterRef}>
     <span className="portfolio-filter-label">{label}</span>
     <button type="button" className="portfolio-filter-trigger" aria-haspopup="listbox" aria-expanded={open} onClick={() => setOpen((current) => !current)}>
-      <span>{value || `All ${label.toLowerCase()}s`}</span><i aria-hidden="true" />
+      <span>{value || allLabel}</span><i aria-hidden="true" />
     </button>
     <div className="portfolio-filter-menu" role="listbox" aria-label={`Filter by ${label}`}>
-      <button type="button" role="option" aria-selected={!value} className={!value ? "is-selected" : undefined} onClick={() => choose("")}>All {label.toLowerCase()}s</button>
+      <button type="button" role="option" aria-selected={!value} className={!value ? "is-selected" : undefined} onClick={() => choose("")}>{allLabel}</button>
       {options.map((option) => <button type="button" role="option" aria-selected={value === option} className={value === option ? "is-selected" : undefined} onClick={() => choose(option)} key={option}>{option}</button>)}
     </div>
   </div>;
@@ -78,7 +79,10 @@ function CompanyCard({ company }: { company: PortfolioCompany }) {
       <span className="portfolio-fund">{[company.fund, ...(company.additionalFunds || [])].join(", ")}</span>
     </div>
     <div className="portfolio-company-logo">
-      {company.logo ? <Image src={company.logo} alt={company.name} width={260} height={120} sizes="(max-width: 650px) 42vw, (max-width: 1000px) 28vw, 20vw" unoptimized /> : <span>{company.name}</span>}
+      {company.logo ? <>
+        <Image className={company.logoWhite ? "portfolio-company-logo-color" : undefined} src={company.logo} alt={company.name} width={260} height={120} sizes="(max-width: 650px) 42vw, (max-width: 1000px) 28vw, 20vw" unoptimized />
+        {company.logoWhite && <Image className="portfolio-company-logo-white" src={company.logoWhite} alt="" width={260} height={120} sizes="(max-width: 650px) 42vw, (max-width: 1000px) 28vw, 20vw" unoptimized />}
+      </> : <span>{company.name}</span>}
     </div>
     <p>{company.sector}</p>
   </>;

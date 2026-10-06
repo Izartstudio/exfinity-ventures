@@ -5,6 +5,7 @@ export type PortfolioCompany = {
   id: string;
   name: string;
   logo?: string;
+  logoWhite?: string;
   fund: PortfolioFund;
   additionalFunds?: PortfolioFund[];
   theme?: string;
@@ -26,24 +27,24 @@ export type PortfolioWallData = {
 };
 
 export const updatedPortfolioLogos: Record<string, string> = {
-  agshift: "/companies/portfolio-provided/agshift.jpg",
-  "ai-palette": "/companies/portfolio-provided/ai-palette.svg",
+  agshift: "/companies/portfolio-provided/agshift.png",
+  "ai-palette": "/companies/portfolio-provided/ai-palette.png",
   akridata: "/companies/portfolio-provided/akridata.png",
   ati: "/companies/featured/ati.png",
-  maieutic: "/companies/popup/maieutic-provided.png",
+  maieutic: "/companies/portfolio-provided/maieutic.svg",
   chara: "/companies/featured/chara.png",
   "raga-ai": "/companies/featured/raga-ai.webp",
   cloudsek: "/companies/featured/cloudsek.png",
   moengage: "/companies/popup/moengage-provided.png",
   pixis: "/companies/featured/pixis.png",
   eccentric: "/companies/popup/eccentric.png",
-  awiros: "/companies/portfolio-provided/awiros.png",
+  awiros: "/companies/portfolio-provided/awiros-new.png",
   qritive: "/companies/portfolio-provided/qritive.png",
   curefit: "/companies/portfolio-provided/curefit.png",
   "get-edge": "/companies/portfolio-provided/edge-networks.png",
   "hippo-video": "/companies/portfolio-provided/hippo-video.png",
-  iqlect: "/companies/portfolio-provided/iqlect.png",
-  log9: "/companies/portfolio-provided/log9.jpg",
+  iqlect: "/companies/portfolio-provided/bangdb.png",
+  log9: "/companies/portfolio-provided/log9.png",
   "mad-street-den": "/companies/portfolio-provided/mad-street-den.png",
   practically: "/companies/portfolio-provided/practically.png",
   uniken: "/companies/portfolio-provided/uniken.png",
@@ -94,6 +95,12 @@ export const portfolioCompanies: PortfolioCompany[] = [
 
 for (const company of portfolioCompanies) {
   company.logo ??= updatedPortfolioLogos[company.id];
+  if (company.id === "agshift") company.logoWhite = "/companies/portfolio-provided/agshift-white.png";
+  if (company.id === "iqlect") company.logoWhite = "/companies/portfolio-provided/bangdb-white.png";
+  if (company.id === "maieutic") company.logoWhite = "/companies/portfolio-provided/maieutic-white.svg";
+  if (company.id === "ai-palette") company.logoWhite = "/companies/portfolio-provided/ai-palette-white.png";
+  if (company.id === "awiros") company.logoWhite = "/companies/portfolio-provided/awiros-white.png";
+  if (company.id === "log9") company.logoWhite = "/companies/portfolio-provided/log9-white.png";
 }
 
 export const fallbackPortfolioWall: PortfolioWallData = {

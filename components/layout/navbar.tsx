@@ -18,6 +18,8 @@ const lightSurfaceSelector = [
   ".companies-we-back",
   ".contact-faqs",
   ".team-directory",
+  ".team-profile",
+  ".team-profile-companies",
   ".offices-section",
   ".news-ledger",
   ".portfolio-section",
@@ -124,7 +126,7 @@ export function Navbar({ theme }: { theme?: "dark" | "light" | "split" }) {
           {menuOpen ? <span className="mobile-menu-close" aria-hidden="true">×</span> : <><span /><span /><span /></>}
         </button>
 
-        <div className="mobile-nav-panel" id="mobile-navigation" aria-hidden={!menuOpen} inert={!menuOpen}>
+        <div className="mobile-nav-panel" id="mobile-navigation" aria-hidden={!menuOpen}>
           <ul className="mobile-primary-links">
             {navigation.map((item) => {
               const active = isActive(item.match);

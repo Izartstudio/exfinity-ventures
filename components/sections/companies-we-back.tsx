@@ -11,7 +11,7 @@ const companies = [
   { name: "Edge", logo: "/companies/featured/edge.png", width: 280, height: 280 },
   { name: "CloudSEK", logo: "/companies/featured/cloudsek.png", width: 280, height: 280 },
   { name: "Cult.fit", logo: "/companies/featured/cult-fit.png", width: 280, height: 280 },
-  { name: "AI Palette", logo: "/companies/featured/ai-palette.png", width: 280, height: 280 },
+  { name: "AI Palette", logo: "/companies/portfolio-provided/ai-palette.png", width: 230, height: 48 },
   { name: "RagaAI", logo: "/companies/featured/raga-ai.webp", width: 500, height: 176 },
 ] as const;
 
