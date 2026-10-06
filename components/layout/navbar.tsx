@@ -16,7 +16,6 @@ const lightSurfaceSelector = [
   ".what-we-back",
   ".philosophy-scroll",
   ".companies-we-back",
-  ".insights-section",
   ".contact-faqs",
   ".team-directory",
   ".offices-section",
@@ -35,27 +34,38 @@ export function Navbar({ theme }: { theme?: "dark" | "light" | "split" }) {
   const effectiveTheme = theme ?? (pathname.startsWith("/news/") || pathname === "/aif-registration-details" ? "light" : pathname.startsWith("/portfolio/") ? "split" : "dark");
   const [menuOpen, setMenuOpen] = useState(false);
   const [useDarkLogo, setUseDarkLogo] = useState(effectiveTheme === "light");
+  const [headerHidden, setHeaderHidden] = useState(false);
   const frame = useRef<number | null>(null);
+  const lastScrollY = useRef(0);
 
   useEffect(() => {
-    const updateLogoTone = () => {
-      const brand = document.querySelector<HTMLElement>(".brand");
-      const bounds = brand?.getBoundingClientRect();
-      const x = bounds ? bounds.left + bounds.width / 2 : 40;
-      const y = bounds ? bounds.top + bounds.height / 2 : 28;
+    const updateNavbar = () => {
+      const header = document.querySelector<HTMLElement>(".site-header");
+      const bounds = header?.getBoundingClientRect();
+      const x = window.innerWidth / 2;
+      const y = Math.max(1, Math.min((bounds?.height ?? 80) / 2, window.innerHeight - 1));
       const surfaceIsLight = document
         .elementsFromPoint(x, y)
         .some((element) => !element.closest(".site-header") && Boolean(element.closest(lightSurfaceSelector)));
 
       setUseDarkLogo(surfaceIsLight || (window.scrollY < 2 && effectiveTheme === "light"));
+
+      const currentScrollY = Math.max(window.scrollY, 0);
+      const delta = currentScrollY - lastScrollY.current;
+      if (!menuOpen) {
+        if (currentScrollY <= 24 || delta < -4) setHeaderHidden(false);
+        else if (currentScrollY > 96 && delta > 4) setHeaderHidden(true);
+      }
+      lastScrollY.current = currentScrollY;
     };
 
-    updateLogoTone();
+    lastScrollY.current = Math.max(window.scrollY, 0);
+    updateNavbar();
 
     const onScroll = () => {
       if (frame.current !== null) return;
       frame.current = window.requestAnimationFrame(() => {
-        updateLogoTone();
+        updateNavbar();
         frame.current = null;
       });
     };
@@ -67,7 +77,7 @@ export function Navbar({ theme }: { theme?: "dark" | "light" | "split" }) {
       window.removeEventListener("resize", onScroll);
       if (frame.current !== null) window.cancelAnimationFrame(frame.current);
     };
-  }, [effectiveTheme]);
+  }, [effectiveTheme, menuOpen]);
 
   useEffect(() => {
     if (!menuOpen) return;
@@ -90,7 +100,7 @@ export function Navbar({ theme }: { theme?: "dark" | "light" | "split" }) {
   const darkLogoActive = menuOpen || useDarkLogo;
 
   return (
-    <header className={`site-header site-header-${effectiveTheme}${menuOpen ? " is-menu-open" : ""}`}>
+    <header className={`site-header site-header-${effectiveTheme}${darkLogoActive ? " is-light-surface" : ""}${headerHidden ? " is-hidden" : ""}${menuOpen ? " is-menu-open" : ""}`}>
       <nav className="navbar container" aria-label="Primary navigation">
         <Link className="brand" href="/" aria-label="Exfinity home" onClick={closeMenu}>
           <Image className={`brand-logo brand-logo-light${darkLogoActive ? " is-inactive" : ""}`} src="/brand/exfinity-logo.svg" alt="" width={203} height={47} priority />
@@ -104,10 +114,13 @@ export function Navbar({ theme }: { theme?: "dark" | "light" | "split" }) {
               return <li key={item.label}><Link className={active ? "is-active" : undefined} href={item.href} aria-current={active ? "page" : undefined}>{item.label}</Link></li>;
             })}
           </ul>
-          <Link className="button button-primary navbar-cta" href="/contact">Pitch to us <span aria-hidden="true">→</span></Link>
+          <Link className="button button-primary navbar-cta" href="mailto:info@exfinityventures.com">Mail to us <span aria-hidden="true">→</span></Link>
         </div>
 
-        <button className="mobile-menu-toggle" type="button" aria-label={menuOpen ? "Close navigation menu" : "Open navigation menu"} aria-expanded={menuOpen} aria-controls="mobile-navigation" onClick={() => setMenuOpen((open) => !open)}>
+        <button className="mobile-menu-toggle" type="button" aria-label={menuOpen ? "Close navigation menu" : "Open navigation menu"} aria-expanded={menuOpen} aria-controls="mobile-navigation" onClick={() => {
+          setHeaderHidden(false);
+          setMenuOpen((open) => !open);
+        }}>
           {menuOpen ? <span className="mobile-menu-close" aria-hidden="true">×</span> : <><span /><span /><span /></>}
         </button>
 
@@ -120,7 +133,7 @@ export function Navbar({ theme }: { theme?: "dark" | "light" | "split" }) {
           </ul>
 
           <div className="mobile-nav-footer">
-            <Link className="button button-primary mobile-pitch-cta" href="/contact" onClick={closeMenu}>Pitch to us</Link>
+            <Link className="button button-primary mobile-pitch-cta" href="mailto:info@exfinityventures.com" onClick={closeMenu}>Mail to us</Link>
           </div>
         </div>
       </nav>

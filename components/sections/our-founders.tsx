@@ -6,7 +6,7 @@ import type { HomepageFounder } from "@/types/homepage";
 
 export function OurFounders({ founders }: { founders: HomepageFounder[] }) {
   const sectionRef = useRef<HTMLElement>(null);
-  const [active, setActive] = useState(Math.min(2, founders.length - 1));
+  const [active, setActive] = useState(0);
   const [entered, setEntered] = useState(false);
   const [hasAdvanced, setHasAdvanced] = useState(false);
   const [isHovered, setIsHovered] = useState(false);
@@ -43,8 +43,6 @@ export function OurFounders({ founders }: { founders: HomepageFounder[] }) {
       ref={sectionRef}
       className={`our-founders${entered ? " is-visible" : ""}`}
       aria-labelledby="founders-title"
-      onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={() => setIsHovered(false)}
     >
       <svg className="founders-paths" viewBox="0 0 1440 900" preserveAspectRatio="xMidYMin slice" aria-hidden="true">
         <path className="founders-ellipse founders-ellipse-left" d="M0 790 A720 720 0 0 1 720 70" pathLength="1" />
@@ -56,7 +54,7 @@ export function OurFounders({ founders }: { founders: HomepageFounder[] }) {
       <div className="container founders-content">
         <h2 id="founders-title">What Our Founders Say</h2>
 
-        <div className="founders-ticker" aria-live="off">
+        <div className="founders-ticker" aria-live="off" onMouseEnter={() => setIsHovered(true)} onMouseLeave={() => setIsHovered(false)}>
           {founders.map((founder, index) => {
             let offset = (index - active + founders.length) % founders.length;
             if (offset > founders.length / 2) offset -= founders.length;
@@ -71,7 +69,8 @@ export function OurFounders({ founders }: { founders: HomepageFounder[] }) {
                 aria-hidden={index !== active}
                 style={{ opacity: isVisible ? 1 : 0, zIndex: index === active ? 3 : 1 }}
               >
-                <img src={founder.imageUrl} alt={index === active ? founder.name : ""} />
+                <img className="founder-photo" src={founder.imageUrl} alt={index === active ? founder.name : ""} />
+                {founder.logoUrl && <span className="founder-company-logo"><img src={founder.logoUrl} alt="" /></span>}
               </figure>
             );
           })}

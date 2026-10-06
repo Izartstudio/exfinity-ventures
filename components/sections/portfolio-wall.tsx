@@ -2,13 +2,14 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import { fallbackPortfolioWall, type PortfolioCompany, type PortfolioWallData } from "@/content/portfolio";
 
 type FilterKey = "fund" | "sector" | "status";
 type PortfolioTheme = "Deep Tech" | "AI Native" | "B2B";
 
 const portfolioThemes: PortfolioTheme[] = ["Deep Tech", "AI Native", "B2B"];
+const portfolioFunds = ["Fund I", "Fund II", "Fund III", "Fund IV"];
 const themeByCompanyId: Record<string, PortfolioTheme> = {
   ati: "Deep Tech",
   maieutic: "Deep Tech",
@@ -34,20 +35,47 @@ function getPortfolioTheme(company: PortfolioCompany): PortfolioTheme {
 }
 
 function FilterSelect({ label, value, options, onChange }: { label: string; value: string; options: string[]; onChange: (value: string) => void }) {
-  return <label className="portfolio-filter">
-    <span className="sr-only">Filter by {label}</span>
-    <select value={value} onChange={(event) => onChange(event.target.value)}>
-      <option value="">{label}</option>
-      {options.map((option) => <option value={option} key={option}>{option}</option>)}
-    </select>
-  </label>;
+  const [open, setOpen] = useState(false);
+  const filterRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    if (!open) return;
+    const close = (event: MouseEvent) => {
+      if (!filterRef.current?.contains(event.target as Node)) setOpen(false);
+    };
+    const closeOnEscape = (event: KeyboardEvent) => {
+      if (event.key === "Escape") setOpen(false);
+    };
+    document.addEventListener("mousedown", close);
+    window.addEventListener("keydown", closeOnEscape);
+    return () => {
+      document.removeEventListener("mousedown", close);
+      window.removeEventListener("keydown", closeOnEscape);
+    };
+  }, [open]);
+
+  const choose = (nextValue: string) => {
+    onChange(nextValue);
+    setOpen(false);
+  };
+
+  return <div className={`portfolio-filter${open ? " is-open" : ""}`} ref={filterRef}>
+    <span className="portfolio-filter-label">{label}</span>
+    <button type="button" className="portfolio-filter-trigger" aria-haspopup="listbox" aria-expanded={open} onClick={() => setOpen((current) => !current)}>
+      <span>{value || `All ${label.toLowerCase()}s`}</span><i aria-hidden="true" />
+    </button>
+    <div className="portfolio-filter-menu" role="listbox" aria-label={`Filter by ${label}`}>
+      <button type="button" role="option" aria-selected={!value} className={!value ? "is-selected" : undefined} onClick={() => choose("")}>All {label.toLowerCase()}s</button>
+      {options.map((option) => <button type="button" role="option" aria-selected={value === option} className={value === option ? "is-selected" : undefined} onClick={() => choose(option)} key={option}>{option}</button>)}
+    </div>
+  </div>;
 }
 
 function CompanyCard({ company }: { company: PortfolioCompany }) {
   const content = <>
     <div className="portfolio-card-top">
-      <span className={`portfolio-status is-${company.status.toLowerCase()}`}>{company.status}</span>
-      <span className="portfolio-fund">{company.fund}</span>
+      <span className={`portfolio-status is-${company.status.toLowerCase().replaceAll(" ", "-")}`}>{company.status}</span>
+      <span className="portfolio-fund">{[company.fund, ...(company.additionalFunds || [])].join(", ")}</span>
     </div>
     <div className="portfolio-company-logo">
       {company.logo ? <Image src={company.logo} alt={company.name} width={260} height={120} sizes="(max-width: 650px) 42vw, (max-width: 1000px) 28vw, 20vw" unoptimized /> : <span>{company.name}</span>}
@@ -62,12 +90,12 @@ export function PortfolioWall({ data = fallbackPortfolioWall }: { data?: Portfol
   const { companies, sectionLabel } = data;
   const [filters, setFilters] = useState<Record<FilterKey, string>>({ fund: "", sector: "", status: "" });
   const options = useMemo(() => ({
-    fund: [...new Set(companies.map((company) => company.fund))],
+    fund: portfolioFunds,
     sector: portfolioThemes,
     status: [...new Set(companies.map((company) => company.status))],
   }), [companies]);
   const filtered = companies.filter((company) =>
-    (!filters.fund || company.fund === filters.fund) &&
+    (!filters.fund || company.fund === filters.fund || company.additionalFunds?.includes(filters.fund as PortfolioCompany["fund"])) &&
     (!filters.sector || getPortfolioTheme(company) === filters.sector) &&
     (!filters.status || company.status === filters.status),
   );

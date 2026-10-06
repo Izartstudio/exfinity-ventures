@@ -5,19 +5,19 @@ import { useEffect, useRef, useState } from "react";
 const steps = [
   {
     number: "01",
-    title: "Founders with Global Vision",
+    title: "Founders with global vision",
     description:
       "We back founders who build for global markets from day one; companies engineered in India to compete and win globally.",
   },
   {
     number: "02",
-    title: "Teams with Technical and operational Depth",
+    title: "Teams with technical and operational depth",
     description:
       "We look for the founding team with technical authority and operating capability.",
   },
   {
     number: "03",
-    title: "Companies with Market validation",
+    title: "Companies with market validation",
     description:
       "A first customer, signed POC, or an enterprise partnership can accelerate our journey.",
   },
@@ -111,7 +111,7 @@ export function InvestmentPhilosophy() {
       </div>
       <div className="scroll-cue" aria-hidden="true">
         <span className="scroll-mouse">
-          <i className="scroll-mouse-dot" style={{ transform: `translate3d(-50%, ${mappedProgress * 22}px, 0)` }} />
+          <i className="scroll-mouse-dot" style={{ transform: `translate3d(-50%, ${mappedProgress * 11}px, 0)` }} />
           <span className="scroll-mouse-arrow" />
         </span>
       </div>

@@ -8,4 +8,5 @@ export type HomepageFounder = {
   role: string;
   quote: string;
   imageUrl: string;
+  logoUrl?: string;
 };

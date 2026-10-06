@@ -20,6 +20,7 @@ const visibleCellCount = 6;
 export function CompaniesWeBack() {
   const [logoIndexes, setLogoIndexes] = useState(() => Array.from({ length: visibleCellCount }, (_, index) => index));
   const lastCellRef = useRef(-1);
+  const isLogoHoveredRef = useRef(false);
 
   useEffect(() => {
     companies.forEach((company) => {
@@ -31,6 +32,7 @@ export function CompaniesWeBack() {
     if (reduceMotion.matches) return;
 
     const timer = window.setInterval(() => {
+      if (isLogoHoveredRef.current) return;
       let cell = Math.floor(Math.random() * visibleCellCount);
       if (cell === lastCellRef.current) cell = (cell + 1 + Math.floor(Math.random() * (visibleCellCount - 1))) % visibleCellCount;
       lastCellRef.current = cell;
@@ -58,7 +60,7 @@ export function CompaniesWeBack() {
               const company = companies[logoIndexes[cellIndex]];
 
               return (
-                <div className="portfolio-logo-cell" key={cellIndex}>
+                <div className="portfolio-logo-cell" key={cellIndex} onMouseEnter={() => { isLogoHoveredRef.current = true; }} onMouseLeave={() => { isLogoHoveredRef.current = false; }}>
                   <div className="portfolio-logo-frame">
                     <Image
                       unoptimized

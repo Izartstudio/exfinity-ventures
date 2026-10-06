@@ -10,7 +10,7 @@ export type Office = {
 const defaultOffices: Office[] = [
   { city: "Bangalore", country: "India", image: "/team/offices/bangalore.jpg" },
   { city: "Singapore City", country: "Singapore", image: "/team/offices/singapore.jpg" },
-  { city: "Silicon Valley", country: "USA", image: "/team/offices/silicon-valley.jpg" },
+  { city: "Silicon Valley", country: "USA", image: "/team/offices/silicon-valley-enhanced.png" },
 ];
 
 export function Offices({

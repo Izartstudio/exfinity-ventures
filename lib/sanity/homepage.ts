@@ -9,11 +9,10 @@ const fallbackStats: HomepageStat[] = [
 type SanityResponse = { result?: { stats?: HomepageStat[] } };
 
 const fallbackFounders: HomepageFounder[] = [
-  { name: "Founder", role: "Founder & CEO", quote: "Exfinity backed our ambition early and remained a committed partner as we built for a global market.", imageUrl: "/founders/founder-1.png" },
-  { name: "Founder", role: "Founder & CEO", quote: "Their combination of conviction, patience, and operating perspective made them an invaluable partner.", imageUrl: "/founders/founder-2.png" },
-  { name: "Shubham Mishra", role: "Founder & CEO", quote: "They were our first investors and they stayed with us through several product pivots. Chinnu introduced us to our first major customer, which is now a million-dollar account.", imageUrl: "/founders/founder-3.png" },
-  { name: "Founder", role: "Founder & CEO", quote: "They understood the technology, the market, and the scale of what we were setting out to build.", imageUrl: "/founders/founder-4.png" },
-  { name: "Founder", role: "Founder & CEO", quote: "From the earliest days, Exfinity worked alongside us with the focus and perspective of a true partner.", imageUrl: "/founders/founder-5.png" },
+  { name: "Shubham Mishra", role: "Co-founder & CEO, Pixis", quote: "Exfinity’s B2B focus, domain expertise and conviction in their founders has been vital in our journey. They were our 1st investors and continued to trust us through our multiple product pivots. Chinnu introduced us to our first major customer - which is now a million-dollar account for Pixis", imageUrl: "/founders/featured/shubham-mishra.png", logoUrl: "/companies/featured/pixis.png" },
+  { name: "Raviteja Dodda", role: "Co-founder & CEO, MoEngage", quote: "Exfinity has been one of the few investors who understand Enterprise Software, and have been early believers in the 'India SaaS for the World' opportunity right from 2014.", imageUrl: "/founders/featured/moengage-founder.png", logoUrl: "/companies/popup/moengage-provided.png" },
+  { name: "Ravi Annavajjihala", role: "CEO, Kinara AI", quote: "Exfinity facilitated the setup of our R&D center in Hyderabad, providing us both a cost and scale advantage. They have furthermore opened doors to many partners and customers – and been instrumental in our Series B, bringing the right investors to our cap table.", imageUrl: "/founders/featured/kinara-founder.png", logoUrl: "/companies/popup/kinara-provided.png" },
+  { name: "Khushboo Aggarwal", role: "Founder, Zyla Health", quote: "Exfinity has the risk appetite to enter new areas like healthcare and the expertise to help with corporate GTM strategy. Their board involvement has helped us immensely with new customers, better GTM strategy and hiring.", imageUrl: "/founders/featured/zyla-founder.jpg", logoUrl: "/companies/popup/zyla.png" },
 ];
 
 export async function getHomepageStats(): Promise<HomepageStat[]> {
@@ -37,27 +36,6 @@ export async function getHomepageStats(): Promise<HomepageStat[]> {
   }
 }
 
-type FoundersResponse = { result?: { founders?: HomepageFounder[] } };
-
 export async function getHomepageFounders(): Promise<HomepageFounder[]> {
-  const projectId = process.env.NEXT_PUBLIC_SANITY_PROJECT_ID;
-  const dataset = process.env.NEXT_PUBLIC_SANITY_DATASET;
-  if (!projectId || !dataset) return fallbackFounders;
-
-  const query = encodeURIComponent(
-    `*[_type == "homepageFounders"][0]{"founders": founders[]{name,role,quote,"imageUrl":image.asset->url}}`,
-  );
-  const url = `https://${projectId}.api.sanity.io/v2026-10-01/data/query/${dataset}?query=${query}`;
-
-  try {
-    const response = await fetch(url, { next: { revalidate: 300 } });
-    if (!response.ok) return fallbackFounders;
-    const data = (await response.json()) as FoundersResponse;
-    const founders = data.result?.founders?.filter(
-      (founder) => founder.name && founder.role && founder.quote && founder.imageUrl,
-    );
-    return founders && founders.length >= 3 ? founders : fallbackFounders;
-  } catch {
-    return fallbackFounders;
-  }
+  return fallbackFounders;
 }

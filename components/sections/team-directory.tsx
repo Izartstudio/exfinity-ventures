@@ -16,15 +16,18 @@ export type TeamDirectoryContent = {
   partnersTitle: string;
   foundersTitle: string;
   investmentTitle: string;
+  tacTitle: string;
   partners: TeamMember[];
   founders: TeamMember[];
   investmentTeam: TeamMember[];
+  tacTeam: TeamMember[];
 };
 
 const teamDirectoryContent: TeamDirectoryContent = {
-  partnersTitle: "Partners & IC Members",
+  partnersTitle: "Partners",
   foundersTitle: "Founders & Advisors",
   investmentTitle: "Team",
+  tacTitle: "TAC Team",
   partners: [
     { name: "Balakrishnan V", role: "General Partner & IC Member", region: "Silicon Valley & India", image: "/team/partners/balakrishnan-v.jpg", funds: "I, II, III" },
     { name: "Chinnu Senthilkumar", role: "General Partner & IC Member", region: "Silicon Valley & India", image: "/team/partners/chinnu-senthilkumar.jpg" },
@@ -52,6 +55,11 @@ const teamDirectoryContent: TeamDirectoryContent = {
     { name: "Afreed Faizan", role: "Investment Analyst", region: "India", image: "/team/investment/afreed-faizan.jpg" },
     { name: "R Abhijith Menon", role: "Operations & IR Analyst", region: "India", image: "/team/investment/abhijith-menon.jpg" },
   ],
+  tacTeam: [
+    { name: "Balaji", role: "TAC Member", region: "India", image: "/team/tac/balaji.png" },
+    { name: "Vikas Sharma", role: "TAC Member", region: "India", image: "/team/tac/vikas-sharma.png" },
+    { name: "Rahul Sasi", role: "TAC Member", region: "India", image: "/team/tac/rahul-sasi.png" },
+  ],
 };
 
 const cmsImageLoader = ({ src }: ImageLoaderProps) => src;
@@ -71,7 +79,6 @@ function TeamGrid({ members, label }: { members: TeamMember[]; label: string }) 
               sizes="(max-width: 650px) calc(100vw - 2.5rem), (max-width: 900px) 48vw, 24vw"
               style={{ objectPosition: member.imagePosition ?? "center center" }}
             />
-            {member.funds && <div className="team-member-funds"><span>Funds</span><strong>{member.funds}</strong></div>}
           </div>
           <div className="team-member-copy">
             <h3>{member.name}</h3>
@@ -85,8 +92,10 @@ function TeamGrid({ members, label }: { members: TeamMember[]; label: string }) 
 }
 
 export function TeamDirectory({ content = teamDirectoryContent }: { content?: TeamDirectoryContent }) {
-  const [activeTab, setActiveTab] = useState<"partners" | "founders">("partners");
+  const [activeTab, setActiveTab] = useState<"partners" | "founders" | "tac">("partners");
   const isPartners = activeTab === "partners";
+  const isFounders = activeTab === "founders";
+  const isTac = activeTab === "tac";
 
   return (
     <section className="team-directory" aria-labelledby="team-directory-title">
@@ -95,7 +104,8 @@ export function TeamDirectory({ content = teamDirectoryContent }: { content?: Te
 
         <div className="team-tabs" role="tablist" aria-label="Team categories">
           <button type="button" role="tab" aria-selected={isPartners} aria-controls="partners-panel" id="partners-tab" className={isPartners ? "is-active" : ""} onClick={() => setActiveTab("partners")}>{content.partnersTitle}</button>
-          <button type="button" role="tab" aria-selected={!isPartners} aria-controls="founders-panel" id="founders-tab" className={!isPartners ? "is-active" : ""} onClick={() => setActiveTab("founders")}>{content.foundersTitle}</button>
+          <button type="button" role="tab" aria-selected={isFounders} aria-controls="founders-panel" id="founders-tab" className={isFounders ? "is-active" : ""} onClick={() => setActiveTab("founders")}>{content.foundersTitle}</button>
+          <button type="button" role="tab" aria-selected={isTac} aria-controls="tac-panel" id="tac-tab" className={isTac ? "is-active" : ""} onClick={() => setActiveTab("tac")}>{content.tacTitle}</button>
         </div>
 
         {isPartners ? (
@@ -107,10 +117,15 @@ export function TeamDirectory({ content = teamDirectoryContent }: { content?: Te
               <TeamGrid members={content.investmentTeam} label={content.investmentTitle} />
             </div>
           </div>
-        ) : (
+        ) : isFounders ? (
           <div id="founders-panel" role="tabpanel" aria-labelledby="founders-tab">
             <h2 id="team-directory-title">{content.foundersTitle}</h2>
             <TeamGrid members={content.founders} label={content.foundersTitle} />
+          </div>
+        ) : (
+          <div id="tac-panel" role="tabpanel" aria-labelledby="tac-tab">
+            <h2 id="team-directory-title">{content.tacTitle}</h2>
+            <TeamGrid members={content.tacTeam} label={content.tacTitle} />
           </div>
         )}
       </div>
