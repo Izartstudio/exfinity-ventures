@@ -78,6 +78,7 @@ export function Insights() {
                 </Link>
               ))}
             </div>
+            <Link className="button button-outline insights-view-all-mobile" href="/news">View all <span aria-hidden="true">→</span></Link>
           </div>
         </div>
       </section>

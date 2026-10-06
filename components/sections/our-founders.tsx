@@ -67,7 +67,7 @@ export function OurFounders({ founders }: { founders: HomepageFounder[] }) {
                 style={{ opacity: isVisible ? 1 : 0, zIndex: index === active ? 3 : 1 }}
               >
                 <img className="founder-photo" src={founder.imageUrl} alt={index === active ? founder.name : ""} />
-                {founder.logoUrl && <span className="founder-company-logo"><img src={founder.logoUrl} alt="" /></span>}
+                {index === active && founder.logoUrl && <span className="founder-company-logo"><img src={founder.logoUrl} alt="" /></span>}
               </figure>
             );
           })}
