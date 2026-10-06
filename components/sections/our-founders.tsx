@@ -8,7 +8,6 @@ export function OurFounders({ founders }: { founders: HomepageFounder[] }) {
   const sectionRef = useRef<HTMLElement>(null);
   const [active, setActive] = useState(0);
   const [entered, setEntered] = useState(false);
-  const [hasAdvanced, setHasAdvanced] = useState(false);
   const [isHovered, setIsHovered] = useState(false);
 
   useEffect(() => {
@@ -30,7 +29,6 @@ export function OurFounders({ founders }: { founders: HomepageFounder[] }) {
   useEffect(() => {
     if (!entered || isHovered || window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
     const timer = window.setInterval(() => {
-      setHasAdvanced(true);
       setActive((current) => (current + 1) % founders.length);
     }, 4000);
     return () => window.clearInterval(timer);
@@ -59,12 +57,11 @@ export function OurFounders({ founders }: { founders: HomepageFounder[] }) {
             let offset = (index - active + founders.length) % founders.length;
             if (offset > founders.length / 2) offset -= founders.length;
             const visibleOffset = Math.max(-2, Math.min(2, offset));
-            const isVisible = Math.abs(offset) <= 2;
-            const isEntering = hasAdvanced && visibleOffset === 2 && isVisible;
+            const isVisible = Math.abs(offset) <= 1;
 
             return (
               <figure
-                className={`founder-portrait founder-slot-${visibleOffset}${index === active ? " is-active" : ""}${isEntering ? " is-entering" : ""}`}
+                className={`founder-portrait founder-slot-${visibleOffset}${index === active ? " is-active" : ""}`}
                 key={`${founder.name}-${index}`}
                 aria-hidden={index !== active}
                 style={{ opacity: isVisible ? 1 : 0, zIndex: index === active ? 3 : 1 }}
