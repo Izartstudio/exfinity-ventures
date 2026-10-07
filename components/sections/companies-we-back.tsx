@@ -5,14 +5,14 @@ import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 
 const companies = [
-  { name: "Ati Robotics", logo: "/companies/featured/ati.png", width: 584, height: 584 },
-  { name: "Chara", logo: "/companies/featured/chara.png", width: 500, height: 500 },
-  { name: "Pixis", logo: "/companies/featured/pixis.png", width: 500, height: 251 },
-  { name: "Edge", logo: "/companies/featured/edge.png", width: 280, height: 280 },
-  { name: "CloudSEK", logo: "/companies/featured/cloudsek.png", width: 280, height: 280 },
-  { name: "Cult.fit", logo: "/companies/featured/cult-fit.png", width: 280, height: 280 },
-  { name: "AI Palette", logo: "/companies/portfolio-provided/ai-palette.png", width: 230, height: 48 },
-  { name: "RagaAI", logo: "/companies/featured/raga-ai.webp", width: 500, height: 176 },
+  { name: "Ati Robotics", logo: "/companies/vector/ati.svg", width: 60, height: 35 },
+  { name: "Chara", logo: "/companies/vector/chara.svg", width: 150, height: 40 },
+  { name: "Pixis", logo: "/companies/vector/pixis.svg", width: 120, height: 60 },
+  { name: "Edge", logo: "/companies/vector/edge-networks.svg", width: 125, height: 43 },
+  { name: "CloudSEK", logo: "/companies/vector/cloudsek.svg", width: 135, height: 28 },
+  { name: "Cult.fit", logo: "/companies/vector/curefit.svg", width: 83, height: 70 },
+  { name: "AI Palette", logo: "/companies/vector/ai-palette.svg", width: 200, height: 43 },
+  { name: "RagaAI", logo: "/companies/vector/raga-ai.svg", width: 137, height: 32 },
 ] as const;
 
 const visibleCellCount = 6;

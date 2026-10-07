@@ -27,32 +27,73 @@ export type PortfolioWallData = {
 };
 
 export const updatedPortfolioLogos: Record<string, string> = {
-  agshift: "/companies/portfolio-provided/agshift.png",
-  "ai-palette": "/companies/portfolio-provided/ai-palette.png",
-  akridata: "/companies/portfolio-provided/akridata.png",
-  ati: "/companies/featured/ati.png",
+  agshift: "/companies/vector/agshift.svg",
+  "ai-palette": "/companies/vector/ai-palette.svg",
+  akridata: "/companies/vector/akridata.svg",
+  ati: "/companies/vector/ati.svg",
   maieutic: "/companies/portfolio-provided/maieutic.svg",
-  chara: "/companies/featured/chara.png",
-  "raga-ai": "/companies/featured/raga-ai.webp",
-  cloudsek: "/companies/featured/cloudsek.png",
-  moengage: "/companies/popup/moengage-provided.png",
-  pixis: "/companies/featured/pixis.png",
-  eccentric: "/companies/popup/eccentric.png",
-  awiros: "/companies/portfolio-provided/awiros-new.png",
-  qritive: "/companies/portfolio-provided/qritive.png",
-  curefit: "/companies/portfolio-provided/curefit.png",
-  "get-edge": "/companies/portfolio-provided/edge-networks.png",
-  "hippo-video": "/companies/portfolio-provided/hippo-video.png",
-  iqlect: "/companies/portfolio-provided/bangdb.png",
-  log9: "/companies/portfolio-provided/log9.png",
-  "mad-street-den": "/companies/portfolio-provided/mad-street-den.png",
-  practically: "/companies/portfolio-provided/practically.png",
+  chara: "/companies/vector/chara.svg",
+  "raga-ai": "/companies/vector/raga-ai.svg",
+  cloudsek: "/companies/vector/cloudsek.svg",
+  moengage: "/companies/vector/moengage.svg",
+  pixis: "/companies/vector/pixis.svg",
+  eccentric: "/companies/vector/eccentric.svg",
+  awiros: "/companies/vector/awiros.svg",
+  qritive: "/companies/vector/qritive.svg",
+  curefit: "/companies/vector/curefit.svg",
+  "get-edge": "/companies/vector/edge-networks.svg",
+  "hippo-video": "/companies/vector/hippo-video.svg",
+  iqlect: "/companies/vector/bangdb.svg",
+  log9: "/companies/vector/log9.svg",
+  "mad-street-den": "/companies/vector/mad-street-den.svg",
+  practically: "/companies/vector/practically.svg",
   uniken: "/companies/portfolio-provided/uniken.png",
-  "neural-garage": "/companies/portfolio-provided/neural-garage.png",
-  gridraster: "/companies/portfolio-provided/gridraster.png",
-  "resolve-ai": "/companies/portfolio-provided/rezolve-ai.png",
-  "skit-ai": "/companies/portfolio-provided/skit-ai.jpg",
-  unscript: "/companies/portfolio-provided/unscript.png",
+  "neural-garage": "/companies/vector/neural-garage.svg",
+  gridraster: "/companies/vector/gridraster.svg",
+  locus: "/companies/vector/locus.svg",
+  "resolve-ai": "/companies/vector/rezolve-ai.svg",
+  "skit-ai": "/companies/vector/skit-ai.svg",
+  str8bat: "/companies/vector/str8bat.svg",
+  unscript: "/companies/vector/unscript.svg",
+  "zyla-health": "/companies/vector/zyla.svg",
+  autoverse: "/companies/vector/autoverse.svg",
+  credilio: "/companies/vector/credilio.svg",
+  kinara: "/companies/vector/kinara.svg",
+  "optimized-electrotech": "/companies/vector/optimized-electrotech.svg",
+};
+
+export const updatedPortfolioWhiteLogos: Record<string, string> = {
+  agshift: "/companies/vector/agshift-white.svg",
+  "ai-palette": "/companies/vector/ai-palette-white.svg",
+  akridata: "/companies/vector/akridata-white.svg",
+  ati: "/companies/vector/ati-white.svg",
+  autoverse: "/companies/vector/autoverse-white.svg",
+  awiros: "/companies/vector/awiros-white.svg",
+  chara: "/companies/vector/chara-white.svg",
+  cloudsek: "/companies/vector/cloudsek-white.svg",
+  credilio: "/companies/vector/credilio-white.svg",
+  curefit: "/companies/vector/curefit-white.svg",
+  eccentric: "/companies/vector/eccentric-white.svg",
+  "get-edge": "/companies/vector/edge-networks-white.svg",
+  gridraster: "/companies/vector/gridraster-white.svg",
+  "hippo-video": "/companies/vector/hippo-video-white.svg",
+  iqlect: "/companies/vector/bangdb-white.svg",
+  kinara: "/companies/vector/kinara-white.svg",
+  locus: "/companies/vector/locus-white.svg",
+  log9: "/companies/vector/log9-white.svg",
+  "mad-street-den": "/companies/vector/mad-street-den-white.svg",
+  moengage: "/companies/vector/moengage-white.svg",
+  "neural-garage": "/companies/vector/neural-garage-white.svg",
+  "optimized-electrotech": "/companies/vector/optimized-electrotech-white.svg",
+  pixis: "/companies/vector/pixis-white.svg",
+  practically: "/companies/vector/practically-white.svg",
+  qritive: "/companies/vector/qritive-white.svg",
+  "raga-ai": "/companies/vector/raga-ai-white.svg",
+  "resolve-ai": "/companies/vector/rezolve-ai-white.svg",
+  "skit-ai": "/companies/vector/skit-ai-white.svg",
+  str8bat: "/companies/vector/str8bat-white.svg",
+  unscript: "/companies/vector/unscript-white.svg",
+  "zyla-health": "/companies/vector/zyla-white.svg",
 };
 
 // Mirrors the collection shape used by the CMS. Logo remains optional so a
@@ -94,13 +135,9 @@ export const portfolioCompanies: PortfolioCompany[] = [
 ];
 
 for (const company of portfolioCompanies) {
-  company.logo ??= updatedPortfolioLogos[company.id];
-  if (company.id === "agshift") company.logoWhite = "/companies/portfolio-provided/agshift-white.png";
-  if (company.id === "iqlect") company.logoWhite = "/companies/portfolio-provided/bangdb-white.png";
+  if (updatedPortfolioLogos[company.id]) company.logo = updatedPortfolioLogos[company.id];
+  if (updatedPortfolioWhiteLogos[company.id]) company.logoWhite = updatedPortfolioWhiteLogos[company.id];
   if (company.id === "maieutic") company.logoWhite = "/companies/portfolio-provided/maieutic-white.svg";
-  if (company.id === "ai-palette") company.logoWhite = "/companies/portfolio-provided/ai-palette-white.png";
-  if (company.id === "awiros") company.logoWhite = "/companies/portfolio-provided/awiros-white.png";
-  if (company.id === "log9") company.logoWhite = "/companies/portfolio-provided/log9-white.png";
 }
 
 export const fallbackPortfolioWall: PortfolioWallData = {

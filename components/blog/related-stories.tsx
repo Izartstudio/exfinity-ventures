@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { useRef } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 
 export type RelatedStory = { title: string; image: string; date: string; category: string; href: string };
 
@@ -14,6 +14,22 @@ const defaultStories: RelatedStory[] = [
 
 export function RelatedStories({ stories = defaultStories }: { stories?: RelatedStory[] }) {
   const railRef = useRef<HTMLDivElement>(null);
+  const [canMoveBack, setCanMoveBack] = useState(false);
+  const [canMoveForward, setCanMoveForward] = useState(true);
+  const syncControls = useCallback(() => {
+    const rail = railRef.current;
+    if (!rail) return;
+    const maxScroll = Math.max(0, rail.scrollWidth - rail.clientWidth);
+    setCanMoveBack(rail.scrollLeft > 2);
+    setCanMoveForward(rail.scrollLeft < maxScroll - 2);
+  }, []);
+
+  useEffect(() => {
+    syncControls();
+    window.addEventListener("resize", syncControls);
+    return () => window.removeEventListener("resize", syncControls);
+  }, [stories.length, syncControls]);
+
   const move = (direction: -1 | 1) => railRef.current?.scrollBy({ left: direction * 360, behavior: "smooth" });
 
   return (
@@ -22,16 +38,18 @@ export function RelatedStories({ stories = defaultStories }: { stories?: Related
       <div className="related-layout container">
         <div className="related-intro">
           <p>Every investment is made with a long-term perspective. These outcomes reflect years of partnership, execution, and global scale.</p>
-          <div className="related-controls"><button type="button" onClick={() => move(-1)} aria-label="Previous stories">‹</button><button type="button" onClick={() => move(1)} aria-label="Next stories">›</button></div>
         </div>
-        <div className="related-rail" ref={railRef}>
-          {stories.map((story) => <article className="related-card" key={story.title}>
-            <h3><Link href={story.href}>{story.title}</Link></h3>
-            <Link className="related-card-image" href={story.href} aria-label={story.title}><Image src={story.image} alt="" fill sizes="220px" /></Link>
-            <time dateTime={new Date(story.date).toISOString()}>{story.date}</time>
-            <div className="related-card-rule"><span /></div>
-            <p>{story.category}</p>
-          </article>)}
+        <div className="related-cards-row">
+          <div className="related-controls"><button type="button" disabled={!canMoveBack} onClick={() => move(-1)} aria-label="Previous stories">‹</button><button type="button" disabled={!canMoveForward} onClick={() => move(1)} aria-label="Next stories">›</button></div>
+          <div className="related-rail" ref={railRef} onScroll={syncControls}>
+            {stories.map((story) => <article className="related-card" key={story.title}>
+              <h3><Link href={story.href}>{story.title}</Link></h3>
+              <Link className="related-card-image" href={story.href} aria-label={story.title}><Image src={story.image} alt="" fill sizes="220px" /></Link>
+              <time dateTime={new Date(story.date).toISOString()}>{story.date}</time>
+              <div className="related-card-rule"><span /></div>
+              <p>{story.category}</p>
+            </article>)}
+          </div>
         </div>
       </div>
     </section>

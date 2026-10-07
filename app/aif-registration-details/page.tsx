@@ -40,9 +40,7 @@ export default function AifRegistrationDetailsPage() {
               <div><dt>Category of AIF</dt><dd>Category II AIF (Venture Capital Fund)</dd></div>
               <div className="aif-schemes">
                 <dt>Name of the Schemes</dt>
-                <dd><ol aria-label="Exfinity India Fund schemes">
-                  <li>Exfinity India Fund I</li>
-                </ol></dd>
+                <dd>Exfinity India Fund I</dd>
               </div>
             </dl>
           </div>

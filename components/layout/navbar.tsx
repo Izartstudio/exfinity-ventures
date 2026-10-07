@@ -113,7 +113,7 @@ export function Navbar({ theme }: { theme?: "dark" | "light" | "split" }) {
           <ul className="nav-links">
             {navigation.map((item) => {
               const active = isActive(item.match);
-              return <li key={item.label}><Link className={active ? "is-active" : undefined} href={item.href} aria-current={active ? "page" : undefined}>{item.label}</Link></li>;
+              return <li key={item.label}><Link className={active ? "is-active" : undefined} href={item.href} aria-current={active ? "page" : undefined}><span>{item.label}</span></Link></li>;
             })}
           </ul>
           <Link className="button button-primary navbar-cta" href="mailto:info@exfinityventures.com">Mail to us <span aria-hidden="true">→</span></Link>

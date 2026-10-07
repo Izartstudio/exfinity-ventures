@@ -59,11 +59,11 @@ function FilterSelect({ label, value, options, onChange }: { label: string; valu
     setOpen(false);
   };
   const allLabel = label === "Status" ? "All status" : `All ${label.toLowerCase()}s`;
+  const displayValue = value || allLabel;
 
   return <div className={`portfolio-filter${open ? " is-open" : ""}`} ref={filterRef}>
-    <span className="portfolio-filter-label">{label}</span>
-    <button type="button" className="portfolio-filter-trigger" aria-haspopup="listbox" aria-expanded={open} onClick={() => setOpen((current) => !current)}>
-      <span>{value || allLabel}</span><i aria-hidden="true" />
+    <button type="button" className="portfolio-filter-trigger" aria-label={`${label}: ${displayValue}`} aria-haspopup="listbox" aria-expanded={open} onClick={() => setOpen((current) => !current)}>
+      <span>{displayValue}</span><i aria-hidden="true" />
     </button>
     <div className="portfolio-filter-menu" role="listbox" aria-label={`Filter by ${label}`}>
       <button type="button" role="option" aria-selected={!value} className={!value ? "is-selected" : undefined} onClick={() => choose("")}>{allLabel}</button>
