@@ -1,7 +1,7 @@
 const principles = [
   {
     number: "01",
-    title: "Cheque Size",
+    title: "Cheque Sizes",
     heading:
       "We invest $2–3M at entry",
     description:

@@ -9,6 +9,7 @@ const cards = [
     id: "deeptech",
     title: "DeepTech",
     image: "/what-we-back/deeptech.png",
+    aboutLead: "Built on breakthroughs, guarded by complexity",
     copy: "Companies that turn hard science into products protected by proprietary IP, complex engineering, and years of R&D. Their moat is structural as competitors need science, talent, and time to catch up.",
     themes: ["Semiconductors & Computing", "Aerospace", "Advanced Materials & Manufacturing", "Energy & Climate Tech", "Robotics & Automation", "Defence & Dual-Use Technology", "Life Sciences"],
     companies: [
@@ -24,6 +25,7 @@ const cards = [
     id: "ai-native",
     title: "AI Native Software",
     image: "/what-we-back/ai-native.png",
+    aboutLead: "Software that learns the business it serves",
     copy: "Products where intelligence is the core, using AI models and proprietary data to automate decisions and uncover insights at scale. Their moat grows with every use, as better data builds better models and deeper customer lock-in. The stack that helps build these self-learning products is also a part of this thesis.",
     themes: ["AI Agents & Autonomous Systems", "AI Infrastructure", "AI Developer Tools", "Data & ML Infrastructure", "AI Evals & Security", "Cybersecurity", "Vertical AI"],
     companies: [
@@ -39,6 +41,7 @@ const cards = [
     id: "b2b",
     title: "B2B Platforms",
     image: "/what-we-back/b2b-platforms.png",
+    aboutLead: "The rails on which industries run",
     copy: "Platforms that bring fragmented businesses together or provide a unique product, with deep domain know-how and operational expertise built into every workflow. Their moat combines network effects with institutional knowledge that competitors can't copy.",
     themes: ["Industrial Platforms", "Health Technology", "AI Native Services"],
     companies: [
@@ -119,6 +122,7 @@ export function WhatWeBack() {
         <div className="modal-copy">
           <details className="modal-accordion" open={openPanel === "about"}>
             <summary onClick={(event) => { event.preventDefault(); setOpenPanel((current) => current === "about" ? null : "about"); }}><span>About</span><i className="accordion-chevron" aria-hidden="true" /></summary>
+            <p className="modal-about-lead">“{active.aboutLead}”</p>
             <p>{active.copy}</p>
           </details>
           <details className="modal-accordion" open={openPanel === "themes"}>

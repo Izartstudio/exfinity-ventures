@@ -28,7 +28,7 @@ export const teamDirectoryContent: TeamDirectoryContent = {
   partnersTitle: "Partners & IC",
   foundersTitle: "Founding Sponsors",
   investmentTitle: "Team",
-  tacTitle: "TAC Team",
+  tacTitle: "Technical Advisory Committee",
   partners: [
     {
       name: "Balakrishnan V",
@@ -172,6 +172,14 @@ export const teamDirectoryContent: TeamDirectoryContent = {
       region: "India",
       image: "/team/investment/arundhati-menon.jpg",
       biography: ["Arundhati brings end-to-end investment experience across sourcing, diligence, and portfolio management, and has contributed to Exfinity's fundraising efforts for Fund 4. She has been involved across the deal lifecycle: from thesis-driven origination and technical-commercial due diligence through to post-investment governance and portfolio support. Prior to Exfinity, she worked at Zinnov, a global management consulting and research firm specialising in technology and innovation. She holds an MBA from INSEAD, and rejoined Exfinity in 2025 following the completion of her postgraduate studies."],
+    },
+    {
+      name: "Nitin Lalwani",
+      role: "VP Investor Relations",
+      region: "India",
+      image: "/team/investment/nitin-lalwani.jpg",
+      funds: "II, III, IV",
+      biography: ["Nitin brings over seven years of experience across venture capital, M&A, and startup advisory, with a focus on investor relations, portfolio management, and fund operations. At Exfinity, he has served as a board observer for several companies, led portfolio-level exit discussions, and now leads Fund IV collateral development while connecting portfolio companies with growth-stage funds for follow-on capital — building on prior transaction experience at Deloitte and his own startup, Taxvalley, a virtual CFO and compliance platform for startups and AIFs."],
     },
     {
       name: "Prachi Singh",
