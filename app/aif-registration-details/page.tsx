@@ -42,6 +42,7 @@ export default function AifRegistrationDetailsPage() {
                 <dt>Name of the Schemes</dt>
                 <dd>Exfinity India Fund I</dd>
               </div>
+              <div><dt>Name of the Compliance Officer</dt><dd>Jesper Ludolph</dd></div>
             </dl>
           </div>
         </div>

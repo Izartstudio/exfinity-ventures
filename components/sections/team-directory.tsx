@@ -26,7 +26,6 @@ function TeamGrid({ members, label }: { members: TeamMember[]; label: string }) 
           <div className="team-member-copy">
             <h3>{member.name}</h3>
             <p>{member.role}</p>
-            <span>{member.region}</span>
           </div>
         </Link>
       ))}
@@ -47,8 +46,8 @@ export function TeamDirectory({ content = teamDirectoryContent }: { content?: Te
 
         <div className="team-tabs" role="tablist" aria-label="Team categories">
           <button type="button" role="tab" aria-selected={isPartners} aria-controls="partners-panel" id="partners-tab" className={isPartners ? "is-active" : ""} onClick={() => setActiveTab("partners")}>{content.partnersTitle}</button>
-          <button type="button" role="tab" aria-selected={isFounders} aria-controls="founders-panel" id="founders-tab" className={isFounders ? "is-active" : ""} onClick={() => setActiveTab("founders")}>{content.foundersTitle}</button>
           <button type="button" role="tab" aria-selected={isTac} aria-controls="tac-panel" id="tac-tab" className={isTac ? "is-active" : ""} onClick={() => setActiveTab("tac")}>{content.tacTitle}</button>
+          <button type="button" role="tab" aria-selected={isFounders} aria-controls="founders-panel" id="founders-tab" className={isFounders ? "is-active" : ""} onClick={() => setActiveTab("founders")}>{content.foundersTitle}</button>
         </div>
 
         {isPartners ? (

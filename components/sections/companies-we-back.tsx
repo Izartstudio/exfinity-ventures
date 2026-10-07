@@ -5,14 +5,18 @@ import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 
 const companies = [
-  { name: "Ati Robotics", logo: "/companies/vector/ati.svg", width: 60, height: 35 },
-  { name: "Chara", logo: "/companies/vector/chara.svg", width: 150, height: 40 },
-  { name: "Pixis", logo: "/companies/vector/pixis.svg", width: 120, height: 60 },
-  { name: "Edge", logo: "/companies/vector/edge-networks.svg", width: 125, height: 43 },
-  { name: "CloudSEK", logo: "/companies/vector/cloudsek.svg", width: 135, height: 28 },
-  { name: "Cult.fit", logo: "/companies/vector/curefit.svg", width: 83, height: 70 },
-  { name: "AI Palette", logo: "/companies/vector/ai-palette.svg", width: 200, height: 43 },
-  { name: "RagaAI", logo: "/companies/vector/raga-ai.svg", width: 137, height: 32 },
+  { name: "Kinara AI", logo: "/companies/vector/kinara.svg", href: "/portfolio/kinara", width: 150, height: 50 },
+  { name: "Ati Robotics", logo: "/companies/vector/ati.svg", href: "/portfolio/ati", width: 60, height: 35 },
+  { name: "CloudSEK", logo: "/companies/vector/cloudsek.svg", href: "/portfolio/cloudsek", width: 135, height: 28 },
+  { name: "Credilio", logo: "/companies/vector/credilio.svg", href: "/portfolio/credilio", width: 150, height: 50 },
+  { name: "GridRaster", logo: "/companies/vector/gridraster.svg", href: "/portfolio/gridraster", width: 150, height: 50 },
+  { name: "Maieutic", logo: "/companies/portfolio-provided/maieutic.svg", href: "/portfolio/maieutic", width: 150, height: 50 },
+  { name: "Pixis", logo: "/companies/vector/pixis.svg", href: "/portfolio/pixis", width: 120, height: 60 },
+  { name: "MoEngage", logo: "/companies/vector/moengage.svg", href: "/portfolio/moengage", width: 150, height: 50 },
+  { name: "Zyla", logo: "/companies/vector/zyla.svg", href: "/portfolio/zyla-health", width: 150, height: 50 },
+  { name: "Chara Motors", logo: "/companies/vector/chara.svg", href: "/portfolio/chara", width: 150, height: 40 },
+  { name: "Optimized Electrotech", logo: "/companies/vector/optimized-electrotech.svg", href: "/portfolio/optimized-electrotech", width: 150, height: 50 },
+  { name: "Str8bat", logo: "/companies/vector/str8bat.svg", href: "/portfolio/str8bat", width: 150, height: 50 },
 ] as const;
 
 const visibleCellCount = 6;
@@ -60,7 +64,7 @@ export function CompaniesWeBack() {
               const company = companies[logoIndexes[cellIndex]];
 
               return (
-                <div className="portfolio-logo-cell" key={cellIndex} onMouseEnter={() => { isLogoHoveredRef.current = true; }} onMouseLeave={() => { isLogoHoveredRef.current = false; }}>
+                <Link className="portfolio-logo-cell" href={company.href} aria-label={`View ${company.name} portfolio page`} key={cellIndex} onMouseEnter={() => { isLogoHoveredRef.current = true; }} onMouseLeave={() => { isLogoHoveredRef.current = false; }} onFocus={() => { isLogoHoveredRef.current = true; }} onBlur={() => { isLogoHoveredRef.current = false; }}>
                   <div className="portfolio-logo-frame">
                     <Image
                       unoptimized
@@ -73,7 +77,7 @@ export function CompaniesWeBack() {
                       sizes="159px"
                     />
                   </div>
-                </div>
+                </Link>
               );
             })}
           </div>

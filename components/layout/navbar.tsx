@@ -116,7 +116,7 @@ export function Navbar({ theme }: { theme?: "dark" | "light" | "split" }) {
               return <li key={item.label}><Link className={active ? "is-active" : undefined} href={item.href} aria-current={active ? "page" : undefined}><span>{item.label}</span></Link></li>;
             })}
           </ul>
-          <Link className="button button-primary navbar-cta" href="mailto:info@exfinityventures.com">Mail to us <span aria-hidden="true">→</span></Link>
+          <Link className="button button-primary navbar-cta" href="mailto:info@exfinityventures.com">Pitch to us <span aria-hidden="true">→</span></Link>
         </div>
 
         <button className="mobile-menu-toggle" type="button" aria-label={menuOpen ? "Close navigation menu" : "Open navigation menu"} aria-expanded={menuOpen} aria-controls="mobile-navigation" onClick={() => {
@@ -135,7 +135,7 @@ export function Navbar({ theme }: { theme?: "dark" | "light" | "split" }) {
           </ul>
 
           <div className="mobile-nav-footer">
-            <Link className="button button-primary mobile-pitch-cta" href="mailto:info@exfinityventures.com" onClick={closeMenu}>Mail to us</Link>
+            <Link className="button button-primary mobile-pitch-cta" href="mailto:info@exfinityventures.com" onClick={closeMenu}>Pitch to us</Link>
           </div>
         </div>
       </nav>

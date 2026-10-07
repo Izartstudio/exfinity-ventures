@@ -3,16 +3,8 @@ import Link from "next/link";
 import type { TeamMember } from "@/content/team";
 import { portfolioCompanies, type PortfolioCompany } from "@/content/portfolio";
 
-const rajivBiography = [
-  "Rajiv has more than 23 years of management experience in IT, BPO, and ITeS industries. He has worked for 16 years at Infosys Ltd., and served as its Assistant Vice President and Practice Head of Communication and Product Services. He was instrumental in defining Offshore Development Center (OSDC) as an outsourcing concept.",
-  "He was the Chief Operating Officer at Onmobile Global Limited from 2006–08, and had overall responsibility for delivery and operations to ensure customer satisfaction.",
-  "He served as the TVS’s Head of Operations and Head of Business Transformation and also as Venture Advisor at TVS Capital Funds Limited.",
-  "Rajiv received Bachelor of Technology in Electrical Engineering from Indian Institute of Technology, New Delhi.",
-  "Since 2008, he is working as an investor-mentor with many start-ups.",
-];
-
 function biographyFor(member: TeamMember) {
-  if (member.name === "Rajiv Kuchhal") return rajivBiography;
+  if (member.biography?.length) return member.biography;
   return [
     `${member.name} is ${member.role.toLowerCase()} at Exfinity Venture Partners, working across ${member.region}.`,
     "At Exfinity, they work closely with founders, bringing investment experience, strategic guidance and an operator’s perspective to building category-defining technology companies.",
@@ -49,7 +41,7 @@ export function TeamProfile({ member }: { member: TeamMember }) {
 
     <section className="team-profile-companies" aria-labelledby="team-companies-title">
       <div className="team-profile-companies-head">
-        <p>A selection of companies they work closely with, bringing investment<br className="team-profile-desktop-break" /> experience, strategic guidance and operational perspective to their growth.</p>
+        <p>A selection of companies they work closely with, bringing investment<br className="team-profile-desktop-break" /> experience, strategic guidance and operational perspective to their growth</p>
         <h2 id="team-companies-title">Companies</h2>
       </div>
       {companies.length ? <div className="team-profile-company-grid">{companies.map((company) => <Link href={`/portfolio/${company.id}`} className="team-profile-company-card" key={company.id}>

@@ -1,18 +1,18 @@
 const principles = [
   {
     number: "01",
-    title: "Lead",
-    heading: "We Lead/Co-Lead early rounds with conviction",
+    title: "Cheque Size",
+    heading:
+      "We invest $2–3M at entry",
     description:
-      "We lead or co-lead seed to Series A rounds, backing companies as their technology and market ambition take shape.",
+      "Half of the investible corpus is reserved for follow ons",
   },
   {
     number: "02",
-    title: "Going-in Cheque Size",
-    heading:
-      "We invest $2–3M at entry, with roughly half the fund reserved for follow-ons as the company grows.",
+    title: "Lead",
+    heading: "We Lead/Co-Lead early rounds with conviction",
     description:
-      "Half of the investible corpus is reserved for follow ons",
+      "We lead or co-lead Seed, Pre-Series A & Series A rounds, backing companies as their technology and market ambition take shape",
   },
   {
     number: "03",

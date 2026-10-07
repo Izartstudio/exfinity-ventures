@@ -37,7 +37,7 @@ export function RelatedStories({ stories = defaultStories }: { stories?: Related
       <div className="related-heading container"><span /><h2 id="related-title">Related Stories</h2></div>
       <div className="related-layout container">
         <div className="related-intro">
-          <p>Every investment is made with a long-term perspective. These outcomes reflect years of partnership, execution, and global scale.</p>
+          <p>Every investment is made with a long-term perspective; these outcomes reflect years of partnership, execution, and global scale</p>
         </div>
         <div className="related-cards-row">
           <div className="related-controls"><button type="button" disabled={!canMoveBack} onClick={() => move(-1)} aria-label="Previous stories">‹</button><button type="button" disabled={!canMoveForward} onClick={() => move(1)} aria-label="Next stories">›</button></div>

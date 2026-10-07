@@ -8,7 +8,6 @@ export function OurFounders({ founders }: { founders: HomepageFounder[] }) {
   const sectionRef = useRef<HTMLElement>(null);
   const [active, setActive] = useState(0);
   const [entered, setEntered] = useState(false);
-  const [isHovered, setIsHovered] = useState(false);
 
   useEffect(() => {
     const section = sectionRef.current;
@@ -27,12 +26,12 @@ export function OurFounders({ founders }: { founders: HomepageFounder[] }) {
   }, []);
 
   useEffect(() => {
-    if (!entered || isHovered || window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
-    const timer = window.setInterval(() => {
+    if (!entered || window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    const timer = window.setTimeout(() => {
       setActive((current) => (current + 1) % founders.length);
     }, 4000);
-    return () => window.clearInterval(timer);
-  }, [entered, founders.length, isHovered]);
+    return () => window.clearTimeout(timer);
+  }, [active, entered, founders.length]);
 
   const activeFounder = founders[active];
 
@@ -52,7 +51,7 @@ export function OurFounders({ founders }: { founders: HomepageFounder[] }) {
       <div className="container founders-content">
         <h2 id="founders-title">What Our Founders Say</h2>
 
-        <div className="founders-ticker" aria-live="off" onMouseEnter={() => setIsHovered(true)} onMouseLeave={() => setIsHovered(false)}>
+        <div className="founders-ticker" aria-live="off">
           {founders.map((founder, index) => {
             let offset = (index - active + founders.length) % founders.length;
             if (offset > founders.length / 2) offset -= founders.length;
@@ -60,15 +59,22 @@ export function OurFounders({ founders }: { founders: HomepageFounder[] }) {
             const isVisible = Math.abs(offset) <= 1;
 
             return (
-              <figure
-                className={`founder-portrait founder-slot-${visibleOffset}${index === active ? " is-active" : ""}`}
+              <button
+                className={`founder-portrait founder-slot-${visibleOffset}${index === active ? " is-active" : ""}${isVisible && index !== active ? " is-selectable" : ""}`}
+                type="button"
                 key={`${founder.name}-${index}`}
-                aria-hidden={index !== active}
+                aria-hidden={!isVisible}
+                aria-label={index === active ? undefined : `Show testimonial from ${founder.name}`}
+                aria-pressed={index === active}
+                tabIndex={isVisible && index !== active ? 0 : -1}
+                onClick={() => {
+                  if (index !== active && isVisible) setActive(index);
+                }}
                 style={{ opacity: isVisible ? 1 : 0, zIndex: index === active ? 3 : 1 }}
               >
-                <img className="founder-photo" src={founder.imageUrl} alt={index === active ? founder.name : ""} />
+                <img className="founder-photo" src={founder.imageUrl} alt={isVisible ? founder.name : ""} />
                 {index === active && founder.logoUrl && <span className="founder-company-logo"><img src={founder.logoUrl} alt="" /></span>}
-              </figure>
+              </button>
             );
           })}
         </div>

@@ -9,7 +9,7 @@ type PreFooterProps = {
 
 export function PreFooter({
   title = "Building Technology That Could Define a Category?",
-  description = "We back founders combining technical depth with the ambition to build category-defining companies from India for global markets.",
+  description = "We back founders combining technical depth with the ambition to build category-defining companies from India for global markets",
   ctaLabel = "Pitch to us",
   ctaHref = "/contact",
 }: PreFooterProps) {

@@ -15,8 +15,8 @@ export default function ContactPage() {
     <main>
       <TeamHero
         title={<>Let&apos;s Start a<br />Conversation</>}
-        description={<>Send us a note with your company, what you&apos;re building,<br />and where you are in your journey. We&apos;ll take it from there.</>}
-        cta={{ label: "Write to us", href: "mailto:info@exfinityventures.com" }}
+        description={<>Send us a note with your company, what you&apos;re building,<br />and where you are in your journey We&apos;ll take it from there</>}
+        cta={{ label: "Pitch to us", href: "mailto:info@exfinityventures.com" }}
       />
       <ContactFaqs />
     </main>

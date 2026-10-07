@@ -7,19 +7,19 @@ const steps = [
     number: "01",
     title: "Founders with global vision",
     description:
-      "We back founders who build for global markets from day one; companies engineered in India to compete and win globally.",
+      "We back founders who build for global markets from day one; companies engineered in India to compete and win globally",
   },
   {
     number: "02",
     title: "Teams with technical and operational depth",
     description:
-      "We look for the founding team with technical authority and operating capability.",
+      "We look for the founding team with technical authority and operating capability",
   },
   {
     number: "03",
     title: "Companies with market validation",
     description:
-      "A first customer, signed POC, or an enterprise partnership can accelerate our journey.",
+      "A first customer, signed POC, or an enterprise partnership can accelerate our journey",
   },
 ] as const;
 

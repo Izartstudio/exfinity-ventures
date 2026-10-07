@@ -15,7 +15,7 @@ const linkGroups = [
   {
     title: "Company",
     links: [
-      { label: "Insights", href: "/news" },
+      { label: "News & Insights", href: "/news" },
       { label: "Contact Us", href: "/contact" },
     ],
   },
