@@ -6,52 +6,48 @@ type Faq = { question: string; answer: ReactNode };
 
 const faqs: Faq[] = [
   {
-    question: "What kind of sectors does Exfinity invest in?",
-    answer: <>Three themes: AI-Powered Software (applied AI across applications, governance and silicon, plus cybersecurity); DeepTech (semiconductors and computing including quantum and photonics, energy and materials, space tech, and selective shorter-cycle life sciences); and B2B Platforms (fintech, health tech, B2B marketplaces).</>,
+    question: "What does Exfinity invest in?",
+    answer: <>We invest in early-stage B2B startups at the <em>Seed, Pre-Series A, and Series A</em> stages, building across <em>DeepTech, AI-Native Software, and B2B Platforms</em>.</>,
+  },
+  {
+    question: "What kind of themes does Exfinity invest in?",
+    answer: <><p>Our investment themes span three sectors:</p><ul><li><strong>DeepTech:</strong> Semiconductors &amp; Computing, Aerospace, Advanced Materials &amp; Manufacturing, Energy &amp; Climate Tech, Robotics &amp; Automation, Defence &amp; Dual-Use Technology, and Life Sciences.</li><li><strong>AI-Native Software:</strong> AI Agents &amp; Autonomous Systems, AI Infrastructure, AI Developer Tools, AI Evals &amp; Security, Cybersecurity, Data &amp; ML Infrastructure, and Vertical AI.</li><li><strong>B2B Platforms:</strong> Industrial Platforms, Healthcare, and AI-Native Services.</li></ul></>,
   },
   {
     question: "When is the right time to get in touch?",
-    answer: <>We typically invest at the Seed and Series A stages, but it&apos;s never too early to reach out. We like to brainstorm with entrepreneurs and aspiring founders, and build relationships well before we invest.</>,
+    answer: <>We typically invest at the <em>Seed, Pre-Series A, and Series A</em> stages, but it&apos;s never too early to reach out. We like to brainstorm with entrepreneurs and aspiring founders and build relationships well before we invest.</>,
   },
   {
     question: "What are your typical cheque sizes?",
-    answer: <>We typically invest between $0.5 Million and $4 Million, depending on the opportunity and round.</>,
+    answer: <>We typically invest between <em>$0.5 million and $4 million</em>, depending on the opportunity and round size. We also reserve capital for follow-on investments.</>,
   },
   {
-    question: "Do you lead/co-lead/participate in a round with other investors?",
-    answer: <>Yes. We are open to leading, co-leading or participating alongside other investors, depending on the structure and requirements of the round.</>,
+    question: "Do you lead, co-lead, or participate in rounds with other investors?",
+    answer: <>Yes. We are open to <em>leading, co-leading, or participating</em> alongside other investors, depending on the structure and requirements of the round.</>,
   },
   {
     question: "How do I get in touch?",
-    answer: <>You can email us at <a href="mailto:info@exfinityventures.com">info@exfinityventures.com</a>, or reach out directly to any member of our team.</>,
-  },
-  {
-    question: "What does Exfinity invest in?",
-    answer: <>Early-stage Deep Technology, AI Native, and B2B Platforms. Our focus includes semiconductors, AI and computing hardware, physical AI and robotics, cybersecurity, AI-native software, and scalable enterprise platforms. We back founders of Indian origin across Bengaluru, the Bay Area, and Singapore, investing in companies incorporated in all three. Most of our companies engineer in India and sell globally.</>,
-  },
-  {
-    question: "What stage and cheque size?",
-    answer: <>We lead or co-lead seed to Series A rounds with a $2–3M going-in cheque and reserve capital for follow-ons.</>,
+    answer: <>You can email us at <a href="mailto:info@exfinityventures.com"><em>info@exfinityventures.com</em></a> or reach out directly to any member of our team.</>,
   },
   {
     question: "Do you only invest in Indian companies?",
-    answer: <>No. The focus is companies that build their product and technology in India while selling into both Indian and global markets. Some portfolio entities are domiciled offshore with Indian engineering bases.</>,
-  },
-  {
-    question: "Do you invest in single-founder companies?",
-    answer: <>No. We look for founding teams with at least two co-founders who together cover the technical and commercial sides of the business.</>,
-  },
-  {
-    question: "What do you offer beyond capital?",
-    answer: <>Operator-led, hands-on support at the Investment Manager&apos;s own expense: enterprise customer introductions, senior leadership hiring, go-to-market and product strategy, governance and finance-function build-out with mandatory external audits, follow-on and growth capital introductions, and exit preparation including early acquirer mapping.</>,
+    answer: <>No. We invest in companies incorporated in <em>India, the US, and Singapore</em>. Our focus is on founders of Indian origin building for global markets, supported by our network and partners across all three geographies.</>,
   },
   {
     question: "What do you look for?",
-    answer: <>A technical founding team, defensible IP, a clear global market, and the ambition to build a category leader. Revenue at seed helps, though it is optional.</>,
+    answer: <>We look for <em>complementary founding teams</em> that combine strong product and technical depth with market focus, backed by early signals such as a <em>POC, first customer, or enterprise partnership</em>.</>,
   },
   {
-    question: "How do I pitch?",
-    answer: <>Send your deck, demo, or data room to <a href="mailto:info@exfinityventures.com">info@exfinityventures.com</a>.</>,
+    question: "Do you invest in single-founder companies?",
+    answer: <>We generally look for founding teams with <em>at least two co-founders</em> who collectively cover the technical and commercial aspects of the business. That said, we have backed exceptional founders and teams who may not fit this profile.</>,
+  },
+  {
+    question: "What do you offer beyond capital?",
+    answer: <><p>Beyond capital, we support founders with:</p><ul><li><strong>Customer access:</strong> Warm CXO introductions that can convert into first pilots and customers.</li><li><strong>Hiring:</strong> Support in hiring the first core team members, which is critical to company building.</li><li><strong>Fundraising &amp; strategic capital:</strong> Connections to our VC and CVC network for future rounds and strategic investments.</li><li><strong>Market intelligence:</strong> Insights on the competitive landscape and broader macro trends.</li><li><strong>Hands-on support:</strong> Alongside a Partner who sits on the Board, a senior team member works closely with the company at every stage, beyond formal board meetings.</li></ul></>,
+  },
+  {
+    question: "Do you invest in consumer tech and D2C brands?",
+    answer: <>No. We do not invest in <em>consumer tech or D2C brands</em>. Our focus is exclusively on <em>B2B and enterprise technologies</em>.</>,
   },
 ];
 

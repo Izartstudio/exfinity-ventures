@@ -6,6 +6,7 @@ export type TeamMember = {
   imagePosition?: string;
   funds?: string;
   biography?: string[];
+  portfolioCompanyIds?: string[];
 };
 
 export type TeamDirectoryContent = {
@@ -35,6 +36,7 @@ export const teamDirectoryContent: TeamDirectoryContent = {
       region: "Silicon Valley & India",
       image: "/team/partners/balakrishnan-v.jpg",
       funds: "I, II, III",
+      portfolioCompanyIds: ["uniken", "practically", "locus", "agshift"],
       biography: [
         "Prior to founding Exfinity, Bala served as Head of BPO, Finacle & India Business Unit at Infosys. Bala also served as the Chief Financial Officer of Infosys Ltd., from May 1, 2006 to October 31, 2012.",
         "Bala served as Secretary and Senior Vice President – Finance of Infosys Ltd., from joining it in 2001 to April 2006. He was a full-time Director on the Board of Infosys Limited from June 2011 to December 2013.",
@@ -60,6 +62,7 @@ export const teamDirectoryContent: TeamDirectoryContent = {
       region: "India",
       image: "/team/partners/girish-paranjpe.jpg",
       funds: "I, II, III, IV",
+      portfolioCompanyIds: ["uniken", "practically", "locus", "agshift"],
       biography: [
         "Girish Paranjpe is a founding partner of Exfinity Ventures and brings over three decades of leadership experience in global technology and business services. He served as Joint CEO of Wipro's IT Business, where he helped scale the company into a global enterprise spanning over 50 countries, and subsequently as President of Wipro's Finance Solutions division. Earlier in his career at Wipro, he held several senior roles across business units and geographies, building deep expertise in enterprise technology, digital transformation and large-scale P&L management.",
         "Following his executive career, Girish has been an active investor and board advisor across technology and growth-stage companies. He brings to Exfinity a distinctive combination of operational depth, global enterprise networks and boardroom experience with a particular focus on helping portfolio companies navigate international expansion, enterprise sales and organisational maturity.",

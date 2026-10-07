@@ -12,11 +12,13 @@ function biographyFor(member: TeamMember) {
 }
 
 function companiesFor(member: TeamMember): PortfolioCompany[] {
-  if (member.name === "Rajiv Kuchhal") {
-    const ids = ["maieutic", "chara", "raga-ai", "awiros"];
-    return ids.map((id) => portfolioCompanies.find((company) => company.id === id)).filter((company): company is PortfolioCompany => Boolean(company));
-  }
-  return portfolioCompanies.filter((company) => company.exfinityTeam?.includes(member.name)).slice(0, 4);
+  const explicitlyMappedIds = new Set(member.portfolioCompanyIds ?? []);
+
+  return portfolioCompanies.filter((company) =>
+    explicitlyMappedIds.has(company.id)
+    || company.exfinityTeam?.includes(member.name)
+    || company.founders?.includes(member.name)
+  );
 }
 
 export function TeamProfile({ member }: { member: TeamMember }) {
@@ -46,7 +48,10 @@ export function TeamProfile({ member }: { member: TeamMember }) {
       </div>
       {companies.length ? <div className="team-profile-company-grid">{companies.map((company) => <Link href={`/portfolio/${company.id}`} className="team-profile-company-card" key={company.id}>
         <div className="team-profile-company-top"><span>{company.status}</span><b>{company.fund}</b></div>
-        <div className="team-profile-company-logo">{company.logo ? <Image src={company.logo} alt={company.name} width={220} height={110} /> : <strong>{company.name}</strong>}</div>
+        <div className="team-profile-company-logo">{company.logo ? <>
+          <Image className={company.logoWhite ? "team-profile-company-logo-color" : undefined} src={company.logo} alt={company.name} width={220} height={110} />
+          {company.logoWhite && <Image className="team-profile-company-logo-white" src={company.logoWhite} alt="" width={220} height={110} />}
+        </> : <strong>{company.name}</strong>}</div>
         <p>{company.theme ?? company.sector} <i /> {company.sector}</p>
       </Link>)}</div> : <p className="team-profile-no-companies">Portfolio associations will be added soon.</p>}
     </section>
