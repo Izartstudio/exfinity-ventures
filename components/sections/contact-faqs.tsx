@@ -43,12 +43,9 @@ const faqs: Faq[] = [
   },
   {
     question: "What do you offer beyond capital?",
-    answer: <><p>Beyond capital, we support founders with:</p><ul><li><strong>Customer access:</strong> Warm CXO introductions that can convert into first pilots and customers.</li><li><strong>Hiring:</strong> Support in hiring the first core team members, which is critical to company building.</li><li><strong>Fundraising &amp; strategic capital:</strong> Connections to our VC and CVC network for future rounds and strategic investments.</li><li><strong>Market intelligence:</strong> Insights on the competitive landscape and broader macro trends.</li><li><strong>Hands-on support:</strong> Alongside a Partner who sits on the Board, a senior team member works closely with the company at every stage, beyond formal board meetings.</li></ul></>,
+    answer: <><p>Beyond capital, we support founders with:</p><ul><li><strong>Customer access:</strong> Warm CXO introductions that can convert into pilots and customers.</li><li><strong>Hiring:</strong> Support in hiring the first core team members, which is critical to company building.</li><li><strong>Fundraising &amp; strategic capital:</strong> Connections to our VC and CVC network for future rounds and strategic investments.</li><li><strong>Market intelligence:</strong> Insights on the competitive landscape and broader macro trends.</li><li><strong>Hands-on support:</strong> Alongside a Partner who sits on the Board, a senior team member works closely with the company at every stage, beyond formal board meetings.</li></ul></>,
   },
-  {
-    question: "Do you invest in consumer tech and D2C brands?",
-    answer: <>No. We do not invest in <em>consumer tech or D2C brands</em>. Our focus is exclusively on <em>B2B and enterprise technologies</em>.</>,
-  },
+ 
 ];
 
 export function ContactFaqs() {
