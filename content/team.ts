@@ -170,7 +170,7 @@ export const teamDirectoryContent: TeamDirectoryContent = {
       name: "Arundhati Menon",
       role: "AVP Investments",
       region: "India",
-      image: "/team/investment/arundhati-menon.jpg",
+      image: "/team/investment/arundhati-menon.png",
       biography: ["Arundhati brings end-to-end investment experience across sourcing, diligence, and portfolio management, and has contributed to Exfinity's fundraising efforts for Fund 4. She has been involved across the deal lifecycle: from thesis-driven origination and technical-commercial due diligence through to post-investment governance and portfolio support. Prior to Exfinity, she worked at Zinnov, a global management consulting and research firm specialising in technology and innovation. She holds an MBA from INSEAD, and rejoined Exfinity in 2025 following the completion of her postgraduate studies."],
     },
     {
@@ -201,7 +201,7 @@ export const teamDirectoryContent: TeamDirectoryContent = {
       name: "Balaji Kanigicherla",
       role: "TAC Member",
       region: "India",
-      image: "/team/tac/balaji.png",
+      image: "/team/tac/tac-2.png",
       biography: [
         "Balaji Kanigicherla is a seasoned semiconductor technology and engineering leader with nearly three decades of experience spanning chip architecture, product development and business management. He most recently served as Vice President, Head of Engineering and CTO at Renesas Electronics, where he led global engineering initiatives and drove innovation across semiconductor technologies.",
         "Prior to Renesas, Balaji was a Corporate Vice President & General Manager at Intel and the Founder & CEO of INEDA Systems, where he developed innovative semiconductor solutions and industry-first product architectures. His experience spans data centers, automotive, embedded systems, IoT, networking and communications. Balaji holds 17 U.S. patents in IP, SoC and system architectures and an M.S. in Electrical Engineering from Arizona State University.",
@@ -222,7 +222,7 @@ export const teamDirectoryContent: TeamDirectoryContent = {
       name: "Rahul Sasi",
       role: "TAC Member",
       region: "India",
-      image: "/team/tac/rahul-sasi.png",
+      image: "/team/tac/tac-3.png",
       biography: [
         "Rahul Sasi is a prominent cybersecurity entrepreneur and technology leader, and the Founder & CEO of CloudSEK, an AI-powered predictive cybersecurity platform. He founded CloudSEK in 2015 with the vision of using AI and machine learning to identify and mitigate cyber threats before they escalate.",
         "Rahul began his cybersecurity journey through independent research and the open-source security community, later working with iSIGHT Partners and Citrix. He is a recognized security researcher and has spoken at leading cybersecurity conferences globally. He has also contributed to policy discussions on digital security, including serving on an expert panel constituted by the Reserve Bank of India. Under his leadership, CloudSEK has grown into a global cybersecurity company serving hundreds of enterprises across sectors.",
@@ -232,7 +232,7 @@ export const teamDirectoryContent: TeamDirectoryContent = {
       name: "Vikas Sharma",
       role: "TAC Member",
       region: "India",
-      image: "/team/tac/vikas-sharma.png",
+      image: "/team/tac/tac-1.png",
       biography: [
         "Vikas Sharma is a seasoned financial services executive and investment banking leader with over 25 years of experience across Asia. He served as Senior Managing Director and Executive Chairman of Nomura India, having previously led Nomura's Asia ex-Japan business. He joined Nomura in 1999 and played a pivotal role in establishing and building the firm's India franchise from 2007 onwards.",
         "As Head of Asia ex-Japan, Vikas was responsible for driving Nomura's business strategy across the region, with deep experience in investment banking and the Technology, Media & Telecom (TMT) sectors. He has advised businesses and institutions across Asia and brings extensive expertise in capital markets, strategic transactions and cross-border opportunities. Vikas is an alumnus of Manipal Institute of Technology and holds an MBA from the Asian Institute of Management, Manila.",

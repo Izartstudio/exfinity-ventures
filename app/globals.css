@@ -979,7 +979,10 @@ img,svg { -webkit-user-select:none; user-select:none; -webkit-user-drag:none; }
   .philosophy-copy p { max-width:100%; font-size:9px; line-height:1.3; }
 }
 @media (max-width:650px) {
-  .team-tabs button { padding-inline:.2rem; font-size:clamp(.52rem,2.65vw,.68rem); white-space:nowrap; }
+  .team-tabs button { min-height:64px; padding-inline:.2rem; font-size:clamp(.52rem,2.65vw,.68rem); white-space:nowrap; }
+  #tac-tab { line-height:1.25; white-space:normal; }
+  #tac-tab .tac-tab-last-word { display:block; }
+  .tac-heading-last-word { display:block; }
   .hero h1,.team-hero h1,.aif-details h1,.company-detail-copy h1,.team-profile-copy h1 { font-size:2rem; line-height:1.18; }
   .hero h1 { font-size:clamp(1.2rem,6.25vw,1.4rem); line-height:1.22; white-space:nowrap; }
   .contact-faq-layout > h2,.team-directory [role="tabpanel"] > h2,.investment-team-block > h2,.offices-section > .container > h2,.section-intro h2,.philosophy-sticky > h2,.how-we-invest h2,.founders-content h2,.insights-heading h2 { font-size:1.75rem; line-height:1.22; }

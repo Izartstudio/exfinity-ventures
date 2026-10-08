@@ -46,7 +46,7 @@ export function TeamDirectory({ content = teamDirectoryContent }: { content?: Te
 
         <div className="team-tabs" role="tablist" aria-label="Team categories">
           <button type="button" role="tab" aria-selected={isPartners} aria-controls="partners-panel" id="partners-tab" className={isPartners ? "is-active" : ""} onClick={() => setActiveTab("partners")}>{content.partnersTitle}</button>
-          <button type="button" role="tab" aria-selected={isTac} aria-controls="tac-panel" id="tac-tab" className={isTac ? "is-active" : ""} onClick={() => setActiveTab("tac")}>{content.tacTitle}</button>
+          <button type="button" role="tab" aria-selected={isTac} aria-controls="tac-panel" id="tac-tab" className={isTac ? "is-active" : ""} onClick={() => setActiveTab("tac")}><span>Technical Advisory</span>{" "}<span className="tac-tab-last-word">Committee</span></button>
           <button type="button" role="tab" aria-selected={isFounders} aria-controls="founders-panel" id="founders-tab" className={isFounders ? "is-active" : ""} onClick={() => setActiveTab("founders")}>{content.foundersTitle}</button>
         </div>
 
@@ -66,7 +66,7 @@ export function TeamDirectory({ content = teamDirectoryContent }: { content?: Te
           </div>
         ) : (
           <div id="tac-panel" role="tabpanel" aria-labelledby="tac-tab">
-            <h2 id="team-directory-title">{content.tacTitle}</h2>
+            <h2 id="team-directory-title"><span>Technical Advisory</span>{" "}<span className="tac-heading-last-word">Committee</span></h2>
             <TeamGrid members={content.tacTeam} label={content.tacTitle} />
           </div>
         )}
