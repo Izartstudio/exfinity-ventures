@@ -13,6 +13,7 @@ export type PortfolioCompany = {
   status: PortfolioStatus;
   tagline?: string;
   description?: string;
+  inceptionYear?: string;
   partneredSince?: string;
   entryStage?: string;
   founders?: string[];
@@ -134,7 +135,44 @@ export const portfolioCompanies: PortfolioCompany[] = [
   { id: "zyla-health", name: "Zyla", logo: "/companies/popup/zyla.png", fund: "Fund III", theme: "Healthtech", sector: "B2B Platform", status: "Active", tagline: "Healthcare platform to help insurance / corporate firms reduce insurance claims", description: "Zyla is a health-tech platform that delivers personalised health guidance to keep people healthier, and claims lower. Insurers use it to reduce claim rates, corporates to strengthen employee wellbeing and benefits, and pharma companies to build their medical brands and drive treatment adherence. Backed by extensive R&D with proven medical and commercial outcomes, Zyla's insurer-first model wins where B2C health apps have struggled.", partneredSince: "2023", entryStage: "Series A", founders: ["Khushboo Aggarwal"], exfinityTeam: ["Shailesh Ghorpade", "Sunith Mandala"], websiteUrl: "https://zyla.in/" },
 ];
 
+const portfolioSheetUpdates: Record<string, Partial<Pick<PortfolioCompany, "theme" | "sector" | "status" | "websiteUrl" | "inceptionYear">>> = {
+  agshift: { theme: "AgriTech", status: "Exited", websiteUrl: "https://www.agshift.com/", inceptionYear: "2017" },
+  "ai-palette": { theme: "AI Analytics", status: "Exited", inceptionYear: "2020" },
+  akridata: { theme: "Vision AI", status: "Exited", websiteUrl: "https://akridata.ai/", inceptionYear: "2017" },
+  ati: { theme: "Robotics", sector: "DeepTech", status: "Active", websiteUrl: "https://atirobotics.ai/", inceptionYear: "2018" },
+  autoverse: { theme: "B2B marketplace", sector: "B2B Platform", status: "Active", websiteUrl: "https://www.autoversemobility.in/", inceptionYear: "2023" },
+  awiros: { theme: "Vision AI", sector: "AI Native Software", status: "Active", websiteUrl: "https://awiros.com/", inceptionYear: "2015" },
+  chara: { theme: "EV Technology", sector: "DeepTech", status: "Active", websiteUrl: "https://www.chara.co.in/", inceptionYear: "2019" },
+  cloudsek: { theme: "Cybersecurity", sector: "AI Native Software", status: "Active", websiteUrl: "https://cloudsek.com/", inceptionYear: "2015" },
+  credilio: { theme: "Fintech Platform", sector: "B2B Platform", status: "Active", websiteUrl: "https://www.novio.in/", inceptionYear: "2020" },
+  curefit: { theme: "Healthtech", status: "Exited", websiteUrl: "https://next.cult.fit/home?redirect_source=web_to_next", inceptionYear: "-" },
+  eccentric: { theme: "Automotive", sector: "AI Native Software", status: "Active", websiteUrl: "https://weareeccentric.com/", inceptionYear: "2012" },
+  "get-edge": { theme: "HR Tech", status: "Exited", websiteUrl: "https://www.phenom.com/", inceptionYear: "2010" },
+  gridraster: { theme: "Defence Tech", sector: "DeepTech", status: "Active", websiteUrl: "https://gridraster.com/", inceptionYear: "2016" },
+  "hippo-video": { theme: "Generative AI", status: "Exited", websiteUrl: "https://www.hippovideo.io/", inceptionYear: "2016" },
+  iqlect: { theme: "Data Infrastructure", status: "Exited", websiteUrl: "https://bangdb.com/", inceptionYear: "2012" },
+  kinara: { theme: "Semicondcutor", sector: "DeepTech", status: "Exited", websiteUrl: undefined, inceptionYear: "2018" },
+  locus: { theme: "Logistics", status: "Exited", websiteUrl: "https://locus.sh/", inceptionYear: "2015" },
+  log9: { theme: "EV Technology", status: "Exited", websiteUrl: "https://log9materials.com/", inceptionYear: "2015" },
+  "mad-street-den": { theme: "Vision AI", status: "Exited", websiteUrl: "https://www.madstreetden.com/", inceptionYear: "2013" },
+  maieutic: { theme: "Semiconductors", sector: "DeepTech", status: "Active", websiteUrl: "https://www.maieuticsemi.com/", inceptionYear: "2025" },
+  moengage: { theme: "Marketing Tech", status: "Exited", websiteUrl: "https://www.moengage.com/", inceptionYear: "2014" },
+  "neural-garage": { theme: "GenerativeAI", sector: "AI Native Software", status: "Active", websiteUrl: "https://visualdub.ai/", inceptionYear: "2021" },
+  "optimized-electrotech": { theme: "Defence Tech", sector: "DeepTech", status: "Active", websiteUrl: "https://optimizedelectrotech.com/", inceptionYear: "2017" },
+  pixis: { theme: "Marketing Tech", sector: "AI Native Software", status: "Active", websiteUrl: "https://pixis.ai/", inceptionYear: "2015" },
+  practically: { theme: "EdTech", status: "Exited", websiteUrl: undefined, inceptionYear: "2018" },
+  qritive: { theme: "AI Pathology", sector: "AI Native Software", status: "Active", websiteUrl: "https://qritive.com/", inceptionYear: "2017" },
+  "raga-ai": { theme: "AI Ops", sector: "AI Native Software", status: "Active", websiteUrl: "https://raga.ai/", inceptionYear: "2022" },
+  "resolve-ai": { theme: "AI powered ITSM", sector: "AI Native Software", status: "Active", websiteUrl: "https://www.rezolve.ai/", inceptionYear: "2017" },
+  "skit-ai": { theme: "Conversational AI", sector: "B2B Platform", status: "Active", websiteUrl: "https://skit.ai/in/", inceptionYear: "2016" },
+  str8bat: { theme: "AI Analytics", sector: "DeepTech", status: "Active", websiteUrl: "https://www.str8bat.com/", inceptionYear: "2020" },
+  uniken: { theme: "Identity & Access Management", status: "Exited", websiteUrl: "https://www.ditto.id/", inceptionYear: "2004" },
+  unscript: { theme: "Generative AI", sector: "AI Native Software", status: "Active", websiteUrl: "https://unscript.ai/", inceptionYear: "2021" },
+  "zyla-health": { theme: "Healthtech", sector: "B2B Platform", status: "Active", websiteUrl: "https://zyla.in/", inceptionYear: "2017" },
+};
+
 for (const company of portfolioCompanies) {
+  Object.assign(company, portfolioSheetUpdates[company.id]);
   if (updatedPortfolioLogos[company.id]) company.logo = updatedPortfolioLogos[company.id];
   if (updatedPortfolioWhiteLogos[company.id]) company.logoWhite = updatedPortfolioWhiteLogos[company.id];
   if (company.id === "maieutic") company.logoWhite = "/companies/portfolio-provided/maieutic-white.svg";

@@ -38,10 +38,6 @@ const faqs: Faq[] = [
     answer: <>We look for <em>complementary founding teams</em> that combine strong product and technical depth with market focus, backed by early signals such as a <em>POC, first customer, or enterprise partnership</em>.</>,
   },
   {
-    question: "Do you invest in single-founder companies?",
-    answer: <>We generally look for founding teams with <em>at least two co-founders</em> who collectively cover the technical and commercial aspects of the business. That said, we have backed exceptional founders and teams who may not fit this profile.</>,
-  },
-  {
     question: "What do you offer beyond capital?",
     answer: <><p>Beyond capital, we support founders with:</p><ul><li><strong>Customer access:</strong> Warm CXO introductions that can convert into pilots and customers.</li><li><strong>Hiring:</strong> Support in hiring the first core team members, which is critical to company building.</li><li><strong>Fundraising &amp; strategic capital:</strong> Connections to our VC and CVC network for future rounds and strategic investments.</li><li><strong>Market intelligence:</strong> Insights on the competitive landscape and broader macro trends.</li><li><strong>Hands-on support:</strong> Alongside a Partner who sits on the Board, a senior team member works closely with the company at every stage, beyond formal board meetings.</li></ul></>,
   },

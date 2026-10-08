@@ -29,7 +29,7 @@ export function OurFounders({ founders }: { founders: HomepageFounder[] }) {
     if (!entered || window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
     const timer = window.setTimeout(() => {
       setActive((current) => (current + 1) % founders.length);
-    }, 4000);
+    }, 3500);
     return () => window.clearTimeout(timer);
   }, [active, entered, founders.length]);
 
