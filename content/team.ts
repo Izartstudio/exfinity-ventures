@@ -198,7 +198,7 @@ export const teamDirectoryContent: TeamDirectoryContent = {
       name: "Arundhati Menon",
       role: "AVP - Investments",
       region: "India",
-      image: "/team/investment/arundhati-menon.png",
+      image: "/team/investment/arundhati-menon-hd.png",
       profileImage: "/team/investment/arundhati-menon-hd.png",
       funds: "IV",
       portfolioCompanyIds: [],

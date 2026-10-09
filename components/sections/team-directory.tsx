@@ -3,13 +3,16 @@
 import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import { teamDirectoryContent, teamMemberSlug, type TeamDirectoryContent, type TeamMember } from "@/content/team";
 
-function TeamGrid({ members, label }: { members: TeamMember[]; label: string }) {
+export type TeamTab = "partners" | "founders" | "tac";
+
+function TeamGrid({ members, label, activeTab }: { members: TeamMember[]; label: string; activeTab: TeamTab }) {
   return (
     <div className="team-member-grid" aria-label={label}>
       {members.map((member) => (
-        <Link className="team-member-card" href={`/team/${teamMemberSlug(member.name)}`} key={member.name} aria-label={`View ${member.name}'s profile`}>
+        <Link className="team-member-card" href={{ pathname: `/team/${teamMemberSlug(member.name)}`, query: { from: activeTab } }} key={member.name} aria-label={`View ${member.name}'s profile`}>
           <div className="team-member-image">
             <Image
               fill
@@ -30,9 +33,8 @@ function TeamGrid({ members, label }: { members: TeamMember[]; label: string }) 
   );
 }
 
-export type TeamTab = "partners" | "founders" | "tac";
-
 export function TeamDirectory({ content = teamDirectoryContent, initialTab = "partners" }: { content?: TeamDirectoryContent; initialTab?: TeamTab }) {
+  const router = useRouter();
   const [activeTab, setActiveTab] = useState<TeamTab>(initialTab);
   const isPartners = activeTab === "partners";
   const isFounders = activeTab === "founders";
@@ -40,9 +42,7 @@ export function TeamDirectory({ content = teamDirectoryContent, initialTab = "pa
 
   function selectTab(tab: TeamTab) {
     setActiveTab(tab);
-    const url = new URL(window.location.href);
-    url.searchParams.set("tab", tab);
-    window.history.replaceState(window.history.state, "", url);
+    router.replace(`/team?tab=${tab}`, { scroll: false });
   }
 
   return (
@@ -59,21 +59,21 @@ export function TeamDirectory({ content = teamDirectoryContent, initialTab = "pa
         {isPartners ? (
           <div id="partners-panel" role="tabpanel" aria-labelledby="partners-tab">
             <h2 id="team-directory-title">{content.partnersTitle}</h2>
-            <TeamGrid members={content.partners} label={content.partnersTitle} />
+            <TeamGrid members={content.partners} label={content.partnersTitle} activeTab="partners" />
             <div className="investment-team-block">
               <h2>{content.investmentTitle}</h2>
-              <TeamGrid members={content.investmentTeam} label={content.investmentTitle} />
+              <TeamGrid members={content.investmentTeam} label={content.investmentTitle} activeTab="partners" />
             </div>
           </div>
         ) : isFounders ? (
           <div id="founders-panel" role="tabpanel" aria-labelledby="founders-tab">
             <h2 id="team-directory-title">{content.foundersTitle}</h2>
-            <TeamGrid members={content.founders} label={content.foundersTitle} />
+            <TeamGrid members={content.founders} label={content.foundersTitle} activeTab="founders" />
           </div>
         ) : (
           <div id="tac-panel" role="tabpanel" aria-labelledby="tac-tab">
             <h2 id="team-directory-title"><span>Technical Advisory</span>{" "}<span className="tac-heading-last-word">Committee</span></h2>
-            <TeamGrid members={content.tacTeam} label={content.tacTitle} />
+            <TeamGrid members={content.tacTeam} label={content.tacTitle} activeTab="tac" />
           </div>
         )}
       </div>
