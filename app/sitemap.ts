@@ -2,6 +2,7 @@ import type { MetadataRoute } from "next";
 import { articles } from "@/content/articles";
 import { portfolioCompanies } from "@/content/portfolio";
 import { siteUrl } from "@/lib/seo";
+import { teamDirectoryContent, teamMemberSlug } from "@/content/team";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const staticRoutes: MetadataRoute.Sitemap = [
@@ -26,5 +27,18 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.7,
   }));
 
-  return [...staticRoutes, ...articleRoutes, ...portfolioRoutes];
+  const teamMembers = Array.from(new Map([
+    ...teamDirectoryContent.partners,
+    ...teamDirectoryContent.investmentTeam,
+    ...teamDirectoryContent.tacTeam,
+    ...teamDirectoryContent.founders,
+  ].map((member) => [teamMemberSlug(member.name), member])).keys());
+
+  const teamRoutes: MetadataRoute.Sitemap = teamMembers.map((slug) => ({
+    url: `${siteUrl}/team/${slug}`,
+    changeFrequency: "monthly",
+    priority: 0.6,
+  }));
+
+  return [...staticRoutes, ...articleRoutes, ...portfolioRoutes, ...teamRoutes];
 }

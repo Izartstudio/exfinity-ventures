@@ -61,8 +61,8 @@ function CompanyCard({ company }: { company: PortfolioCompany }) {
     </div>
     <div className="portfolio-company-logo">
       {company.logo ? <>
-        <Image className={company.logoWhite ? "portfolio-company-logo-color" : undefined} src={company.logo} alt={company.name} width={260} height={120} sizes="(max-width: 650px) 42vw, (max-width: 1000px) 28vw, 20vw" unoptimized />
-        {company.logoWhite && <Image className="portfolio-company-logo-white" src={company.logoWhite} alt="" width={260} height={120} sizes="(max-width: 650px) 42vw, (max-width: 1000px) 28vw, 20vw" unoptimized />}
+        <Image className={company.logoWhite ? "portfolio-company-logo-color" : undefined} src={company.logo} alt={company.name} width={260} height={120} sizes="(max-width: 650px) 42vw, (max-width: 1000px) 28vw, 20vw" quality={90} />
+        {company.logoWhite && <Image className="portfolio-company-logo-white" src={company.logoWhite} alt="" width={260} height={120} sizes="(max-width: 650px) 42vw, (max-width: 1000px) 28vw, 20vw" quality={90} />}
       </> : <span>{company.name}</span>}
     </div>
     <p>{company.theme || company.sector}</p>
@@ -76,7 +76,7 @@ export function PortfolioWall({ data = fallbackPortfolioWall }: { data?: Portfol
   const [filters, setFilters] = useState<Record<FilterKey, string>>({ sector: "", status: "" });
   const options = useMemo(() => ({
     sector: portfolioThemes,
-    status: ["Active", "Exited", "Partially Exited"],
+    status: ["Active", "Exited"],
   }), []);
   const filtered = companies.filter((company) =>
     (!filters.sector || getPortfolioTheme(company) === filters.sector) &&

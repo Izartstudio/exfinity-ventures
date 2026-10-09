@@ -40,7 +40,7 @@ export function TeamProfile({ member }: { member: TeamMember }) {
           {!!funds.length && <div className="team-profile-funds"><span>Fund</span><div>{funds.map((fund) => <b key={fund}>Fund {fund}</b>)}</div></div>}
           <div className="team-profile-bio">{biographyFor(member).map((paragraph) => <p key={paragraph}>{paragraph}</p>)}</div>
         </div>
-        <div className="team-profile-portrait"><Image src={member.profileImage ?? member.image} alt={member.name} fill priority unoptimized sizes="(max-width: 800px) 100vw, 50vw" style={{ objectPosition: member.imagePosition ?? "center center" }} /></div>
+        <div className="team-profile-portrait"><Image src={member.profileImage ?? member.image} alt={member.name} fill priority quality={90} sizes="(max-width: 800px) 100vw, 50vw" style={{ objectPosition: member.imagePosition ?? "center center" }} /></div>
       </div>
     </section>
 

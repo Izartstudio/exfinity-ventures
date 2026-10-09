@@ -1,11 +1,9 @@
 "use client";
 
 import { useState } from "react";
-import Image, { type ImageLoaderProps } from "next/image";
+import Image from "next/image";
 import Link from "next/link";
 import { teamDirectoryContent, teamMemberSlug, type TeamDirectoryContent, type TeamMember } from "@/content/team";
-
-const cmsImageLoader = ({ src }: ImageLoaderProps) => src;
 
 function TeamGrid({ members, label }: { members: TeamMember[]; label: string }) {
   return (
@@ -15,10 +13,9 @@ function TeamGrid({ members, label }: { members: TeamMember[]; label: string }) 
           <div className="team-member-image">
             <Image
               fill
-              unoptimized
-              loader={cmsImageLoader}
               src={member.image}
               alt={member.name}
+              quality={90}
               sizes="(max-width: 650px) calc(100vw - 2.5rem), (max-width: 900px) 48vw, 24vw"
               style={{ objectPosition: member.imagePosition ?? "center center" }}
             />
@@ -33,11 +30,20 @@ function TeamGrid({ members, label }: { members: TeamMember[]; label: string }) 
   );
 }
 
-export function TeamDirectory({ content = teamDirectoryContent }: { content?: TeamDirectoryContent }) {
-  const [activeTab, setActiveTab] = useState<"partners" | "founders" | "tac">("partners");
+export type TeamTab = "partners" | "founders" | "tac";
+
+export function TeamDirectory({ content = teamDirectoryContent, initialTab = "partners" }: { content?: TeamDirectoryContent; initialTab?: TeamTab }) {
+  const [activeTab, setActiveTab] = useState<TeamTab>(initialTab);
   const isPartners = activeTab === "partners";
   const isFounders = activeTab === "founders";
   const isTac = activeTab === "tac";
+
+  function selectTab(tab: TeamTab) {
+    setActiveTab(tab);
+    const url = new URL(window.location.href);
+    url.searchParams.set("tab", tab);
+    window.history.replaceState(window.history.state, "", url);
+  }
 
   return (
     <section className="team-directory" aria-labelledby="team-directory-title">
@@ -45,9 +51,9 @@ export function TeamDirectory({ content = teamDirectoryContent }: { content?: Te
         <div className="section-kicker"><span>The Team</span></div>
 
         <div className="team-tabs" role="tablist" aria-label="Team categories">
-          <button type="button" role="tab" aria-selected={isPartners} aria-controls="partners-panel" id="partners-tab" className={isPartners ? "is-active" : ""} onClick={() => setActiveTab("partners")}>{content.partnersTitle}</button>
-          <button type="button" role="tab" aria-selected={isTac} aria-controls="tac-panel" id="tac-tab" className={isTac ? "is-active" : ""} onClick={() => setActiveTab("tac")}><span>Technical Advisory</span>{" "}<span className="tac-tab-last-word">Committee</span></button>
-          <button type="button" role="tab" aria-selected={isFounders} aria-controls="founders-panel" id="founders-tab" className={isFounders ? "is-active" : ""} onClick={() => setActiveTab("founders")}>{content.foundersTitle}</button>
+          <button type="button" role="tab" aria-selected={isPartners} aria-controls="partners-panel" id="partners-tab" className={isPartners ? "is-active" : ""} onClick={() => selectTab("partners")}>{content.partnersTitle}</button>
+          <button type="button" role="tab" aria-selected={isTac} aria-controls="tac-panel" id="tac-tab" className={isTac ? "is-active" : ""} onClick={() => selectTab("tac")}><span>Technical Advisory</span>{" "}<span className="tac-tab-last-word">Committee</span></button>
+          <button type="button" role="tab" aria-selected={isFounders} aria-controls="founders-panel" id="founders-tab" className={isFounders ? "is-active" : ""} onClick={() => selectTab("founders")}>{content.foundersTitle}</button>
         </div>
 
         {isPartners ? (

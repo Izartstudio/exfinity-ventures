@@ -5,7 +5,7 @@ import { Footer } from "@/components/layout/footer";
 import { PreFooter } from "@/components/sections/pre-footer";
 import { portfolioCompanies } from "@/content/portfolio";
 import { getPortfolioCompany } from "@/lib/sanity/portfolio";
-import { siteName } from "@/lib/seo";
+import { siteName, siteUrl } from "@/lib/seo";
 
 export function generateStaticParams() {
   return portfolioCompanies.map((company) => ({ company: company.id }));
@@ -46,7 +46,19 @@ export default async function CompanyDetailPage({ params }: PageProps<"/portfoli
   const company = await getPortfolioCompany(slug);
   if (!company) notFound();
 
+  const companyJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    name: company.name,
+    description: company.description ?? company.tagline,
+    url: company.websiteUrl ?? `${siteUrl}/portfolio/${company.id}`,
+    mainEntityOfPage: `${siteUrl}/portfolio/${company.id}`,
+    ...(company.logo ? { logo: `${siteUrl}${company.logo}` } : {}),
+    ...(company.linkedinUrl ? { sameAs: [company.linkedinUrl] } : {}),
+  };
+
   return <>
+    <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(companyJsonLd) }} />
     <main>
       <CompanyDetail company={company} />
       <PreFooter />

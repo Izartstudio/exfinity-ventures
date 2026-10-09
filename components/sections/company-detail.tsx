@@ -13,7 +13,7 @@ export function CompanyDetail({ company }: { company: PortfolioCompany }) {
       <div className="company-detail-visual">
         <Link className="company-back" href="/portfolio"><span aria-hidden="true">‹</span> Back to portfolio</Link>
         <div className="company-detail-visual-logo">
-          {company.logo ? <Image src={company.logoWhite ?? company.logo} alt={company.name} width={320} height={150} unoptimized /> : <span>{company.name}</span>}
+          {company.logo ? <Image src={company.logoWhite ?? company.logo} alt={company.name} width={320} height={150} quality={90} /> : <span>{company.name}</span>}
         </div>
       </div>
       <div className="company-detail-copy">

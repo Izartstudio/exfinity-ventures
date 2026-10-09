@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { TeamHero } from "@/components/sections/team-hero";
-import { TeamDirectory } from "@/components/sections/team-directory";
+import { TeamDirectory, type TeamTab } from "@/components/sections/team-directory";
 import { Offices } from "@/components/sections/offices";
 import { PreFooter } from "@/components/sections/pre-footer";
 import { Footer } from "@/components/layout/footer";
@@ -12,11 +12,14 @@ export const metadata: Metadata = createMetadata({
   path: "/team",
 });
 
-export default function TeamPage() {
+export default async function TeamPage({ searchParams }: { searchParams: Promise<{ tab?: string | string[] }> }) {
+  const tabParam = (await searchParams).tab;
+  const initialTab: TeamTab = tabParam === "tac" || tabParam === "founders" ? tabParam : "partners";
+
   return <>
     <main>
       <TeamHero />
-      <TeamDirectory />
+      <TeamDirectory initialTab={initialTab} />
       <Offices />
       <PreFooter />
     </main>

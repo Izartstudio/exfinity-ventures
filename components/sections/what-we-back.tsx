@@ -131,8 +131,8 @@ export function WhatWeBack() {
           </details>
         </div>
         <div className={`company-grid company-grid-${active.companies.length}`} aria-label={`${active.title} companies`}>{active.companies.map((company) => <Link className="company-logo-cell" data-company={company.name.toLowerCase()} href={company.href} key={company.name} onClick={closeModal}>
-          <Image className="company-logo-image company-logo-image-color" src={company.logo} alt={company.name} width={280} height={280} unoptimized />
-          <Image className="company-logo-image company-logo-image-white" src={company.logoWhite} alt="" width={280} height={280} unoptimized />
+          <Image className="company-logo-image company-logo-image-color" src={company.logo} alt={company.name} width={280} height={280} quality={90} />
+          <Image className="company-logo-image company-logo-image-white" src={company.logoWhite} alt="" width={280} height={280} quality={90} />
         </Link>)}</div>
       </section>
     </div>}

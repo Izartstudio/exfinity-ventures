@@ -9,25 +9,25 @@ import { defaultDescription, siteName, siteUrl, socialImage } from "@/lib/seo";
 const sharpGrotesk = localFont({
   variable: "--font-sharp-grotesk",
   display: "swap",
-  src: "./fonts/SharpGrotesk-Book20.otf",
+  src: "./fonts/SharpGrotesk-Book20.woff2",
 });
 
 const sharpGroteskCta = localFont({
   variable: "--font-sharp-grotesk-cta",
   display: "swap",
-  src: "./fonts/SharpGrotesk-Medium20.otf",
+  src: "./fonts/SharpGrotesk-Medium20.woff2",
 });
 
 const interDisplayNav = localFont({
   variable: "--font-inter-display-nav",
   display: "swap",
-  src: "./fonts/InterDisplay-Medium.ttf",
+  src: "./fonts/InterDisplay-Medium.woff2",
 });
 
 const interDisplayRegular = localFont({
   variable: "--font-inter-display-regular",
   display: "swap",
-  src: "./fonts/InterDisplay-Regular.ttf",
+  src: "./fonts/InterDisplay-Regular.woff2",
 });
 
 export const metadata: Metadata = {
@@ -46,6 +46,16 @@ export const metadata: Metadata = {
   authors: [{ name: siteName, url: siteUrl }],
   creator: siteName,
   publisher: siteName,
+  icons: {
+    icon: [
+      { url: "/favicon-dark.svg", type: "image/svg+xml", sizes: "64x64", media: "(prefers-color-scheme: light)" },
+      { url: "/favicon-light.svg", type: "image/svg+xml", sizes: "64x64", media: "(prefers-color-scheme: dark)" },
+      { url: "/favicon-thumbnail.svg", type: "image/svg+xml", sizes: "256x256", media: "(prefers-color-scheme: light)" },
+      { url: "/favicon-thumbnail-dark.svg", type: "image/svg+xml", sizes: "256x256", media: "(prefers-color-scheme: dark)" },
+    ],
+    shortcut: "/favicon-dark.svg",
+    apple: [{ url: "/apple-touch-icon.png", type: "image/png", sizes: "256x256" }],
+  },
   alternates: { canonical: "/" },
   openGraph: {
     title: siteName,

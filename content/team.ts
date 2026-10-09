@@ -38,7 +38,7 @@ export const teamDirectoryContent: TeamDirectoryContent = {
       region: "Silicon Valley & India",
       image: "/team/partners/balakrishnan-v.jpg",
       funds: "I, II, III",
-      portfolioCompanyIds: ["uniken", "practically", "locus", "agshift"],
+      portfolioCompanyIds: [],
       linkedinUrl: "https://www.linkedin.com/in/venkatraman-balakrishnan-847544/",
       biography: [
         "Prior to founding Exfinity, Bala served as Head of BPO, Finacle & India Business Unit at Infosys. Bala also served as the Chief Financial Officer of Infosys Ltd., from May 1, 2006 to October 31, 2012.",
@@ -67,7 +67,7 @@ export const teamDirectoryContent: TeamDirectoryContent = {
       region: "India",
       image: "/team/partners/girish-paranjpe.jpg",
       funds: "I, II, III, IV",
-      portfolioCompanyIds: ["uniken", "practically", "locus", "agshift"],
+      portfolioCompanyIds: [],
       linkedinUrl: "https://in.linkedin.com/in/girishparanjpe",
       biography: [
         "Girish Paranjpe is a founding partner of Exfinity Ventures and brings over three decades of leadership experience in global technology and business services. He served as Joint CEO of Wipro's IT Business, where he helped scale the company into a global enterprise spanning over 50 countries, and subsequently as President of Wipro's Finance Solutions division. Earlier in his career at Wipro, he held several senior roles across business units and geographies, building deep expertise in enterprise technology, digital transformation and large-scale P&L management.",
@@ -80,6 +80,7 @@ export const teamDirectoryContent: TeamDirectoryContent = {
       region: "India, Middle East & South East Asia",
       image: "/team/partners/jesper-ludolph.jpg",
       funds: "II, III, IV",
+      portfolioCompanyIds: ["cloudsek", "awiros"],
       linkedinUrl: "https://www.linkedin.com/in/ludolph?originalSubdomain=in",
       biography: [
         "Jesper brings over two decades of global leadership experience across consulting, private equity and entrepreneurship, having lived and worked in 30+ countries across Europe, Asia and India. He has led value-creation programs at PE-backed companies Navico and Provimi through to successful exits, and spent a decade as Partner at McKinsey & Company driving large-scale transformations in energy, high-tech, pharma and logistics.",
@@ -104,6 +105,7 @@ export const teamDirectoryContent: TeamDirectoryContent = {
       region: "Silicon Valley",
       image: "/team/partners/rakesh-vaidyanathan.jpg",
       funds: "II, III, IV",
+      portfolioCompanyIds: ["ati", "kinara"],
       linkedinUrl: "https://www.linkedin.com/in/rakeshvaidyanathan/",
       biography: [
         "Rakesh has over 20 years of international business growth experience focused on new market entry, channel management, strategic alliances, and cross-border M&A across the US, Latin America, and India. He brings deep sector exposure in IT services, industrial goods, life sciences, and healthcare, with a strong orientation to digital transformation and go-to-market strategy.",

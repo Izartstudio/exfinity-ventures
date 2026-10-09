@@ -1,7 +1,7 @@
 "use client";
 
-/* eslint-disable @next/next/no-img-element */
 import { useEffect, useRef, useState } from "react";
+import Image from "next/image";
 import type { HomepageFounder } from "@/types/homepage";
 
 export function OurFounders({ founders }: { founders: HomepageFounder[] }) {
@@ -72,8 +72,8 @@ export function OurFounders({ founders }: { founders: HomepageFounder[] }) {
                 }}
                 style={{ opacity: isVisible ? 1 : 0, zIndex: index === active ? 3 : 1 }}
               >
-                <img className="founder-photo" src={founder.imageUrl} alt={isVisible ? founder.name : ""} />
-                {index === active && founder.logoUrl && <span className="founder-company-logo"><img src={founder.logoUrl} alt="" /></span>}
+                <Image className="founder-photo" src={founder.imageUrl} alt={isVisible ? founder.name : ""} fill quality={90} sizes="(max-width: 650px) 43vw, (max-width: 1100px) 24vw, 20vw" />
+                {index === active && founder.logoUrl && <span className="founder-company-logo"><Image src={founder.logoUrl} alt="" fill sizes="112px" /></span>}
               </button>
             );
           })}
