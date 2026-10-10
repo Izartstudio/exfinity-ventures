@@ -1,5 +1,5 @@
 {
-  "createdAt": "2026-10-09T11:05:18.804Z",
+  "createdAt": "2026-10-10T10:39:17.811Z",
   "studioVersion": "6.18.0",
   "version": 3,
   "workspaces": [
@@ -13,7 +13,7 @@
       },
       "name": "exfinity",
       "projectId": "9tvsfb8e",
-      "schema": "1991dd80.create-schema.json",
+      "schema": "473220a3.create-schema.json",
       "title": "Exfinity Ventures",
       "tools": "ef87c8fe.create-tools.json"
     }

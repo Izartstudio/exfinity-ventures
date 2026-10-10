@@ -67,7 +67,7 @@ export default async function ArticlePage({ params }: PageProps<"/news/[slug]">)
       <article className="article-body">
         <div className="container">
           <RichText blocks={article.body} />
-          {article.externalUrl && <a className="article-read-more" href={article.externalUrl}>Read more <span aria-hidden="true">›</span></a>}
+          {article.externalUrl && <a className="article-read-more" href={article.externalUrl}><span className="article-read-more-label">Read more</span></a>}
         </div>
       </article>
       {stories.length > 0 && <RelatedStories stories={stories} />}
