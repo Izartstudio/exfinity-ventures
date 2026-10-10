@@ -6,13 +6,7 @@ import { useCallback, useEffect, useRef, useState } from "react";
 
 export type RelatedStory = { title: string; image: string; date: string; category: string; href: string };
 
-const defaultStories: RelatedStory[] = [
-  { title: "VC Funding Surges in AI SaaS, Driving Innovation and Growth", image: "/news/related/ai-saas.jpg", date: "Jan 21, 2026", category: "News", href: "/news/fund-four" },
-  { title: "Maieutic Raises the Bar for AI Chip Design", image: "/news/related/chip-design.jpg", date: "Jan 21, 2026", category: "News", href: "/news/maieutic-funding" },
-  { title: "Rethinking the Future of Analog Chip Design", image: "/news/related/analog-chip.jpg", date: "Jan 15, 2026", category: "News", href: "/news/cloudsek-state-fund" },
-];
-
-export function RelatedStories({ stories = defaultStories }: { stories?: RelatedStory[] }) {
+export function RelatedStories({ stories }: { stories: RelatedStory[] }) {
   const railRef = useRef<HTMLDivElement>(null);
   const [canMoveBack, setCanMoveBack] = useState(false);
   const [canMoveForward, setCanMoveForward] = useState(true);
@@ -44,7 +38,7 @@ export function RelatedStories({ stories = defaultStories }: { stories?: Related
           <div className="related-rail" ref={railRef} onScroll={syncControls}>
             {stories.map((story) => <article className="related-card" key={story.title}>
               <h3><Link href={story.href}>{story.title}</Link></h3>
-              <Link className="related-card-image" href={story.href} aria-label={story.title}><Image src={story.image} alt="" fill sizes="220px" /></Link>
+              <Link className="related-card-image" href={story.href} aria-label={story.title}><Image quality={100} src={story.image} alt="" fill sizes="220px" /></Link>
               <time dateTime={new Date(story.date).toISOString()}>{story.date}</time>
               <div className="related-card-rule"><span /></div>
               <p>{story.category}</p>

@@ -4,16 +4,12 @@ import { ArticleHero } from "@/components/blog/article-hero";
 import { RelatedStories } from "@/components/blog/related-stories";
 import { RichText } from "@/components/blog/rich-text";
 import { Footer } from "@/components/layout/footer";
-import { articles, getArticleBySlug } from "@/content/articles";
+import { getNewsArticles, getArticleBySlug } from "@/lib/sanity/news";
 import { siteName, siteUrl } from "@/lib/seo";
-
-export function generateStaticParams() {
-  return articles.map((article) => ({ slug: article.slug.split("/").pop()! }));
-}
 
 export async function generateMetadata({ params }: PageProps<"/news/[slug]">): Promise<Metadata> {
   const { slug } = await params;
-  const article = getArticleBySlug(slug);
+  const article = await getArticleBySlug(slug);
   if (!article) return {};
 
   const description = article.body.find((block) => block.type === "paragraph")?.children.map((span) => span.text).join(" ")
@@ -44,8 +40,12 @@ export async function generateMetadata({ params }: PageProps<"/news/[slug]">): P
 
 export default async function ArticlePage({ params }: PageProps<"/news/[slug]">) {
   const { slug } = await params;
-  const article = getArticleBySlug(slug);
+  const article = await getArticleBySlug(slug);
   if (!article) notFound();
+  const allArticles = await getNewsArticles();
+  const candidates = allArticles.filter(item => item.id !== article.id);
+  const selected = article.relatedIds?.length ? candidates.filter(item => article.relatedIds!.includes(item.id)) : candidates.slice(0, 6);
+  const stories = selected.map(item => ({ title: item.title, image: item.image, date: item.date, category: item.category, href: item.slug }));
 
   const description = article.body.find((block) => block.type === "paragraph")?.children.map((span) => span.text).join(" ") || article.title;
   const articleJsonLd = {
@@ -53,7 +53,7 @@ export default async function ArticlePage({ params }: PageProps<"/news/[slug]">)
     "@type": "Article",
     headline: article.title,
     description,
-    image: `${siteUrl}${article.image}`,
+    image: new URL(article.image, siteUrl).href,
     datePublished: new Date(article.date).toISOString(),
     mainEntityOfPage: `${siteUrl}${article.slug}`,
     author: { "@type": "Organization", name: siteName, url: siteUrl },
@@ -61,7 +61,7 @@ export default async function ArticlePage({ params }: PageProps<"/news/[slug]">)
   };
 
   return <>
-    <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd) }} />
+    <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd).replace(/</g, "\\u003c") }} />
     <main>
       <ArticleHero article={article} />
       <article className="article-body">
@@ -70,7 +70,7 @@ export default async function ArticlePage({ params }: PageProps<"/news/[slug]">)
           {article.externalUrl && <a className="article-read-more" href={article.externalUrl}>Read more <span aria-hidden="true">›</span></a>}
         </div>
       </article>
-      <RelatedStories />
+      {stories.length > 0 && <RelatedStories stories={stories} />}
     </main>
     <Footer />
   </>;

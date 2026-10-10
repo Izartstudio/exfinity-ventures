@@ -22,10 +22,10 @@ export const blogPost = {
           { title: "News", value: "News" },
           { title: "Social", value: "Social" },
           { title: "Newsletters", value: "Newsletters" },
+          { title: "Uncategorised (legacy)", value: "" },
         ],
         layout: "radio",
       },
-      validation: required,
     },
     { name: "publishedAt", title: "Published date", type: "datetime", validation: required },
     {
@@ -88,6 +88,7 @@ export const blogPost = {
           fields: [
             { name: "alt", title: "Alternative text", type: "string" },
             { name: "caption", title: "Caption", type: "string" },
+            { name: "linkUrl", title: "Image link URL", type: "url" },
           ],
         },
         {
@@ -138,6 +139,13 @@ export const blogPost = {
           preview: { select: { title: "language", subtitle: "code" } },
         },
         { name: "divider", title: "Divider", type: "object", fields: [{ name: "label", title: "Internal label", type: "string" }] },
+        {
+          name: "mediaEmbed", title: "Podcast player", type: "object",
+          fields: [
+            { name: "title", title: "Player title", type: "string" },
+            { name: "url", title: "Spotify or SoundCloud embed URL", type: "url", validation: required },
+          ],
+        },
       ],
     },
     { name: "sourceUrl", title: "Read more URL", type: "url" },

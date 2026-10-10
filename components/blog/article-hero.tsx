@@ -12,7 +12,7 @@ export function ArticleHero({ article }: { article: Article }) {
         </div>
         <div className="article-hero-media">
           <div className="article-share"><span>Share via</span><div><a href={`mailto:?subject=${encodeURIComponent(article.title)}&body=${encodeURIComponent(`https://www.exfinityventures.com${article.slug}`)}`} aria-label="Share by email">↗</a><a href={`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(`https://www.exfinityventures.com${article.slug}`)}`} target="_blank" rel="noreferrer" aria-label="Share on LinkedIn">in</a><a href={`https://x.com/intent/post?url=${encodeURIComponent(`https://www.exfinityventures.com${article.slug}`)}&text=${encodeURIComponent(article.title)}`} target="_blank" rel="noreferrer" aria-label="Share on X">𝕏</a></div></div>
-          <div className="article-lead-image"><Image src={article.image} alt="" fill priority sizes="(max-width: 900px) calc(100vw - 2.5rem), 48vw" /></div>
+          <div className="article-lead-image"><Image quality={100} src={article.image} alt="" fill priority sizes="(max-width: 900px) 200vw, 100vw" /></div>
         </div>
       </div>
     </header>

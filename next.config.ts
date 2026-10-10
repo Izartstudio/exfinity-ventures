@@ -1,9 +1,14 @@
 import type { NextConfig } from "next";
+import archive from "./content/news-archive.json";
 
 const nextConfig: NextConfig = {
   compress: true,
   poweredByHeader: false,
   images: {
+    remotePatterns: [
+      { protocol: "https", hostname: "cdn.sanity.io" },
+      { protocol: "https", hostname: "cdn.prod.website-files.com" },
+    ],
     formats: ["image/avif", "image/webp"],
     qualities: [75, 85, 90, 100],
     minimumCacheTTL: 2_592_000,
@@ -27,6 +32,7 @@ const nextConfig: NextConfig = {
   async redirects() {
     return [
       { source: "/:path*", has: [{ type: "host", value: "exfinityventures.com" }], destination: "https://www.exfinityventures.com/:path*", permanent: true },
+      ...archive.map(article => ({ source: article.legacyPath, destination: article.slug, permanent: true })),
       { source: "/our-team", destination: "/team", permanent: true },
       { source: "/people", destination: "/team", permanent: true },
       { source: "/contact-us", destination: "/contact", permanent: true },
@@ -36,12 +42,6 @@ const nextConfig: NextConfig = {
       { source: "/aif-registration", destination: "/aif-registration-details", permanent: true },
       { source: "/terms", destination: "/", permanent: true },
       { source: "/privacy", destination: "/", permanent: true },
-      { source: "/media/exfinity-inside-india-2026-danish-delegation", destination: "/news/inside-india-2026", permanent: true },
-      { source: "/media/exfinity-fund-iv-1100-crore-deep-tech", destination: "/news/fund-four", permanent: true },
-      { source: "/media/cloudsek-first-indian-origin-cybersecurity-us-state-fund-investment", destination: "/news/cloudsek-state-fund", permanent: true },
-      { source: "/media/chara-technologies-raises-rs-52-crore-to-expand-rare-earth-free-motor-manufacturing", destination: "/news/chara-series-a", permanent: true },
-      { source: "/media/ikea-arm-acquires-india-born-logistics-tech-startup-locus", destination: "/news/ikea-locus", permanent: true },
-      { source: "/media/exf-physical-ai", destination: "/news", permanent: true },
       { source: "/media/:slug", destination: "/news", permanent: true },
       { source: "/portfolio/ati-motors", destination: "/portfolio/ati", permanent: true },
       { source: "/portfolio/maieutic-semiconductors", destination: "/portfolio/maieutic", permanent: true },

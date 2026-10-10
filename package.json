@@ -11,7 +11,10 @@
     "start": "next start",
     "lint": "eslint",
     "studio": "sanity dev",
-    "studio:build": "sanity build"
+    "studio:build": "sanity build",
+    "news:import": "sanity exec scripts/import-news.mjs --with-user-token",
+    "news:verify": "sanity exec scripts/verify-news.mjs --with-user-token",
+    "test:news": "node --experimental-strip-types --test scripts/news-content.test.mjs"
   },
   "dependencies": {
     "@sanity/image-url": "^2.1.1",

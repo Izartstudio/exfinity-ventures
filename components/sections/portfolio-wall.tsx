@@ -6,14 +6,14 @@ import { useEffect, useMemo, useRef, useState } from "react";
 import { fallbackPortfolioWall, type PortfolioCompany, type PortfolioWallData } from "@/content/portfolio";
 
 type FilterKey = "sector" | "status";
-type PortfolioTheme = "Deep Tech" | "AI Native" | "B2B";
+type PortfolioTheme = "DeepTech" | "AI Native Software" | "B2B Platforms";
 
-const portfolioThemes: PortfolioTheme[] = ["Deep Tech", "AI Native", "B2B"];
+const portfolioThemes: PortfolioTheme[] = ["DeepTech", "AI Native Software", "B2B Platforms"];
 function getPortfolioTheme(company: PortfolioCompany): PortfolioTheme {
   const sector = company.sector.toLowerCase();
-  if (/deep|robot|semiconductor|battery|ev tech|aerospace|material|manufactur|energy|climate|defence|life science/.test(sector)) return "Deep Tech";
-  if (/ai|saas|cyber|marketing tech|ops|generative|machine learning/.test(sector)) return "AI Native";
-  return "B2B";
+  if (/deep|robot|semiconductor|battery|ev tech|aerospace|material|manufactur|energy|climate|defence|life science/.test(sector)) return "DeepTech";
+  if (/ai|saas|cyber|marketing tech|ops|generative|machine learning/.test(sector)) return "AI Native Software";
+  return "B2B Platforms";
 }
 
 function FilterSelect({ label, value, options, onChange }: { label: string; value: string; options: string[]; onChange: (value: string) => void }) {

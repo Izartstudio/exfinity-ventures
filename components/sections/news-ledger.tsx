@@ -3,12 +3,12 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useMemo, useState } from "react";
-import { newsItems, type NewsCategory, type NewsItem } from "@/content/news";
+import type { NewsCategory, NewsItem } from "@/content/news";
 
 const filters = ["All", "Social", "News", "Newsletters"] as const;
 type Filter = (typeof filters)[number];
 
-export function NewsLedger({ items = newsItems }: { items?: NewsItem[] }) {
+export function NewsLedger({ items }: { items: NewsItem[] }) {
   const [activeFilter, setActiveFilter] = useState<Filter>("All");
   const [visibleCount, setVisibleCount] = useState(6);
   const filteredItems = useMemo(
@@ -33,7 +33,7 @@ export function NewsLedger({ items = newsItems }: { items?: NewsItem[] }) {
           {visibleItems.map((item) => (
             <article className="news-ledger-card" key={item.id}>
               <Link className="news-ledger-image" href={item.slug} aria-label={item.title}>
-                <Image src={item.image} alt="" fill sizes="(max-width: 650px) calc(100vw - 2.5rem), (max-width: 900px) 48vw, 31vw" style={{ objectPosition: item.imagePosition ?? "center center" }} />
+                <Image quality={100} src={item.image} alt="" fill sizes="(max-width: 650px) calc(100vw - 2.5rem), (max-width: 900px) 48vw, 31vw" style={{ objectPosition: item.imagePosition ?? "center center" }} />
               </Link>
               <h2><Link href={item.slug}>{item.title}</Link></h2>
               <time dateTime={new Date(item.date).toISOString()}>{item.date}</time>

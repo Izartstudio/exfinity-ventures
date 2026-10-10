@@ -3,9 +3,9 @@
 import Image from "next/image";
 import Link from "next/link";
 import { FormEvent, useCallback, useEffect, useRef, useState } from "react";
-import { newsItems } from "@/content/news";
+import type { NewsItem } from "@/content/news";
 
-export function Insights() {
+export function Insights({ items }: { items: NewsItem[] }) {
   const [isOpen, setIsOpen] = useState(false);
   const [isClosing, setIsClosing] = useState(false);
   const closeButtonRef = useRef<HTMLButtonElement>(null);
@@ -61,7 +61,7 @@ export function Insights() {
                 <Link className="button button-outline" href="/news">View all <span aria-hidden="true">→</span></Link>
               </div>
               <div className="thesis-card">
-                <Image src="/insights/physical-ai-thesis.png" alt="Exfinity Physical AI Thesis report" width={374} height={315} sizes="(max-width: 900px) 100vw, 38vw" />
+                <Image quality={100} src="/insights/physical-ai-thesis.png" alt="Exfinity Physical AI Thesis report" width={374} height={315} sizes="(max-width: 900px) 100vw, 38vw" />
                 <p>A research-led view of the technologies, market shifts and emerging opportunities shaping the future of Indian deep tech and AI</p>
                 <button className="button button-primary" type="button" onClick={() => { closingRef.current = false; setIsClosing(false); setIsOpen(true); }} aria-haspopup="dialog">
                   View thesis reports <span aria-hidden="true">→</span>
@@ -70,10 +70,10 @@ export function Insights() {
             </div>
 
             <div className="insights-grid">
-              {newsItems.slice(0, 4).map((article) => (
+              {items.slice(0, 4).map((article) => (
                 <Link className="insight-card" href={article.slug} key={article.id} aria-label={`Read ${article.title}`}>
                   <h3>{article.title}</h3>
-                  <Image src={article.image} alt="" width={200} height={200} sizes="(max-width: 650px) 80vw, 200px" />
+                  <Image quality={100} src={article.image} alt="" width={200} height={200} sizes="(max-width: 650px) 80vw, 200px" />
                   <div className="insight-meta"><time>{article.date}</time><span>{article.category}</span></div>
                 </Link>
               ))}
@@ -89,7 +89,7 @@ export function Insights() {
             <button ref={closeButtonRef} className="research-close" type="button" onClick={closeModal} aria-label="Close thesis form">×</button>
             <div className="research-summary">
               <h2 id="research-modal-title">A research-led view of the technologies, market shifts and emerging opportunities shaping the future of Indian deep tech and AI</h2>
-              <Image src="/insights/physical-ai-thesis.png" alt="Physical AI Thesis report" width={460} height={350} sizes="(max-width: 700px) 90vw, 42vw" />
+              <Image quality={100} src="/insights/physical-ai-thesis.png" alt="Physical AI Thesis report" width={460} height={350} sizes="(max-width: 700px) 90vw, 42vw" />
             </div>
             <form className="research-form" onSubmit={submit}>
               <label><span>Enter Your Name</span><input name="name" type="text" autoComplete="name" required /></label>

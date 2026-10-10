@@ -1,0 +1,4158 @@
+[
+  {
+    "id": "physical-ai-thesis",
+    "slug": "/news/physical-ai-thesis",
+    "title": "Exfinity Physical AI Thesis",
+    "date": "August 31, 2026",
+    "category": "Social",
+    "image": "https://cdn.prod.website-files.com/649ac839edcdef49d684ea62/6a95d131042c44294a012532_Exf_Physical_AI_Thumbnail_2.png",
+    "body": [
+      {
+        "type": "image",
+        "src": "https://cdn.prod.website-files.com/649ac839edcdef49d684ea62/6a95c863e97d3b292d0cc909_Cover_Exfinity_Physical%20AI_page-0001.jpg",
+        "alt": "",
+        "caption": "Click the image to read the complete report.",
+        "href": "https://docsend.com/v/4wkhj/exf_physical_ai"
+      },
+      {
+        "type": "heading",
+        "level": 3,
+        "children": [
+          {
+            "text": "WHY PHYSICAL AI MATTERS AND WHY NOW",
+            "marks": [
+              "bold"
+            ]
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "children": [
+          {
+            "text": "Robotics is moving beyond deterministic automation. Traditional systems excel in structured environments but are typically pre-programmed for specific tasks and struggle as variability increases. Physical AI adds layers of learning, perception and reasoning, enabling robots to understand context, adapt to changing environments and handle a broader range of real-world edge cases."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "children": [
+          {
+            "text": "This report examines the evolution of Physical AI, the underlying technology stack and the segments where we believe value will accrue. Our focus is primarily on the embodied layer - robotics and the infrastructure that enables it - where intelligence ultimately translates into physical action. While autonomous systems and industrial intelligence extend across and beyond robotics, we concentrate on the embodied stack. We also explore where India stands in this sector and what opportunities exist in the country."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "level": 3,
+        "children": [
+          {
+            "text": "DEFINING PHYSICAL AI AND ITS BREAK FROM TRADITIONAL ROBOTICS",
+            "marks": [
+              "bold"
+            ]
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "children": [
+          {
+            "text": "Distinguishing Physical AI from traditional robotics is critical: while the latter requires human intervention for every unforeseen edge case, Physical AI leverages a reasoning layer to handle real-world variability."
+          }
+        ]
+      },
+      {
+        "type": "image",
+        "src": "https://cdn.prod.website-files.com/649ac839edcdef49d684ea62/6a95ca87cde5dadb82231a06_Cover_Exfinity_Physical%20AI_page-0002.jpg",
+        "alt": ""
+      },
+      {
+        "type": "paragraph",
+        "children": [
+          {
+            "text": "The Paradigm Shift defines this transition as a move toward perception-led, adaptive autonomy. Traditional systems are high-precision but low-adaptable. Physical AI, conversely, understands context, follows high-level goals, and possesses the inherent ability to recover from failures without a manual reset."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "children": [
+          {
+            "text": "The Technology Unlocks for scaling beyond a single function on the factory floors lies in three core technical breakthroughs:"
+          }
+        ]
+      },
+      {
+        "type": "list",
+        "style": "bullet",
+        "items": [
+          [
+            {
+              "text": "Vision-Language Models (VLM): Enabling robots to reason about spatial context using natural language."
+            }
+          ],
+          [
+            {
+              "text": "Multi-modal Reasoning: Integrating disparate data streams into a single decision-making framework."
+            }
+          ],
+          [
+            {
+              "text": "World Models: These serve as the strategic shortcut for physics-based reasoning, allowing robots to observe and predict physical interactions without requiring decades of legacy datasets."
+            }
+          ]
+        ]
+      },
+      {
+        "type": "heading",
+        "level": 3,
+        "children": [
+          {
+            "text": "WHERE ROBOTIC CAPABILITY STILL FALLS SHORT",
+            "marks": [
+              "bold"
+            ]
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "children": [
+          {
+            "text": "The maturity framework evaluates where current robotic functions sit relative to human capability, highlighting the remaining bottlenecks for generalized autonomy."
+          }
+        ]
+      },
+      {
+        "type": "image",
+        "src": "https://cdn.prod.website-files.com/649ac839edcdef49d684ea62/6a96847cc74ba97029b3265a_Cover_Exfinity_Physical%20AI_page-0003.jpg",
+        "alt": ""
+      },
+      {
+        "type": "paragraph",
+        "children": [
+          {
+            "text": "The Maturity Spectrum"
+          }
+        ]
+      },
+      {
+        "type": "list",
+        "style": "bullet",
+        "items": [
+          [
+            {
+              "text": "Multi-modal Sensing (High Maturity): Sensing vision, touch, and sound is no longer the scaling bottleneck."
+            }
+          ],
+          [
+            {
+              "text": "Task Planning & Locomotion (Medium Maturity): LLMs and VLMs have accelerated agentic decision-making, while sim-to-real transfer has made robot mobility commercially viable."
+            }
+          ],
+          [
+            {
+              "text": "Manipulation & Dexterity (Low Maturity): Fine motor control and tactile precision remain the \"hardest challenges.\""
+            }
+          ]
+        ]
+      },
+      {
+        "type": "paragraph",
+        "children": [
+          {
+            "text": "This Reliability Gap is where Vertical Robots can achieve reliability in narrow, high-value domains - over general-purpose humanoids in the near term."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "level": 3,
+        "children": [
+          {
+            "text": "WE MUST UNDERSTAND THE SIX-LAYER PHYSICAL AI STACK TO EXPAND CAPABILITIES",
+            "marks": [
+              "bold"
+            ]
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "children": [
+          {
+            "text": "Anyone building a Physical AI robot today must navigate a bottom-up stack. This six-layer architecture rigorously maps the technology required across the embodiment layer."
+          }
+        ]
+      },
+      {
+        "type": "image",
+        "src": "https://cdn.prod.website-files.com/649ac839edcdef49d684ea62/6a95caad25ba1fd5f0ce3384_Cover_Exfinity_Physical%20AI_page-0004.jpg",
+        "alt": ""
+      },
+      {
+        "type": "list",
+        "style": "number",
+        "items": [
+          [
+            {
+              "text": "Infrastructure & Hardware: Beyond raw compute, this includes Edge Systems (on-device inference) and Middleware/Protocols (ROS2/DDS) that provide the connective tissue for robot-to-cloud synchronization."
+            }
+          ],
+          [
+            {
+              "text": "Foundation Models (The Brain): The intelligence layer now incorporates Vision-Language-Action (VLA) models, which translate perception directly into intent-based actions."
+            }
+          ],
+          [
+            {
+              "text": "Data-Perception-Control: The real-time intelligence loop for mapping, localization, and precision execution."
+            }
+          ],
+          [
+            {
+              "text": "Autonomy Tooling: The operations plane for orchestration, observability, and security."
+            }
+          ],
+          [
+            {
+              "text": "Physical Robots: The experience layer, ranging from AMRs to specialized industrial systems."
+            }
+          ],
+          [
+            {
+              "text": "Simulation (Vertical): The cross-stack “shadow world” for physics simulation, synthetic data, digital twins, sim-to-real, and validation."
+            }
+          ]
+        ]
+      },
+      {
+        "type": "heading",
+        "level": 3,
+        "children": [
+          {
+            "text": "WHY INDIA IS READY TO BUILD THE STACK",
+            "marks": [
+              "bold"
+            ]
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "children": [
+          {
+            "text": "India is strategically positioned to be a key global player from inception, with the right combination of global R&D presence, proven Physical AI companies, and exceptional STEM talent density."
+          }
+        ]
+      },
+      {
+        "type": "image",
+        "src": "https://cdn.prod.website-files.com/649ac839edcdef49d684ea62/6a9684cb58aac974b8f33915_Cover_Exfinity_Physical%20AI_page-0005.jpg",
+        "alt": ""
+      },
+      {
+        "type": "paragraph",
+        "children": [
+          {
+            "text": "India hosts over 2,500 Global Innovation Centers from leaders like NVIDIA, Google, and Bosch, creating a deep ecosystem for global R&D, engineering, and product design."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "children": [
+          {
+            "text": "India is already producing globally funded Physical AI companies. GreyOrange, Kinara, Ati Robotics, and Unbox demonstrate India’s ability to build export-ready IP across high-value layers of the stack."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "children": [
+          {
+            "text": "The Talent Advantage India’s STEM engine produces a high-beta opportunity that the US can no longer match in raw volume. (2.3M STEM Graduates in India vs. 0.8M in the USA  in 2025)"
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "level": 3,
+        "children": [
+          {
+            "text": "WE MAP THE INDIAN COMPANIES ALREADY IN PLAY",
+            "marks": [
+              "bold"
+            ]
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "children": [
+          {
+            "text": "The Indian ecosystem is field-testing the Physical AI thesis - but mostly at the top of the stack."
+          }
+        ]
+      },
+      {
+        "type": "image",
+        "src": "https://cdn.prod.website-files.com/649ac839edcdef49d684ea62/6a9684ac83cf47c021882cec_Cover_Exfinity_Physical%20AI_page-0006.jpg",
+        "alt": ""
+      },
+      {
+        "type": "paragraph",
+        "children": [
+          {
+            "text": "Our market map reveals meaningful activity in applications and form factors:"
+          }
+        ]
+      },
+      {
+        "type": "list",
+        "style": "bullet",
+        "items": [
+          [
+            {
+              "text": "Form Factors: Significant innovation is occurring in AMR & Aerial (Unbox Robotics, Raphe Mphibr), Robotic Arms & Cobots (CynLr, Systemantics), and Legged Robots (Ati Robotics)."
+            }
+          ],
+          [
+            {
+              "text": "Vertical Specialization: Startups are solving high-stakes problems in Medical & Life Sciences (Articulus, SSii) and Agricultural (Marut Drones), where specialized workflows offer a faster path to commercialization."
+            }
+          ],
+          [
+            {
+              "text": "Infrastructure & Tooling: Companies like Kinara (Edge AI) and GreyOrange (Orchestration) provide the \"operating system\" for fleets."
+            }
+          ]
+        ]
+      },
+      {
+        "type": "paragraph",
+        "children": [
+          {
+            "text": "The gap is at the base - foundation models and infrastructure purpose-built for Physical AI remain limited."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "level": 3,
+        "children": [
+          {
+            "text": "BASED ON THE ABOVE, EXFINITY'S THREE AREAS OF CONVICTION ARE AS FOLLOWS",
+            "marks": [
+              "bold"
+            ]
+          }
+        ]
+      },
+      {
+        "type": "image",
+        "src": "https://cdn.prod.website-files.com/649ac839edcdef49d684ea62/6a968370b8e2387ab0936023_Cover_Exfinity_Physical%20AI_page-0007.jpg",
+        "alt": ""
+      },
+      {
+        "type": "paragraph",
+        "children": [
+          {
+            "text": "I. Vertical Robots"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "children": [
+          {
+            "text": "For high-value/high-risk workflows, specialized systems prioritize reliability in high-stakes domains - manufacturing, surgical suites, Industrial plants long before general-purpose robots can successfully navigate the real life environments."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "children": [
+          {
+            "text": "II. Autonomy Tooling"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "children": [
+          {
+            "text": "As deployments move to large heterogeneous fleets, the software layer to manage them-data infrastructure, orchestration, and security-becomes the critical control plane."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "children": [
+          {
+            "text": "III. Hardware Stack"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "children": [
+          {
+            "text": "Proprietary design IP in critical components: motors, actuators, and Edge Systems. Critical components offer defensibility where proprietary engineering directly drives performance and reliability."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "level": 3,
+        "children": [
+          {
+            "text": "THE PHYSICAL AI INFLECTION IS HERE AND WE ARE BACKING THE BUILDERS OF THIS SPACE",
+            "marks": [
+              "bold"
+            ]
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "children": [
+          {
+            "text": "The transition to Physical AI is a current market reality."
+          }
+        ]
+      },
+      {
+        "type": "image",
+        "src": "https://cdn.prod.website-files.com/649ac839edcdef49d684ea62/6a95cb17e13be35d97ab3bae_Cover_Exfinity_Physical%20AI_page-0008.jpg",
+        "alt": ""
+      },
+      {
+        "type": "paragraph",
+        "children": [
+          {
+            "text": "Exfinity Venture Partners is the partner of choice for architects of the physical future. We are backing the founders building the next generation of Physical AI."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "children": [
+          {
+            "text": "If you are innovating in Robotics, Autonomous Systems, Industrial Intelligence, or Infrastructure, we would love to hear from you. "
+          },
+          {
+            "text": "\n"
+          },
+          {
+            "text": "\n"
+          },
+          {
+            "text": "Please reach out to us at "
+          },
+          {
+            "text": "info@exfinityventures.com",
+            "href": "mailto:info@exfinityventures.com"
+          },
+          {
+            "text": ". Let’s talk. "
+          }
+        ]
+      }
+    ],
+    "legacyPath": "/media/exf-physical-ai",
+    "originalUrl": "https://www.exfinityventures.com/media/exf-physical-ai"
+  },
+  {
+    "id": "inside-india-2026",
+    "slug": "/news/inside-india-2026",
+    "title": "Exfinity at Inside India 2026: Engaging with a Senior Danish Delegation",
+    "date": "February 28, 2026",
+    "category": "Social",
+    "image": "https://cdn.prod.website-files.com/649ac839edcdef49d684ea62/69ad8c8dcc12b45a72763d41_1772270519123.jpeg",
+    "body": [
+      {
+        "type": "paragraph",
+        "children": [
+          {
+            "text": "We had the privilege of engaging with a senior Danish delegation visiting India as part of the Inside India 2026 program across Mumbai, Pune and Bangalore, curated by China Experience. The cohort brought together leaders from institutions such as Dansk Ejerkapital, Nykredit, Formuepleje and more, against the backdrop of India's emergence as a key global growth engine and the ongoing India-EU trade and investment dialogue, including the recently signed Free Trade Agreement between the countries."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "children": [
+          {
+            "text": "Our partners Chinnu Senthilkumar and Jesper Ludolph shared Exfinity's perspective on building and scaling B2B tech from India for the world, followed by an engaging conversation with our portfolio companies Ati Motors and CloudSEK, represented by Naveen Arulselvan and Koushik Sivaraman respectively."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "children": [
+          {
+            "text": "The discussions underscored both the increasing interest from European enterprises in India's innovation and manufacturing story and the potential for deeper collaboration as trade ties strengthen and India cements its position as an economic powerhouse."
+          }
+        ]
+      }
+    ],
+    "legacyPath": "/media/exfinity-inside-india-2026-danish-delegation",
+    "originalUrl": "https://www.exfinityventures.com/media/exfinity-inside-india-2026-danish-delegation",
+    "externalUrl": "https://www.linkedin.com/feed/update/urn:li:activity:7433441337049522176"
+  },
+  {
+    "id": "fund-four",
+    "slug": "/news/fund-four",
+    "title": "Exfinity Venture Partners Unveils ₹1,100 Crore Fund IV for Deep-Tech Investments",
+    "date": "January 21, 2026",
+    "category": "News",
+    "image": "https://cdn.prod.website-files.com/649ac839edcdef49d684ea62/69ad8fe818f304cce8ef0299_WhatsApp%20Image%202026-01-21%20at%2008.44.17.jpeg",
+    "body": [
+      {
+        "type": "paragraph",
+        "children": [
+          {
+            "text": "Exfinity Venture Partners has launched a ₹1,100 crore fourth fund, expanding its focus on semiconductors, physical AI, advanced compute, robotics and enterprise AI software."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "children": [
+          {
+            "text": "The filing for Fund IV has been submitted to SEBI and the firm expects to start raising shortly, partners Chinnu Senthilkumar and Jesper Ludolph told ETEntrepreneur. The fund will remain early-stage focused but allocate a larger portion to follow-on rounds, given longer build and commercialisation cycles in deep tech."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "children": [
+          {
+            "text": "Exfinity has invested in 40 startups so far and has completed 17 investments from its third fund. The firm typically aims for 10–20 per cent ownership and expects cheque sizes to rise modestly in the new fund."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "children": [
+          {
+            "text": "Senthilkumar noted that some of the firm's earliest investments are now being validated as global markets shift — including Kinara AI, backed in 2018 and acquired by NXP Semiconductors, and Chara Technologies, invested in more than three years before rare-earth mineral concerns went mainstream. Exfinity also recently achieved full capital return for its 2016-vintage Fund II, supported by cross-border exits including the acquisitions of Kinara, Locus and AI Palette by multinational buyers."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "children": [
+          {
+            "text": "Fund IV will also target emerging categories such as photonics, quantum computing, hydrogen and energy systems, and life sciences — areas Exfinity has not previously invested in meaningfully but sees maturing rapidly."
+          }
+        ]
+      }
+    ],
+    "legacyPath": "/media/exfinity-fund-iv-1100-crore-deep-tech",
+    "originalUrl": "https://www.exfinityventures.com/media/exfinity-fund-iv-1100-crore-deep-tech",
+    "externalUrl": "https://b2b.economictimes.indiatimes.com/news/entrepreneur/exfinity-venture-partners-unveils-1100-crore-fund-iv-for-deep-tech-investments/126930732"
+  },
+  {
+    "id": "cloudsek-state-fund",
+    "slug": "/news/cloudsek-state-fund",
+    "title": "CloudSEK Becomes First Indian-Origin Cybersecurity Company to Receive Investment from a U.S. State Fund",
+    "date": "January 15, 2026",
+    "category": "News",
+    "image": "https://cdn.prod.website-files.com/649ac839edcdef49d684ea62/69ad8dc40da890f42d037c4e_CloudSEK_pic.jpeg",
+    "body": [
+      {
+        "type": "paragraph",
+        "children": [
+          {
+            "text": "CloudSEK, a Predictive Cyber Threat Intelligence firm specialising in AI-powered attack detection, has secured a strategic investment from Connecticut Innovations (CI), the venture capital arm of the State of Connecticut, as part of its Series B2 round. With this, CloudSEK becomes the first Indian-origin cybersecurity company to receive funding from a U.S. state-backed venture fund."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "children": [
+          {
+            "text": "The partnership with CI was forged after CloudSEK emerged as a top startup at VentureClash, CI's global investment pitch competition, where CEO Rahul Sasi and product owner Nivya Ravi pitched to a panel including Indra Nooyi, former Chair and CEO of PepsiCo, and Connecticut Governor Ned Lamont."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "children": [
+          {
+            "text": "CloudSEK will use the investment to establish its U.S. regional hub in Connecticut, recruit cybersecurity and AI talent, build academic and research partnerships, and drive region-specific innovation."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "children": [
+          {
+            "text": "Early investors including Exfinity Ventures continue to support the company's long-term growth."
+          }
+        ]
+      }
+    ],
+    "legacyPath": "/media/cloudsek-first-indian-origin-cybersecurity-us-state-fund-investment",
+    "originalUrl": "https://www.exfinityventures.com/media/cloudsek-first-indian-origin-cybersecurity-us-state-fund-investment",
+    "externalUrl": "https://www.prnewswire.com/news-releases/cloudsek-becomes-first-indian-origin-cybersecurity-company-to-receive-investment-from-a-us-state-fund-302662459.html"
+  },
+  {
+    "id": "chara-series-a",
+    "slug": "/news/chara-series-a",
+    "title": "Chara Technologies raises Rs 52 crore to expand rare-earth-free motor manufacturing",
+    "date": "October 13, 2025",
+    "category": "News",
+    "image": "https://cdn.prod.website-files.com/649ac839edcdef49d684ea62/690b21e3750b58af368b8b5f_Screenshot%202025-11-05%20at%203.37.10%20PM.png",
+    "body": [
+      {
+        "type": "paragraph",
+        "children": [
+          {
+            "text": "Chara Technologies, a Bengaluru-based deep-tech startup, has raised ₹52 crore (around USD 6 million) in a Series A round led by Arkam Ventures, with participation from Exfinity Venture Partners, Kalaari Capital, and IIMA Ventures. Founded by Bhaktha Keshavachar, Mahalingam Koushik, and Ravi Prasad, the company focuses on designing and manufacturing next-generation electric motors and controllers that completely eliminate the use of rare-earth magnets. Its proprietary synchronous reluctance motor (SynRM) technology delivers performance comparable to permanent-magnet motors while significantly reducing costs and supply-chain dependence on rare-earth materials, a critical vulnerability in the global EV industry."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "children": [
+          {
+            "text": "With this funding, Chara aims to expand its manufacturing and testing facilities in Bengaluru, increasing annual production capacity from approximately 20,000 units to 100,000 units. The company also plans to diversify its product portfolio, introducing high-speed, lightweight motors and larger-capacity variants catering to electric two-wheelers, three-wheelers, four-wheelers, off-highway vehicles, and industrial applications. Chara currently serves over 100 customers, including major OEMs such as Greaves Cotton, Sonalika Tractors, and VST Motors, and has a joint manufacturing partnership with Greaves Cotton in Aurangabad."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "children": [
+          {
+            "text": "By eliminating rare-earth materials, Chara’s innovation supports India’s self-reliance and “Make in India” ambitions in advanced manufacturing while reducing environmental impact associated with rare-earth mining. Its cost-effective and scalable technology positions India as a credible player in the global sustainable mobility ecosystem, offering an indigenous solution to one of the most pressing supply chain and sustainability challenges in the electric motor industry."
+          }
+        ]
+      }
+    ],
+    "legacyPath": "/media/chara-technologies-raises-rs-52-crore-to-expand-rare-earth-free-motor-manufacturing",
+    "originalUrl": "https://www.exfinityventures.com/media/chara-technologies-raises-rs-52-crore-to-expand-rare-earth-free-motor-manufacturing",
+    "externalUrl": "https://www.moneycontrol.com/news/business/startup/chara-technologies-raises-rs-52-crore-to-expand-rare-earth-free-motor-manufacturing-13611690.html"
+  },
+  {
+    "id": "ikea-locus",
+    "slug": "/news/ikea-locus",
+    "title": "IKEA arm acquires India-born logistics tech startup Locus",
+    "date": "October 7, 2025",
+    "category": "News",
+    "image": "https://cdn.prod.website-files.com/649ac839edcdef49d684ea62/690b26901bfb5c895f120914_Screenshot%202025-11-05%20at%203.57.12%20PM.png",
+    "body": [
+      {
+        "type": "paragraph",
+        "children": [
+          {
+            "text": "Locus, an India-born logistics technology startup founded in 2015, has been acquired by Ingka Investments, the investment arm of IKEA, for an undisclosed amount. Headquartered in the U.S. with Indian roots, Locus provides an AI-powered logistics management platform that optimizes delivery routes, enhances real-time tracking, and improves supply chain efficiency for global enterprises."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "children": [
+          {
+            "text": "The acquisition will enable IKEA to strengthen its fulfilment and last-mile logistics capabilities, supporting faster, more flexible, and sustainable deliveries worldwide. It aligns with IKEA’s broader “One IKEA” strategy to enhance omnichannel fulfilment and meet growing customer demand for home delivery services."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "children": [
+          {
+            "text": "Locus will continue to operate independently, serving a diverse global client base while expanding its product and engineering capabilities. The deal highlights India’s emergence as a hub for deep technology and logistics innovation, showcasing how homegrown startups are shaping global supply chain transformation."
+          }
+        ]
+      }
+    ],
+    "legacyPath": "/media/ikea-arm-acquires-india-born-logistics-tech-startup-locus",
+    "originalUrl": "https://www.exfinityventures.com/media/ikea-arm-acquires-india-born-logistics-tech-startup-locus",
+    "externalUrl": "https://www.fortuneindia.com/business-news/ikea-arm-acquires-india-born-logistics-tech-startup-locus/127282"
+  },
+  {
+    "id": "maieutic-funding",
+    "slug": "/news/maieutic-funding",
+    "title": "Deeptech startup Maieutic Semiconductor raises $4.15 million from Exfinity Venture Partners",
+    "date": "July 3, 2025",
+    "category": "News",
+    "image": "https://cdn.prod.website-files.com/649ac839edcdef49d684ea62/690b27b708af03bcb58d3ac5_Screenshot%202025-11-05%20at%204.02.09%20PM.png",
+    "body": [
+      {
+        "type": "paragraph",
+        "children": [
+          {
+            "text": "Maieutic Semiconductor, a Bengaluru-based deep-tech startup, has raised USD 4.15 million in a seed round co-led by Endiya Partners and Exfinity Venture Partners. Founded in early 2025 by industry veterans Gireesh Rajendran, Ashish Lachhwani, Rakesh Kumar, and Krishna Sankar, the company is building a generative AI-powered “co-pilot” to transform analog integrated circuit (IC) design — one of the most complex and under-automated parts of semiconductor development."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "children": [
+          {
+            "text": "The platform aims to automate traditionally manual design workflows, reduce development cycles from weeks to days, and enable greater accuracy and efficiency in analog design. By leveraging AI to detect design inconsistencies and optimize trade-offs, Maieutic seeks to make analog design faster, more accessible, and less dependent on highly specialized expertise."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "children": [
+          {
+            "text": "With this funding, Maieutic plans to strengthen its engineering team, accelerate product development, and expand globally. The company’s innovation has the potential to redefine analog chip design and enhance India’s position in the global semiconductor value chain."
+          }
+        ]
+      }
+    ],
+    "legacyPath": "/media/deeptech-startup-maieutic-semiconductor-raises-4-15-million-from-exfinity-venture-partners",
+    "originalUrl": "https://www.exfinityventures.com/media/deeptech-startup-maieutic-semiconductor-raises-4-15-million-from-exfinity-venture-partners",
+    "externalUrl": "https://economictimes.indiatimes.com/tech/funding/deeptech-startup-maieutic-semiconductor-raises-4-15-million-from-endiya-partners-exfinity-venture-partners/articleshow/122210969.cms?from=mdr"
+  },
+  {
+    "id": "this-indian-genai-startup-is-reshaping-dubbing-and-lip-sync",
+    "slug": "/news/this-indian-genai-startup-is-reshaping-dubbing-and-lip-sync",
+    "title": "This Indian GenAI Startup Is Reshaping Dubbing and Lip Sync",
+    "date": "June 15, 2025",
+    "category": "News",
+    "image": "https://cdn.prod.website-files.com/649ac839edcdef49d684ea62/690b28961c017c0f139cb931_Screenshot%202025-11-05%20at%204.05.51%20PM.png",
+    "body": [
+      {
+        "type": "paragraph",
+        "children": [
+          {
+            "text": "Neural Garage, an Indian Generative AI startup, is redefining how dubbing and lip-sync are done for video content across languages. The company’s technology focuses on eliminating “visual discord”, the mismatch between a speaker’s lip movements and dubbed audio -by using AI models that accurately align lip motion with the translated dialogue. This ensures that localized content looks natural and immersive, preserving both the tone and emotion of the original performance."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "children": [
+          {
+            "text": "The platform combines advanced speech synthesis, facial animation, and deep learning to deliver seamless multilingual versions of video content. By maintaining the authenticity of voice, expression, and timing, Neural Garage enables creators, studios, and OTT platforms to expand their global reach without compromising quality. The solution is designed to work at scale, addressing a key bottleneck in the fast-growing localization industry."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "children": [
+          {
+            "text": "Through this innovation, Neural Garage is positioning India as a leader in GenAI-driven media technology. Its approach not only enhances viewer experience but also supports more inclusive content distribution by bridging linguistic barriers and democratizing access to storytelling worldwide."
+          }
+        ]
+      }
+    ],
+    "legacyPath": "/media/this-indian-genai-startup-is-reshaping-dubbing-and-lip-sync",
+    "originalUrl": "https://www.exfinityventures.com/media/this-indian-genai-startup-is-reshaping-dubbing-and-lip-sync",
+    "externalUrl": "https://www.forbes.com/sites/swetakaushal/2025/06/15/this-indian-genai-startup-is-reshaping-dubbing-and-lip-sync/"
+  },
+  {
+    "id": "cybersecurity-startup-cloudsek-bags-19-mn-from-exfinity-ventures-massmutual-ventures-others",
+    "slug": "/news/cybersecurity-startup-cloudsek-bags-19-mn-from-exfinity-ventures-massmutual-ventures-others",
+    "title": "Cybersecurity Startup CloudSEK Bags $19 Mn From Exfinity Ventures, Massmutual Ventures, Others",
+    "date": "May 20, 2025",
+    "category": "News",
+    "image": "https://cdn.prod.website-files.com/649ac839edcdef49d684ea62/690b29655c1fb24246660dfb_Screenshot%202025-11-05%20at%204.09.08%20PM.png",
+    "body": [
+      {
+        "type": "paragraph",
+        "children": [
+          {
+            "text": "CloudSEK, an AI-driven cybersecurity startup founded in 2015 by Rahul Sasi, has raised USD 19 million in its Series A2 and B1 funding rounds from investors including MassMutual Ventures, Inflexor Ventures, Prana Ventures, Tenacity Ventures, and Commvault. The funding marks a significant milestone in the company’s expansion and growth journey."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "children": [
+          {
+            "text": "CloudSEK’s platform provides predictive threat intelligence, helping enterprises identify potential cyber risks such as leaked credentials, exposed APIs, and compromised vendors before they escalate into major security breaches. Its AI-powered system continuously monitors digital assets to deliver real-time alerts and actionable insights, enabling proactive cyber defense. The company currently serves over 250 global enterprises across sectors like banking, healthcare, and technology."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "children": [
+          {
+            "text": "With this capital infusion, CloudSEK aims to enhance its AI capabilities, strengthen product innovation, and accelerate its expansion in international markets, particularly the United States. The company’s focus on preemptive cybersecurity reflects the growing global shift toward intelligence-led threat prevention."
+          }
+        ]
+      }
+    ],
+    "legacyPath": "/media/cybersecurity-startup-cloudsek-bags-19-mn-from-exfinity-ventures-massmutual-ventures-others",
+    "originalUrl": "https://www.exfinityventures.com/media/cybersecurity-startup-cloudsek-bags-19-mn-from-exfinity-ventures-massmutual-ventures-others",
+    "externalUrl": "https://inc42.com/buzz/cybersecurity-startup-cloudsek-bags-19-mn-from-massmutual-ventures-others/"
+  },
+  {
+    "id": "nxp-agrees-to-acquire-edge-ai-pioneer-kinara-to-redefine-the-intelligent-edge",
+    "slug": "/news/nxp-agrees-to-acquire-edge-ai-pioneer-kinara-to-redefine-the-intelligent-edge",
+    "title": "NXP Agrees to Acquire Edge AI Pioneer Kinara to Redefine the Intelligent Edge",
+    "date": "February 10, 2025",
+    "category": "News",
+    "image": "https://cdn.prod.website-files.com/649ac839edcdef49d684ea62/690b2a8fdda5a7332ca0cdce_Screenshot%202025-11-05%20at%204.14.17%20PM.png",
+    "body": [
+      {
+        "type": "paragraph",
+        "children": [
+          {
+            "text": "NXP Semiconductors N.V. has announced its agreement to acquire Kinara, Inc., an edge AI pioneer, in an all-cash deal valued at approximately USD 307 million. The acquisition is expected to close in the first half of 2025 and marks a strategic move to enhance NXP’s capabilities in the rapidly expanding field of edge intelligence."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "children": [
+          {
+            "text": "Kinara is known for its high-performance, energy-efficient neural processing units (NPUs) and supporting software designed for real-time, on-device AI inference, including generative AI workloads. Its flagship products, the Ara-1 and Ara-2 NPUs, enable AI computing directly at the edge, reducing latency and power consumption while ensuring data privacy."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "children": [
+          {
+            "text": "Through this acquisition, NXP aims to integrate Kinara’s technology into its broader portfolio of processors, connectivity, and security solutions. The deal strengthens NXP’s position in industrial, automotive, and IoT markets, accelerating its vision of scalable, intelligent edge devices that operate efficiently and securely without reliance on cloud-based processing."
+          }
+        ]
+      }
+    ],
+    "legacyPath": "/media/nxp-agrees-to-acquire-edge-ai-pioneer-kinara-to-redefine-the-intelligent-edge",
+    "originalUrl": "https://www.exfinityventures.com/media/nxp-agrees-to-acquire-edge-ai-pioneer-kinara-to-redefine-the-intelligent-edge",
+    "externalUrl": "https://www.globenewswire.com/news-release/2025/02/10/3023372/0/en/NXP-Agrees-to-Acquire-Edge-AI-Pioneer-Kinara-to-Redefine-the-Intelligent-Edge.html"
+  },
+  {
+    "id": "ati-motors-raises-20m-as-indias-robotics-industry-grows",
+    "slug": "/news/ati-motors-raises-20m-as-indias-robotics-industry-grows",
+    "title": "Ati Motors raises $20M as India’s robotics industry grows",
+    "date": "January 22, 2025",
+    "category": "News",
+    "image": "https://cdn.prod.website-files.com/649ac839edcdef49d684ea62/690b313196c883dd554a43dc_Screenshot%202025-11-05%20at%204.42.36%20PM.png",
+    "body": [
+      {
+        "type": "paragraph",
+        "children": [
+          {
+            "text": "Ati Motors, a Bengaluru-based autonomous mobile robotics startup backed by Exfinity Venture Partners, has raised USD 20 million in a Series B funding round led by Walden Catalyst Ventures and NGP Capital, with continued participation from Exfinity, True Ventures, Athera Venture Partners, and Blume Ventures. The round reinforces the growing investor conviction in India’s deep-tech and industrial automation capabilities."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "children": [
+          {
+            "text": "Ati Motors develops full-stack autonomous mobile robots (AMRs) that integrate AI, sensor fusion, and fleet management software to automate material movement in complex industrial environments. Its flagship “Sherpa” robots are deployed across more than 40 manufacturing facilities worldwide, serving major automotive and industrial clients and delivering safer, more efficient, and scalable logistics operations."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "children": [
+          {
+            "text": "Exfinity Venture Partners, an early investor in Ati Motors, has played a key role in supporting its product innovation and global expansion. With the fresh capital, Ati Motors aims to strengthen its AI capabilities, expand into new geographies such as North America and Southeast Asia, and accelerate India’s emergence as a global hub for intelligent robotics."
+          }
+        ]
+      }
+    ],
+    "legacyPath": "/media/ati-motors-raises-20m-as-indias-robotics-industry-grows",
+    "originalUrl": "https://www.exfinityventures.com/media/ati-motors-raises-20m-as-indias-robotics-industry-grows",
+    "externalUrl": "https://techcrunch.com/2025/01/22/ati-motors-raises-20m-as-indias-robotics-industry-grows/"
+  },
+  {
+    "id": "eccentric-engine-secures-5m-in-pre-series-a-funding-co-led-by-exfinity-venture-partners-arkam-ventures",
+    "slug": "/news/eccentric-engine-secures-5m-in-pre-series-a-funding-co-led-by-exfinity-venture-partners-arkam-ventures",
+    "title": "Eccentric Engine secures $5M in pre-Series A funding co-led by Exfinity Venture Partners, Arkam Ventures",
+    "date": "January 15, 2025",
+    "category": "News",
+    "image": "https://cdn.prod.website-files.com/649ac839edcdef49d684ea62/690b3290228e5aa970f8d2ad_Screenshot%202025-11-05%20at%204.48.26%20PM.png",
+    "body": [
+      {
+        "type": "paragraph",
+        "children": [
+          {
+            "text": "Eccentric (formerly Eccentric Engine), a Mumbai-based 3D visualization technology company for the automotive industry, has raised USD 5 million in a pre-Series A funding round co-led by Exfinity Venture Partners and Arkam Ventures. This marks the company’s first institutional fundraise since its founding in 2012 and a major step toward global expansion."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "children": [
+          {
+            "text": "Eccentric’s flagship platform, One3D, converts automotive OEMs’ CAD data into immersive, real-time 3D experiences across web, mobile, and dealership environments—enabling customers to explore, configure, and experience vehicles without downloading an app. The platform has recorded over 200 million interactions and is deployed across more than 3,500 dealer locations globally."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "children": [
+          {
+            "text": "Exfinity Venture Partners’ investment underscores its focus on deep enterprise and frontier technologies with scalable global applications, while Arkam Ventures’ participation highlights the growing potential of immersive digital experiences. The funding will support Eccentric’s expansion into North America and Europe, product innovation, and strengthening of its leadership position in automotive 3D visualization."
+          }
+        ]
+      }
+    ],
+    "legacyPath": "/media/eccentric-engine-secures-5m-in-pre-series-a-funding-co-led-by-exfinity-venture-partners-arkam-ventures",
+    "originalUrl": "https://www.exfinityventures.com/media/eccentric-engine-secures-5m-in-pre-series-a-funding-co-led-by-exfinity-venture-partners-arkam-ventures",
+    "externalUrl": "https://yourstory.com/2025/01/funding-eccentric-engine-exfinity-venture-partners-arkam-ventures"
+  },
+  {
+    "id": "sportstech-startup-str8bat-raises-3-5-million-from-exfinity-venture-partners",
+    "slug": "/news/sportstech-startup-str8bat-raises-3-5-million-from-exfinity-venture-partners",
+    "title": "Sportstech Startup Str8bat Raises $3.5 million from Exfinity Venture Partners",
+    "date": "October 3, 2024",
+    "category": "News",
+    "image": "https://cdn.prod.website-files.com/649ac839edcdef49d684ea62/670cf4a7ac6deb76fc5688f4_picture.png",
+    "body": [
+      {
+        "type": "paragraph",
+        "children": [
+          {
+            "text": "Sports technology startup Str8bat has raised $3.5 million (about Rs 29.3 crore) in a series A funding round led by Exfinity Venture Partners."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "children": [
+          {
+            "text": "The round also saw participation from TRTL Ventures, Eternal Capital and the VCats group (including Venture Catalyst and VCgrid), alongside existing investors such as Techstars and SucSEED Indovation Fund."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "children": [
+          {
+            "text": "The Bengaluru-based startup plans to use the new funds to accelerate product development, introduce new product lines and expand both its marketing efforts and geographic footprint."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "children": [
+          {
+            "text": "Founded in 2018 by Gagan Daga, Rahul Nagar and Madhusudan R, Str8bat is a sports technology company that has developed a platform providing real-time data analytics for athletes. Its core product is a sensor that attaches to the back of a cricket bat, offering real-time insights to help players improve their game."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "children": [
+          {
+            "text": "Str8bat’s mobile app delivers key metrics such as bat speed, impact speed and bat lift angle. The startup has partnered with sports original equipment manufacturers (OEMs) like SG Cricket to launch the “smart willow” bat, which has the sensor embedded directly into the bat, enabling advanced shot tracking without the need for cameras."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "children": [
+          {
+            "text": "“In a world where power hitting and innovative shots dominate, Str8bat’s cutting-edge insights are helping coaches, players and teams achieve superior performance outcomes,” said Shailesh Ghorpade, founding managing partner, Exfinity Venture Partners. “Their strategic partnerships, especially in cricket, enhance their credibility and fast-track their go-to-market strategy. We are thrilled to support their journey in redefining players’ performance on a global scale.”"
+          }
+        ]
+      }
+    ],
+    "legacyPath": "/media/sportstech-startup-str8bat-raises-3-5-million-from-exfinity-venture-partners",
+    "originalUrl": "https://www.exfinityventures.com/media/sportstech-startup-str8bat-raises-3-5-million-from-exfinity-venture-partners",
+    "externalUrl": "https://economictimes.indiatimes.com/tech/funding/sportstech-startup-str8bat-raises-3-5-million-from-exfinity-venture-partners-others/articleshow/113898598.cms?from=mdr"
+  },
+  {
+    "id": "musashi-seimitsu-partners-with-log9-materials-to-revolutionize-the-ev-market",
+    "slug": "/news/musashi-seimitsu-partners-with-log9-materials-to-revolutionize-the-ev-market",
+    "title": "Musashi Seimitsu partners with Log9 Materials to revolutionize the EV market",
+    "date": "September 26, 2024",
+    "category": "News",
+    "image": "https://cdn.prod.website-files.com/649ac839edcdef49d684ea62/670cf82698935c86e973ebe0_Log9-Musashi-MOU.png",
+    "body": [
+      {
+        "type": "paragraph",
+        "children": [
+          {
+            "text": "Musashi Seimitsu Industry, Japan, has announced a strategic partnership with Log9 Materials, that aims to revolutionise the electric vehicle (EV) market, by combining Musashi’s high-performance e-Axle system and Log9’s battery technology creating an integrated powertrain solution tailored specifically for electric two-wheelers and three-wheelers."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "children": [
+          {
+            "text": "Designed for OEMs, the partnership aims to reduce energy losses common in conventional powertrains, extending vehicle range and improving performance across diverse driving conditions, especially in densely populated urban areas, by combining battery packs with e-Axels."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "children": [
+          {
+            "text": "Pankaj Sharma, Co-Founder of Log9 Materials shared “We are thrilled to announce our partnership with Musashi, as we work together towards a shared vision of advancing high-end engineering solutions for electric vehicles (EVs). By combining Musahi’s expertise in manufacturing and energy-efficient motion conversion with Log9’s cutting-edge battery technology, we aim to bring the most efficient powertrain solutions to the market. Both companies are deeply committed to the common goal of decarbonizing the world through innovative technology, and this collaboration strengthens our aligned business ethos and future objectives.”"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "children": [
+          {
+            "text": "Commenting on the association,"
+          },
+          {
+            "text": " ",
+            "marks": [
+              "bold"
+            ]
+          },
+          {
+            "text": "Hiroshi Otsuka, President and Group CEO, Musashi, said, “By joining forces with Log9, we are committed to delivering a comprehensive, high-performance solution tailored for electric two-wheelers and three-wheelers. Our goal is to address critical market gaps and offer an integrated system that enhances energy efficiency, optimises synergy between battery and drivetrain systems, and sets new industry standards for sustainability and innovation.”"
+          }
+        ]
+      }
+    ],
+    "legacyPath": "/media/musashi-seimitsu-partners-with-log9-materials-to-revolutionize-the-ev-market",
+    "originalUrl": "https://www.exfinityventures.com/media/musashi-seimitsu-partners-with-log9-materials-to-revolutionize-the-ev-market",
+    "externalUrl": "https://www.financialexpress.com/business/express-mobility-musashi-seimitsu-partners-with-log9-materials-to-revolutionise-the-ev-market-3623684/"
+  },
+  {
+    "id": "aarna-bags-funding-from-exfinity-venture-partners-to-offer-gpu-as-a-service",
+    "slug": "/news/aarna-bags-funding-from-exfinity-venture-partners-to-offer-gpu-as-a-service",
+    "title": "Aarna Bags Funding From Exfinity Venture Partners To Offer GPU-As-A-Service",
+    "date": "September 25, 2024",
+    "category": "News",
+    "image": "https://cdn.prod.website-files.com/649ac839edcdef49d684ea62/670cf9afb573587aec4e33b7_Aarna.ml_-800x400.png",
+    "body": [
+      {
+        "type": "paragraph",
+        "children": [
+          {
+            "text": "Aarna.ml, an open-source GPU-as-a-Service (GPUaaS) AI cloud software platform, has secured USD 1.25 million in its Series A funding round. The investment was led by Exfinity Venture Partners, a leading venture capital firm known for its deep-tech investments."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "children": [
+          {
+            "text": "This funding round follows Aarna.ml's previous raise of USD 5.5 million in October 2023, co-led by NVIDIA, LDV Partners, 3Lines, CARAT Venture Partners, and others."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "children": [
+          {
+            "text": "The proceeds will be used to extend its platform to the GPU reference architectures that include high-speed networks and storage."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "children": [
+          {
+            "text": "Amar Kapadia, Co-founder and CEO of Aarna.ml, said, \"Beyond the financial support, Exfinity's expertise in scaling deep-tech startups in cross-border settings will significantly aid our expansion. With Exfinity's backing, we are poised to extend our reach and enhance our impact in the industry.\""
+          }
+        ]
+      }
+    ],
+    "legacyPath": "/media/aarna-bags-funding-from-exfinity-venture-partners-to-offer-gpu-as-a-service",
+    "originalUrl": "https://www.exfinityventures.com/media/aarna-bags-funding-from-exfinity-venture-partners-to-offer-gpu-as-a-service",
+    "externalUrl": "https://inc42.com/buzz/aarna-bags-funding-from-exfinity-venture-partners-to-offer-gpu-as-a-service/"
+  },
+  {
+    "id": "neuralgarage-and-ufo-moviez-announce-a-landmark-partnership",
+    "slug": "/news/neuralgarage-and-ufo-moviez-announce-a-landmark-partnership",
+    "title": "NeuralGarage and UFO Moviez Announce a Landmark Partnership",
+    "date": "July 29, 2024",
+    "category": "News",
+    "image": "https://cdn.prod.website-files.com/649ac839edcdef49d684ea62/670cfaec5a4e01b2e3f3c1cf_NG%20UFO.jpeg",
+    "body": [
+      {
+        "type": "paragraph",
+        "children": [
+          {
+            "text": "In a global first, NeuralGarage, a Bangalore-based Generative AI company has collaborated with UFO Moviez, India’s largest digital cinema distribution network and in-cinema advertising platform, showcasing the way how GenAI technology can be brought to its customers directly paving the way for mass adoption."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "children": [
+          {
+            "text": "Commenting on the development, Mr. Mandar Natekar, Co-Founder and CEO, Neural Garage, said – “VisualDub has been built keeping in mind the exacting expectations from actors, film studios & producers preserving the cinematic expression as the original. The complex Generative AI technology that we have built ensures that visual integrity is retained across every frame and audiences have a mind-blowing experience watching their favorite film in a language of their choice, without the barrier of visual discord that comes in when films are dubbed. We are excited to collaborate with UFO Moviez to bring their technology to the film industry in India. UFO, with their massive network in the film production & distribution fraternity, are the best partners we could have imagined and together with them, we will bring this technology to the film industry at a rapid pace.” "
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "children": [
+          {
+            "text": "Mr. Rajesh Mishra, Executive Director and Group CEO , UFO Moviez  said – “This partnership marks a significant milestone in the industry, showcasing the capabilities of a completely India-based Generative AI startup in solving one of the biggest problems in film making when they are dubbed into multiple languages. As NeuralGarage and UFO Moviez join forces, audiences can look forward to a new era of multi lingual visual content that feels natural and authentic, setting the stage for future innovations that will further enhance the viewing experience for lovers of cinema across the world."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "children": [
+          {
+            "text": "Read more about the announcement here.",
+            "href": "https://cxotoday.com/press-release/neuralgarage-and-ufo-moviez-announce-a-landmark-partnership-to-revolutionize-the-way-films-are-produced-shot-and-viewed-through-generative-ai-technology-visualdub/"
+          },
+          {
+            "text": " "
+          }
+        ]
+      }
+    ],
+    "legacyPath": "/media/neuralgarage-and-ufo-moviez-announce-a-landmark-partnership",
+    "originalUrl": "https://www.exfinityventures.com/media/neuralgarage-and-ufo-moviez-announce-a-landmark-partnership",
+    "externalUrl": "https://cxotoday.com/press-release/neuralgarage-and-ufo-moviez-announce-a-landmark-partnership-to-revolutionize-the-way-films-are-produced-shot-and-viewed-through-generative-ai-technology-visualdub/"
+  },
+  {
+    "id": "health-tech-startup-zyla-raises-4-mn-in-series-a-led-by-exfinity-ventures",
+    "slug": "/news/health-tech-startup-zyla-raises-4-mn-in-series-a-led-by-exfinity-ventures",
+    "title": "Health-tech startup Zyla raises $4 mn in Series A led by Exfinity Ventures",
+    "date": "November 30, 2023",
+    "category": "News",
+    "image": "https://cdn.prod.website-files.com/649ac839edcdef49d684ea62/690c201b810e51ef3524364a_Screenshot%202025-11-06%20at%209.41.57%20AM.png",
+    "body": [
+      {
+        "type": "paragraph",
+        "children": [
+          {
+            "text": "Zyla Health, a Gurugram-based healthtech startup, has raised USD 4 million in a Series A funding round led by Exfinity Venture Partners, with participation from Sony Innovation Fund, Venture Catalysts, and Aureolis Ventures. The fresh capital will be used to strengthen its technology stack, expand across insurance, corporate wellness, and pharmaceutical segments, and enhance data-driven care delivery."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "children": [
+          {
+            "text": "Zyla Health provides an AI-enabled continuous care management platform that connects patients with medical experts for personalized, real-time health support. It focuses on chronic disease management, offering integrated care through partnerships with enterprises, diagnostic networks, and connected health devices. The company has reported strong year-on-year growth and high client retention across its B2B verticals."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "children": [
+          {
+            "text": "Exfinity Venture Partners’ investment underscores its confidence in Zyla’s mission to make healthcare proactive and accessible. The fund’s support aligns with its broader strategy of backing tech-driven innovations that improve outcomes, reduce hospitalization costs, and bring scalability to India’s chronic care ecosystem."
+          }
+        ]
+      }
+    ],
+    "legacyPath": "/media/health-tech-startup-zyla-raises-4-mn-in-series-a-led-by-exfinity-ventures",
+    "originalUrl": "https://www.exfinityventures.com/media/health-tech-startup-zyla-raises-4-mn-in-series-a-led-by-exfinity-ventures",
+    "externalUrl": "https://www.livemint.com/companies/start-ups/healthtech-startup-zyla-raises-4-mn-in-series-a-led-by-exfinity-ventures-11701352736688.html"
+  },
+  {
+    "id": "rezolve-ai-raises-11m-series-a-led-by-sig-venture-capital-exfinity-ventures",
+    "slug": "/news/rezolve-ai-raises-11m-series-a-led-by-sig-venture-capital-exfinity-ventures",
+    "title": "Rezolve.ai Raises $11M Series A Led by SIG Venture Capital, Exfinity Ventures",
+    "date": "February 9, 2023",
+    "category": "News",
+    "image": "https://cdn.prod.website-files.com/649ac839edcdef49d684ea62/690c215458eddf067bd4c170_Screenshot%202025-11-06%20at%209.47.09%20AM.png",
+    "body": [
+      {
+        "type": "paragraph",
+        "children": [
+          {
+            "text": "Rezolve.ai, a California-based SaaS startup focused on AI-driven employee service automation, has raised USD 11 million in a Series A round led by SIG Venture Capital, with significant participation from Exfinity Venture Partners. The round highlights Exfinity’s continued commitment to investing in enterprise SaaS and deep technology ventures that are redefining global workplace efficiency."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "children": [
+          {
+            "text": "Exfinity Venture Partners’ support has been instrumental in helping Rezolve.ai scale its AI-first approach to enterprise support. The company’s platform integrates with collaboration tools such as Microsoft Teams and Slack, enabling employees to access instant, automated IT and HR assistance. By combining generative AI with intelligent automation, Rezolve.ai dramatically reduces ticket volumes, accelerates query resolution, and improves workforce productivity."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "children": [
+          {
+            "text": "The fresh funding will help Rezolve.ai expand its product suite, strengthen AI capabilities, and accelerate market expansion. With Exfinity’s strategic backing, Rezolve.ai is poised to establish itself as a category leader in AI-powered enterprise support, driving the next wave of intelligent automation across global workplaces."
+          }
+        ]
+      }
+    ],
+    "legacyPath": "/media/rezolve-ai-raises-11m-series-a-led-by-sig-venture-capital-exfinity-ventures",
+    "originalUrl": "https://www.exfinityventures.com/media/rezolve-ai-raises-11m-series-a-led-by-sig-venture-capital-exfinity-ventures",
+    "externalUrl": "https://www.globenewswire.com/news-release/2023/02/09/2605554/0/en/Rezolve-ai-Raises-11M-Series-A-Led-by-SIG-Venture-Capital.html?utm_source=chatgpt.com"
+  },
+  {
+    "id": "deeptech-startup-chara-raises-4-75-million-from-exfinity-others",
+    "slug": "/news/deeptech-startup-chara-raises-4-75-million-from-exfinity-others",
+    "title": "Deeptech startup Chara raises $4.75 million from Exfinity, others",
+    "date": "January 17, 2023",
+    "category": "News",
+    "image": "https://cdn.prod.website-files.com/649ac839edcdef49d684ea62/690c2282eb64ac1d91e784f6_Screenshot%202025-11-06%20at%209.52.11%20AM.png",
+    "body": [
+      {
+        "type": "paragraph",
+        "children": [
+          {
+            "text": "Chara Technologies, a Bengaluru-based deep-tech company developing rare-earth-free electric motors and controllers, has raised USD 4.75 million in a pre-Series A funding round led by Exfinity Venture Partners, with participation from other strategic investors. The funding reinforces Exfinity’s focus on backing deep-tech ventures driving India’s technological self-reliance."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "children": [
+          {
+            "text": "Chara’s patented technology is centered on developing next-generation switched reluctance motors (SRMs) that eliminate the use of rare-earth magnets—reducing supply chain dependence and costs while enhancing sustainability. Its applications span electric vehicles, HVAC systems, and industrial automation."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "children": [
+          {
+            "text": "With this funding, Chara plans to scale production, expand its product line, and strengthen its engineering capabilities. Exfinity’s leadership in the round highlights its belief in Chara’s potential to redefine India’s role in the global electric mobility and energy efficiency ecosystem."
+          }
+        ]
+      }
+    ],
+    "legacyPath": "/media/deeptech-startup-chara-raises-4-75-million-from-exfinity-others",
+    "originalUrl": "https://www.exfinityventures.com/media/deeptech-startup-chara-raises-4-75-million-from-exfinity-others",
+    "externalUrl": "https://economictimes.indiatimes.com/tech/funding/deeptech-startup-chara-raises-4-75-million-from-exfinity-others/articleshow/97038883.cms?from=mdr"
+  },
+  {
+    "id": "deep-tech-startup-neuralgarage-raises-1-45-million-in-seed-funding",
+    "slug": "/news/deep-tech-startup-neuralgarage-raises-1-45-million-in-seed-funding",
+    "title": "Deep Tech Startup NeuralGarage Raises $1.45 Million In Seed Funding",
+    "date": "November 18, 2022",
+    "category": "News",
+    "image": "https://cdn.prod.website-files.com/649ac839edcdef49d684ea62/690c2333eb64ac1d91e7b0cd_Screenshot%202025-11-06%20at%209.54.33%20AM.png",
+    "body": [
+      {
+        "type": "paragraph",
+        "children": [
+          {
+            "text": "NeuralGarage, a deep-tech startup based in India, has raised USD 1.45 million in a seed funding round led by Exfinity Venture Partners, with participation from several prominent angel investors. The investment underscores Exfinity’s continued commitment to backing cutting-edge technologies at the intersection of AI, media, and content creation."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "children": [
+          {
+            "text": "NeuralGarage’s flagship product, "
+          },
+          {
+            "text": "VisualDub",
+            "marks": [
+              "italic"
+            ]
+          },
+          {
+            "text": ", leverages advanced computer vision and AI to synchronize lip and facial movements with dubbed audio across multiple languages. This innovation eliminates the traditional mismatch between audio and visuals, offering a seamless and immersive multilingual video experience for creators, streaming platforms, and production studios."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "children": [
+          {
+            "text": "The company plans to channel the new funding into R&D, product development, and team expansion. With Exfinity’s strategic support, NeuralGarage aims to redefine the global dubbing and localization industry—empowering content creators to deliver culturally relevant, high-quality experiences across diverse audiences and markets."
+          }
+        ]
+      }
+    ],
+    "legacyPath": "/media/deep-tech-startup-neuralgarage-raises-1-45-million-in-seed-funding",
+    "originalUrl": "https://www.exfinityventures.com/media/deep-tech-startup-neuralgarage-raises-1-45-million-in-seed-funding",
+    "externalUrl": "https://www.entrepreneur.com/en-in/news-and-trends/deep-tech-startup-neuralgarage-raises-145-million-in-seed/439468"
+  },
+  {
+    "id": "unscript-ai-secures-1-25-mn-in-exfinity-venture-partners-led-funding",
+    "slug": "/news/unscript-ai-secures-1-25-mn-in-exfinity-venture-partners-led-funding",
+    "title": "unSCRIPT.ai secures $1.25 Mn in Exfinity Venture Partners-led funding",
+    "date": "September 29, 2022",
+    "category": "News",
+    "image": "https://cdn.prod.website-files.com/649ac839edcdef49d684ea62/690c245e937db9c8bd868b6c_Screenshot%202025-11-06%20at%2010.00.11%20AM.png",
+    "body": [
+      {
+        "type": "paragraph",
+        "children": [
+          {
+            "text": "UnscriptAI, an Indian startup focused on automating content creation and editing through artificial intelligence, has raised USD 12.5 million in a funding round led by Exfinity Venture Partners."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "children": [
+          {
+            "text": "The fresh capital will be used to scale UnscriptAI’s AI-powered platform that transforms raw video footage into fully edited, published content—enabling creators and brands to streamline production workflows and reach audiences faster. By reducing reliance on traditional editing processes, the startup empowers users to generate high-quality multimedia at scale."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "children": [
+          {
+            "text": "With Exfinity Venture Partners’ backing and strategic input, UnscriptAI is poised to expand its product capabilities, broaden its go-to-market operations, and capture growth opportunities across global digital content and creator economies."
+          }
+        ]
+      }
+    ],
+    "legacyPath": "/media/unscript-ai-secures-1-25-mn-in-exfinity-venture-partners-led-funding",
+    "originalUrl": "https://www.exfinityventures.com/media/unscript-ai-secures-1-25-mn-in-exfinity-venture-partners-led-funding",
+    "externalUrl": "https://www.peoplematters.in/news/ai-and-emerging-tech/unscriptai-secures-125-mn-in-exfinity-venture-partners-led-funding-35458"
+  },
+  {
+    "id": "awiros-raises-7m-led-by-exfinity-ventures-inflexor-ventures",
+    "slug": "/news/awiros-raises-7m-led-by-exfinity-ventures-inflexor-ventures",
+    "title": "Awiros raises $7M led by Exfinity Ventures, Inflexor Ventures",
+    "date": "September 14, 2022",
+    "category": "News",
+    "image": "https://cdn.prod.website-files.com/649ac839edcdef49d684ea62/690c251777be736ae11896a4_Screenshot%202025-11-06%20at%2010.03.16%20AM.png",
+    "body": [
+      {
+        "type": "paragraph",
+        "children": [
+          {
+            "text": "Awiros, a deep-tech startup based in India, has raised USD 7 million in a Series A funding round led by Inflexor Ventures, with strong participation from Exfinity Venture Partners. The investment reflects Exfinity’s continued focus on supporting scalable enterprise deep-tech innovations with global potential."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "children": [
+          {
+            "text": "Awiros has developed an AI-driven video intelligence platform that acts as an operating system for computer vision, enabling developers and enterprises to build, deploy, and manage vision-based applications seamlessly across devices. Its technology is used across industries such as smart cities, manufacturing, and security to deliver real-time insights from video data."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "children": [
+          {
+            "text": "With this funding, Awiros plans to strengthen its product capabilities, expand its engineering and sales teams in India and the U.S., and accelerate its global go-to-market efforts. Exfinity’s backing will help Awiros scale internationally while deepening its presence in India’s growing computer vision ecosystem."
+          }
+        ]
+      }
+    ],
+    "legacyPath": "/media/awiros-raises-7m-led-by-exfinity-ventures-inflexor-ventures",
+    "originalUrl": "https://www.exfinityventures.com/media/awiros-raises-7m-led-by-exfinity-ventures-inflexor-ventures",
+    "externalUrl": "https://timesofindia.indiatimes.com/awiros-raises-7m-led-by-inflexor-ventures-exfinity-ventures/articleshow/94207726.cms"
+  },
+  {
+    "id": "fintech-startup-credilio-raises-4-million",
+    "slug": "/news/fintech-startup-credilio-raises-4-million",
+    "title": "Fintech startup credilio raises $ 4 Million",
+    "date": "March 24, 2022",
+    "category": "News",
+    "image": "https://cdn.prod.website-files.com/649ac839edcdef49d684ea62/690c25e84f316830ad6dfd49_Screenshot%202025-11-06%20at%2010.06.38%20AM.png",
+    "body": [
+      {
+        "type": "paragraph",
+        "children": [
+          {
+            "text": "Credilio, a Mumbai-based fintech startup, has raised USD 4 million in a pre-Series A funding round from Exfinity Venture Partners, Cornerstone Venture Partners Fund, and angel investor Mukul Agarwal. The funding highlights Exfinity’s growing interest in digital financial infrastructure and its potential to modernize credit distribution in India."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "children": [
+          {
+            "text": "Credilio operates a tech-driven platform that empowers financial advisors to recommend and sell credit cards and personal loans digitally, while allowing customers to onboard financial products seamlessly. By integrating open banking APIs and mobile technology, the company is digitizing the traditional distribution network for retail credit products."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "children": [
+          {
+            "text": "With the new funding, Credilio aims to expand its presence across tier-2 and tier-3 cities, strengthen its technology capabilities, and accelerate customer acquisition. Backed by Exfinity’s strategic guidance, Credilio is well-positioned to drive financial inclusion by bridging the gap between traditional advisors and India’s growing base of digital-first consumers."
+          }
+        ]
+      }
+    ],
+    "legacyPath": "/media/fintech-startup-credilio-raises-4-million",
+    "originalUrl": "https://www.exfinityventures.com/media/fintech-startup-credilio-raises-4-million",
+    "externalUrl": "https://timesofindia.indiatimes.com/business/startups/companies/fintech-startup-credilio-raises-4-million/articleshow/90422032.cms"
+  },
+  {
+    "id": "log-9-materials-raises-2-million-from-petronas-ventures",
+    "slug": "/news/log-9-materials-raises-2-million-from-petronas-ventures",
+    "title": "Log 9 Materials raises $2 million from Petronas Ventures",
+    "date": "October 8, 2021",
+    "category": "News",
+    "image": "https://cdn.prod.website-files.com/649ac839edcdef49d684ea62/64ae2c37c93bc48ef7ef3f64_Screenshot-2021-10-28-at-11.43.16-PM.png",
+    "body": [
+      {
+        "type": "paragraph",
+        "children": [
+          {
+            "text": "Bengaluru:",
+            "marks": [
+              "bold"
+            ]
+          },
+          {
+            "text": " Log 9 Materials, a startup building advanced lithium-ion battery and fuel cell technologies, has raised $2 million in funding from Petronas Ventures, the venture capital arm of Malaysian oil and gas giant Petronas. The investment brings to a close the company’s $10 million Series A+ round, which was led by automotive battery maker."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "children": [
+          {
+            "text": "The company was the winner in the"
+          },
+          {
+            "text": " Top Innovator",
+            "marks": [
+              "bold"
+            ]
+          },
+          {
+            "text": " category of the most recent edition of the ET Startup Awards."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "children": [
+          {
+            "text": "“(This investment) enables us to accelerate our ongoing mission of introducing our breakthrough InstaCharge (rapid charging) battery technology to a plethora of end-users, and in positioning Log 9 as the largest Indian player in advanced cell chemistries,”",
+            "marks": [
+              "bold"
+            ]
+          },
+          {
+            "text": " said Akshay Singhal, cofounder and CEO at Log 9 Materials."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "level": 4,
+        "children": [
+          {
+            "text": "Log 9 $2M funding news",
+            "href": "https://economictimes.indiatimes.com/tech/funding/log-9-materials-raises-2-million-from-petronas-ventures/articleshow/86869422.cms?from=mdr"
+          }
+        ]
+      }
+    ],
+    "legacyPath": "/media/log-9-materials-raises-2-million-from-petronas-ventures",
+    "originalUrl": "https://www.exfinityventures.com/media/log-9-materials-raises-2-million-from-petronas-ventures"
+  },
+  {
+    "id": "grid-raster-inc-awarded-the-us-air-force-sbir-phase-ii-contract",
+    "slug": "/news/grid-raster-inc-awarded-the-us-air-force-sbir-phase-ii-contract",
+    "title": "Grid Raster Inc. Awarded the US Air Force SBIR Phase II Contract",
+    "date": "September 21, 2021",
+    "category": "News",
+    "image": "https://cdn.prod.website-files.com/649ac839edcdef49d684ea62/654caa4b892b8bd0f7fa4b92_grid-raster.png",
+    "body": [
+      {
+        "type": "paragraph",
+        "children": [
+          {
+            "text": "MOUNTAIN VIEW, Calif.--Grid Raster Inc., a leading provider of cloud-based Extended Reality (XR) platforms that power high-performance and scalable Augmented Reality (AR)/Virtual Reality (VR)/Mixed Reality (MR) experiences for enterprises, announced today that the U.S. Air Force (USAF) awarded Grid Raster a SBIR Phase II contract to improve Aircraft Wiring Maintenance. This project will support the USAF’s fleet of CV-22 Osprey aircraft by providing a high precision Augmented Reality (AR) Toolset."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "children": [
+          {
+            "text": "The complexity of USAF aircraft wiring continues to increase with the fielding and deployment of advanced communications, integrated aircraft survivability systems, and aircraft data collection systems. Maintenance technicians must maintain extraordinarily complex wiring installations, routing, clamp, and abatement placements and are required to know all variants of the systems. With V-22 variants expected to be in service beyond 2040, capability enhancements and readiness initiatives are program priorities, not only for the USAF, but also for the Marine Corps and Navy."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "children": [
+          {
+            "text": "As part of the Phase II effort, Grid Raster Inc. will develop a high-precision AR Toolset prototype built on an open system scalable XR infrastructure and will test and evaluate the system’s ability to facilitate repair and maintenance of CV-22 engine nacelle wiring. The USAF’s CV-22 nacelle wiring has been a major readiness degrader accounting for approximately 60% of the overall maintenance effort. GridRaster’s proposed solution will enable CV-22 maintainers to troubleshoot, repair, and train far more efficiently in the operational environment."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "children": [
+          {
+            "text": "“We are excited to work with the US Air Force and specifically with the CV-22 Program Office at NAS PAX River” "
+          },
+          {
+            "text": "said Rishi Ranjan, CEO and Founder of GridRaster. ",
+            "marks": [
+              "bold"
+            ]
+          },
+          {
+            "text": "“We look forward to delivering an affordable AR Toolset built on an open system infrastructure, utilizing pattern recognition, and providing precise, intuitive visual overlays of complex wiring installations, routings, clamp and abatement placements in relation to surrounding components and structures. With the proposed solution, our objective is to solve the CV-22 wiring maintenance mission need by reducing maintenance man-hours, eliminating errors, and improving installation accuracy of aircraft wiring harnesses in congested spaces of the aircraft by delivering a solution that can seamlessly scale to support other avionics systems and variants of the aircraft.”"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "children": [
+          {
+            "text": "For this effort, GridRaster will team with Avatar Partners, Inc. who specializes in development of military-grade, immersive XR training and job-aiding solutions,"
+          },
+          {
+            "text": " ",
+            "marks": [
+              "bold"
+            ]
+          },
+          {
+            "text": "to provide an end-to-end solution. GridRaster will provide the underlying core software infrastructure with high-fidelity, low-latency remote rendering, high-precision 3D Artificial Intelligence (AI) and agile deployment and operations using DevSecOps; while Avatar Partners will design and develop AR application for CV-22 Wiring Maintenance."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "children": [
+          {
+            "text": "About Grid Raster Inc.",
+            "marks": [
+              "bold"
+            ]
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "children": [
+          {
+            "text": "GridRaster is a leading provider of cloud based XR platforms that power compelling high-quality AR/VR/MR experiences on mobile devices for enterprises. The company works with manufacturers in automotive, aerospace and defense, and technology to launch and scale AR/VR/MR solutions. The company utilizes a cloud-based approach leveraging distributed edge computing, low-latency remote rendering, 3D Artificial Intelligence (AI) and DevSecOps based agile deployment to help clients overcome performance, scalability, and legacy project limitations. For more information, please visit "
+          },
+          {
+            "text": "www.gridraster.com",
+            "href": "https://cts.businesswire.com/ct/CT?id=smartlink&url=http%3A%2F%2Fwww.gridraster.com&esheet=52494914&newsitemid=20210921005358&lan=en-US&anchor=www.gridraster.com&index=1&md5=22f102afbadaf7bd9d9e8639086636e8"
+          },
+          {
+            "text": "."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "children": [
+          {
+            "text": "Read More at: "
+          },
+          {
+            "text": "Gridraster Contract News",
+            "href": "https://www.businesswire.com/news/home/20210921005358/en/Grid-Raster-Inc.-Awarded-the-US-Air-Force-SBIR-Phase-II-Contract-to-Improve-CV-22-Osprey-Aircraft-Wiring-and-Maintenance-using-Augmented-Reality#.YUpBtCoFhBQ.linkedin"
+          }
+        ]
+      }
+    ],
+    "legacyPath": "/media/grid-raster-inc-awarded-the-us-air-force-sbir-phase-ii-contract",
+    "originalUrl": "https://www.exfinityventures.com/media/grid-raster-inc-awarded-the-us-air-force-sbir-phase-ii-contract"
+  },
+  {
+    "id": "deep-vision-raises-35-mn-series-b-round-led-by-tiger-global",
+    "slug": "/news/deep-vision-raises-35-mn-series-b-round-led-by-tiger-global",
+    "title": "Deep Vision Raises $35 Mn Series B Round Led By Tiger Global",
+    "date": "September 20, 2021",
+    "category": "News",
+    "image": "https://cdn.prod.website-files.com/649ac839edcdef49d684ea62/64ae2c36665ef07592ca1e1e_ravi-anna.jpeg",
+    "body": [
+      {
+        "type": "paragraph",
+        "children": [
+          {
+            "text": "Deep Vision, Inc.—the developers of an artificial intelligence (AI) processor and comprehensive software development suite for edge computing applications—on Monday announced that it received $35 million in an oversubscribed Series B financing round, led by Tiger Global. Tiger Global is joined by Series A investors Exfinity Venture Partners, SiliconMotion, and Western Digital, which are also rejoining in the latest round of financing."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "children": [
+          {
+            "text": "When combined with its existing revenue streams, the funding proceeds will help Deep Vision expand the capabilities of its AI processor and software tools and support its rapidly growing customer base."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "children": [
+          {
+            "text": "\"This investment is a resounding affirmation of Deep Vision's solutions and strategic direction, which are rapidly driving our company into a wide variety of applications in our key target markets,” said Ravi Annavajjhala, chief executive officer, Deep Vision. “We will now be able to significantly fortify our efforts to continue designing and building the world's most power- and price-efficient AI inference platform as well as flawless software development tools.”",
+            "marks": [
+              "italic"
+            ]
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "children": [
+          {
+            "text": "“The key to our success is rooted in the ingenuity, passion, dedication, and spirit of collaboration of our architecture and engineering teams in India,” shared Sree Reddy, vice president of engineering, Deep Vision. “Deep Vision’s leadership position in the Edge AI space is the result of cutting-edge research developed at Stanford coupled with flawless execution by the engineering team in India as well as the cross-border collaboration between the US and India teams.”",
+            "marks": [
+              "italic"
+            ]
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "children": [
+          {
+            "text": "Deep Vision’s patented AI processor, named ARA-1, delivers a combination of performance, power, and price for camera-based applications like smart retail, driver-monitoring systems, smart city, drones, and factory automation. The company’s processor also provides natural language processing (NLP) capabilities for a growing market of voice-controlled applications. Deep Vision complements its processing technology with an extremely comprehensive, flexible, and set of development tools that allow its customers to easily convert their neural network models into highly optimized computation graphs ready to be deployed on the ARA-1 chip."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "children": [
+          {
+            "text": "“We are excited to partner with Deep Vision. We believe that the company is positioned for a long runway ahead, with a unique AI processor that combines innovative software and silicon architecture for edge computing,” commented Scott Shleifer, partner, Tiger Global.",
+            "marks": [
+              "italic"
+            ]
+          }
+        ]
+      },
+      {
+        "type": "quote",
+        "children": [
+          {
+            "text": "\"One of the Exfinity Venture Partners’ core funding theses is to back companies leveraging skill and scale in the fertile Indo-US tech corridor, particularly in the deep tech domain from early stages,” added Chinnu Senthilkumar, general partner, and chief technology officer, Exfinity Venture Partners. “Deep Vision is a testament to this, as their execution demonstrates India's semiconductor chip designers' potential in building cutting edge AI silicon chips and expediting India's path to achieving self-reliance in chip manufacturing and the emerging semiconductor ecosystem.\"",
+            "marks": [
+              "italic"
+            ]
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "children": [
+          {
+            "text": "Read more at: "
+          },
+          {
+            "text": "Deepvision Series B",
+            "href": "https://www.entrepreneur.com/article/386440"
+          }
+        ]
+      }
+    ],
+    "legacyPath": "/media/deep-vision-raises-35-mn-series-b-round-led-by-tiger-global",
+    "originalUrl": "https://www.exfinityventures.com/media/deep-vision-raises-35-mn-series-b-round-led-by-tiger-global"
+  },
+  {
+    "id": "skit-raises-23-million-in-series-b-from-westbridge-capital",
+    "slug": "/news/skit-raises-23-million-in-series-b-from-westbridge-capital",
+    "title": "Skit raises $23 million in Series B from WestBridge Capital",
+    "date": "September 1, 2021",
+    "category": "News",
+    "image": "https://cdn.prod.website-files.com/649ac839edcdef49d684ea62/64ae2c35665ef07592ca1ded_Image-3.jpeg",
+    "body": [
+      {
+        "type": "paragraph",
+        "children": [
+          {
+            "text": "Artificial intelligence-based voice startup Skit, which was previously Vernacular.ai, has secured $23 million as part of its Series B funding led by by WestBridge Capital with participation from Kalaari Capital and Exfinity Ventures, Angelist Syndicate led by Aaryaman Vir Shah from Prophetic Ventures, and LetsVenture Syndicate led by Sense AI. The capital will be used for sales and marketing, building delivery capabilities, R&D to speed up innovation and further enhance the company's products while expanding globally."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "children": [
+          {
+            "text": "Founded in 2016 by IIT Roorkee alumnus Sourabh Gupta and Akshay Deshraj, the startup belives it will be able to address voice customer service market globally with its voice automation platform Vernacular Intellegent Voice Assistant (VIVA)."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "children": [
+          {
+            "text": "\"This investment comes when we are making strategic inroads into the US and SouthEast Asian markets. Clients and investors alike have recognised the uniqueness and superiority of our product and continue to show confidence in our growth path,” says Sourabh Gupta, CEO and co-founder of Skit.",
+            "marks": [
+              "bold"
+            ]
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "children": [
+          {
+            "text": "The global contact centre market size is expected to grow steadily and reach a value of $496 billion by 2027. “To address this sizeable growth, we at Skit are using voice bot innovation and our market observations to personalise caller experiences at customer contact centres, and deliver upto 50 percent cost reduction and superior customer experience,\" added Gupta."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "children": [
+          {
+            "text": "The fundraising follows a Series A announcement in May 2020, led by Exfinity Ventures and Kalaari Capital, AngelList, with IAN Fund and LetsVenture also participating in the round. This Series B funding brings the startup's total raise to USD 30 million. The company plans to double down and scale operations in both Indian and global markets."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "children": [
+          {
+            "text": "“Skit's success in helping India's largest companies positions them well to enter the US market, where there is a massive need for voice AI solutions.\" says Sashi Reddi, venture advisor to Westbridge Capital."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "children": [
+          {
+            "text": "With over 10 million hours of training data, its product (VIVA) can currently respond in over 16+ languages, covering over 160 dialects and replicating human-like conversations. It serves enterprise clients across banking and financial services, including insurance, securities and NBFCs, food and beverage, ecommerce, automotive, and travel and tourism. Some of its clients include Axis Bank, Hathway, Porter and Barbeque Nation."
+          }
+        ]
+      }
+    ],
+    "legacyPath": "/media/skit-raises-23-million-in-series-b-from-westbridge-capital",
+    "originalUrl": "https://www.exfinityventures.com/media/skit-raises-23-million-in-series-b-from-westbridge-capital"
+  },
+  {
+    "id": "ai-palette-raises-4-4m-to-help-companies-react-faster-to-consumer-trends",
+    "slug": "/news/ai-palette-raises-4-4m-to-help-companies-react-faster-to-consumer-trends",
+    "title": "Ai Palette raises $4.4M to help companies react faster to consumer trends",
+    "date": "August 25, 2021",
+    "category": "News",
+    "image": "https://cdn.prod.website-files.com/649ac839edcdef49d684ea62/64ae2c35c3e873fd5532aa3c_aipalette_16x9.jpeg",
+    "body": [
+      {
+        "type": "paragraph",
+        "children": [
+          {
+            "text": "Developing new packaged foods and consumer goods can take a couple years as companies research, prototype and test products. In a society that runs on social media, however, people expect to see trends land on store shelves much more quickly. Founded in 2018, "
+          },
+          {
+            "text": "Ai Palette",
+            "href": "https://www.aipalette.com/"
+          },
+          {
+            "text": " uses machine learning to help companies spot trends in real time and get them retail-ready, often within a few months. The startup, whose clients include Danone, Kellogg’s, Cargill and Dole, announced today it has raised an oversubscribed $4.4 million Series A co-led by pi Ventures and Exfinity Venture Partners. Both will join Ai Palette’s board."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "children": [
+          {
+            "text": "The round also included participation from returning backers food tech venture firm AgFunder and Decacorn Capital, and new investor Anthill Ventures. It brings Ai Palette’s total raised to $5.5 million, including a seed round "
+          },
+          {
+            "text": "announced in 2019",
+            "href": "https://e27.co/exclusive-foodtech-startup-ai-palette-gets-us1m-seed-funding-from-decacorn-capital-others-20190823/"
+          },
+          {
+            "text": "."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "children": [
+          {
+            "text": "Ai Palette is based in Singapore, with an engineering hub in Bangalore. Its customer base started in Southeast Asia, before expanding into China, Japan, the United States and Europe."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "children": [
+          {
+            "text": "Its customer base started in Southeast Asia and India, and expanded to China, Japan, the United States and Europe. Ai Palette supports 15 languages, which the company claims is the most of any AI-based tool for predicting consumer packaged goods (CPG) trends. Its funding will be used to expand into more markets and fill engineering and data science roles."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "children": [
+          {
+            "text": "Ai Palette was founded in 2018 by chief executive officer Somsubhra GanChoudhuri and chief technology officer Himanshu Upreti, who met through Entrepreneur First, the “talent investor” that recruits and teams up potential founders."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "children": [
+          {
+            "text": "Before Ai Palette, GanChoudhuri worked in sales and marketing at Givaudan, the world’s largest manufacturer of fragrances and flavors. This allowed him to see how product innovation is done for many types of consumer products, ranging from snacks and fast food to packaged goods. Many of the companies he worked with were beginning to realize that a two-year product innovation cycle could no longer meet demand. Upreti, an advanced machine learning and big data analysis expert, previously worked at companies including Visa, where he built models that can handle petabytes of data."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "children": [
+          {
+            "text": "Ai Palette’s first product is Foresight Engine, which tracks trends like ingredients or flavors, analyzes why they are popular and predicts how long demand will last. It also identifies “white space opportunities,” or situations where there is unmet demand. For example, GanChoudhuri said the COVID-19 pandemic has changed the way people eat — they are now eating health snacks up to six times a day in front of screens — so companies have the chance to release new kinds of products."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "children": [
+          {
+            "text": "Foresight Engine gives contextual information, said Upreti. “For example, is a food item eaten on the go, or at a café. Is a product consumed socially or individually? What’s trending at kids’ birthday parties? For a specific product or ingredient, images provide information on product pairings and product format.”"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "children": [
+          {
+            "text": "The platform uses data from sources like social media, search, blogs, recipes, menus and company data. “Data sets popular to each market are prioritized, like a local recipe or a food delivery app,” said GanChoudhuri. “And they are tracked over the years to determine growth trajectory with a strong degree of confidence.”"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "children": [
+          {
+            "text": "Some specific examples of how Ai Palette’s tech has translated into new products include brands that want to launch a new flavor, like for a potato chip or soda, in a specific country. They can use the Foresight Engine to not only see what trends are rising, but which ones have the potential to become long-term favorites, so they don’t invest in a product that will almost instantly lose its popularity."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "children": [
+          {
+            "text": "Many of Ai Palette’s clients have used it to react to new trends and consumer behavior patterns during the COVID-19 pandemic. Not surprisingly, people in many markets are interested in healthy food or ones that are supposed to boost immunity. For example, in Southeast Asia there is more demand for lemon and garlic, while acerola and yerba mate are trending in the United States."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "children": [
+          {
+            "text": "On the other hand, “in China, taste is paramount, even over health, because people are looking for food that brings back a sense of normalcy,” said GanChoudhuri. Meanwhile in India, there is demand for products with longer shelf life as people continue to cope with the pandemic, but many consumers are also seeking interesting snacks to ease the boredom of lockdown, with kimchi and other Korean flavors becoming especially popular."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "children": [
+          {
+            "text": "Ai Palette’s ability to work with many languages is one of the ways it differentiates from other machine learning-based trend-prediction platforms. It currently supports English, simplified Mandarin, Japanese, Korean, Thai, Vietnamese, Bahasa Indonesian, Bahasa Melayu, Tagalog, Spanish, French and German, with plans to add more as it targets new European countries, Mexico, Latin America and the Middle East."
+          }
+        ]
+      }
+    ],
+    "legacyPath": "/media/ai-palette-raises-4-4m-to-help-companies-react-faster-to-consumer-trends",
+    "originalUrl": "https://www.exfinityventures.com/media/ai-palette-raises-4-4m-to-help-companies-react-faster-to-consumer-trends"
+  },
+  {
+    "id": "log-9-materials-raises-8-5m-in-series-a-led-by-amara-raja-batteries",
+    "slug": "/news/log-9-materials-raises-8-5m-in-series-a-led-by-amara-raja-batteries",
+    "title": "Log 9 Materials raises $8.5M in Series A+ led by Amara Raja Batteries",
+    "date": "August 9, 2021",
+    "category": "News",
+    "image": "https://cdn.prod.website-files.com/649ac839edcdef49d684ea62/64ae2c344bf3e30841a4cf9f_log9-founder.jpeg",
+    "body": [
+      {
+        "type": "paragraph",
+        "children": [
+          {
+            "text": "The fresh funds raised will be utilised to expand production capacity and business development efforts of Log 9’s latest innovation -- Rapid Charging Battery technology, which has already completed successful pilots and is due for commercial roll-out in October 2021."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "children": [
+          {
+            "text": "Log 9 Materials",
+            "marks": [
+              "bold"
+            ]
+          },
+          {
+            "text": ", a "
+          },
+          {
+            "text": "Bengaluru",
+            "marks": [
+              "bold"
+            ]
+          },
+          {
+            "text": "-headquartered advanced battery-tech and deeptech startup, on Monday announced an equity partnership and collaboration with "
+          },
+          {
+            "text": "Amara Raja Batteries",
+            "marks": [
+              "bold"
+            ]
+          },
+          {
+            "text": " (ARBL), a battery technology leader and one of India’s largest manufacturers of industrial and automotive batteries."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "children": [
+          {
+            "text": "The company has raised an investment of "
+          },
+          {
+            "text": "$5 million",
+            "marks": [
+              "bold"
+            ]
+          },
+          {
+            "text": " from Amara Raja Batteries during its ongoing Series A+ funding round."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "children": [
+          {
+            "text": "Akshay Singhal, Founder and CEO, Log 9 Materials",
+            "marks": [
+              "bold"
+            ]
+          },
+          {
+            "text": " said, “The partnership with ARBL will enable us to propel commercialisation at scale of our Rapid Charging Batteries, which in turn shall play a major role in the future in Log 9 eventually becoming the frontrunner and one of the largest Indian players in advanced cell chemistries. In the upcoming months of 2021, we at Log 9 are looking to take our breakthrough rapid charging battery-tech to end-users at scale; on the other hand, the development and advancements of our Aluminum Fuel Cells will also continue to happen in parallel -- including pilots and OEM-level vehicular integrations.”"
+          }
+        ]
+      },
+      {
+        "type": "image",
+        "src": "https://cdn.prod.website-files.com/649ac839edcdef49d684ea62/64ae2c344bf3e30841a4cfe9_Imagen59z-1599818083656.jpeg",
+        "alt": "Log9 Founders, Akshay Singhal, Kartik Hajela"
+      },
+      {
+        "type": "paragraph",
+        "children": [
+          {
+            "text": "Log 9 Founders (L:R) Akshay Singhal, Kartik Hajela"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "children": [
+          {
+            "text": "ARBL's investment in Log 9 Materials is a part of the 'Energy and Mobility' strategy announced by the company in June this year, which focuses on entering into new green technologies and solutions. These initiatives will include expansion and investments that will help the firm maintain technological and business leadership in the 'Energy & Mobility' space, apart from creating new growth avenues."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "children": [
+          {
+            "text": "While providing an impetus to the research and development work at ongoing projects of Log 9, ARBL is expected to be the primary partner for scaling up the manufacturing operations of Log 9's battery and fuel cell technologies."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "children": [
+          {
+            "text": "The startup's newly-developed Rapid Charging Battery Packs solve multiple challenges to expedite 2/3 wheeler EV adoption in India, whereas Log 9’s flagship Aluminum Fuel Cell technology is targeted towards long-haul electric mobility and as a zero emission alternative to diesel generators."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "children": [
+          {
+            "text": "Vikramadithya Gourineni, Executive Director at ARBL,",
+            "marks": [
+              "bold"
+            ]
+          },
+          {
+            "text": " said, that their investment is in line with ARBL’s plans to invest in cutting-edge technologies to accelerate its evolution towards becoming an 'Energy & Mobility' enterprise."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "children": [
+          {
+            "text": "Log 9 is also announced that it has secured funding from existing investors including "
+          },
+          {
+            "text": "Exfinity Ventures",
+            "marks": [
+              "bold"
+            ]
+          },
+          {
+            "text": " and "
+          },
+          {
+            "text": "Sequoia Capital India's Surge Programme",
+            "marks": [
+              "bold"
+            ]
+          },
+          {
+            "text": ", alongside a clutch of new investors, as a part of its Series A+ funding round. The strategic angels who also participated in this funding round are -- Rajesh Yabaji and Chanakya Hridaya, Co-founders of logistics industry Unicorn Blackbuck; Rajesh Ramaiah, Partner, Premji Invest; Desikan Sundarajan, MD, Equinor and Faiz Mayalakkara, Director Investments, Emirates Investment Authority. AC Ventures (SEA Frontier Fund LLP) is also among the new investors of Log 9."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "children": [
+          {
+            "text": "Chinnu Senthilkumar, General Partner and CTO, Exfinity Venture Partners,",
+            "marks": [
+              "bold"
+            ]
+          },
+          {
+            "text": " said,"
+          }
+        ]
+      },
+      {
+        "type": "quote",
+        "children": [
+          {
+            "text": "“In the last 18-24 months, Log 9 Materials has made tremendous progress, both on core technology development and strategic OEM business tie-ups. ARBL's anchor participation in the Series A+ round and strategic partnership further validates Log 9's cutting-edge technology solutions and its future commercial potential.\""
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "children": [
+          {
+            "text": "The new investors have, along with the existing investors, invested around $8.5 million in the ongoing $10-12 million Series A+ round."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "children": [
+          {
+            "text": "The fresh funds raised will be utilised to expand production capacity and business development efforts of Log 9’s Rapid Charging Battery technology, which has already completed successful pilots and is due for commercial roll-out in October 2021. Further, these funds will also be utilised to advance the startup’s Supercapacitor and Aluminum Fuel Cell based innovations."
+          }
+        ]
+      }
+    ],
+    "legacyPath": "/media/log-9-materials-raises-8-5m-in-series-a-led-by-amara-raja-batteries",
+    "originalUrl": "https://www.exfinityventures.com/media/log-9-materials-raises-8-5m-in-series-a-led-by-amara-raja-batteries"
+  },
+  {
+    "id": "moengage-raises-32-5-million-funding-from-multiples-alternate-asset-management-others",
+    "slug": "/news/moengage-raises-32-5-million-funding-from-multiples-alternate-asset-management-others",
+    "title": "MoEngage raises $32.5 million funding from Multiples Alternate Asset Management, others",
+    "date": "July 31, 2021",
+    "category": "News",
+    "image": "https://cdn.prod.website-files.com/649ac839edcdef49d684ea62/64ae2c34c17c9ae16bb128b3_Image-2.jpeg",
+    "body": [
+      {
+        "type": "paragraph",
+        "children": [
+          {
+            "text": "MoEngage, an insights-led customer engagement platform, on Saturday said it has raised $32.5 million (Rs 241.7 crore) in a funding round, led by Multiples Alternate Asset Management. Existing investors, Eight Roads Ventures, F-Prime Capital and Matrix Partners, also participated, while "
+          },
+          {
+            "text": "Exfinity Venture Partners made a healthy exit in this round",
+            "marks": [
+              "bold"
+            ]
+          },
+          {
+            "text": ", a statement said."
+          },
+          {
+            "text": "\n"
+          },
+          {
+            "text": "\n"
+          },
+          {
+            "text": "The funding will support and accelerate MoEngage’s global growth strategy and further strengthen the product’s AI and predictive capabilities, it added."
+          },
+          {
+            "text": "\n"
+          },
+          {
+            "text": "\n"
+          },
+          {
+            "text": "As part of this funding round, MoEngage also completed an Employee Stock Option Plan (ESOP) buyback of $ 1.5 million for its current and former employees."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "children": [
+          {
+            "text": "MoEngage has added over 250 new customers in the past year and counts large brands such as McAfee, Nestle, Domino’s, Deutsche Telekom, Travelodge, Ally Financial, Byju’s, Flipkart, CIMB Bank and JD.ID as customers."
+          },
+          {
+            "text": "\n"
+          },
+          {
+            "text": "\n"
+          },
+          {
+            "text": "This series C1 round of funding is a mix of primary and secondary investments, MoEngage co-founder and CEO Raviteja Dodda said."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "children": [
+          {
+            "text": "“Over the last 12 months, we have seen rapid global adoption of insights-led customer engagement. Our customer base and recurring revenue has doubled in the last 12 months and our business growth in the U.S. and Europe has tripled in the first half of 2021 as compared to the second half of 2020,” he added."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "children": [
+          {
+            "text": "This funding will help the company further accelerate its global growth and product innovation, he said."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "children": [
+          {
+            "text": "The company has 375 employees and has ambitious hiring plans. It has opened up offices in the UK, Germany and Vietnam over the past year, with plans to open offices in New York City and Boston this year."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "children": [
+          {
+            "text": "Read more at: "
+          },
+          {
+            "text": "MoEngage Series C round",
+            "href": "https://economictimes.indiatimes.com/tech/funding/moengage-raises-32-5-million-funding-from-multiples-alternate-asset-management-others/articleshow/84925848.cms"
+          }
+        ]
+      }
+    ],
+    "legacyPath": "/media/moengage-raises-32-5-million-funding-from-multiples-alternate-asset-management-others",
+    "originalUrl": "https://www.exfinityventures.com/media/moengage-raises-32-5-million-funding-from-multiples-alternate-asset-management-others"
+  },
+  {
+    "id": "exfinity-venture-announces-partial-exit-from-mad-street-den-inc-msd",
+    "slug": "/news/exfinity-venture-announces-partial-exit-from-mad-street-den-inc-msd",
+    "title": "Exfinity Venture Announces Partial Exit From Mad Street Den Inc (MSD)",
+    "date": "July 28, 2021",
+    "category": "News",
+    "image": "https://cdn.prod.website-files.com/649ac839edcdef49d684ea62/654491eaaf8a32103fc1548e_madstreetden.jpg",
+    "body": [
+      {
+        "type": "heading",
+        "level": 4,
+        "children": [
+          {
+            "text": "While Exfinity has exited partially, and given the aggressive growth of the company, it is safe to infer that MSD will not only return the entire fund but also will provide significant upside over the fund size",
+            "marks": [
+              "italic"
+            ]
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "children": [
+          {
+            "text": "Exfinity Venture Fund, an early-stage VC Fund that was one of the first funds to focus exclusively on B2B technology investments, announced a partial exit from one of their early investments in Mad Street Den Inc (MSD). While Exfinity has exited partially, and given the aggressive growth of the company, it is safe to infer that MSD will not only return the entire fund but also will provide significant upside over the fund size. The secondaries were purchased by existing investors, FalconEdge, who led the company's Series B."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "children": [
+          {
+            "text": "Exfinity is now raising its third fund aggregating to Rs. 500 crores based on the same thesis and has already announced its first investment in Ati Motors, a company that is into autonomous robots for material movement. Exfinity’s portfolio comprises some marquee names in B2B SaaS, Enterprise, and Deep Tech viz. MoEngage, Locus, Pyxis, Vernacular.ai, Deep Vision, Log 9 Materials, etc."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "children": [
+          {
+            "text": "MSD is one of the first true blue AI companies from India which has a platform called Vue.ai, which powers end-to-end automation and digital experience management using AI for Multi-Billion Dollar Retailers including Diesel, Mercadolibre, Tata Group and more."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "children": [
+          {
+            "text": "The company's latest platform play, Blox.ai, puts it on a trajectory with global A.I players, allowing it to bring its offerings from Retail into education, healthcare, finance, and many more industries. With the rapid growth of Blox.ai platform, the company is positioned to become the biggest AI player in the India-US corridor."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "children": [
+          {
+            "text": "Speaking on the exit, Shailesh Ghorpade, Managing Partner & CIO, who served on the Board of MSD said that “MSD has had a fascinating journey so far. Exfinity funded the company in the seed stage as the founders were extremely accomplished and they had a clear vision of where they wanted to go. During this course, MSD has achieved a pole position in the digitization of the retail segment while growing exponentially in others & bagging multi-year contracts from some of the best names in the business. We believe MSD is just blossoming out and they have enormous potential. It is extremely satisfying to be a part of a journey of one of the earliest AI companies from India”."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "children": [
+          {
+            "text": "Ashwini Asokan, co-founder, and CEO of MSD stated, “We've been incredibly lucky to have the folks at Exfinity by our side since day 0. From operational help to hiring to business development and more, Shailesh and team have been there for us through so many different milestones. As a fund with a clear deep tech and enterprise tech thesis, they've created an entire cross-border portfolio of companies that are building the next generation of businesses in the segment. We're barely just getting started with our journey here at MSD. Our vision for all things AI is big and we hope to take the lessons from this first phase of our journey with Exfinity with us, all the way forward”."
+          }
+        ]
+      }
+    ],
+    "legacyPath": "/media/exfinity-venture-announces-partial-exit-from-mad-street-den-inc-msd",
+    "originalUrl": "https://www.exfinityventures.com/media/exfinity-venture-announces-partial-exit-from-mad-street-den-inc-msd"
+  },
+  {
+    "id": "autonomous-industrial-vehicle-maker-ati-motors-raises-3-5m-in-pre-series-a-round",
+    "slug": "/news/autonomous-industrial-vehicle-maker-ati-motors-raises-3-5m-in-pre-series-a-round",
+    "title": "Autonomous industrial vehicle maker Ati Motors raises $3.5M in pre-Series A round",
+    "date": "July 14, 2021",
+    "category": "News",
+    "image": "https://cdn.prod.website-files.com/649ac839edcdef49d684ea62/654490c2a8c66d50a02a83ae_img_221025_saurabhchandraandnaveenarulselvan.jpg",
+    "body": [
+      {
+        "type": "paragraph",
+        "children": [
+          {
+            "text": "Ati Motors will use the capital to manufacture and deploy a large fleet of autonomous vehicles in factories and warehouses in both domestic and global markets.",
+            "marks": [
+              "italic"
+            ]
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "children": [
+          {
+            "text": "Bengaluru",
+            "marks": [
+              "bold"
+            ]
+          },
+          {
+            "text": "-based all-electric autonomous industrial vehicle maker "
+          },
+          {
+            "text": "Ati Motors",
+            "marks": [
+              "bold"
+            ]
+          },
+          {
+            "text": " has raised $3.5 million (about Rs 26.12 crore) in a funding round led by "
+          },
+          {
+            "text": "Exfinity Venture Partners",
+            "marks": [
+              "bold"
+            ]
+          },
+          {
+            "text": " & "
+          },
+          {
+            "text": "Blume Ventures",
+            "marks": [
+              "bold"
+            ]
+          },
+          {
+            "text": ", among others."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "children": [
+          {
+            "text": "The "
+          },
+          {
+            "text": "pre-Series A",
+            "marks": [
+              "bold"
+            ]
+          },
+          {
+            "text": " funding will be deployed for manufacturing and deployment of a large fleet of autonomous vehicles in factories and warehouses, in both domestic and global markets, the company said on Wednesday."
+          }
+        ]
+      },
+      {
+        "type": "image",
+        "src": "https://cdn.prod.website-files.com/649ac839edcdef49d684ea62/64ae2c3529d7e0cb533d1680_Imagesnxr-1626258554629.png",
+        "alt": "Ati Motors"
+      },
+      {
+        "type": "paragraph",
+        "children": [
+          {
+            "text": "MFV Partners and a syndicate on "
+          },
+          {
+            "text": "LetsVenture ",
+            "marks": [
+              "bold"
+            ]
+          },
+          {
+            "text": "led by "
+          },
+          {
+            "text": "Livspace ",
+            "marks": [
+              "bold"
+            ]
+          },
+          {
+            "text": "founder Ramakant Sharma also participated in the round, Ati Motors said."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "children": [
+          {
+            "text": "Founded by "
+          },
+          {
+            "text": "Saurabh Chandra",
+            "marks": [
+              "bold"
+            ]
+          },
+          {
+            "text": ","
+          },
+          {
+            "text": " V Vinay,",
+            "marks": [
+              "bold"
+            ]
+          },
+          {
+            "text": " and "
+          },
+          {
+            "text": "Saad Nasser",
+            "marks": [
+              "bold"
+            ]
+          },
+          {
+            "text": ", Ati Motors is a full-stack autonomous platform for material movement in industrial environments."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "children": [
+          {
+            "text": "Ati Motors autonomous cargo vehicle Sherpa uses a technology approach similar to that used in driverless cars (the likes of Tesla and Google) and is more versatile than warehouse or humanoid robots."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "children": [
+          {
+            "text": "While Sherpa Tug, a one-tonne trolley puller, has been deployed in tough manufacturing environments with very rough conditions, Sherpa Lite has found uptake in ecommerce warehouses for order fulfilment."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "children": [
+          {
+            "text": "The Sherpa Tug has been successfully deployed at a multinational auto OEM's manufacturing unit in Chennai, it said."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "children": [
+          {
+            "text": "\"Their (Ati Motors) ready-to-deploy Autonomous Mobile Robots will not just be helpful in manufacturing floors but also be transformational in many more use cases like warehousing and outdoor mobility,\" said Nihar Ranjan, Venture Partner at Exfinity.",
+            "marks": [
+              "bold"
+            ]
+          }
+        ]
+      }
+    ],
+    "legacyPath": "/media/autonomous-industrial-vehicle-maker-ati-motors-raises-3-5m-in-pre-series-a-round",
+    "originalUrl": "https://www.exfinityventures.com/media/autonomous-industrial-vehicle-maker-ati-motors-raises-3-5m-in-pre-series-a-round"
+  },
+  {
+    "id": "chinnus-conversation-with-akash-bhat",
+    "slug": "/news/chinnus-conversation-with-akash-bhat",
+    "title": "Chinnu's Conversation with Akash Bhat",
+    "date": "July 13, 2021",
+    "category": "",
+    "image": "https://cdn.prod.website-files.com/649ac839edcdef49d684ea62/64d390b6d7253779fa421945_Screenshot-2021-10-26-at-2.17.22-PM-e1635238078993.png",
+    "body": [
+      {
+        "type": "embed",
+        "src": "https://open.spotify.com/embed/episode/0ovLEVPFsoHZXq9NgNHxnw?utm_source=generator&theme=0&t=0",
+        "title": "Podcast episode"
+      },
+      {
+        "type": "paragraph",
+        "children": [
+          {
+            "text": "Chinnu Senthilkumar, Managing Partner & CTO of Exfinity Venture Partners, sat with Akash Bhat of 'The Desi VC' to discuss a arrange of topics around Venture Capital & its evolution in India."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "children": [
+          {
+            "text": "In this episode, we will cover",
+            "marks": [
+              "bold"
+            ]
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "children": [
+          {
+            "text": "1. Current VC landscape in India (2:27)"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "children": [
+          {
+            "text": "2. Chinnu’s background (12:04)"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "children": [
+          {
+            "text": "3. Consumer vs Enterprise startups (16:10)"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "children": [
+          {
+            "text": "4. Investment strategy and criteria at Exfinity (22:00)"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "children": [
+          {
+            "text": "5. Dissecting deals won or lost i.e. using post mortem to analyze fund performance and strategy (27:38)"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "children": [
+          {
+            "text": "6. Corporate VC vs traditional VC (31:01)"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "children": [
+          {
+            "text": "7. The role of a GP and how they raise funds (34:04)"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "children": [
+          {
+            "text": "8. Time allocation as a GP (40:04)"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "children": [
+          {
+            "text": "9. Raising funds –– which is the toughest, the first or the subsequent ones? (44:05)"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "children": [
+          {
+            "text": "10. LP communications –– best practices with existing investors and how to handle conversations with potential LPs (45:55)"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "children": [
+          {
+            "text": "11. GP commitment and benchmarks (53:23)"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "children": [
+          {
+            "text": "12. Rapid fire (56:42)"
+          }
+        ]
+      }
+    ],
+    "legacyPath": "/media/chinnus-conversation-with-akash-bhat",
+    "originalUrl": "https://www.exfinityventures.com/media/chinnus-conversation-with-akash-bhat"
+  },
+  {
+    "id": "cure-fit-acquires-fitternity-in-second-acquisition-in-2021",
+    "slug": "/news/cure-fit-acquires-fitternity-in-second-acquisition-in-2021",
+    "title": "Cure fit acquires Fitternity in second acquisition in 2021",
+    "date": "February 9, 2021",
+    "category": "News",
+    "image": "https://cdn.prod.website-files.com/649ac839edcdef49d684ea62/654491a4bddb25762b3cac49_neha-motwani-and-jayam-founders-fitternity-1-1.webp",
+    "body": [
+      {
+        "type": "paragraph",
+        "children": [
+          {
+            "text": "BENGALURU",
+            "marks": [
+              "bold"
+            ]
+          },
+          {
+            "text": ": Fitness startup "
+          },
+          {
+            "text": "Cure.fit",
+            "href": "https://www.livemint.com/companies/start-ups/curefit-acquires-onyx-to-improve-international-offerings-11610961496401.html"
+          },
+          {
+            "text": " on Tuesday said it has acquired fitness facilities aggregator Fitternity, a move that will give it access to a higher number of offline "
+          },
+          {
+            "text": "fitness",
+            "href": "https://www.livemint.com/news/world/how-covid-19-has-permanently-changed-the-fitness-industry-11611051511474.html"
+          },
+          {
+            "text": " centres in the country. The value of the deal was not disclosed."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "children": [
+          {
+            "text": "After the acquisition, Fitternity will continue to exist as a separate platform and will help Cure.fit to scale its Cult Pass - the company’s all-access pass to offline gyms and Cult centres in the country, the company said."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "children": [
+          {
+            "text": "Cult Pass, launched in December, marked Cure.fit’s entry into the gym and equipment-workout space as it looked to add all fitness formats on its platform."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "children": [
+          {
+            "text": "This is the second acquisition for Cure.fit this year after it bought out California-based fitness company Onyx in January to boost its at-home fitness offerings and to bolster its international business."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "children": [
+          {
+            "text": "“Fitness in India is still in initial stages at sub 1% penetration. Over the next 10-20 years, this will increase to 15-20% like in the West. With increasing health awareness, demand is increasing, and we need to put up quality supply. With Fitternity on board, Cure.fit will improve existing offline gyms, bring them up to speed with better technology, and focus on empowering them to adjust to the post-Covid scenario amid changing consumer expectations,\" said Mukesh Bansal, co-founder, Cure.fit."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "children": [
+          {
+            "text": "The acquisition will bring in more than 5,000 fitness centres across top 20 cities in India, and 3 million customers under the purview of Cure.fit and Fitternity."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "children": [
+          {
+            "text": "Cure.fit is also planning to help offline gyms with operating procedures and aid them in increasing their visibility for better utilisation through the acquisition."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "children": [
+          {
+            "text": "\"At Fitternity, we have always focused on creating innovative solutions to make fitness easy and accessible for Indians - this vision will be further extended with our partnership. Fitternity will continue to run as it always has,\" said Neha Motwani, co-founder and CEO, Fitternity."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "children": [
+          {
+            "text": "Cure.fit added that the combined infrastructure of Fitternity will result in almost doubling of revenues from the Cult Pass offering."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "children": [
+          {
+            "text": "Read More at: "
+          },
+          {
+            "text": "Fitternity acquired by Curefit",
+            "href": "https://www.livemint.com/companies/start-ups/curefit-acquires-fitternity-in-second-acquisition-in-2021-11612858891924.html"
+          }
+        ]
+      }
+    ],
+    "legacyPath": "/media/cure-fit-acquires-fitternity-in-second-acquisition-in-2021",
+    "originalUrl": "https://www.exfinityventures.com/media/cure-fit-acquires-fitternity-in-second-acquisition-in-2021"
+  },
+  {
+    "id": "shailesh-ghorpades-podcast-with-100x-entrepreneur",
+    "slug": "/news/shailesh-ghorpades-podcast-with-100x-entrepreneur",
+    "title": "Shailesh Ghorpade's Podcast with 100x Entrepreneur",
+    "date": "January 4, 2021",
+    "category": "",
+    "image": "https://cdn.prod.website-files.com/649ac839edcdef49d684ea62/64d390b72876620d9376e2b6_sg.jpeg",
+    "body": [
+      {
+        "type": "embed",
+        "src": "https://w.soundcloud.com/player/?visual=true&url=https%3A%2F%2Fapi.soundcloud.com%2Ftracks%2F955172920&show_artwork=true&maxheight=960&maxwidth=640",
+        "title": "Podcast episode"
+      },
+      {
+        "type": "paragraph",
+        "children": [
+          {
+            "text": "In this episode of 100xEntrepreneur Podcast, we chat with Shailesh Ghorpade, Managing Partner and CIO, Exfinity Venture Partners"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "children": [
+          {
+            "text": "Throughout the podcast, Shailesh shares his deep understanding of the SaaS startups building for Enterprises from his close to two decades of experience working at Infosys, Suzlon & Azure Capital, and others."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "children": [
+          {
+            "text": "02:31 - Intro of Shailesh"
+          },
+          {
+            "text": "\n"
+          },
+          {
+            "text": "03:25 - Background in the VC ecosystem"
+          },
+          {
+            "text": "\n"
+          },
+          {
+            "text": "06:07 - Major milestones at Exfinity Venture Partners"
+          },
+          {
+            "text": "\n"
+          },
+          {
+            "text": "08:36 - Fund growth over-time & thesis change"
+          },
+          {
+            "text": "\n"
+          },
+          {
+            "text": "09:50 - Investing early-on in AI startups like Mad Street Den"
+          },
+          {
+            "text": "\n"
+          },
+          {
+            "text": "13:29 - Identifying Mega-trends while looking out for potential portfolio companies"
+          },
+          {
+            "text": "\n"
+          },
+          {
+            "text": "17:33 - Differentiating factor between top portfolio companies vs other portfolio companies funded around the same time"
+          },
+          {
+            "text": "\n"
+          },
+          {
+            "text": "19:59 - Essential fundamentals to get from 0 to $1Mn ARR early-on"
+          },
+          {
+            "text": "\n"
+          },
+          {
+            "text": "22:52 - Standing out amongst thousands of SaaS businesses in India"
+          },
+          {
+            "text": "\n"
+          },
+          {
+            "text": "25:47 - Approaching Enterprises to validate problem statements as a SaaS founder"
+          },
+          {
+            "text": "\n"
+          },
+          {
+            "text": "35:23 - Challenges restricting founders in between $1Mn to $10Mn ARR"
+          },
+          {
+            "text": "\n"
+          },
+          {
+            "text": "39:50 - India market not completely ready for SaaS offerings"
+          },
+          {
+            "text": "\n"
+          },
+          {
+            "text": "48:39 - Hiring the right people for Enterprise SaaS startups"
+          },
+          {
+            "text": "\n"
+          },
+          {
+            "text": "59:55 - Book Recommendation - Jonathan Livingston Seagull by Richard Bach"
+          }
+        ]
+      }
+    ],
+    "legacyPath": "/media/shailesh-ghorpades-podcast-with-100x-entrepreneur",
+    "originalUrl": "https://www.exfinityventures.com/media/shailesh-ghorpades-podcast-with-100x-entrepreneur"
+  },
+  {
+    "id": "whos-winning-the-cloud-war",
+    "slug": "/news/whos-winning-the-cloud-war",
+    "title": "Who's winning the Cloud War?",
+    "date": "August 2, 2019",
+    "category": "",
+    "image": "https://cdn.prod.website-files.com/649ac839edcdef49d684ea62/64d390b87805d002d0a50740_Picture-1.png",
+    "body": [
+      {
+        "type": "paragraph",
+        "children": [
+          {
+            "text": "By Chinnu Senthilkumar, Vivek Pendharkar & Rishabh Bardia",
+            "marks": [
+              "bold"
+            ]
+          },
+          {
+            "text": "\n"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "children": [
+          {
+            "text": "Cloud Computing has gained a lot of attention in the last decade since the launch of Amazon Web Services (AWS) in 2006. Ever since, there has been a fundamental shift in how the software businesses are offering their products & services to the end customers - SaaS, PaaS, IaaS et al. As IT matures, there is a massive shift in Computing business - from CapEx to OpEx, in essence transitioning into a utility model. AWS monopoly is being Challenged Currently the Cloud market is transitioning from a monopolistic market to an oligopoly & has a long tail which consists of many localized & verticalized solutions, which clearly indicates that there will be many acquisitions & inorganic growth opportunities as the tech titans battle it out for higher market share & augment their cloud strategies. Having tracked & invested for a while in this evolving."
+          },
+          {
+            "text": "\n"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "children": [
+          {
+            "text": "Year 2019 has been exciting for the Cloud Computing market & has witnessed a string of significant developments, ranging from large & mid sized acquisitions by the tech titans. IBM’s mega acquisition of Red Hat to get into the open hybrid cloud is a clear indication that, though late in this market, they are looking to catch up with incumbents like AWS & Microsoft’s Azure. Until recently, Amazon was the undisputed king for long but now its dominance is being challenged by the aggressive push by Microsoft & Google Cloud Computing Platforms. Q2 2019  AWS revenues stood at $8.4Bn and grew 36% YoY with highest market share (32%). For the same quarter, Microsoft’s Azure grew faster & picked up further ground in market share as the number 2 player at a 64% YoY growth & has crossed an annualized revenue of $20Bn."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "children": [
+          {
+            "text": "Other Tech Titans are catching up:",
+            "marks": [
+              "bold"
+            ]
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "children": [
+          {
+            "text": "While Amazon’s core offering is public cloud, Microsoft is targeting its existing as well as other enterprise clients with its focus on large scalable enterprise cloud solutions. IBM is using Multi & Open Hybrid cloud strategy to upsell to its existing clients & enter newer accounts.  Google has had strong High Performance Computing (HPC) offerings and with their recent multi billion acquisitions (Looker, Elastifile, Velostrata & Alooma) they are improving their cloud capabilities - data analytics, storage & cloud migration, to extend their reach. Microsoft’s recent acquisitions of Cycle Computing, Cloudyn & Express Logic shows their approach to strengthen their platform through multi verticalized solutions. On and above VC community is investing into emerging platforms like Edge computing."
+          }
+        ]
+      },
+      {
+        "type": "image",
+        "src": "https://cdn.prod.website-files.com/649ac839edcdef49d684ea62/64d390b87805d002d0a50740_Picture-1.png",
+        "alt": ""
+      },
+      {
+        "type": "paragraph",
+        "children": [
+          {
+            "text": "   Figure 1: Cloud Ecosystem & Key Players"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "children": [
+          {
+            "text": "Factors driving different types of Cloud Strategies:",
+            "marks": [
+              "bold"
+            ]
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "children": [
+          {
+            "text": "CompaniesCore OfferingsCloud Strategy Focus",
+            "marks": [
+              "bold"
+            ]
+          },
+          {
+            "text": "Amazon (AWS)Convenience / Ease of UsePublic CloudMicrosoft (Azure)Enterprise Applications - Security, Recovery & ReliabilityPrivate & Hybrid CloudGoogle CloudHigh Performance ComputingMulti & Hybrid CloudIBMEnterprise Services & Turn Key SolutionsMulti & Open Hybrid CloudAliCloudConveniencePublic Cloud with focus on Asia"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "children": [
+          {
+            "text": "Mega trends which are altering the Cloud Computing Landscape:",
+            "marks": [
+              "bold"
+            ]
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "children": [
+          {
+            "text": "Data Privacy Regulations & Security",
+            "marks": [
+              "bold"
+            ]
+          },
+          {
+            "text": ": To meet GDPR & other regulatory compliances, enterprises are opting for different cloud strategies - Hybrid Cloud, Multi Cloud et al. Our portfolio company PrimaryIO helps enterprises migrate their workloads from on-prem to cloud in compliant manner & saving costs."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "children": [
+          {
+            "text": "Interoperability",
+            "marks": [
+              "bold"
+            ]
+          },
+          {
+            "text": ": As businesses/enterprises become aware of becoming too reliant on a single cloud service provider, they are taking proactive measures to keep their Cloud strategies agile."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "children": [
+          {
+            "text": "5G, IoT, AR/VR, AV",
+            "marks": [
+              "bold"
+            ]
+          },
+          {
+            "text": ": With the advent of 5G, as IoT, AR/VR and Autonomous Vehicles gain their full potential, there will be an enormous amount of data that will be generated through connected devices, in turn giving rise to the need of shifting & processing the data between edge & centralized cloud data centres. Our portfolio company AkriData helps aggregate, filter and transport large amounts of data from Edge to Cloud for AI pipelines. Another portfolio company Deepvision.io, (headquartered in Silicon Valley & operations in Hyderabad) makes AI silicon for high performance edge computing."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "children": [
+          {
+            "text": "HPC",
+            "marks": [
+              "bold"
+            ]
+          },
+          {
+            "text": ": With newer technologies like AI, Machine Learning, Block Chain, Cryptography growing fast, there will be need of high performance computing."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "children": [
+          {
+            "text": "Emerging Cloud Computing strategies have started to influence the computing infrastructure. For example, many traditional retail CoLo companies (example: Equinix) are re-architecting to meet the surging demand in efficient Cloud Services. Power is becoming critical in the efficient operations of Cloud Infrastructure and our portfolio company Virtual Power System provides platform to maximize power utilization in data centres thus reducing the TCO."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "children": [
+          {
+            "text": "Above mentioned Business and Technology trends are going to drive the evolution of Cloud Computing as the players fight it out to grab a larger market share using different strategies. In this quest we are going to see more acquisitions by large players to augment their capabilities. We also envisage smaller players offering specialized and localized solutions to enterprises will continue to thrive with a significant minority share of the total market."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "children": [
+          {
+            "text": "In the end, it will be the customers (i.e. enterprises that consume IT) that will dictate how the Cloud Wars play out. "
+          },
+          {
+            "text": "Data",
+            "marks": [
+              "bold"
+            ]
+          },
+          {
+            "text": " will be the ultimate currency for most enterprises and the ability to control, secure and own your Data - while utilizing IT as a service will drive the industry towards portability and interoperability across clouds while providing for security, agility and cost efficiency."
+          }
+        ]
+      }
+    ],
+    "legacyPath": "/media/whos-winning-the-cloud-war",
+    "originalUrl": "https://www.exfinityventures.com/media/whos-winning-the-cloud-war"
+  },
+  {
+    "id": "tipping-point-for-blockchain-ai-and-mixed-reality-startups",
+    "slug": "/news/tipping-point-for-blockchain-ai-and-mixed-reality-startups",
+    "title": "Tipping Point For Blockchain, AI and Mixed Reality Startups",
+    "date": "June 27, 2018",
+    "category": "",
+    "image": "https://cdn.prod.website-files.com/649ac839edcdef49d684ea62/64d390b8f58845ec821e9117_Screenshot-2021-10-26-at-1.50.55-PM.png",
+    "body": [
+      {
+        "type": "paragraph",
+        "children": [
+          {
+            "text": "Startups have seen huge success stories since the past few years, "
+          },
+          {
+            "text": "with a few new companies not just hitting it big",
+            "marks": [
+              "bold"
+            ]
+          },
+          {
+            "text": ", but changing the face of business."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "children": [
+          {
+            "text": "But for every successful startup, countless others fail to make it big."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "children": [
+          {
+            "text": "A startup failure can be attributed to various factors. We have tried to "
+          },
+          {
+            "text": "analyse the possible tipping point",
+            "href": "https://inc42.com/resources/cryptocurrency-blockchain-icos/"
+          },
+          {
+            "text": " when startups in certain technologies will be able to build big businesses."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "level": 2,
+        "children": [
+          {
+            "text": "BlockChain",
+            "marks": [
+              "bold"
+            ]
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "children": [
+          {
+            "text": "Everybody, even the greatest doubters of Bitcoin and different cryptographic forms of money have had good things to say in of support the Blockchain innovation, that has the potential to cause the biggest disruption for any form of transaction. However, it has been a long time since Blockchain technology was built and we are yet to see any major application of it.https://api-esp.piano.io/publisher/bekose/659?wv=124&v=vg.prod-nz-1.80.0-0c64b7a"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "children": [
+          {
+            "text": "It can be argued that as"
+          },
+          {
+            "text": " Blockchain is the technology on which Bitcoin is built upon",
+            "marks": [
+              "bold"
+            ]
+          },
+          {
+            "text": ", its major use is as a payment system or, as it has evolved, a store of value. The other use cases for Blockchain like an authenticity verification, a distributed storage, a decentralized trading platform, smart contracts, and as an immutable ledger have all been tried, but not succeeded."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "level": 3,
+        "children": [
+          {
+            "text": "The banking revolution"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "children": [
+          {
+            "text": "When cryptocurrencies like Bitcoin emerged as a costless and instant way to exchange value without the need for a middleman, everybody thought that this will revolutionize banking. However, much to our chagrin, "
+          },
+          {
+            "text": "things have not panned out as expected as speculation and greed took over.",
+            "marks": [
+              "bold"
+            ]
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "children": [
+          {
+            "text": "Bitcoin, instead of becoming a functional currency took on the mantle of digital gold. The “banking revolution” hype also died down significantly with an increase in transaction fees and time is taken to consummate, even though the adoption grew worldwide."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "children": [
+          {
+            "text": "Even the banks have started breathing easy as their own fears of being outdone by the digital currency have receded, at least for the foreseeable future.ADVERTISEMENT"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "children": [
+          {
+            "text": "The underlying Blockchain technology has to be safe and secure for everybody, not only the tech-savvy people. The government-backed banking systems provides various forms of securities like FDIC guarantees, reversibility of ACH, identity verification, audit standards, and there is an investigation system if things go wrong which are not currently addressed in cryptocurrencies."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "children": [
+          {
+            "text": "Recent hacks like Bitfinex or Coincheck, show that it is still not safe to trade cryptocurrencies",
+            "marks": [
+              "bold"
+            ]
+          },
+          {
+            "text": ", especially for those who are not tech savvy and most vulnerable, as they leave themselves open to the higher risk of getting hacked and spammed."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "children": [
+          {
+            "text": "One of the other major challenges a blockchain-based service has to address is scalability. The "
+          },
+          {
+            "text": "challenge to handle thousands of transactions per second",
+            "marks": [
+              "bold"
+            ]
+          },
+          {
+            "text": " for the entire system and replicate the entire ledger in every node in the network is enormous."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "children": [
+          {
+            "text": "There are also multiple distributed ledger platforms powering digital business and laying the foundation for the programmable economy. Though the road to a programmable economy is long until there is a unified framework similar to what TCP/IP did for the entire internet ecosystem."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "children": [
+          {
+            "text": "Other use cases like smart contracts are also interesting",
+            "marks": [
+              "bold"
+            ]
+          },
+          {
+            "text": " as it creates a worldwide computing network that could totally eliminate the need for centralized third-parties. However, smart contracts still have a long way to go as the recent DAO incident proved that smart contracts can still be fooled."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "children": [
+          {
+            "text": "Everyone believes that Blockchain can be made to fit into almost any sector of modern life, however, even after almost 10 years since the inception of Blockchain technology, there is no one sector where it has taken over and threatened the incumbents."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "children": [
+          {
+            "text": "The ideas of its application are great, but the execution of this game changing technology is still too slow. There are about 9 blockchain companies which have received a funding of USD 100 Mn+ but still are at an early stage of product development."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "level": 2,
+        "children": [
+          {
+            "text": "Artificial Intelligence (AI)",
+            "marks": [
+              "bold"
+            ]
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "children": [
+          {
+            "text": "While AI is finding adoption in different businesses including"
+          },
+          {
+            "text": " ecommerce, health tech, edtech, fintech etc",
+            "href": "https://inc42.com/resources/how-ai-can-bring-unprecedented-value-to-each-aspect-of-retail/"
+          },
+          {
+            "text": "., it has faced some unique challenges. There are a "
+          },
+          {
+            "text": "number of startups that claim to use AI, but, sadly few will make the cut and build sustainable businesses.",
+            "marks": [
+              "bold"
+            ]
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "children": [
+          {
+            "text": "One of the biggest challenges is clearly identifying whether the business is actually using AI to solve problems. While most of the companies may be using Machine Learning, it doesn’t necessarily qualify to be an AI company."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "children": [
+          {
+            "text": "In order to qualify, the system should be based on self-learning algorithms, and be able to make its own decisions with constant self-improvement. In order to succeed in an AI system, there should be a right mix of other technologies like NLP, Deep Learning,"
+          },
+          {
+            "text": " and related tech,",
+            "marks": [
+              "bold"
+            ]
+          },
+          {
+            "text": " which most startups in the AI space fail to acknowledge."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "children": [
+          {
+            "text": "Further, every AI startup demands more tech-focused founders with skills in physics, maths, cognitive, computer science, who can build complex models with a lot of math and problem-solving skills. It takes enormous patience to build an AI company, particularly when talent is scarce. "
+          },
+          {
+            "text": "The Big 5 in Silicon Valley offers top dollar for this talent",
+            "marks": [
+              "bold"
+            ]
+          },
+          {
+            "text": " which few startups can afford."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "children": [
+          {
+            "text": "As right team is core for scaling the system, (un)availability of talent is a big deterrent in scaling up the AI startup."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "children": [
+          {
+            "text": "It is also important to have a deep understanding of potential customers in order to understand their problems and get their data. "
+          },
+          {
+            "text": "Access to data is the key",
+            "marks": [
+              "bold"
+            ]
+          },
+          {
+            "text": ". Once the data is available, it has to be cleaned, structured, and labeled. "
+          },
+          {
+            "text": "Without properly structured data ",
+            "href": "https://analyticsindiamag.com/dealing-data-deluge-new-age-marketers-top-priority/"
+          },
+          {
+            "text": "the models cannot be trained. If the data is not of sufficient quality, "
+          },
+          {
+            "text": "it needs a lot of capital and time to fix it with human labour.",
+            "marks": [
+              "bold"
+            ]
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "children": [
+          {
+            "text": "AI has a lot of potential in every sector but needs more visibility of where to start with an application. AI startups also have long gestation cycle and it can normally take upto two years before the revenue starts trickling in. There is a need to bridge the gap between theoretical idea and real product application."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "children": [
+          {
+            "text": "Autonomous Vehicles is one of the verticals where AI is expected to have the maximum impact.",
+            "marks": [
+              "bold"
+            ]
+          },
+          {
+            "text": " Over USD 7 billion is already invested in the space by top VCs and giant car manufacturers, but AI in autonomous technology is still where computing was in the 60s."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "children": [
+          {
+            "text": "This means that while the technology is nascent, it is not modular, and it is yet to be determined how the different parts will fit together.  The recent accidents of Tesla vehicles or Uber’s crash show that developing an AI-based system that can be manufactured and deployed at scale with cost-effective, maintainable hardware is challenging."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "children": [
+          {
+            "text": "Large sets of data are critical to training the AI models",
+            "marks": [
+              "bold"
+            ]
+          },
+          {
+            "text": " as the impact of failures is fatal. Companies including Waymo, GM, Lyft, Uber, and Intel, and even the car rental firm Avis, have recognized this and formed partnerships with potential rivals, sharing data and services in the quest to build a real autonomous vehicle and the infrastructure that will support it."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "children": [
+          {
+            "text": "Over the past few decades, AI has seen cycles of hype and disillusionment but has recently started gaining momentum in the business world. There is no dispute on its ability to better serve customers."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "children": [
+          {
+            "text": "A well-established business does not change overnight, especially when it involves technology that is difficult to understand and perceived as a threat by the people it is intended to help. Building and deploying AI systems requires a sound strategy around desired business outcomes, targeted use cases, data assets, algorithms, high-scale computing, process integration, change management, incentive alignment, executive support and accountability."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "children": [
+          {
+            "text": "Though it’s at an interesting crossroad, it is becoming a commonplace in our everyday lives be it navigation, or personal assistants like Siri and Alexa."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "level": 2,
+        "children": [
+          {
+            "text": "Mixed Reality",
+            "marks": [
+              "bold"
+            ]
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "children": [
+          {
+            "text": "Virtual reality and Augmented reality are the other two big tech disruptions",
+            "marks": [
+              "bold"
+            ]
+          },
+          {
+            "text": " that have been around for a while now. A lot of startups are trying to be a part of the next VR revolution and many others are expected to come since the projected expectation for AR/VR market is huge.ADVERTISEMENT"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "children": [
+          {
+            "text": "Virtual Reality emergence had started in 2012, credit to Palmer Luckey’s Kickstarter campaign for the Oculus Rift device. Since then, the VR ecosystem started flourishing and the technology started getting a lot of attention. Research firms started forecasting big numbers for the upcoming years and it reached the peak of the hype cycle."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "children": [
+          {
+            "text": "In reality, though, the "
+          },
+          {
+            "text": "VR market has continuously grown but has never reached that expected big numbers.",
+            "marks": [
+              "bold"
+            ]
+          },
+          {
+            "text": " All major technology companies are currently betting on it, be it Microsoft, Google, Facebook, Apple, or Valve. John Riccitiello, the CEO of Unity said that VR will start to take off in 2019 but as we see we are still a couple of years from the disruption."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "children": [
+          {
+            "text": "One of the major reason for this slower growth than expected is that the price of VR is very high. High-quality VR head mount devices like Oculus Rift, HTC Vive are too expensive ($600-900) and will need to be powered by a powerful PC to offer a decent experience. Adding to the same the VR-ready PCs are expensive too ($1000) and the compounded cost of experience prohibits adoption."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "children": [
+          {
+            "text": "The virtual simulations available today are also not perfect.",
+            "marks": [
+              "bold"
+            ]
+          },
+          {
+            "text": " The emulation of the visual experience in VR is not great and the user’s brain is still able to see pixels and understand that it is not real.  Also, existing HMDs require the user to mount external cameras, calibrate systems and handle lots of cables. This is hard for a generic customer to use."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "children": [
+          {
+            "text": "Another major factor is the content, which is very poor. There are "
+          },
+          {
+            "text": "currently no AAA games",
+            "marks": [
+              "bold"
+            ]
+          },
+          {
+            "text": " for virtual reality. Most of the available games are from indie studios which are made with the help of headset producers to grow the market."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "children": [
+          {
+            "text": "For VR to take of VR hardware prices has to come down drastically. This will attract buyers which in turn will entice more software producers and only after it reaches a critical mass,"
+          },
+          {
+            "text": " will big studios find it interesting to start creating high-quality applications",
+            "marks": [
+              "bold"
+            ]
+          },
+          {
+            "text": ". There are still challenges to adoption like simulation sickness, space in the house, or (dis)comfort of users to have headset strapped on their face for hours."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "children": [
+          {
+            "text": "In our view, VR will find more adoption in B2B areas before B2C kicks in. There are compelling use cases in Training, MRO, Health Care that can be addressed through VR."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "children": [
+          {
+            "text": "Mobile VR which is expected to address the challenges of price, mass adoption, ease of use etc. has its own constraints.",
+            "marks": [
+              "bold"
+            ]
+          },
+          {
+            "text": " The most obvious and well-discussed challenge facing mobile virtual reality applications is the much more limited power budget and thermal constraints when compared to its desktop PC equivalent."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "children": [
+          {
+            "text": "Although mobile Chips can pack in a decent octa-core CPU arrangement and some notable GPU power, it’s not possible to run these chips at full tilt, due to both the power consumption and thermal constraints mentioned previously."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "children": [
+          {
+            "text": "As the VR industry expands, "
+          },
+          {
+            "text": "one of the brightest spots could be what is called “standalone” headsets.",
+            "marks": [
+              "bold"
+            ]
+          },
+          {
+            "text": " These are devices that are neither tethered nor connected to a smartphone. Rather, they have integrated computing and communications systems. Both Google and GameFace Labs are thought to be working on such systems."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "children": [
+          {
+            "text": "Companies like Nvidia, ARM, AMD are already working on memory bandwidth which is limited on un-tethered devices. Their integrated GPUs"
+          },
+          {
+            "text": " can save 50% bandwidth",
+            "marks": [
+              "bold"
+            ]
+          },
+          {
+            "text": " using compression technologies. Also, the arrival of the next generation of mobile networks, widely referred to as 5G, will unlock the full potential of VR and AR technology."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "children": [
+          {
+            "text": "Current 4G network standards severely curtail the proliferation of VR/AR, thanks to limitations in bandwidth, latency, and uniformity. High-quality VR and AR experiences require a lot of data to be processed. This is fine for local applications, but if the data is fed remotely it can place a strain on a network."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "children": [
+          {
+            "text": "This is where 5G’s significantly faster speeds and lower latency will come to the rescue. "
+          },
+          {
+            "text": "Experts anticipate that 5G will bring about a 10X improvement in throughput",
+            "marks": [
+              "bold"
+            ]
+          },
+          {
+            "text": ", a 10X decrease in latency, a 100X improvement in traffic capacity, and a 100X improvement in network efficiency over 4G.ADVERTISEMENT"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "children": [
+          {
+            "text": "Augmented Reality which has some technology overlap with VR is different from VR and serves different purposes. "
+          },
+          {
+            "text": "Augmented Reality is predicted to completely change our way of life",
+            "marks": [
+              "bold"
+            ]
+          },
+          {
+            "text": ", as it is expected that it could make us shift from smartphones to wearing a pair of AR glasses."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "children": [
+          {
+            "text": "It needs to be mentioned that the present generation of AR glasses is premature and unusable for customers. Technology wise it is way behind VR but as it does not have content challenges it can be expected that once the technology is mature we could see much faster adoption."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "children": [
+          {
+            "text": "To conclude, these technology disruptions have a lot of potential to change human life in a significant way. In a digital era where data is fueling most of the innovation, companies have to be extra responsible on issues like data privacy. "
+          },
+          {
+            "text": "Recent incidents involving Facebook and Cambridge Analytica regarding unauthorized",
+            "marks": [
+              "bold"
+            ]
+          },
+          {
+            "text": " use of personal information has led to the world-wide debate over dark side of innovation."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "children": [
+          {
+            "text": "China is becoming a powerhouse for AI technologies as their companies have access to a huge amount of data without any regard to privacy. In addition, a large domestic market will ensure that Chinese startups will scale rapidly and may threaten the world order. On the other end of the spectrum is the EU which places a premium of personal data privacy that is reflected in the GDPR regulation."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "children": [
+          {
+            "text": "However, all major countries have started talking about their own data privacy laws but there are still grey areas about data ownership and liability which will take some time to evolve. One, therefore, hopes that a right balance is struck between regulators, innovators, and public to ensure that these technologies realise their potential and build big businesses."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "children": [
+          {
+            "text": "[This article is co-authored by Shailesh Ghorpade, Managing Partner and CIO of Exfinity Venture Partners and Mohit Babu, Associate of Exfinity Venture Partners.]",
+            "marks": [
+              "bold",
+              "italic"
+            ]
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "children": [
+          {
+            "text": "Article "
+          },
+          {
+            "text": "Link",
+            "href": "https://inc42.com/buzz/tipping-point-for-blockchain-ai-and-mixed-reality-startups/"
+          }
+        ]
+      }
+    ],
+    "legacyPath": "/media/tipping-point-for-blockchain-ai-and-mixed-reality-startups",
+    "originalUrl": "https://www.exfinityventures.com/media/tipping-point-for-blockchain-ai-and-mixed-reality-startups"
+  },
+  {
+    "id": "how-to-turn-your-startup-into-a-viable-business",
+    "slug": "/news/how-to-turn-your-startup-into-a-viable-business",
+    "title": "How To Turn Your Startup Into A Viable Business",
+    "date": "November 3, 2016",
+    "category": "",
+    "image": "https://cdn.prod.website-files.com/649ac839edcdef49d684ea62/64d390b705f3aedd1baf482e_shaileshghorpade-1.jpeg",
+    "body": [
+      {
+        "type": "paragraph",
+        "children": [
+          {
+            "text": "There is a lot of buzz about startups over the past few years and justifiably so, given the disruption that these are causing by either decimating existing business models or creating new business models where none existed. A lot has also been written about their funding, unicorn status, acquisitions, and exit."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "children": [
+          {
+            "text": "However, the media writes overwhelmingly about successful startups and while few articles are written about the failures, it is not in proportion to their mortality rate. If you ask any VC or look at statistics of success vs failures, you will find invariably that"
+          },
+          {
+            "text": " approx. 10-20% of the VC portfolio gives blockbuster returns",
+            "marks": [
+              "bold"
+            ]
+          },
+          {
+            "text": " – the rest either give par or mostly sub-par returns but the blockbusters really return your fund."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "children": [
+          {
+            "text": "The phenomenon of power law in VC portfolios is well-documented and popularised by Peter Thiel in his VC bible “Zero to One”. The power law is a modification of the 80-20 rule which dictates that 80% of the returns of a VC portfolio is from 20% of the deals. The deals that provide blockbuster hits are called Unicorns – startups that are valued at > $1 Bn."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "children": [
+          {
+            "text": "Union Square Ventures and Sequoia Capital US",
+            "marks": [
+              "bold"
+            ]
+          },
+          {
+            "text": " lead the unicorn tables with a hit rate of just 8% and 5% respectively. This is not surprising as only very few startups can get it right in terms of team, product market fit, capital, business model etc. Increasingly, most tech-led businesses are becoming winner take all businesses. As a startup progresses from Seed stage to Series A, B, C etc., the bar for business metrics keeps increasing and just 1-2 companies emerge as victors. As per a report by PwC, "
+          },
+          {
+            "text": "over 100 horizontal ecommerce companies were launched in India in 2010 but by end of 2015 only two",
+            "marks": [
+              "bold"
+            ]
+          },
+          {
+            "text": " – "
+          },
+          {
+            "text": "Flipkart",
+            "href": "https://inc42.com/tag/flipkart"
+          },
+          {
+            "text": " and "
+          },
+          {
+            "text": "Snapdeal",
+            "href": "https://inc42.com/tag/snapdeal"
+          },
+          {
+            "text": " – survived and emerged as victors.https://api-esp.piano.io/publisher/bekose/659?wv=124&v=vg.prod-nz-1.80.0-0c64b7a"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "children": [
+          {
+            "text": "Why are the mortality rates so high? What makes start ups succeed? What makes them attractive to acquirers? What has been the key learnings thus far?"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "children": [
+          {
+            "text": "One of the prime reasons why few startups make the cut is "
+          },
+          {
+            "text": "because they have successfully metamorphosed their idea into a business",
+            "marks": [
+              "bold"
+            ]
+          },
+          {
+            "text": ". Many startups fail because they fail to decipher the problem statement correctly or assess the opportunity size or fail to understand the competitive scenario which results in an abject failure to design a robust and differentiated value proposition. I am not going to delve into this issue."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "children": [
+          {
+            "text": "There are, however, startups that have seemingly got everything right – team, problem statement, technology, product, funding, customer and market insights but still fail to deliver returns commensurate to their potential."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "level": 2,
+        "children": [
+          {
+            "text": "A Sustainable Business Model Is Need Of The Hour"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "children": [
+          {
+            "text": "Housing.com ",
+            "href": "https://inc42.com/tag/housing"
+          },
+          {
+            "text": "falls into this category. The startup had a charismatic leader, a large market, an innovative product , huge funding ($150 Mn) , marquee investors etc. As per news reports, the company was valued at more than $250 Mn in its previous funding round but was in discussions with Snapdeal to acquire it for $50 Mn-$100 Mn."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "children": [
+          {
+            "text": "But inspite of the public nature of the spat between the founder and the investors, the real reason for the downturn in Housing’s fortune was the"
+          },
+          {
+            "text": " lack of product market fit and its inability to build a business model that can justify its valuation",
+            "marks": [
+              "bold"
+            ]
+          },
+          {
+            "text": ". A similar story has panned out at "
+          },
+          {
+            "text": "Jabong",
+            "href": "https://inc42.com/tag/jabong"
+          },
+          {
+            "text": " which was snapped by "
+          },
+          {
+            "text": "Myntra for $70 Mn in 2016 while it was valued at $508 Mn in 2013",
+            "marks": [
+              "bold"
+            ]
+          },
+          {
+            "text": " . The culprit is again the management’s inability to build a sustainable business model."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "children": [
+          {
+            "text": "This is when the problem starts becoming interesting. Why would a startup having every possible thing going for it, meander? According to us, one of the prime reasons why such startups fail to realize their potential is that they remain as startups – they fail to transform their startup into a “ “business” – and only sustainable business can have increasing or sustainable valuations. Early-stage investors bet on a team, idea, product, market etc., but do not value companies as its impossible to value companies early on."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "children": [
+          {
+            "text": "According to us, one of the prime reasons why such startups fail to realise their potential is that they remain as "
+          },
+          {
+            "text": "startups",
+            "href": "https://inc42.com/tag/startups"
+          },
+          {
+            "text": " – they fail to transform their startup into a “business” – and only sustainable business can have increasing or sustainable valuations. Early-stage investors bet on a team, idea, product, market etc., but do not value companies as its impossible to value companies early on."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "children": [
+          {
+            "text": "A company’s valuation is determined after Series B, C rounds",
+            "marks": [
+              "bold"
+            ]
+          },
+          {
+            "text": ". It is, of course, not necessary to show profitability or even revenues early on. But the product the company has built must show clear signs of high customer engagement and scalability, for eg."
+          },
+          {
+            "text": " Google, Facebook, Whatsapp",
+            "marks": [
+              "bold"
+            ]
+          },
+          {
+            "text": " etc. At the bare minimum, a startup must create a universally-liked product that can add value to users."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "children": [
+          {
+            "text": "A few startups might get acquired at stratospheric valuations for their technology, for eg. "
+          },
+          {
+            "text": "Deepmind was acquired by Google for over $600 Mn",
+            "marks": [
+              "bold"
+            ]
+          },
+          {
+            "text": " but had no commercially launched product or business model. These are the exceptions and not the norm. Also, an acquisition is not the benchmark to determine a startup success."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "children": [
+          {
+            "text": "What does it take to transform a startup into a business?"
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "level": 2,
+        "children": [
+          {
+            "text": "Absolute Clarity On Product Market Fit Which Is Understood by Stakeholders"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "children": [
+          {
+            "text": "Product value proposition needs to be clearly articulated and it "
+          },
+          {
+            "text": "should have sustainable differentiation vis-à-vis competition",
+            "marks": [
+              "bold"
+            ]
+          },
+          {
+            "text": ". While competition does catch up and gaps are rapidly bridged to overcome differentiation, challenge is to continually listen to customers, build relationships, make the product proposition better and execute on the promise made to customers."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "children": [
+          {
+            "text": "Clarity is needed on which customer segments and markets you are going after. "
+          },
+          {
+            "text": "You can’t be everything to everybody so pick your battles and be mindful of your resources and execute well",
+            "marks": [
+              "bold"
+            ]
+          },
+          {
+            "text": ". It is extremely important and many startups falter because they have no idea on “what we will not do” and end up doing everything, thereby having a muddled proposition or frittering away resources without any focus."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "children": [
+          {
+            "text": "Uber",
+            "href": "https://inc42.com/tag/uber"
+          },
+          {
+            "text": " has built a strong customer loyalty around the world by focussing just on the point to point transportation problem. On the other hand, fab.com went bust due to premature expansion to Europe and holding inventory. Fab was valued at $1 Bn before being sold at 15 Mn."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "children": [
+          {
+            "text": "Respect the competition and always track their movements on several parameters. Most startups have a very myopic outlook towards competition and track metrics like funding received or customer acquisitions. However, there needs to be "
+          },
+          {
+            "text": "sustained tracking of various tangible and intangible metrics",
+            "marks": [
+              "bold"
+            ]
+          },
+          {
+            "text": " like quality of hires, patents, and quality of IPR, pricing, customer engagement processes, product features, and functionality, assessment of technology and engineering etc. Many startups have an exaggerated view of their own competitive position and by creating charts that show this to the investors, they also start believing in this which could prove disastrous."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "children": [
+          {
+            "text": "Build an objective assessment of competition and build differentiators."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "level": 2,
+        "children": [
+          {
+            "text": "Sustainable And Robust Revenue Model With A Strong Focus On Cash Flow"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "children": [
+          {
+            "text": "Any company that needs to build a business must have a strong revenue model. The litmus test for a startup is whether customers are willing to pay for the value proposition they perceive."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "children": [
+          {
+            "text": "While one can look at an appropriate pricing model at different stages of evolution (discounts, freemium etc. for initial customer sign ups or for marquee customers) it needs to be understood that getting customers that do not pay or do not wish to pay for your product is your "
+          },
+          {
+            "text": "first sign that they do not perceive value.",
+            "marks": [
+              "bold"
+            ]
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "children": [
+          {
+            "text": "Successful entrepreneurs are those that read those signs and either pivot, re-work their proposition or retreat. Most failures occur when you continue to push your “value proposition” when the market signals are loud and clear."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "children": [
+          {
+            "text": "Focus on cash flow is absolutely essential to build a business. "
+          },
+          {
+            "text": "This needs a complete understanding of your pricing model, your burn, overheads, collections",
+            "marks": [
+              "bold"
+            ]
+          },
+          {
+            "text": ","
+          },
+          {
+            "text": " and payables",
+            "marks": [
+              "bold"
+            ]
+          },
+          {
+            "text": ". Strong businesses are built on robust cash flows and not on burning disproportionate cash to acquire customers or retain them. A judicious balance needs to be achieved between conserving cash and using it build a sustained and differentiated business."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "level": 2,
+        "children": [
+          {
+            "text": "Consistently Execute On The Strategy To Deliver On The Promise"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "children": [
+          {
+            "text": "Execution is what differentiates the men from the boys",
+            "marks": [
+              "bold"
+            ]
+          },
+          {
+            "text": ". There is no point in acquiring customers or penetrating markets or creating a media hype unless the start up can execute on its proposition. Execution needs strong attention to detail and it transcends several areas – product quality, product performance, product scale to processes that are customer or market facing to configuring an appropriate team with well-defined roles, competencies, and remuneration to other support processes."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "children": [
+          {
+            "text": "While it is understandable that startups may not have systematic processes like a well-oiled business,"
+          },
+          {
+            "text": " there should be enough thought on paying attention to these details so that you create a “Wow” experience for your customers",
+            "marks": [
+              "bold"
+            ]
+          },
+          {
+            "text": ". Conversely, if you do not deliver on your promise and the exit barriers are not strong, the company can be in trouble no matter what funding, quality of manpower or your campaigns may proclaim. One of the key messages here is therefore, focus on “How” rather than “What”."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "children": [
+          {
+            "text": "Capital efficiency is the hallmark of good execution. Many Indian startups fail to build capital efficient firms because "
+          },
+          {
+            "text": "capital was abundant and labour was cheap and abundant",
+            "marks": [
+              "bold"
+            ]
+          },
+          {
+            "text": ". In the new world order where capital is constrained startups are required to show more revenue per employee. This transition has not been easy."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "children": [
+          {
+            "text": "Most startups though call themselves as tech startups have failed to invest and build technology to automate repeatable process."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "children": [
+          {
+            "text": "Uber is a classic example of building scalable technology",
+            "marks": [
+              "bold"
+            ]
+          },
+          {
+            "text": ". Till recently, Uber had less than 10 employees per city in India while its competitors had greater than 150 employees per city. Even more astonishing was Uber’s customer satisfaction levels which was better than competition. Uber has publicly stated that it has broken even in US a unique and rare feat for a startup that has raised $8 Bn and has a presence in 300 cities worldwide."
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "level": 2,
+        "children": [
+          {
+            "text": "Building The Right Organisation And Culture"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "children": [
+          {
+            "text": "Appropriate organisation design is imperative to achieve success as a business. While it is acceptable to have an amorphous organsation structure when you begin, it is also important to create and set the right expectations (even among founders) on how the organisation will evolve as the company makes progress."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "children": [
+          {
+            "text": "For example, there may not be much emphasis on building sales or marketing bandwidth when you are starting up and working on the product (although it needs customer and market insights) but as you make progress these roles will come into play."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "children": [
+          {
+            "text": "Founders who do heavy lifting have to realise and cede control over some of these functions to professionals else achieving scale will be impossible. Founders need to have the sagacity to realise that they do not get fixated with certain roles but find the right people to fit those roles, particularly at the leadership level."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "children": [
+          {
+            "text": "Having designed the organisation, it is equally important to walk the talk and create a fertile environment for people to express themselves, collaborate and perform by aligning incentives. These softer aspects are often ignored and fixing organisation design and culture at a later date is extremely complex and cathartic."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "children": [
+          {
+            "text": "Transforming a startup into a business is about achieving scale and it is not possible to achieve scale unless the organisation design is appropriate. Remember that the people who take you to the base camp may not be the same who will take you to the peak."
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "children": [
+          {
+            "text": "There is, therefore, no special mantra to transform your startup into a business. A lot of it has to do with developing an “outside in” perspective as well as to dispassionately introspect and evolve. "
+          },
+          {
+            "text": "The ability to make timely course corrections without being dogmatic is the key to success",
+            "marks": [
+              "bold"
+            ]
+          },
+          {
+            "text": ". An idea however brilliant it is, will never succeed unless strong thinking and an affirmative action that underpins the areas mentioned above back it."
+          }
+        ]
+      }
+    ],
+    "legacyPath": "/media/how-to-turn-your-startup-into-a-viable-business",
+    "originalUrl": "https://www.exfinityventures.com/media/how-to-turn-your-startup-into-a-viable-business"
+  }
+]

@@ -4,6 +4,7 @@ import { NewsLedger } from "@/components/sections/news-ledger";
 import { PreFooter } from "@/components/sections/pre-footer";
 import { TeamHero } from "@/components/sections/team-hero";
 import { createMetadata } from "@/lib/seo";
+import { getNewsArticles } from "@/lib/sanity/news";
 
 export const metadata: Metadata = createMetadata({
   title: "News & Insights",
@@ -11,11 +12,13 @@ export const metadata: Metadata = createMetadata({
   path: "/news",
 });
 
-export default function NewsPage() {
+export default async function NewsPage() {
+  const articles = await getNewsArticles();
+  const items = articles.map(({ id, title, image, date, category, slug }) => ({ id, title, image, date, category, slug }));
   return <>
     <main>
-      <TeamHero title="Recent News & Updates" />
-      <NewsLedger />
+      <TeamHero title="Stay Informed With News & Insights" />
+      <NewsLedger items={items} />
       <PreFooter />
     </main>
     <Footer />

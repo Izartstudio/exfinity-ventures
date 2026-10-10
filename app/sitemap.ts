@@ -1,10 +1,11 @@
 import type { MetadataRoute } from "next";
-import { articles } from "@/content/articles";
+import { getNewsArticles } from "@/lib/sanity/news";
 import { portfolioCompanies } from "@/content/portfolio";
 import { siteUrl } from "@/lib/seo";
 import { teamDirectoryContent, teamMemberSlug } from "@/content/team";
 
-export default function sitemap(): MetadataRoute.Sitemap {
+export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
+  const articles = await getNewsArticles();
   const staticRoutes: MetadataRoute.Sitemap = [
     { url: siteUrl, changeFrequency: "weekly", priority: 1 },
     { url: `${siteUrl}/portfolio`, changeFrequency: "weekly", priority: 0.9 },
@@ -16,7 +17,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   const articleRoutes: MetadataRoute.Sitemap = articles.map((article) => ({
     url: `${siteUrl}${article.slug}`,
-    lastModified: new Date(article.date),
+    lastModified: new Date(article.updatedAt ?? article.date),
     changeFrequency: "monthly",
     priority: 0.7,
   }));

@@ -12,6 +12,7 @@ import { PreFooter } from "@/components/sections/pre-footer";
 import { Footer } from "@/components/layout/footer";
 import { ScrollReveal } from "@/components/motion/scroll-reveal";
 import { defaultDescription, siteName, socialImage } from "@/lib/seo";
+import { getNewsArticles } from "@/lib/sanity/news";
 
 export const metadata: Metadata = {
   title: { absolute: "Exfinity Ventures - Investors in B2B Ventures" },
@@ -35,6 +36,7 @@ export const metadata: Metadata = {
 };
 
 export default async function Home() {
-  const founders = await getHomepageFounders();
-  return <><ScrollReveal /><main><Hero /><WhatWeBack /><Stats /><InvestmentPhilosophy /><HowWeInvest /><CompaniesWeBack /><OurFounders founders={founders} /><Insights /><PreFooter /></main><Footer /></>;
+  const [founders, articles] = await Promise.all([getHomepageFounders(), getNewsArticles()]);
+  const items = articles.map(({ id, title, image, date, category, slug }) => ({ id, title, image, date, category, slug }));
+  return <><ScrollReveal /><main><Hero /><WhatWeBack /><Stats /><InvestmentPhilosophy /><HowWeInvest /><CompaniesWeBack /><OurFounders founders={founders} /><Insights items={items} /><PreFooter /></main><Footer /></>;
 }

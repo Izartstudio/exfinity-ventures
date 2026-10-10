@@ -36,7 +36,15 @@ export function RichText({ blocks }: { blocks: RichTextBlock[] }) {
       }
       if (block.type === "quote") return <blockquote key={index}><p>{spans(block.children)}</p>{block.attribution && <cite>{block.attribution}</cite>}</blockquote>;
       if (block.type === "callout") return <aside className={`rich-text-callout is-${block.tone ?? "neutral"}`} key={index}>{block.title && <h3>{block.title}</h3>}<p>{spans(block.children)}</p></aside>;
-      if (block.type === "image") return <figure key={index}><Image src={block.src} alt={block.alt} width={block.width ?? 1200} height={block.height ?? 750} sizes="(max-width: 800px) calc(100vw - 2.5rem), 760px" />{block.caption && <figcaption>{block.caption}</figcaption>}</figure>;
+      if (block.type === "image") {
+        const image = <Image quality={100} src={block.src} alt={block.alt} width={block.width ?? 1200} height={block.height ?? 750} sizes="(max-width: 800px) calc(100vw - 2.5rem), 760px" style={{ height: "auto" }} />;
+        return <figure key={index}>{block.href ? <a href={block.href}>{image}</a> : image}{block.caption && <figcaption>{block.caption}</figcaption>}</figure>;
+      }
+      if (block.type === "embed") {
+        let allowed = false;
+        try { const url = new URL(block.src); allowed = url.protocol === "https:" && ["open.spotify.com", "w.soundcloud.com"].includes(url.hostname); } catch { /* Invalid CMS URL */ }
+        return allowed ? <iframe key={index} src={block.src} title={block.title} loading="lazy" allow="encrypted-media; fullscreen; picture-in-picture" style={{ width: "100%", height: 352, border: 0 }} /> : null;
+      }
       if (block.type === "table") return <div className="rich-text-table-wrap" key={index}><table>{block.caption && <caption>{block.caption}</caption>}<thead><tr>{block.headers.map((header) => <th key={header} scope="col">{header}</th>)}</tr></thead><tbody>{block.rows.map((row, rowIndex) => <tr key={rowIndex}>{row.map((cell, cellIndex) => <td key={cellIndex}>{cell}</td>)}</tr>)}</tbody></table></div>;
       if (block.type === "code") return <pre key={index}><code data-language={block.language}>{block.code}</code></pre>;
       return <hr key={index} />;
