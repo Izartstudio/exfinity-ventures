@@ -38,7 +38,7 @@ export function Footer() {
           <form onSubmit={subscribe}>
             <label className="sr-only" htmlFor="newsletter-email">Email address</label>
             <input id="newsletter-email" name="email" type="email" autoComplete="email" placeholder="Enter Your Email Address" required />
-            <button className="button button-primary" type="submit">Subscribe <span aria-hidden="true">→</span></button>
+            <button className="button button-primary" type="submit"><span className="button-label">Subscribe</span></button>
           </form>
         </section>
 

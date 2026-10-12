@@ -43,7 +43,7 @@ export function NewsLedger({ items }: { items: NewsItem[] }) {
           ))}
         </div>
 
-        {visibleCount < filteredItems.length && <button className="news-load-more" type="button" onClick={() => setVisibleCount((count) => count + 6)}>View more <span aria-hidden="true">⌄</span></button>}
+        {visibleCount < filteredItems.length && <button className="button news-load-more" type="button" onClick={() => setVisibleCount((count) => count + 6)}><span className="button-label">View more</span></button>}
       </div>
     </section>
   );

@@ -87,9 +87,7 @@ export function CompaniesWeBack() {
               From DeepTech to AI Native Softwares, these are companies we believed
               in at the earliest stage; now building for global markets
             </p>
-            <Link className="button button-primary" href="/portfolio">
-              View Portfolio <span aria-hidden="true">→</span>
-            </Link>
+            <Link className="button button-primary" href="/portfolio"><span className="button-label">View Portfolio</span></Link>
           </aside>
         </div>
       </div>

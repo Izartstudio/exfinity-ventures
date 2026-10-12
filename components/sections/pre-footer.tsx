@@ -65,9 +65,7 @@ export function PreFooter({
         <h2 id="pre-footer-title">{title}</h2>
         <div className="pre-footer-rule" aria-hidden="true"><span /></div>
         <p>{description}</p>
-        <Link className="button button-primary" href={ctaHref}>
-          {ctaLabel} <span aria-hidden="true">→</span>
-        </Link>
+        <Link className="button button-primary" href={ctaHref}><span className="button-label">{ctaLabel}</span></Link>
       </div>
     </section>
   );

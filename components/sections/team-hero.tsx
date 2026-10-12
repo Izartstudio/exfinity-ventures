@@ -10,7 +10,7 @@ export function TeamHero({ title = <>Experience that<br />Goes Beyond Capital</>
         <h1 id="team-hero-title">{title}</h1>
         {(description || cta) && <div className="team-hero-aside">
           {description && <p>{description}</p>}
-          {cta && <Link className="button button-primary" href={cta.href}>{cta.label} <span aria-hidden="true">→</span></Link>}
+          {cta && <Link className="button button-primary" href={cta.href}><span className="button-label">{cta.label}</span></Link>}
         </div>}
       </div>
     </section>

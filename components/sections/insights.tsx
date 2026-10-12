@@ -58,14 +58,12 @@ export function Insights({ items }: { items: NewsItem[] }) {
             <div className="insights-feature">
               <div className="insights-heading">
                 <h2 id="insights-title">News &amp; Insights</h2>
-                <Link className="button button-outline" href="/news">View all <span aria-hidden="true">→</span></Link>
+                <Link className="button button-outline" href="/news"><span className="button-label">View all</span></Link>
               </div>
               <div className="thesis-card">
                 <Image quality={100} src="/insights/physical-ai-thesis.png" alt="Exfinity Physical AI Thesis report" width={374} height={315} sizes="(max-width: 900px) 100vw, 38vw" />
                 <p>A research-led view of the technologies, market shifts and emerging opportunities shaping the future of Indian deep tech and AI</p>
-                <button className="button button-primary" type="button" onClick={() => { closingRef.current = false; setIsClosing(false); setIsOpen(true); }} aria-haspopup="dialog">
-                  View thesis reports <span aria-hidden="true">→</span>
-                </button>
+                <button className="button button-primary" type="button" onClick={() => { closingRef.current = false; setIsClosing(false); setIsOpen(true); }} aria-haspopup="dialog"><span className="button-label">View thesis reports</span></button>
               </div>
             </div>
 
@@ -78,7 +76,7 @@ export function Insights({ items }: { items: NewsItem[] }) {
                 </Link>
               ))}
             </div>
-            <Link className="button button-outline insights-view-all-mobile" href="/news">View all <span aria-hidden="true">→</span></Link>
+            <Link className="button button-outline insights-view-all-mobile" href="/news"><span className="button-label">View all</span></Link>
           </div>
         </div>
       </section>
@@ -95,7 +93,7 @@ export function Insights({ items }: { items: NewsItem[] }) {
               <label><span>Enter Your Name</span><input name="name" type="text" autoComplete="name" required /></label>
               <label><span>Enter Your Email Address</span><input name="email" type="email" autoComplete="email" required /></label>
               <label><span>Enter Your Company Name</span><input name="company" type="text" autoComplete="organization" required /></label>
-              <button className="button button-primary" type="submit">Access thesis report <span aria-hidden="true">→</span></button>
+              <button className="button button-primary" type="submit"><span className="button-label">Access thesis report</span></button>
             </form>
           </section>
         </div>
