@@ -5,6 +5,7 @@ import { PreFooter } from "@/components/sections/pre-footer";
 import { TeamProfile } from "@/components/sections/team-profile";
 import { teamDirectoryContent, teamMemberSlug } from "@/content/team";
 import { siteName, siteUrl } from "@/lib/seo";
+import { getTeamMember, getTeamPage } from "@/lib/sanity/team";
 
 const teamMembers = Array.from(new Map([...teamDirectoryContent.partners, ...teamDirectoryContent.founders, ...teamDirectoryContent.investmentTeam, ...teamDirectoryContent.tacTeam].map((member) => [teamMemberSlug(member.name), member])).entries());
 
@@ -12,7 +13,7 @@ export function generateStaticParams() { return teamMembers.map(([name]) => ({ n
 
 export async function generateMetadata({ params }: PageProps<"/team/[name]">): Promise<Metadata> {
   const { name } = await params;
-  const member = teamMembers.find(([slug]) => slug === name)?.[1];
+  const member = await getTeamMember(name);
   if (!member) return {};
   const description = `Meet ${member.name}, ${member.role} at ${siteName}.`;
   const image = member.profileImage ?? member.image;
@@ -40,7 +41,7 @@ export async function generateMetadata({ params }: PageProps<"/team/[name]">): P
 
 export default async function TeamProfilePage({ params }: PageProps<"/team/[name]">) {
   const { name } = await params;
-  const member = teamMembers.find(([slug]) => slug === name)?.[1];
+  const [member, content] = await Promise.all([getTeamMember(name), getTeamPage()]);
   if (!member) notFound();
   const personJsonLd = {
     "@context": "https://schema.org",
@@ -52,5 +53,5 @@ export default async function TeamProfilePage({ params }: PageProps<"/team/[name
     worksFor: { "@type": "Organization", name: siteName, url: siteUrl },
     ...(member.linkedinUrl ? { sameAs: [member.linkedinUrl] } : {}),
   };
-  return <><script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(personJsonLd) }} /><main><TeamProfile member={member} /><PreFooter /></main><Footer /></>;
+  return <><script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(personJsonLd) }} /><main><TeamProfile member={member} companiesTitle={content.profileCompaniesTitle} companiesDescription={content.profileCompaniesDescription} /><PreFooter /></main><Footer /></>;
 }

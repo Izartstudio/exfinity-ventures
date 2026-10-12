@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import type { FormEvent } from "react";
+import { useState, type FormEvent } from "react";
 
 const linkGroups = [
   {
@@ -28,7 +28,32 @@ const linkGroups = [
 ] as const;
 
 export function Footer() {
-  const subscribe = (event: FormEvent<HTMLFormElement>) => event.preventDefault();
+  const [submissionState, setSubmissionState] = useState<"idle" | "submitting" | "success" | "error">("idle");
+
+  const subscribe = async (event: FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    const form = event.currentTarget;
+    const data = new FormData(form);
+    setSubmissionState("submitting");
+
+    try {
+      const response = await fetch("/api/forms", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          formType: "newsletter",
+          email: data.get("email"),
+          companyWebsite: data.get("companyWebsite"),
+          page: window.location.pathname,
+        }),
+      });
+      if (!response.ok) throw new Error("Submission failed");
+      form.reset();
+      setSubmissionState("success");
+    } catch {
+      setSubmissionState("error");
+    }
+  };
 
   return (
     <footer className="site-footer">
@@ -38,7 +63,9 @@ export function Footer() {
           <form onSubmit={subscribe}>
             <label className="sr-only" htmlFor="newsletter-email">Email address</label>
             <input id="newsletter-email" name="email" type="email" autoComplete="email" placeholder="Enter Your Email Address" required />
-            <button className="button button-primary" type="submit"><span className="button-label">Subscribe</span></button>
+            <input className="form-honeypot" name="companyWebsite" type="text" tabIndex={-1} autoComplete="off" aria-hidden="true" />
+            <button className="button button-primary" type="submit" disabled={submissionState === "submitting"}><span className="button-label">{submissionState === "submitting" ? "Submitting…" : "Subscribe"}</span></button>
+            <p className={`form-status is-${submissionState}`} aria-live="polite">{submissionState === "success" ? "Thank you for subscribing." : submissionState === "error" ? "Something went wrong. Please try again." : ""}</p>
           </form>
         </section>
 

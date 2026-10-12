@@ -15,7 +15,7 @@ export const portfolioPage = {
     {
       name: "companies",
       title: "Portfolio companies",
-      description: "Fund, sector and status filters are generated automatically from the values entered on these cards.",
+      description: "Drag companies to rearrange their website order. Sector and status filters are generated automatically from the values entered on these cards.",
       type: "array",
       validation: required,
       of: [
@@ -26,6 +26,13 @@ export const portfolioPage = {
           fields: [
             { name: "name", title: "Company name", type: "string", validation: required },
             { name: "slug", title: "Company page slug", type: "slug", options: { source: "name", maxLength: 96 }, validation: required },
+            {
+              name: "hideFromPortfolio",
+              title: "Hide from portfolio page",
+              description: "Keep this company in the CMS and retain its direct page, but omit it from the portfolio grid.",
+              type: "boolean",
+              initialValue: false,
+            },
             {
               name: "logo",
               title: "Company logo",

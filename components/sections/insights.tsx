@@ -2,12 +2,15 @@
 
 import Image from "next/image";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import { FormEvent, useCallback, useEffect, useRef, useState } from "react";
 import type { NewsItem } from "@/content/news";
 
 export function Insights({ items }: { items: NewsItem[] }) {
+  const router = useRouter();
   const [isOpen, setIsOpen] = useState(false);
   const [isClosing, setIsClosing] = useState(false);
+  const [submissionState, setSubmissionState] = useState<"idle" | "submitting" | "success" | "error">("idle");
   const closeButtonRef = useRef<HTMLButtonElement>(null);
   const closingRef = useRef(false);
   const closeTimerRef = useRef<number | null>(null);
@@ -47,7 +50,33 @@ export function Insights({ items }: { items: NewsItem[] }) {
     window.dispatchEvent(new Event("exfinity:scroll-unlock"));
   }, []);
 
-  const submit = (event: FormEvent<HTMLFormElement>) => event.preventDefault();
+  const submit = async (event: FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    const form = event.currentTarget;
+    const data = new FormData(form);
+    setSubmissionState("submitting");
+
+    try {
+      const response = await fetch("/api/forms", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          formType: "research",
+          name: data.get("name"),
+          email: data.get("email"),
+          company: data.get("company"),
+          companyWebsite: data.get("companyWebsite"),
+          page: window.location.pathname,
+        }),
+      });
+      if (!response.ok) throw new Error("Submission failed");
+      form.reset();
+      setSubmissionState("success");
+      window.setTimeout(() => router.push("/news/physical-ai-thesis"), 500);
+    } catch {
+      setSubmissionState("error");
+    }
+  };
 
   return (
     <>
@@ -63,7 +92,7 @@ export function Insights({ items }: { items: NewsItem[] }) {
               <div className="thesis-card">
                 <Image quality={100} src="/insights/physical-ai-thesis.png" alt="Exfinity Physical AI Thesis report" width={374} height={315} sizes="(max-width: 900px) 100vw, 38vw" />
                 <p>A research-led view of the technologies, market shifts and emerging opportunities shaping the future of Indian deep tech and AI</p>
-                <button className="button button-primary" type="button" onClick={() => { closingRef.current = false; setIsClosing(false); setIsOpen(true); }} aria-haspopup="dialog"><span className="button-label">View thesis reports</span></button>
+                <button className="button button-primary" type="button" onClick={() => { closingRef.current = false; setIsClosing(false); setSubmissionState("idle"); setIsOpen(true); }} aria-haspopup="dialog"><span className="button-label">View thesis reports</span></button>
               </div>
             </div>
 
@@ -93,7 +122,9 @@ export function Insights({ items }: { items: NewsItem[] }) {
               <label><span>Enter Your Name</span><input name="name" type="text" autoComplete="name" required /></label>
               <label><span>Enter Your Email Address</span><input name="email" type="email" autoComplete="email" required /></label>
               <label><span>Enter Your Company Name</span><input name="company" type="text" autoComplete="organization" required /></label>
-              <button className="button button-primary" type="submit"><span className="button-label">Access thesis report</span></button>
+              <input className="form-honeypot" name="companyWebsite" type="text" tabIndex={-1} autoComplete="off" aria-hidden="true" />
+              <button className="button button-primary" type="submit" disabled={submissionState === "submitting"}><span className="button-label">{submissionState === "submitting" ? "Submitting…" : "Access thesis report"}</span></button>
+              <p className={`form-status is-${submissionState}`} aria-live="polite">{submissionState === "success" ? "Thank you. Your access has been recorded." : submissionState === "error" ? "Something went wrong. Please try again." : ""}</p>
             </form>
           </section>
         </div>

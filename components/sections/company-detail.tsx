@@ -33,7 +33,6 @@ export function CompanyDetail({ company }: { company: PortfolioCompany }) {
           <dl className="company-facts">
             <DetailRow label="Inception year">{company.inceptionYear}</DetailRow>
             {company.entryStage && <DetailRow label="Partnered since"><div className="company-pills"><span>{company.entryStage}</span></div></DetailRow>}
-            <DetailRow label="Fund">{[company.fund, ...(company.additionalFunds || [])].map((fund) => fund.replace("Fund IV", "Fund 4").replace("Fund III", "Fund 3").replace("Fund II", "Fund 2").replace("Fund I", "Fund 1")).join(", ")}</DetailRow>
             <DetailRow label="Theme">{company.theme || company.sector}</DetailRow>
             {company.theme && <DetailRow label="Sector">{company.sector}</DetailRow>}
             <DetailRow label="Company status"><span className="company-status-pill">{company.status}</span></DetailRow>

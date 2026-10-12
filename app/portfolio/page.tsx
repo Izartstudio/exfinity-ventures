@@ -17,7 +17,7 @@ export default async function PortfolioPage() {
 
   return <>
     <main>
-      <TeamHero title={<>Backing the<br />Technologies of tomorrow</>} />
+      <TeamHero title={<>Backing the<br />Technologies of Tomorrow</>} />
       <PortfolioWall data={portfolio} />
       <PreFooter />
     </main>

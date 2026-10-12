@@ -1,7 +1,9 @@
 export type TeamMember = {
   name: string;
+  slug?: string;
   role: string;
   region: string;
+  hideFromTeamPage?: boolean;
   image: string;
   profileImage?: string;
   imagePosition?: string;
@@ -12,6 +14,8 @@ export type TeamMember = {
 };
 
 export type TeamDirectoryContent = {
+  heroTitleLines?: string[];
+  sectionLabel?: string;
   partnersTitle: string;
   foundersTitle: string;
   investmentTitle: string;
@@ -20,6 +24,18 @@ export type TeamDirectoryContent = {
   founders: TeamMember[];
   investmentTeam: TeamMember[];
   tacTeam: TeamMember[];
+  officesTitle?: string;
+  officesLabel?: string;
+  offices?: TeamOffice[];
+  profileCompaniesTitle?: string;
+  profileCompaniesDescription?: string;
+};
+
+export type TeamOffice = {
+  city: string;
+  country: string;
+  image: string;
+  imagePosition?: string;
 };
 
 export function teamMemberSlug(name: string) {
@@ -217,7 +233,7 @@ export const teamDirectoryContent: TeamDirectoryContent = {
     },
     {
       name: "Prachi Singh",
-      role: "VP - Operations",
+      role: "VP - Portfolio Management",
       region: "India",
       image: "/team/investment/prachi-singh.jpg",
       funds: "IV",

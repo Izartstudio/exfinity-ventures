@@ -9,6 +9,7 @@ import {
 type SanityCompany = {
   name?: string;
   slug?: string;
+  hideFromPortfolio?: boolean;
   logo?: string;
   fund?: string;
   sector?: string;
@@ -38,7 +39,7 @@ async function fetchPortfolioWall(): Promise<PortfolioWallData> {
   const query = `*[_type == "portfolioPage" && !(_id in path("drafts.**"))][0]{
     sectionLabel,
     "companies": companies[]{
-      name, "slug": slug.current, "logo": logo.asset->url, fund, sector, status,
+      name, "slug": slug.current, hideFromPortfolio, "logo": logo.asset->url, fund, sector, status,
       tagline, description, partneredSince, entryStage, founders, exfinityTeam,
       linkedinUrl, websiteUrl
     }
@@ -62,8 +63,11 @@ async function fetchPortfolioWall(): Promise<PortfolioWallData> {
           ...fallback,
           id: company.slug!,
           name: company.name!,
+          hideFromPortfolio: company.hideFromPortfolio ?? fallback?.hideFromPortfolio ?? false,
           fund: company.fund as PortfolioFund,
-          sector: company.sector!,
+          sector: company.slug === "locus" || company.slug === "practically"
+            ? "AI Native Software"
+            : company.sector!,
           status: company.status as PortfolioStatus,
           logo: company.logo ?? fallback?.logo,
           logoWhite: fallback?.logoWhite,
@@ -87,7 +91,11 @@ async function fetchPortfolioWall(): Promise<PortfolioWallData> {
 }
 
 export async function getPortfolioWall(): Promise<PortfolioWallData> {
-  return fetchPortfolioWall();
+  const portfolio = await fetchPortfolioWall();
+  return {
+    ...portfolio,
+    companies: portfolio.companies.filter((company) => !company.hideFromPortfolio),
+  };
 }
 
 export async function getPortfolioCompany(slug: string): Promise<PortfolioCompany | undefined> {

@@ -48,13 +48,11 @@ export const metadata: Metadata = {
   publisher: siteName,
   icons: {
     icon: [
-      { url: "/favicon-dark.svg", type: "image/svg+xml", sizes: "64x64", media: "(prefers-color-scheme: light)" },
-      { url: "/favicon-light.svg", type: "image/svg+xml", sizes: "64x64", media: "(prefers-color-scheme: dark)" },
-      { url: "/favicon-thumbnail.svg", type: "image/svg+xml", sizes: "256x256", media: "(prefers-color-scheme: light)" },
-      { url: "/favicon-thumbnail-dark.svg", type: "image/svg+xml", sizes: "256x256", media: "(prefers-color-scheme: dark)" },
+      { url: "/favicon-light.svg", type: "image/svg+xml", sizes: "64x64" },
+      { url: "/favicon-thumbnail-dark.svg", type: "image/svg+xml", sizes: "256x256" },
     ],
-    shortcut: "/favicon-dark.svg",
-    apple: [{ url: "/apple-touch-icon.png", type: "image/png", sizes: "256x256" }],
+    shortcut: "/favicon-light.svg",
+    apple: [{ url: "/favicon-thumbnail-dark.svg", type: "image/svg+xml", sizes: "256x256" }],
   },
   alternates: { canonical: "/" },
   openGraph: {

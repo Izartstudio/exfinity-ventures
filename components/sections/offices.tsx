@@ -14,16 +14,18 @@ const defaultOffices: Office[] = [
 ];
 
 export function Offices({
+  label = "Offices",
   title = "We stay close to the markets our founders build for",
   offices = defaultOffices,
 }: {
+  label?: string;
   title?: string;
   offices?: Office[];
 }) {
   return (
     <section className="offices-section" aria-labelledby="offices-title">
       <div className="container">
-        <div className="section-kicker"><span>Offices</span></div>
+        <div className="section-kicker"><span>{label}</span></div>
         <h2 id="offices-title">{title}</h2>
         <div className="offices-grid">
           {offices.map((office) => (

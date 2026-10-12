@@ -5,6 +5,10 @@ const nextConfig: NextConfig = {
   compress: true,
   poweredByHeader: false,
   images: {
+    // Some networks resolve Sanity's CDN through the standard NAT64 prefix
+    // (64:ff9b::/96), which Next treats as a local address by default. Remote
+    // image access remains restricted to the exact HTTPS hosts below.
+    dangerouslyAllowLocalIP: true,
     remotePatterns: [
       { protocol: "https", hostname: "cdn.sanity.io" },
       { protocol: "https", hostname: "cdn.prod.website-files.com" },
