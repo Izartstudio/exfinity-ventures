@@ -1,3 +1,4 @@
+import { getHomepageCompanies, getHomepageBacking } from "@/lib/sanity/sections";
 import type { Metadata } from "next";
 import { Hero } from "@/components/sections/hero";
 import { WhatWeBack } from "@/components/sections/what-we-back";
@@ -36,7 +37,7 @@ export const metadata: Metadata = {
 };
 
 export default async function Home() {
-  const [founders, articles] = await Promise.all([getHomepageFounders(), getNewsArticles()]);
+  const [founders, articles, companies, backing] = await Promise.all([getHomepageFounders(), getNewsArticles(), getHomepageCompanies(), getHomepageBacking()]);
   const items = articles.map(({ id, title, image, date, category, slug }) => ({ id, title, image, date, category, slug }));
-  return <><ScrollReveal /><main><Hero /><WhatWeBack /><Stats /><InvestmentPhilosophy /><HowWeInvest /><CompaniesWeBack /><OurFounders founders={founders} /><Insights items={items} /><PreFooter /></main><Footer /></>;
+  return <><ScrollReveal /><main><Hero /><WhatWeBack content={backing} /><Stats /><InvestmentPhilosophy /><HowWeInvest /><CompaniesWeBack content={companies} /><OurFounders content={founders} /><Insights items={items} /><PreFooter /></main><Footer /></>;
 }

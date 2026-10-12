@@ -127,7 +127,7 @@ img,svg { -webkit-user-select:none; user-select:none; -webkit-user-drag:none; }
 
 .team-directory { padding-block:4.5rem 8rem; background:#fff; color:#000021; }
 .team-directory .section-kicker { color:#075dff; }
-.team-tabs { display:grid; width:min(820px,100%); grid-template-columns:repeat(3,minmax(0,1fr)); margin-top:5rem; border-bottom:1px solid #d9d9d9; }
+.team-tabs { display:grid; width:100%; grid-template-columns:repeat(3,minmax(0,1fr)); margin-top:5rem; border-bottom:1px solid #d9d9d9; }
 .team-tabs button { min-height:50px; padding:0 1rem; border:0; border-bottom:1px solid transparent; background:transparent; color:#666; cursor:pointer; font-family:var(--font-inter-display-regular),Arial,sans-serif; font-size:1rem; text-align:left; transition:background-color .2s ease,color .2s ease,border-color .2s ease; }
 .team-tabs button:hover { color:#004de5; background:#f8faff; }
 .team-tabs button.is-active { border-bottom-color:#004de5; background:#f3f7ff; color:#004de5; }
@@ -497,8 +497,8 @@ img,svg { -webkit-user-select:none; user-select:none; -webkit-user-drag:none; }
 .founders-content { display:grid; height:100%; grid-template-rows:minmax(7rem,24%) minmax(13.5rem,38%) minmax(0,38%); justify-items:center; }
 .founders-content h2 { position:relative; z-index:1; align-self:start; margin:clamp(4.75rem,12vh,7rem) 0 0; padding-inline:.75rem; background:#000021; font-size:clamp(1.75rem,3vw,2.75rem); font-weight:400; letter-spacing:-.025em; }
 .founders-ticker { position:relative; width:100%; height:294px; }
-.founder-portrait { position:absolute; top:48px; left:50%; width:165px; height:198px; margin:0; padding:0; overflow:hidden; border:0; border-radius:15px; outline:0; background:transparent; transform:translate3d(-50%,0,0) scale(1); transform-origin:center; transition:left 1.05s cubic-bezier(.22,.78,.25,1),transform 1.05s cubic-bezier(.22,.78,.25,1),opacity .5s ease; will-change:left,transform,opacity; backface-visibility:hidden; }
-.founder-portrait:not(.is-selectable) { pointer-events:none; }
+.founder-portrait { position:absolute; top:48px; left:50%; width:165px; height:198px; margin:0; padding:0; overflow:hidden; border:0; border-radius:15px; outline:0; background:transparent; transform:translate(-50%,0) scale(1); transform-origin:center; transition:left 1.05s cubic-bezier(.22,.78,.25,1),transform 1.05s cubic-bezier(.22,.78,.25,1),opacity .5s ease; }
+.founder-portrait[aria-hidden="true"] { pointer-events:none; }
 .founder-portrait.is-selectable { cursor:pointer; }
 .founder-portrait.is-selectable:focus-visible { outline:2px solid #75a6ff; outline-offset:4px; }
 .founder-portrait .founder-photo { width:100%; height:100%; object-fit:cover; filter:grayscale(1); }
@@ -506,7 +506,7 @@ img,svg { -webkit-user-select:none; user-select:none; -webkit-user-drag:none; }
 .founder-company-logo { position:absolute; z-index:2; bottom:.65rem; left:50%; display:grid; width:112px; height:28px; place-items:center; transform:translateX(-50%); }
 .founder-company-logo img { display:block; width:100%; height:100%; object-fit:contain; filter:brightness(0) invert(1); }
 .founder-company-logo img[src*="zyla"] { width:68%; }
-.founder-company-logo img[src*="pixis"] { --logo-visual-scale:.82; }
+.founder-company-logo img[src*="pixis"] { --logo-visual-scale:1; }
 
 /* Optical logo normalization: keep each artwork inside the same layout box while
    compensating for transparent padding in the supplied source files. */
@@ -514,7 +514,7 @@ img,svg { -webkit-user-select:none; user-select:none; -webkit-user-drag:none; }
 :is(.company-logo-image,.portfolio-logo-flip,.portfolio-company-logo img,.company-detail-visual-logo img,.founder-company-logo img)[src*="/ati"] { --logo-visual-scale:1.22; }
 :is(.company-logo-image,.portfolio-logo-flip,.portfolio-company-logo img,.company-detail-visual-logo img)[src*="/chara"] { --logo-visual-scale:1.48; }
 :is(.company-logo-image,.portfolio-logo-flip,.portfolio-company-logo img,.company-detail-visual-logo img,.founder-company-logo img)[src*="/pixis"] { --logo-visual-scale:1.12; }
-.founder-company-logo img[src*="/pixis"] { --logo-visual-scale:.78; }
+.founder-company-logo img[src*="/pixis"] { --logo-visual-scale:1; }
 :is(.company-logo-image,.portfolio-logo-flip,.portfolio-company-logo img,.company-detail-visual-logo img)[src*="ai-palette"] { --logo-visual-scale:1.18; }
 :is(.company-logo-image,.portfolio-logo-flip,.portfolio-company-logo img,.company-detail-visual-logo img)[src*="cloudsek"] { --logo-visual-scale:1.24; }
 :is(.company-logo-image,.portfolio-logo-flip,.portfolio-company-logo img,.company-detail-visual-logo img)[src*="cult-fit"] { --logo-visual-scale:1.14; }
@@ -534,7 +534,7 @@ img,svg { -webkit-user-select:none; user-select:none; -webkit-user-drag:none; }
 :is(.company-logo-image,.portfolio-logo-flip,.portfolio-company-logo img,.company-detail-visual-logo img)[src*="/companies/vector/qritive"] { --logo-visual-scale:.82; }
 .company-logo-image[src*="/companies/vector/ati"] { --logo-visual-scale:.72; }
 .company-logo-image[src*="/companies/vector/zyla"] { --logo-visual-scale:.7; }
-.founder-company-logo img[src*="/companies/vector/pixis"] { --logo-visual-scale:.72; }
+.founder-company-logo img[src*="/companies/vector/pixis"] { --logo-visual-scale:1; }
 .portfolio-company-logo img[src*="/companies/vector/ati"] { --logo-visual-scale:.76; }
 .portfolio-company-logo img[src*="/companies/vector/curefit"] { --logo-visual-scale:.7; }
 .portfolio-company-logo img[src*="/companies/vector/log9"] { --logo-visual-scale:.72; }
@@ -553,7 +553,7 @@ img,svg { -webkit-user-select:none; user-select:none; -webkit-user-drag:none; }
 :is(.portfolio-company-logo img,.company-detail-visual-logo img)[src*="portfolio-provided/agshift"] { backface-visibility:hidden; transform:translateZ(0); image-rendering:auto; transition:filter .3s ease; will-change:filter; }
 .founder-slot--2 { left:calc(50% - 410px); }
 .founder-slot--1 { left:calc(50% - 225px); }
-.founder-slot-0 { left:50%; transform:translate3d(-50%,0,0) scale(1.485); }
+.founder-slot-0 { left:50%; transform:translate(-50%,0) scale(1.485); }
 .founder-slot-1 { left:calc(50% + 225px); }
 .founder-slot-2 { left:calc(50% + 410px); }
 .founder-portrait.is-entering { animation:founder-wrap-around 1.05s cubic-bezier(.22,.78,.25,1) both; }
@@ -569,7 +569,7 @@ img,svg { -webkit-user-select:none; user-select:none; -webkit-user-drag:none; }
   .founders-ticker { height:100%; }
   .founder-portrait { top:1.2rem; width:135px; height:162px; }
   .founder-slot--1 { left:calc(50% - 190px); }
-  .founder-slot-0 { transform:translate3d(-50%,0,0) scale(1.36); }
+  .founder-slot-0 { transform:translate(-50%,0) scale(1.36); }
   .founder-slot-1 { left:calc(50% + 190px); }
   .founder-testimonial { padding-top:.4rem; }
   .founder-testimonial h3 { font-size:1.05rem; }
@@ -581,7 +581,7 @@ img,svg { -webkit-user-select:none; user-select:none; -webkit-user-drag:none; }
   .founders-content h2 { margin-top:20.5vh; font-size:clamp(2rem,2.8vw,2.35rem); }
   .founder-portrait { top:.5rem; width:155px; height:186px; }
   .founder-slot--1 { left:calc(50% - 220px); }
-  .founder-slot-0 { transform:translate3d(-50%,0,0) scale(1.45); }
+  .founder-slot-0 { transform:translate(-50%,0) scale(1.45); }
   .founder-slot-1 { left:calc(50% + 220px); }
   .founder-company-logo { width:106px; height:27px; }
   .founder-testimonial { align-content:start; padding:clamp(1.75rem,3.5vh,2.25rem) 0 1rem; }
@@ -907,7 +907,7 @@ img,svg { -webkit-user-select:none; user-select:none; -webkit-user-drag:none; }
   .founder-company-logo { bottom:.45rem; width:88px; height:22px; }
   .founder-slot--2,.founder-slot-2 { opacity:0!important; }
   .founder-slot--1 { left:20%; }
-  .founder-slot-0 { left:50%; width:110px; height:138px; transform:translate3d(-50%,0,0) scale(1.38); }
+  .founder-slot-0 { left:50%; width:110px; height:138px; transform:translate(-50%,0) scale(1.38); }
   .founder-slot-1 { left:80%; }
   .founder-portrait.is-entering { animation-name:founder-wrap-around-mobile; }
   .founder-testimonial { padding:clamp(.65rem,1.5vh,1rem) var(--gutter) .5rem; }
@@ -1025,7 +1025,7 @@ img,svg { -webkit-user-select:none; user-select:none; -webkit-user-drag:none; }
   .founders-content { grid-template-rows:23% 28% 49%; }
   .founders-content h2 { margin-top:4.25rem; font-size:1.05rem; }
   .founder-portrait { top:.35rem; width:92px; height:115px; }
-  .founder-slot-0 { width:92px; height:115px; transform:translate3d(-50%,0,0) scale(1.28); }
+  .founder-slot-0 { width:92px; height:115px; transform:translate(-50%,0) scale(1.28); }
   .founder-company-logo { width:65px; height:17px; }
   .founder-testimonial { padding-top:.25rem; }
   .founder-testimonial h3 { font-size:.82rem; }
@@ -1038,3 +1038,24 @@ img,svg { -webkit-user-select:none; user-select:none; -webkit-user-drag:none; }
 @media (prefers-reduced-motion:reduce) { .founders-ellipse,.founders-stroke { stroke-dashoffset:0; }.founders-ellipse-left,.founders-ellipse-right{clip-path:none}.our-founders.is-visible .founders-ellipse,.our-founders.is-visible .founders-stroke,.our-founders.is-visible .founders-node,.founder-testimonial,.founder-portrait.is-entering{animation:none}.founders-node{opacity:1;transform:none}.founder-portrait{transition:none} }
 @media (prefers-reduced-motion:reduce) { .reveal-item{opacity:1;transform:none;transition:none}.modal-backdrop,.backing-modal,.research-modal,.modal-closing .backing-modal,.modal-closing .research-modal{animation:none} }
 :focus-visible { outline:3px solid #8db7ff; outline-offset:4px; }
+
+/* The five-slot option preserves the existing founder composition and motion. */
+.founder-slot--3 { left:calc(50% - 595px); }
+.founder-slot-3 { left:calc(50% + 595px); }
+.contact-faq-layout h2 { white-space:pre-line; }
+@media (min-width:651px) and (max-width:1100px) {
+  .founders-layout-five .founder-portrait { width:13vw; height:16vw; }
+  .founders-layout-five .founder-slot--2 { left:10%; }
+  .founders-layout-five .founder-slot--1 { left:29%; }
+  .founders-layout-five .founder-slot-1 { left:71%; }
+  .founders-layout-five .founder-slot-2 { left:90%; }
+}
+@media (max-width:650px) {
+  .founders-layout-five .founder-portrait { width:14%; height:auto; aspect-ratio:110/138; }
+  .founders-layout-five .founder-slot--2 { left:8%; }
+  .founders-layout-five .founder-slot--1 { left:27%; }
+  .founders-layout-five .founder-slot-1 { left:73%; }
+  .founders-layout-five .founder-slot-2 { left:92%; }
+  .founders-layout-five .founder-slot--2,.founders-layout-five .founder-slot-2 { opacity:1!important; }
+  .founders-layout-five .founder-company-logo { width:80%; height:18px; bottom:.25rem; }
+}

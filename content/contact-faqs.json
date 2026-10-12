@@ -1,0 +1,520 @@
+{
+  "kicker": "FAQs",
+  "heading": "What Founders\nNeed to Know",
+  "faqs": [
+    {
+      "_type": "faq",
+      "_key": "faq-0",
+      "question": "What does Exfinity invest in?",
+      "answer": [
+        {
+          "_type": "block",
+          "_key": "0",
+          "style": "normal",
+          "children": [
+            {
+              "_type": "span",
+              "_key": "0",
+              "text": "We invest in early-stage B2B startups at the ",
+              "marks": []
+            },
+            {
+              "_type": "span",
+              "_key": "1",
+              "text": "Seed, Pre-Series A, and Series A",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "_type": "span",
+              "_key": "2",
+              "text": " stages, building across ",
+              "marks": []
+            },
+            {
+              "_type": "span",
+              "_key": "3",
+              "text": "DeepTech, AI-Native Software, and B2B Platforms",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "_type": "span",
+              "_key": "4",
+              "text": ".",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        }
+      ]
+    },
+    {
+      "_type": "faq",
+      "_key": "faq-1",
+      "question": "What kind of themes does Exfinity invest in?",
+      "answer": [
+        {
+          "_type": "block",
+          "_key": "0",
+          "style": "normal",
+          "children": [
+            {
+              "_type": "span",
+              "_key": "0",
+              "text": "Our investment themes span three sectors:",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        },
+        {
+          "_type": "block",
+          "_key": "1",
+          "style": "normal",
+          "children": [
+            {
+              "_type": "span",
+              "_key": "0",
+              "text": "DeepTech:",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "_type": "span",
+              "_key": "1",
+              "text": " Semiconductors & Computing, Aerospace, Advanced Materials & Manufacturing, Energy & Climate Tech, Robotics & Automation, Defence & Dual-Use Technology, and Life Sciences.",
+              "marks": []
+            }
+          ],
+          "markDefs": [],
+          "listItem": "bullet",
+          "level": 1
+        },
+        {
+          "_type": "block",
+          "_key": "2",
+          "style": "normal",
+          "children": [
+            {
+              "_type": "span",
+              "_key": "0",
+              "text": "AI-Native Software:",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "_type": "span",
+              "_key": "1",
+              "text": " AI Agents & Autonomous Systems, AI Infrastructure, AI Developer Tools, AI Evals & Security, Cybersecurity, Data & ML Infrastructure, and Vertical AI.",
+              "marks": []
+            }
+          ],
+          "markDefs": [],
+          "listItem": "bullet",
+          "level": 1
+        },
+        {
+          "_type": "block",
+          "_key": "3",
+          "style": "normal",
+          "children": [
+            {
+              "_type": "span",
+              "_key": "0",
+              "text": "B2B Platforms:",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "_type": "span",
+              "_key": "1",
+              "text": " Industrial Platforms, Healthcare, and AI-Native Services.",
+              "marks": []
+            }
+          ],
+          "markDefs": [],
+          "listItem": "bullet",
+          "level": 1
+        }
+      ]
+    },
+    {
+      "_type": "faq",
+      "_key": "faq-2",
+      "question": "When is the right time to get in touch?",
+      "answer": [
+        {
+          "_type": "block",
+          "_key": "0",
+          "style": "normal",
+          "children": [
+            {
+              "_type": "span",
+              "_key": "0",
+              "text": "We typically invest at the ",
+              "marks": []
+            },
+            {
+              "_type": "span",
+              "_key": "1",
+              "text": "Seed, Pre-Series A, and Series A",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "_type": "span",
+              "_key": "2",
+              "text": " stages, but it's never too early to reach out. We like to brainstorm with entrepreneurs and aspiring founders and build relationships well before we invest.",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        }
+      ]
+    },
+    {
+      "_type": "faq",
+      "_key": "faq-3",
+      "question": "What are your typical cheque sizes?",
+      "answer": [
+        {
+          "_type": "block",
+          "_key": "0",
+          "style": "normal",
+          "children": [
+            {
+              "_type": "span",
+              "_key": "0",
+              "text": "We typically invest between ",
+              "marks": []
+            },
+            {
+              "_type": "span",
+              "_key": "1",
+              "text": "$0.5 million and $4 million",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "_type": "span",
+              "_key": "2",
+              "text": ", depending on the opportunity and round size. We also reserve capital for follow-on investments.",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        }
+      ]
+    },
+    {
+      "_type": "faq",
+      "_key": "faq-4",
+      "question": "Do you lead, co-lead, or participate in rounds with other investors?",
+      "answer": [
+        {
+          "_type": "block",
+          "_key": "0",
+          "style": "normal",
+          "children": [
+            {
+              "_type": "span",
+              "_key": "0",
+              "text": "Yes. We are open to ",
+              "marks": []
+            },
+            {
+              "_type": "span",
+              "_key": "1",
+              "text": "leading, co-leading, or participating",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "_type": "span",
+              "_key": "2",
+              "text": " alongside other investors, depending on the structure and requirements of the round.",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        }
+      ]
+    },
+    {
+      "_type": "faq",
+      "_key": "faq-5",
+      "question": "How do I get in touch?",
+      "answer": [
+        {
+          "_type": "block",
+          "_key": "0",
+          "style": "normal",
+          "children": [
+            {
+              "_type": "span",
+              "_key": "0",
+              "text": "You can email us at ",
+              "marks": []
+            },
+            {
+              "_type": "span",
+              "_key": "1",
+              "text": "info@exfinityventures.com",
+              "marks": [
+                "link0",
+                "em"
+              ]
+            },
+            {
+              "_type": "span",
+              "_key": "2",
+              "text": " or reach out directly to any member of our team.",
+              "marks": []
+            }
+          ],
+          "markDefs": [
+            {
+              "_type": "link",
+              "_key": "link0",
+              "href": "mailto:info@exfinityventures.com"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "_type": "faq",
+      "_key": "faq-6",
+      "question": "Do you only invest in Indian companies?",
+      "answer": [
+        {
+          "_type": "block",
+          "_key": "0",
+          "style": "normal",
+          "children": [
+            {
+              "_type": "span",
+              "_key": "0",
+              "text": "No. We invest in companies incorporated in ",
+              "marks": []
+            },
+            {
+              "_type": "span",
+              "_key": "1",
+              "text": "India, the US, and Singapore",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "_type": "span",
+              "_key": "2",
+              "text": ". Our focus is on founders of Indian origin building for global markets, supported by our network and partners across all three geographies.",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        }
+      ]
+    },
+    {
+      "_type": "faq",
+      "_key": "faq-7",
+      "question": "What do you look for?",
+      "answer": [
+        {
+          "_type": "block",
+          "_key": "0",
+          "style": "normal",
+          "children": [
+            {
+              "_type": "span",
+              "_key": "0",
+              "text": "We look for ",
+              "marks": []
+            },
+            {
+              "_type": "span",
+              "_key": "1",
+              "text": "complementary founding teams",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "_type": "span",
+              "_key": "2",
+              "text": " that combine strong product and technical depth with market focus, backed by early signals such as a ",
+              "marks": []
+            },
+            {
+              "_type": "span",
+              "_key": "3",
+              "text": "POC, first customer, or enterprise partnership",
+              "marks": [
+                "em"
+              ]
+            },
+            {
+              "_type": "span",
+              "_key": "4",
+              "text": ".",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        }
+      ]
+    },
+    {
+      "_type": "faq",
+      "_key": "faq-8",
+      "question": "What do you offer beyond capital?",
+      "answer": [
+        {
+          "_type": "block",
+          "_key": "0",
+          "style": "normal",
+          "children": [
+            {
+              "_type": "span",
+              "_key": "0",
+              "text": "Beyond capital, we support founders with:",
+              "marks": []
+            }
+          ],
+          "markDefs": []
+        },
+        {
+          "_type": "block",
+          "_key": "1",
+          "style": "normal",
+          "children": [
+            {
+              "_type": "span",
+              "_key": "0",
+              "text": "Customer access:",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "_type": "span",
+              "_key": "1",
+              "text": " Warm CXO introductions that can convert into pilots and customers.",
+              "marks": []
+            }
+          ],
+          "markDefs": [],
+          "listItem": "bullet",
+          "level": 1
+        },
+        {
+          "_type": "block",
+          "_key": "2",
+          "style": "normal",
+          "children": [
+            {
+              "_type": "span",
+              "_key": "0",
+              "text": "Hiring:",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "_type": "span",
+              "_key": "1",
+              "text": " Support in hiring the first core team members, which is critical to company building.",
+              "marks": []
+            }
+          ],
+          "markDefs": [],
+          "listItem": "bullet",
+          "level": 1
+        },
+        {
+          "_type": "block",
+          "_key": "3",
+          "style": "normal",
+          "children": [
+            {
+              "_type": "span",
+              "_key": "0",
+              "text": "Fundraising & strategic capital:",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "_type": "span",
+              "_key": "1",
+              "text": " Connections to our VC and CVC network for future rounds and strategic investments.",
+              "marks": []
+            }
+          ],
+          "markDefs": [],
+          "listItem": "bullet",
+          "level": 1
+        },
+        {
+          "_type": "block",
+          "_key": "4",
+          "style": "normal",
+          "children": [
+            {
+              "_type": "span",
+              "_key": "0",
+              "text": "Market intelligence:",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "_type": "span",
+              "_key": "1",
+              "text": " Insights on the competitive landscape and broader macro trends.",
+              "marks": []
+            }
+          ],
+          "markDefs": [],
+          "listItem": "bullet",
+          "level": 1
+        },
+        {
+          "_type": "block",
+          "_key": "5",
+          "style": "normal",
+          "children": [
+            {
+              "_type": "span",
+              "_key": "0",
+              "text": "Hands-on support:",
+              "marks": [
+                "strong"
+              ]
+            },
+            {
+              "_type": "span",
+              "_key": "1",
+              "text": " Alongside a Partner who sits on the Board, a senior team member works closely with the company at every stage, beyond formal board meetings.",
+              "marks": []
+            }
+          ],
+          "markDefs": [],
+          "listItem": "bullet",
+          "level": 1
+        }
+      ]
+    }
+  ]
+}

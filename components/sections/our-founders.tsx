@@ -2,12 +2,15 @@
 
 import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
-import type { HomepageFounder } from "@/types/homepage";
+import { founderSlot, type HomepageFoundersSection } from "@/types/homepage";
 
-export function OurFounders({ founders }: { founders: HomepageFounder[] }) {
+export function OurFounders({ content }: { content: HomepageFoundersSection }) {
+  const { founders, layout } = content;
   const sectionRef = useRef<HTMLElement>(null);
   const [active, setActive] = useState(0);
   const [entered, setEntered] = useState(false);
+  const [isHovered, setIsHovered] = useState(false);
+  const isPaused = isHovered;
 
   useEffect(() => {
     const section = sectionRef.current;
@@ -26,20 +29,22 @@ export function OurFounders({ founders }: { founders: HomepageFounder[] }) {
   }, []);
 
   useEffect(() => {
-    if (!entered || window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    if (!entered || isPaused || window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
     const timer = window.setTimeout(() => {
       setActive((current) => (current + 1) % founders.length);
     }, 3500);
     return () => window.clearTimeout(timer);
-  }, [active, entered, founders.length]);
+  }, [active, entered, founders.length, isPaused]);
 
   const activeFounder = founders[active];
 
   return (
     <section
       ref={sectionRef}
-      className={`our-founders${entered ? " is-visible" : ""}`}
+      className={`our-founders founders-layout-${layout}${entered ? " is-visible" : ""}`}
       aria-labelledby="founders-title"
+      data-paused={isPaused}
+
     >
       <svg className="founders-paths" viewBox="0 0 1440 900" preserveAspectRatio="xMidYMin slice" aria-hidden="true">
         <path className="founders-ellipse founders-ellipse-left" d="M0 790 A720 720 0 0 1 720 70" pathLength="1" />
@@ -49,14 +54,11 @@ export function OurFounders({ founders }: { founders: HomepageFounder[] }) {
       <span className="founders-node" aria-hidden="true" />
 
       <div className="container founders-content">
-        <h2 id="founders-title">What Our Founders Say</h2>
+        <h2 id="founders-title">{content.heading}</h2>
 
         <div className="founders-ticker" aria-live="off">
           {founders.map((founder, index) => {
-            let offset = (index - active + founders.length) % founders.length;
-            if (offset > founders.length / 2) offset -= founders.length;
-            const visibleOffset = Math.max(-2, Math.min(2, offset));
-            const isVisible = Math.abs(offset) <= 1;
+            const { offset: visibleOffset, visible: isVisible } = founderSlot(index, active, founders.length, layout);
 
             return (
               <button
@@ -67,13 +69,15 @@ export function OurFounders({ founders }: { founders: HomepageFounder[] }) {
                 aria-label={index === active ? undefined : `Show testimonial from ${founder.name}`}
                 aria-pressed={index === active}
                 tabIndex={isVisible && index !== active ? 0 : -1}
+                onMouseEnter={() => { if (isVisible) setIsHovered(true); }}
+                onMouseLeave={() => setIsHovered(false)}
                 onClick={() => {
                   if (index !== active && isVisible) setActive(index);
                 }}
                 style={{ opacity: isVisible ? 1 : 0, zIndex: index === active ? 3 : 1 }}
               >
                 <Image className="founder-photo" src={founder.imageUrl} alt={isVisible ? founder.name : ""} fill quality={90} sizes="(max-width: 650px) 43vw, (max-width: 1100px) 24vw, 20vw" />
-                {index === active && founder.logoUrl && <span className="founder-company-logo"><Image src={founder.logoUrl} alt="" fill sizes="112px" /></span>}
+                {index === active && founder.logoUrl && <span className="founder-company-logo"><Image src={founder.logoUrl} alt="" fill unoptimized sizes="(max-width: 650px) 112px, 180px" /></span>}
               </button>
             );
           })}

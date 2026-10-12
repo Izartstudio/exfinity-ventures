@@ -4,24 +4,11 @@ import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 
-const companies = [
-  { name: "Kinara AI", logo: "/companies/vector/kinara.svg", href: "/portfolio/kinara", width: 150, height: 50 },
-  { name: "Ati Robotics", logo: "/companies/vector/ati.svg", href: "/portfolio/ati", width: 60, height: 35 },
-  { name: "CloudSEK", logo: "/companies/vector/cloudsek.svg", href: "/portfolio/cloudsek", width: 135, height: 28 },
-  { name: "Credilio", logo: "/companies/vector/credilio.svg", href: "/portfolio/credilio", width: 150, height: 50 },
-  { name: "GridRaster", logo: "/companies/vector/gridraster.svg", href: "/portfolio/gridraster", width: 150, height: 50 },
-  { name: "Maieutic", logo: "/companies/portfolio-provided/maieutic.svg", href: "/portfolio/maieutic", width: 150, height: 50 },
-  { name: "Pixis", logo: "/companies/vector/pixis.svg", href: "/portfolio/pixis", width: 120, height: 60 },
-  { name: "MoEngage", logo: "/companies/vector/moengage.svg", href: "/portfolio/moengage", width: 150, height: 50 },
-  { name: "Zyla", logo: "/companies/vector/zyla.svg", href: "/portfolio/zyla-health", width: 150, height: 50 },
-  { name: "Chara Motors", logo: "/companies/vector/chara.svg", href: "/portfolio/chara", width: 150, height: 40 },
-  { name: "Optimized Electrotech", logo: "/companies/vector/optimized-electrotech.svg", href: "/portfolio/optimized-electrotech", width: 150, height: 50 },
-  { name: "Str8bat", logo: "/companies/vector/str8bat.svg", href: "/portfolio/str8bat", width: 150, height: 50 },
-] as const;
+import type { CompaniesSection } from "@/content/homepage-sections";
 
-const visibleCellCount = 6;
-
-export function CompaniesWeBack() {
+export function CompaniesWeBack({ content }: { content: CompaniesSection }) {
+  const { companies } = content;
+  const visibleCellCount = Math.min(6, companies.length);
   const [logoIndexes, setLogoIndexes] = useState(() => Array.from({ length: visibleCellCount }, (_, index) => index));
   const lastCellRef = useRef(-1);
   const isLogoHoveredRef = useRef(false);
@@ -33,7 +20,7 @@ export function CompaniesWeBack() {
     });
 
     const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
-    if (reduceMotion.matches) return;
+    if (reduceMotion.matches || companies.length <= visibleCellCount) return;
 
     const timer = window.setInterval(() => {
       if (isLogoHoveredRef.current) return;
@@ -49,13 +36,13 @@ export function CompaniesWeBack() {
     }, 5000);
 
     return () => window.clearInterval(timer);
-  }, []);
+  }, [companies, visibleCellCount]);
 
   return (
     <section className="companies-we-back" aria-labelledby="companies-title">
       <div className="container">
         <div className="section-kicker" id="companies-title">
-          Companies We Back
+          {content.heading}
         </div>
 
         <div className="portfolio-wall">
@@ -84,10 +71,9 @@ export function CompaniesWeBack() {
 
           <aside className="portfolio-callout">
             <p>
-              From DeepTech to AI Native Softwares, these are companies we believed
-              in at the earliest stage; now building for global markets
+              {content.description}
             </p>
-            <Link className="button button-primary" href="/portfolio"><span className="button-label">View Portfolio</span></Link>
+            <Link className="button button-primary" href={content.ctaHref}><span className="button-label">{content.ctaLabel}</span></Link>
           </aside>
         </div>
       </div>

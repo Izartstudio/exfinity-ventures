@@ -1,3 +1,4 @@
+import { getContactFaqs } from "@/lib/sanity/contact";
 import type { Metadata } from "next";
 import { Footer } from "@/components/layout/footer";
 import { ContactFaqs } from "@/components/sections/contact-faqs";
@@ -10,7 +11,8 @@ export const metadata: Metadata = createMetadata({
   path: "/contact",
 });
 
-export default function ContactPage() {
+export default async function ContactPage() {
+  const faqs = await getContactFaqs();
   return <>
     <main>
       <TeamHero
@@ -18,7 +20,7 @@ export default function ContactPage() {
         description={<>Send us a note with your company, what you&apos;re building,<br />and where you are in your journey We&apos;ll take it from there</>}
         cta={{ label: "Pitch to us", href: "mailto:info@exfinityventures.com" }}
       />
-      <ContactFaqs />
+      <ContactFaqs content={faqs} />
     </main>
     <Footer />
   </>;
