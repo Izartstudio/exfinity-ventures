@@ -29,12 +29,14 @@ const linkGroups = [
 
 export function Footer() {
   const [submissionState, setSubmissionState] = useState<"idle" | "submitting" | "success" | "error">("idle");
+  const [errorMessage, setErrorMessage] = useState("");
 
   const subscribe = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     const form = event.currentTarget;
     const data = new FormData(form);
     setSubmissionState("submitting");
+    setErrorMessage("");
 
     try {
       const response = await fetch("/api/forms", {
@@ -48,10 +50,11 @@ export function Footer() {
         }),
       });
       const result = await response.json();
-      if (!response.ok || result?.ok !== true) throw new Error("Submission failed");
+      if (!response.ok || result?.ok !== true) throw new Error(result?.error || "We couldn’t submit the form. Please try again.");
       form.reset();
       setSubmissionState("success");
-    } catch {
+    } catch (error) {
+      setErrorMessage(error instanceof Error ? error.message : "Something went wrong. Please try again.");
       setSubmissionState("error");
     }
   };
@@ -66,7 +69,7 @@ export function Footer() {
             <input id="newsletter-email" name="email" type="email" autoComplete="email" placeholder="Enter Your Email Address" required />
             <input className="form-honeypot" name="companyWebsite" type="text" tabIndex={-1} autoComplete="off" aria-hidden="true" />
             <button className="button button-primary" type="submit" disabled={submissionState === "submitting"}><span className="button-label">{submissionState === "submitting" ? "Submitting…" : "Subscribe"}</span></button>
-            <p className={`form-status is-${submissionState}`} aria-live="polite">{submissionState === "success" ? "Thank you for subscribing." : submissionState === "error" ? "Something went wrong. Please try again." : ""}</p>
+            <p className={`form-status is-${submissionState}`} aria-live="polite">{submissionState === "success" ? "Thank you for subscribing." : submissionState === "error" ? errorMessage : ""}</p>
           </form>
         </section>
 

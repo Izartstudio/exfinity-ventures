@@ -9,6 +9,8 @@ export function Insights({ items }: { items: NewsItem[] }) {
   const [isOpen, setIsOpen] = useState(false);
   const [isClosing, setIsClosing] = useState(false);
   const [submissionState, setSubmissionState] = useState<"idle" | "submitting" | "success" | "error">("idle");
+  const [reportUrl, setReportUrl] = useState("");
+  const [errorMessage, setErrorMessage] = useState("");
   const closeButtonRef = useRef<HTMLButtonElement>(null);
   const closingRef = useRef(false);
   const closeTimerRef = useRef<number | null>(null);
@@ -54,6 +56,7 @@ export function Insights({ items }: { items: NewsItem[] }) {
     const form = event.currentTarget;
     const data = new FormData(form);
     setSubmissionState("submitting");
+    setErrorMessage("");
 
     try {
       const response = await fetch("/api/forms", {
@@ -69,10 +72,13 @@ export function Insights({ items }: { items: NewsItem[] }) {
         }),
       });
       const result = await response.json();
-      if (!response.ok || result?.ok !== true) throw new Error("Submission failed");
+      if (!response.ok || result?.ok !== true) throw new Error(result?.error || "We couldn’t submit the form. Please try again.");
+      if (typeof result.reportUrl !== "string" || !result.reportUrl) throw new Error("The report link is unavailable. Please try again.");
+      setReportUrl(result.reportUrl);
       form.reset();
       setSubmissionState("success");
-    } catch {
+    } catch (error) {
+      setErrorMessage(error instanceof Error ? error.message : "Something went wrong. Please try again.");
       setSubmissionState("error");
     }
   };
@@ -118,16 +124,16 @@ export function Insights({ items }: { items: NewsItem[] }) {
               <Image quality={100} src="/insights/physical-ai-thesis.png" alt="Physical AI Thesis report" width={460} height={350} sizes="(max-width: 700px) 90vw, 42vw" />
             </div>
             <form className="research-form" onSubmit={submit}>
-              <label><span>Enter Your Name</span><input name="name" type="text" autoComplete="name" required /></label>
-              <label><span>Enter Your Email Address</span><input name="email" type="email" autoComplete="email" required /></label>
-              <label><span>Enter Your Company Name</span><input name="company" type="text" autoComplete="organization" required /></label>
+              <label><span>Enter Your Name</span><input name="name" type="text" autoComplete="name" minLength={2} maxLength={100} required /></label>
+              <label><span>Enter Your Business or Academic Email</span><input name="email" type="email" autoComplete="email" required /></label>
+              <label><span>Enter Your Company / Institution</span><input name="company" type="text" autoComplete="organization" minLength={2} maxLength={150} required /></label>
               <input className="form-honeypot" name="companyWebsite" type="text" tabIndex={-1} autoComplete="off" aria-hidden="true" />
               {submissionState === "success" ? (
-                <p className="research-download" role="status">Thanks for sharing, <a href="https://docsend.com/v/4wkhj/exf_physical_ai" target="_blank" rel="noopener noreferrer">download the full report</a></p>
+                <p className="research-download" role="status">Thanks for sharing, <a href={reportUrl} target="_blank" rel="noopener noreferrer">download the full report</a></p>
               ) : (
                 <button className="button button-primary" type="submit" disabled={submissionState === "submitting"}><span className="button-label">{submissionState === "submitting" ? "Submitting…" : "Access thesis report"}</span></button>
               )}
-              <p className={`form-status is-${submissionState}`} aria-live="polite">{submissionState === "error" ? "Something went wrong. Please try again." : ""}</p>
+              <p className={`form-status is-${submissionState}`} aria-live="polite">{submissionState === "error" ? errorMessage : ""}</p>
             </form>
           </section>
         </div>

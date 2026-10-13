@@ -1,6 +1,7 @@
 import { NextResponse } from "next/server";
 
 export const runtime = "nodejs";
+export const maxDuration = 60;
 
 type FormSubmission = {
   formType?: "newsletter" | "research";
@@ -48,6 +49,7 @@ export async function POST(request: Request) {
   let body: FormSubmission;
   try {
     body = await request.json() as FormSubmission;
+    if (!body || typeof body !== "object" || Array.isArray(body)) throw new Error("Invalid body");
   } catch {
     return NextResponse.json({ error: "Invalid submission." }, { status: 400 });
   }
@@ -56,25 +58,26 @@ export async function POST(request: Request) {
   if (clean(body.companyWebsite, 200)) return NextResponse.json({ ok: false });
 
   const formType = body.formType;
-  const name = clean(body.name, 120);
+  const name = clean(body.name, 100);
   const email = clean(body.email, 254).toLowerCase();
-  const company = clean(body.company, 160);
+  const company = clean(body.company, 150);
   const page = clean(body.page, 500);
 
   if ((formType !== "newsletter" && formType !== "research") || !emailPattern.test(email)) {
     return NextResponse.json({ error: "Please enter a valid email address." }, { status: 400 });
   }
-  if (formType === "research" && (!name || !company)) {
+  if (formType === "research" && (name.length < 2 || company.length < 2)) {
     return NextResponse.json({ error: "Please complete all required fields." }, { status: 400 });
   }
 
+  const action = formType === "research" ? "thesis" : "newsletter";
   try {
     const response = await fetch(webhookUrl, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
         secret: webhookSecret,
-        formType,
+        action,
         name,
         email,
         company,
@@ -82,18 +85,36 @@ export async function POST(request: Request) {
         page,
       }),
       cache: "no-store",
-      signal: AbortSignal.timeout(10_000),
+      signal: AbortSignal.timeout(45_000),
     });
 
-    const result = await response.json().catch(() => null) as { ok?: boolean; error?: unknown } | null;
-    if (!response.ok || result?.ok !== true) {
+    const result = await response.json().catch(() => null) as { ok?: boolean; error?: unknown; action?: string; redirectUrl?: string } | null;
+    const validationMessages: Record<string, string> = {
+      NAME_REQUIRED: "Please enter your full name (at least 2 characters).",
+      COMPANY_REQUIRED: "Please enter your company or institution (at least 2 characters).",
+      INVALID_EMAIL: "Please enter a valid email address.",
+      BUSINESS_EMAIL_REQUIRED: "Please use your business or academic email address to access the report.",
+    };
+    if (result?.ok === false && typeof result.error === "string" && validationMessages[result.error]) {
+      return NextResponse.json({ ok: false, error: validationMessages[result.error] }, { status: 400 });
+    }
+    if (!response.ok || result?.ok !== true || result.action !== action) {
       // Preserve safe upstream error codes in server logs, without logging PII or secrets.
       const code = typeof result?.error === "string" && /^[A-Z_]{1,64}$/.test(result.error)
         ? result.error
         : "UNCONFIRMED_SUBMISSION";
       throw new Error(`Webhook returned ${response.status}: ${code}`);
     }
-    return NextResponse.json({ ok: true });
+    // Both Apps Script handlers acknowledge success only after the sheet write.
+    let reportUrl: string | undefined;
+    if (action === "thesis") {
+      const report = new URL(result.redirectUrl || "");
+      if (report.protocol !== "https:" || report.hostname !== "docsend.com" || report.username || report.password) {
+        throw new Error("Invalid report URL in webhook response");
+      }
+      reportUrl = report.href;
+    }
+    return NextResponse.json({ ok: true, reportUrl });
   } catch (error) {
     console.error("Unable to submit website form.", error);
     return NextResponse.json({ error: "We couldn't submit the form. Please try again." }, { status: 502 });

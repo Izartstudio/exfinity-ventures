@@ -25,10 +25,12 @@ function companiesFor(member: TeamMember): PortfolioCompany[] {
 
 export function TeamProfile({ member, showFunds = false, companiesTitle = "Companies", companiesDescription = "A selection of companies they work closely with, bringing investment experience, strategic guidance and operational perspective to their growth" }: { member: TeamMember; showFunds?: boolean; companiesTitle?: string; companiesDescription?: string }) {
   const companies = companiesFor(member);
+  const fundNumbers: Record<string, string> = { I: "1", II: "2", III: "3", IV: "4" };
+  const funds = [...new Set((member.funds ?? "").split(",").map((fund) => fund.trim().replace(/^fund\s+/i, "")).filter(Boolean))];
   const isAdvisorProfile = /Advisor|TAC Member|Venture Partner|Chairman/.test(member.role);
 
   return <>
-    <section className={`team-profile${isAdvisorProfile ? " is-advisor-profile" : ""}`} aria-labelledby="team-profile-name">
+    <section className={`team-profile${showFunds && funds.length ? " has-funds" : ""}${isAdvisorProfile ? " is-advisor-profile" : ""}`} aria-labelledby="team-profile-name">
       <div className="team-profile-layout">
         <div className="team-profile-copy">
           <h1 id="team-profile-name">{member.name}</h1>
@@ -36,7 +38,10 @@ export function TeamProfile({ member, showFunds = false, companiesTitle = "Compa
             <p>{member.role}</p>
             {member.linkedinUrl && <a className="team-profile-linkedin" href={member.linkedinUrl} target="_blank" rel="noreferrer" aria-label={`${member.name} on LinkedIn`}>in</a>}
           </div>
-          {showFunds && member.funds && <p className="team-profile-funds">Funds {member.funds}</p>}
+          {showFunds && funds.length > 0 && <dl className="team-profile-funds">
+            <dt>Fund</dt>
+            <dd>{funds.map((fund) => <span key={fund}>Fund {fundNumbers[fund.toUpperCase()] ?? fund}</span>)}</dd>
+          </dl>}
           <div className="team-profile-bio">{biographyFor(member).map((paragraph) => <p key={paragraph}>{paragraph}</p>)}</div>
         </div>
         <div className="team-profile-portrait"><Image src={member.profileImage ?? member.image} alt={member.name} fill priority quality={90} sizes="(max-width: 800px) 100vw, 50vw" style={{ objectPosition: member.imagePosition ?? "center center" }} /></div>

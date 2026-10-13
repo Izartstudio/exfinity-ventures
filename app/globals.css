@@ -1064,4 +1064,15 @@ img,svg { -webkit-user-select:none; user-select:none; -webkit-user-drag:none; }
 .research-download a { color:#004de5; text-decoration:underline; text-underline-offset:3px; }
 
 
-.team-profile-funds { margin:1rem 0; color:#004de5; font-size:.9rem; }
+/* Fund details appear between the role and biography on partner profiles. */
+.team-profile-funds { display:flex; align-items:center; justify-content:space-between; gap:1rem; margin:0; padding:1.2rem 0 .8rem; }
+.team-profile-funds dt { color:#004de5; font-family:var(--font-sharp-grotesk-cta),Arial,sans-serif; font-size:.8rem; font-weight:500; letter-spacing:.18em; text-transform:uppercase; }
+.team-profile-funds dd { display:flex; flex-wrap:wrap; justify-content:flex-end; gap:.6rem; margin:0; }
+.team-profile-funds dd span { display:flex; align-items:center; justify-content:center; min-width:5rem; padding:.85rem 1rem; border:1px solid #e0e3e8; color:#202020; font-family:var(--font-sharp-grotesk),Arial,sans-serif; font-size:.8rem; font-weight:400; line-height:1; text-transform:uppercase; white-space:nowrap; }
+@media (max-width:768px) {
+  .team-profile.has-funds .team-profile-funds { grid-row:3; margin-top:-2.5rem; padding-top:1.2rem; }
+  .team-profile.has-funds .team-profile-portrait { grid-row:4; }
+  .team-profile.has-funds .team-profile-bio { grid-row:5; }
+  .team-profile-funds dd { gap:.5rem; }
+  .team-profile-funds dd span { min-width:4rem; padding:.8rem .6rem; font-size:.7rem; }
+}
