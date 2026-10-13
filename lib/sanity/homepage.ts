@@ -35,5 +35,16 @@ export async function getHomepageFounders(): Promise<HomepageFoundersSection> {
   const data = await getPublishedSection<HomepageFoundersSection>("homepageFounders", `heading,layout,"founders":founders[]{name,role,quote,"imageUrl":coalesce(image.asset->url,imageUrl),"logoUrl":coalesce(logo.asset->url,logoUrl)}`);
   const fallback: HomepageFoundersSection = { heading: "What Our Founders Say", layout: "three", founders: fallbackFounders };
   if (!data?.founders?.length || !data.founders.every((founder) => founder.name && founder.role && founder.quote && founder.imageUrl)) return fallback;
-  return { heading: data.heading || fallback.heading, layout: data.layout === "five" ? "five" : "three", founders: data.founders.map((founder) => ({ ...founder, logoUrl: founder.logoUrl || fallbackFounders.find((item) => item.name === founder.name)?.logoUrl })) };
+  return {
+    heading: data.heading || fallback.heading,
+    layout: data.layout === "five" ? "five" : "three",
+    founders: data.founders.map((founder) => {
+      const fallbackFounder = fallbackFounders.find((item) => item.name === founder.name);
+      // The legacy Pixis and MoEngage SVG files wrap raster images. Safari
+      // softens those images when their animated parent is scaled, so always
+      // use the original PNG assets for these two founder cards.
+      const useSafariSafeLogo = founder.name === "Shubham Mishra" || founder.name === "Raviteja Dodda";
+      return { ...founder, logoUrl: useSafariSafeLogo ? fallbackFounder?.logoUrl : founder.logoUrl || fallbackFounder?.logoUrl };
+    }),
+  };
 }

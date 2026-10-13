@@ -535,6 +535,7 @@ img,svg { -webkit-user-select:none; user-select:none; -webkit-user-drag:none; }
 .company-logo-image[src*="/companies/vector/ati"] { --logo-visual-scale:.72; }
 .company-logo-image[src*="/companies/vector/zyla"] { --logo-visual-scale:.7; }
 .founder-company-logo img[src*="/companies/vector/pixis"] { --logo-visual-scale:1; }
+.founder-company-logo img[src*="moengage-provided"] { --logo-visual-scale:.9; }
 .portfolio-company-logo img[src*="/companies/vector/ati"] { --logo-visual-scale:.76; }
 .portfolio-company-logo img[src*="/companies/vector/curefit"] { --logo-visual-scale:.7; }
 .portfolio-company-logo img[src*="/companies/vector/log9"] { --logo-visual-scale:.72; }
@@ -652,6 +653,7 @@ img,svg { -webkit-user-select:none; user-select:none; -webkit-user-drag:none; }
 .footer-newsletter h2 { margin:0; font-size:clamp(1.65rem,2.2vw,2.15rem); font-weight:400; line-height:1.35; }
 .footer-newsletter form { display:grid; grid-template-columns:1fr auto; }
 .footer-newsletter .form-status { grid-column:1/-1; margin-top:.6rem; }
+.footer-newsletter .form-status.is-success { color:#004de5; }
 .footer-newsletter input { min-width:0; padding:0 1.25rem; border:1px solid #d9dfeb; border-right:0; outline:0; background:rgba(255,255,255,.45); color:#000021; font-family:var(--font-inter-display-regular),Arial,sans-serif; font-size:1rem; }
 .footer-newsletter input:focus { border-color:#75a6ff; }
 .footer-links { display:grid; grid-template-columns:repeat(3,1fr); gap:4rem; padding-block:4rem; border-bottom:1px solid #d9dfeb; }
