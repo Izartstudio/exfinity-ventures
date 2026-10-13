@@ -8,7 +8,13 @@ const teamMember = {
     { name: "slug", title: "Profile page slug", type: "slug", options: { source: "name", maxLength: 96 }, validation: required },
     { name: "role", title: "Role", type: "string", validation: required },
     { name: "region", title: "Region", type: "string", validation: required },
-    { name: "hideFromTeamPage", title: "Hide from team page", type: "boolean", initialValue: false },
+    {
+      name: "hideFromTeamPage",
+      title: "Hide from this team tab",
+      description: "Turn on to remove this member from the team-page tab. Their direct profile remains available.",
+      type: "boolean",
+      initialValue: false,
+    },
     { name: "image", title: "Directory image", type: "image", options: { hotspot: true }, validation: required },
     { name: "profileImage", title: "Profile image override", type: "image", options: { hotspot: true } },
     {
@@ -33,7 +39,7 @@ const teamMember = {
 const memberGroup = (name: string, title: string) => ({
   name,
   title,
-  description: "Drag members to rearrange their order on the website.",
+  description: "Drag members to rearrange their order. Open any member to hide or unhide them in this tab.",
   type: "array",
   of: [{
     ...teamMember,

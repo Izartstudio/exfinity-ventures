@@ -7,7 +7,9 @@ import { teamDirectoryContent, teamMemberSlug } from "@/content/team";
 import { siteName, siteUrl } from "@/lib/seo";
 import { getTeamMember, getTeamPage } from "@/lib/sanity/team";
 
-const teamMembers = Array.from(new Map([...teamDirectoryContent.partners, ...teamDirectoryContent.founders, ...teamDirectoryContent.investmentTeam, ...teamDirectoryContent.tacTeam].map((member) => [teamMemberSlug(member.name), member])).entries());
+const teamMembers = Array.from(new Map([...teamDirectoryContent.partners, ...teamDirectoryContent.founders, ...teamDirectoryContent.investmentTeam, ...teamDirectoryContent.tacTeam]
+  .filter((member) => !member.hideFromTeamPage)
+  .map((member) => [teamMemberSlug(member.name), member])).entries());
 
 export function generateStaticParams() { return teamMembers.map(([name]) => ({ name })); }
 

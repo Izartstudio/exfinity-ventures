@@ -56,6 +56,15 @@ async function fetchTeamPage(): Promise<TeamDirectoryContent> {
     const result = { ...fallback, ...data.result };
     for (const group of groups) {
       if (!Array.isArray(data.result[group])) result[group] = fallback[group];
+      result[group] = result[group].map((member) => {
+        const original = fallback[group].find((fallbackMember) =>
+          teamMemberSlug(fallbackMember.name) === teamMemberSlug(member.name)
+        );
+        return {
+          ...member,
+          hideFromTeamPage: member.hideFromTeamPage ?? original?.hideFromTeamPage ?? false,
+        };
+      });
     }
     result.partners = result.partners.map((member) => ({
       ...member,
@@ -85,5 +94,8 @@ export async function getTeamMember(slug: string): Promise<TeamMember | undefine
   const page = await fetchTeamPage();
   return groups
     .flatMap((group) => page[group])
-    .find((member) => (member.slug || teamMemberSlug(member.name)) === slug);
+    .find((member) =>
+      !member.hideFromTeamPage &&
+      (member.slug || teamMemberSlug(member.name)) === slug
+    );
 }

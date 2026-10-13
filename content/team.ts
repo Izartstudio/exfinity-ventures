@@ -282,6 +282,7 @@ export const teamDirectoryContent: TeamDirectoryContent = {
       name: "Rahul Sasi",
       role: "TAC Member",
       region: "India",
+      hideFromTeamPage: true,
       image: "/team/tac/tac-3-hd.png",
       portfolioCompanyIds: [],
       linkedinUrl: "https://www.linkedin.com/in/fb1h2s/",

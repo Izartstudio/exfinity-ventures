@@ -1,11 +1,16 @@
 import type { MetadataRoute } from "next";
 import { getNewsArticles } from "@/lib/sanity/news";
-import { portfolioCompanies } from "@/content/portfolio";
+import { getPortfolioWall } from "@/lib/sanity/portfolio";
+import { getTeamPage } from "@/lib/sanity/team";
 import { siteUrl } from "@/lib/seo";
-import { teamDirectoryContent, teamMemberSlug } from "@/content/team";
+import { teamMemberSlug } from "@/content/team";
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-  const articles = await getNewsArticles();
+  const [articles, portfolio, team] = await Promise.all([
+    getNewsArticles(),
+    getPortfolioWall(),
+    getTeamPage(),
+  ]);
   const staticRoutes: MetadataRoute.Sitemap = [
     { url: siteUrl, changeFrequency: "weekly", priority: 1 },
     { url: `${siteUrl}/portfolio`, changeFrequency: "weekly", priority: 0.9 },
@@ -22,17 +27,17 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     priority: 0.7,
   }));
 
-  const portfolioRoutes: MetadataRoute.Sitemap = portfolioCompanies.map((company) => ({
+  const portfolioRoutes: MetadataRoute.Sitemap = portfolio.companies.map((company) => ({
     url: `${siteUrl}/portfolio/${company.id}`,
     changeFrequency: "monthly",
     priority: 0.7,
   }));
 
   const teamMembers = Array.from(new Map([
-    ...teamDirectoryContent.partners,
-    ...teamDirectoryContent.investmentTeam,
-    ...teamDirectoryContent.tacTeam,
-    ...teamDirectoryContent.founders,
+    ...team.partners,
+    ...team.investmentTeam,
+    ...team.tacTeam,
+    ...team.founders,
   ].map((member) => [teamMemberSlug(member.name), member])).keys());
 
   const teamRoutes: MetadataRoute.Sitemap = teamMembers.map((slug) => ({
