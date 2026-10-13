@@ -1059,3 +1059,9 @@ img,svg { -webkit-user-select:none; user-select:none; -webkit-user-drag:none; }
   .founders-layout-five .founder-slot--2,.founders-layout-five .founder-slot-2 { opacity:1!important; }
   .founders-layout-five .founder-company-logo { width:80%; height:18px; bottom:.25rem; }
 }
+
+.research-download { margin:0; font-size:1rem; line-height:1.5; }
+.research-download a { color:#004de5; text-decoration:underline; text-underline-offset:3px; }
+
+
+.team-profile-funds { margin:1rem 0; color:#004de5; font-size:.9rem; }

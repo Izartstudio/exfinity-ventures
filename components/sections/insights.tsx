@@ -2,12 +2,10 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { useRouter } from "next/navigation";
 import { FormEvent, useCallback, useEffect, useRef, useState } from "react";
 import type { NewsItem } from "@/content/news";
 
 export function Insights({ items }: { items: NewsItem[] }) {
-  const router = useRouter();
   const [isOpen, setIsOpen] = useState(false);
   const [isClosing, setIsClosing] = useState(false);
   const [submissionState, setSubmissionState] = useState<"idle" | "submitting" | "success" | "error">("idle");
@@ -52,6 +50,7 @@ export function Insights({ items }: { items: NewsItem[] }) {
 
   const submit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
+    if (submissionState === "submitting" || submissionState === "success") return;
     const form = event.currentTarget;
     const data = new FormData(form);
     setSubmissionState("submitting");
@@ -69,10 +68,10 @@ export function Insights({ items }: { items: NewsItem[] }) {
           page: window.location.pathname,
         }),
       });
-      if (!response.ok) throw new Error("Submission failed");
+      const result = await response.json();
+      if (!response.ok || result?.ok !== true) throw new Error("Submission failed");
       form.reset();
       setSubmissionState("success");
-      window.setTimeout(() => router.push("/news/physical-ai-thesis"), 500);
     } catch {
       setSubmissionState("error");
     }
@@ -123,8 +122,12 @@ export function Insights({ items }: { items: NewsItem[] }) {
               <label><span>Enter Your Email Address</span><input name="email" type="email" autoComplete="email" required /></label>
               <label><span>Enter Your Company Name</span><input name="company" type="text" autoComplete="organization" required /></label>
               <input className="form-honeypot" name="companyWebsite" type="text" tabIndex={-1} autoComplete="off" aria-hidden="true" />
-              <button className="button button-primary" type="submit" disabled={submissionState === "submitting"}><span className="button-label">{submissionState === "submitting" ? "Submitting…" : "Access thesis report"}</span></button>
-              <p className={`form-status is-${submissionState}`} aria-live="polite">{submissionState === "success" ? "Thank you. Your access has been recorded." : submissionState === "error" ? "Something went wrong. Please try again." : ""}</p>
+              {submissionState === "success" ? (
+                <p className="research-download" role="status">Thanks for sharing, <a href="https://docsend.com/v/4wkhj/exf_physical_ai" target="_blank" rel="noopener noreferrer">download the full report</a></p>
+              ) : (
+                <button className="button button-primary" type="submit" disabled={submissionState === "submitting"}><span className="button-label">{submissionState === "submitting" ? "Submitting…" : "Access thesis report"}</span></button>
+              )}
+              <p className={`form-status is-${submissionState}`} aria-live="polite">{submissionState === "error" ? "Something went wrong. Please try again." : ""}</p>
             </form>
           </section>
         </div>

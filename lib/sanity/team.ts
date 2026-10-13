@@ -30,7 +30,7 @@ async function fetchTeamPage(): Promise<TeamDirectoryContent> {
   if (!projectId || !dataset) return fallback;
 
   const memberProjection = `{
-    name, "slug": slug.current, role, region, hideFromTeamPage,
+    name, "slug": slug.current, role, region, funds, hideFromTeamPage,
     "image": image.asset->url, "profileImage": profileImage.asset->url,
     imagePosition, biography, portfolioCompanyIds, linkedinUrl
   }`;
@@ -57,6 +57,12 @@ async function fetchTeamPage(): Promise<TeamDirectoryContent> {
     for (const group of groups) {
       if (!Array.isArray(data.result[group])) result[group] = fallback[group];
     }
+    result.partners = result.partners.map((member) => ({
+      ...member,
+      funds: member.funds ?? fallback.partners.find((original) =>
+        teamMemberSlug(original.name) === teamMemberSlug(member.name)
+      )?.funds,
+    }));
     if (!Array.isArray(data.result.offices)) result.offices = fallback.offices;
     return result;
   } catch {

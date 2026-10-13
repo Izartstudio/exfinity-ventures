@@ -52,8 +52,8 @@ export async function POST(request: Request) {
     return NextResponse.json({ error: "Invalid submission." }, { status: 400 });
   }
 
-  // Silently accept honeypot submissions without forwarding them.
-  if (clean(body.companyWebsite, 200)) return NextResponse.json({ ok: true });
+  // Do not acknowledge a sheet write for submissions that are not forwarded.
+  if (clean(body.companyWebsite, 200)) return NextResponse.json({ ok: false });
 
   const formType = body.formType;
   const name = clean(body.name, 120);
@@ -85,8 +85,14 @@ export async function POST(request: Request) {
       signal: AbortSignal.timeout(10_000),
     });
 
-    const result = await response.json().catch(() => null) as { ok?: boolean } | null;
-    if (!response.ok || !result?.ok) throw new Error(`Webhook returned ${response.status}`);
+    const result = await response.json().catch(() => null) as { ok?: boolean; error?: unknown } | null;
+    if (!response.ok || result?.ok !== true) {
+      // Preserve safe upstream error codes in server logs, without logging PII or secrets.
+      const code = typeof result?.error === "string" && /^[A-Z_]{1,64}$/.test(result.error)
+        ? result.error
+        : "UNCONFIRMED_SUBMISSION";
+      throw new Error(`Webhook returned ${response.status}: ${code}`);
+    }
     return NextResponse.json({ ok: true });
   } catch (error) {
     console.error("Unable to submit website form.", error);

@@ -23,7 +23,7 @@ function companiesFor(member: TeamMember): PortfolioCompany[] {
   );
 }
 
-export function TeamProfile({ member, companiesTitle = "Companies", companiesDescription = "A selection of companies they work closely with, bringing investment experience, strategic guidance and operational perspective to their growth" }: { member: TeamMember; companiesTitle?: string; companiesDescription?: string }) {
+export function TeamProfile({ member, showFunds = false, companiesTitle = "Companies", companiesDescription = "A selection of companies they work closely with, bringing investment experience, strategic guidance and operational perspective to their growth" }: { member: TeamMember; showFunds?: boolean; companiesTitle?: string; companiesDescription?: string }) {
   const companies = companiesFor(member);
   const isAdvisorProfile = /Advisor|TAC Member|Venture Partner|Chairman/.test(member.role);
 
@@ -36,6 +36,7 @@ export function TeamProfile({ member, companiesTitle = "Companies", companiesDes
             <p>{member.role}</p>
             {member.linkedinUrl && <a className="team-profile-linkedin" href={member.linkedinUrl} target="_blank" rel="noreferrer" aria-label={`${member.name} on LinkedIn`}>in</a>}
           </div>
+          {showFunds && member.funds && <p className="team-profile-funds">Funds {member.funds}</p>}
           <div className="team-profile-bio">{biographyFor(member).map((paragraph) => <p key={paragraph}>{paragraph}</p>)}</div>
         </div>
         <div className="team-profile-portrait"><Image src={member.profileImage ?? member.image} alt={member.name} fill priority quality={90} sizes="(max-width: 800px) 100vw, 50vw" style={{ objectPosition: member.imagePosition ?? "center center" }} /></div>

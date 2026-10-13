@@ -43,9 +43,8 @@ export const portfolioPage = {
             {
               name: "fund",
               title: "Fund",
-              description: "For example: Fund I, Fund II or Fund III. A new value automatically becomes a filter option.",
+              description: "For example: Fund I, Fund II or Fund III. Leave blank if unspecified.",
               type: "string",
-              validation: required,
             },
             {
               name: "sector",
@@ -68,6 +67,8 @@ export const portfolioPage = {
               initialValue: "Active",
               validation: required,
             },
+            { name: "theme", title: "Theme", type: "string" },
+            { name: "inceptionYear", title: "Inception year", type: "string" },
             { name: "tagline", title: "Tagline", type: "string" },
             { name: "description", title: "Company description", type: "text", rows: 5 },
             { name: "partneredSince", title: "Partnered since", type: "string", description: "For example: 2022" },

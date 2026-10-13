@@ -35,7 +35,13 @@ const memberGroup = (name: string, title: string) => ({
   title,
   description: "Drag members to rearrange their order on the website.",
   type: "array",
-  of: [teamMember],
+  of: [{
+    ...teamMember,
+    fields: name === "partners" ? [
+      ...teamMember.fields,
+      { name: "funds", title: "Funds", type: "string", description: "Fund numbers, for example I, II, III, IV. Displayed only inside Partners & IC profile pages." },
+    ] : teamMember.fields,
+  }],
 });
 
 export const teamPage = {

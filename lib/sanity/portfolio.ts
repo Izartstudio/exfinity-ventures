@@ -13,6 +13,8 @@ type SanityCompany = {
   logo?: string;
   fund?: string;
   sector?: string;
+  theme?: string;
+  inceptionYear?: string;
   status?: string;
   tagline?: string;
   description?: string;
@@ -39,7 +41,7 @@ async function fetchPortfolioWall(): Promise<PortfolioWallData> {
   const query = `*[_type == "portfolioPage" && !(_id in path("drafts.**"))][0]{
     sectionLabel,
     "companies": companies[]{
-      name, "slug": slug.current, hideFromPortfolio, "logo": logo.asset->url, fund, sector, status,
+      name, "slug": slug.current, hideFromPortfolio, "logo": logo.asset->url, fund, sector, theme, inceptionYear, status,
       tagline, description, partneredSince, entryStage, founders, exfinityTeam,
       linkedinUrl, websiteUrl
     }
@@ -56,7 +58,7 @@ async function fetchPortfolioWall(): Promise<PortfolioWallData> {
     if (!source?.companies?.length) return fallbackPortfolioWall;
 
     const companies = source.companies
-      .filter((company) => company.name && company.slug && company.fund && company.sector && company.status)
+      .filter((company) => company.name && company.slug && company.sector && company.status)
       .map((company): PortfolioCompany => {
         const fallback = fallbackPortfolioWall.companies.find((item) => item.id === company.slug);
         return {
@@ -64,7 +66,9 @@ async function fetchPortfolioWall(): Promise<PortfolioWallData> {
           id: company.slug!,
           name: company.name!,
           hideFromPortfolio: company.hideFromPortfolio ?? fallback?.hideFromPortfolio ?? false,
-          fund: company.fund as PortfolioFund,
+          fund: (company.fund as PortfolioFund | undefined) ?? fallback?.fund,
+          theme: company.theme ?? fallback?.theme,
+          inceptionYear: company.inceptionYear ?? fallback?.inceptionYear,
           sector: company.slug === "locus" || company.slug === "practically"
             ? "AI Native Software"
             : company.sector!,
@@ -81,6 +85,13 @@ async function fetchPortfolioWall(): Promise<PortfolioWallData> {
           websiteUrl: company.websiteUrl,
         };
       });
+
+    if (!companies.length) return fallbackPortfolioWall;
+
+    // Keep the supplied Aarna entry available until it is added to the CMS.
+    // An existing CMS entry (including a hidden entry) takes precedence.
+    const aarna = fallbackPortfolioWall.companies.find((company) => company.id === "aarna");
+    if (aarna && !source.companies.some((company) => company.slug === "aarna")) companies.push(aarna);
 
     return companies.length
       ? { sectionLabel: source.sectionLabel || fallbackPortfolioWall.sectionLabel, companies }

@@ -47,7 +47,8 @@ export function Footer() {
           page: window.location.pathname,
         }),
       });
-      if (!response.ok) throw new Error("Submission failed");
+      const result = await response.json();
+      if (!response.ok || result?.ok !== true) throw new Error("Submission failed");
       form.reset();
       setSubmissionState("success");
     } catch {
@@ -90,7 +91,6 @@ export function Footer() {
             <div><strong>Address</strong><span>10, Museum Rd, Shanthala Nagar, Ashok Nagar, Bengaluru, Karnataka 560001</span></div>
             <div className="footer-socials">
               <a href="https://www.linkedin.com/company/exfinity-venture-partners" target="_blank" rel="noreferrer" aria-label="Exfinity on LinkedIn">in</a>
-              <a href="https://x.com/ExfinityVP" target="_blank" rel="noreferrer" aria-label="Exfinity on X">𝕏</a>
             </div>
           </address>
         </div>

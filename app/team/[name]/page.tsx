@@ -53,5 +53,5 @@ export default async function TeamProfilePage({ params }: PageProps<"/team/[name
     worksFor: { "@type": "Organization", name: siteName, url: siteUrl },
     ...(member.linkedinUrl ? { sameAs: [member.linkedinUrl] } : {}),
   };
-  return <><script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(personJsonLd) }} /><main><TeamProfile member={member} companiesTitle={content.profileCompaniesTitle} companiesDescription={content.profileCompaniesDescription} /><PreFooter /></main><Footer /></>;
+  return <><script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(personJsonLd) }} /><main><TeamProfile member={member} showFunds={content.partners.some((partner) => (partner.slug || teamMemberSlug(partner.name)) === name)} companiesTitle={content.profileCompaniesTitle} companiesDescription={content.profileCompaniesDescription} /><PreFooter /></main><Footer /></>;
 }
