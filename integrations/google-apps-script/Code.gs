@@ -82,7 +82,6 @@ const THESIS_HEADERS = Object.freeze([
   "Company / Institution",
   "Email Domain",
   "Source",
-  "Report Email Sent",
   "Team Notification Sent",
 ]);
 
@@ -209,7 +208,6 @@ function handleThesisSubmission_(payload, settings) {
       domain,
       safeCell_(source),
       "Pending",
-      "Pending",
     ]);
 
     rowNumber = sheet.getLastRow();
@@ -223,25 +221,6 @@ function handleThesisSubmission_(payload, settings) {
     "dd MMM yyyy, hh:mm a"
   );
 
-  const reportEmailSent = sendVisitorEmail_({
-    to: email,
-    subject: "Your Exfinity Physical AI Thesis",
-    eyebrow: "EXFINITY RESEARCH",
-    title: "Your Physical AI Thesis is ready",
-    greeting: "Hello " + name + ",",
-    paragraphs: [
-      "Thank you for sharing your details with Exfinity Venture Partners.",
-      "You can access the full Physical AI Thesis using the link below.",
-    ],
-    buttonLabel: "Download the full report",
-    buttonUrl: CONFIG.DOCSEND_URL,
-    footer: "This report was requested for " + email + ". If you did not make this request, please contact " + CONFIG.UPDATES_EMAIL + ".",
-  });
-
-  sheet
-    .getRange(rowNumber, 7)
-    .setValue(reportEmailSent ? "Yes" : "Failed");
-
   const teamNotificationSent = sendEntryNotification_({
     title: "New thesis report access",
     summary: "A visitor submitted their details to access the Physical AI Thesis. Their entry has been saved to the sheet.",
@@ -250,7 +229,6 @@ function handleThesisSubmission_(payload, settings) {
     spreadsheetId: settings.spreadsheetId,
     sheetId: sheet.getSheetId(),
     rowNumber: rowNumber,
-    endColumn: "H",
     details: [
       ["Name", name],
       ["Email", email],
@@ -266,14 +244,13 @@ function handleThesisSubmission_(payload, settings) {
   });
 
   sheet
-    .getRange(rowNumber, 8)
+    .getRange(rowNumber, 7)
     .setValue(teamNotificationSent ? "Yes" : "Failed");
 
   return {
     ok: true,
     action: "thesis",
     redirectUrl: CONFIG.DOCSEND_URL,
-    reportEmailSent: reportEmailSent,
     teamNotificationSent: teamNotificationSent,
   };
 }
@@ -349,17 +326,32 @@ function handleNewsletterSubmission_(payload, settings) {
 
 
   if (!welcomeEmailSent) {
-    welcomeEmailSent = sendVisitorEmail_({
+    welcomeEmailSent = sendMailSafely_({
       to: email,
+      replyTo: CONFIG.UPDATES_EMAIL,
+      name: CONFIG.SENDER_NAME,
       subject: "Welcome to Exfinity News & Insights",
-      eyebrow: "EXFINITY NEWS & INSIGHTS",
-      title: "Thank you for subscribing",
-      greeting: "Welcome to Exfinity News & Insights.",
-      paragraphs: [
-        "You will receive our latest perspectives, portfolio updates, research and stories from the technology ecosystem.",
-        "We look forward to sharing what we are learning alongside ambitious founders building global technology companies.",
-      ],
-      footer: "If you did not request this subscription, please contact " + CONFIG.UPDATES_EMAIL + ".",
+      body:
+        "Thank you for subscribing to Exfinity News & Insights.\n\n" +
+        "You will receive our latest perspectives, portfolio updates, " +
+        "research and stories from the technology ecosystem.\n\n" +
+        "If you did not request this subscription, contact " +
+        CONFIG.UPDATES_EMAIL + ".\n\n" +
+        "Exfinity Venture Partners",
+      htmlBody:
+        "<div style=\"font-family:Arial,sans-serif;color:#000021;" +
+        "line-height:1.6;max-width:620px\">" +
+        "<h2 style=\"font-weight:500\">Welcome to Exfinity News &amp; Insights</h2>" +
+        "<p>Thank you for subscribing.</p>" +
+        "<p>You will receive our latest perspectives, portfolio updates, " +
+        "research and stories from the technology ecosystem.</p>" +
+        "<p style=\"color:#666;font-size:13px\">" +
+        "If you did not request this subscription, contact " +
+        "<a href=\"mailto:" + CONFIG.UPDATES_EMAIL + "\">" +
+        CONFIG.UPDATES_EMAIL +
+        "</a>.</p>" +
+        "<p>Exfinity Venture Partners</p>" +
+        "</div>",
     });
 
     sheet
@@ -376,7 +368,6 @@ function handleNewsletterSubmission_(payload, settings) {
       spreadsheetId: settings.spreadsheetId,
       sheetId: sheet.getSheetId(),
       rowNumber: rowNumber,
-      endColumn: "G",
       details: [
         ["Email", email],
         ["Email domain", domain],
@@ -440,24 +431,13 @@ function ensureSheet_(spreadsheet, sheetName, headers) {
     sheet = spreadsheet.insertSheet(sheetName);
   }
 
-  // Migrate the original thesis sheet without overwriting its existing
-  // internal-notification values in column G.
-  if (
-    sheetName === CONFIG.THESIS_SHEET &&
-    sheet.getLastColumn() === 7 &&
-    String(sheet.getRange(1, 7).getValue()) === "Team Notification Sent"
-  ) {
-    sheet.insertColumnBefore(7);
-  }
+  if (sheet.getLastRow() === 0) {
+    sheet
+      .getRange(1, 1, 1, headers.length)
+      .setValues([headers])
+      .setFontWeight("bold");
 
-  sheet
-    .getRange(1, 1, 1, headers.length)
-    .setValues([headers])
-    .setFontWeight("bold");
-
-  sheet.setFrozenRows(1);
-
-  if (sheet.getLastRow() <= 1) {
+    sheet.setFrozenRows(1);
     sheet.autoResizeColumns(1, headers.length);
   }
 
@@ -533,49 +513,6 @@ function sendMailSafely_(mailOptions) {
   }
 }
 
-/** Send a branded confirmation to the visitor who submitted the form. */
-function sendVisitorEmail_(message) {
-  const paragraphs = message.paragraphs.map(function (paragraph) {
-    return '<p style="margin:0 0 16px;color:#42506a;font-size:15px;line-height:1.7">' +
-      escapeHtml_(paragraph) + '</p>';
-  }).join("");
-
-  const button = message.buttonUrl
-    ? '<p style="margin:28px 0"><a href="' + escapeHtml_(message.buttonUrl) +
-      '" style="display:inline-block;padding:14px 22px;border-radius:4px;background:#004de5;color:#ffffff;text-decoration:none;font-size:14px;font-weight:600">' +
-      escapeHtml_(message.buttonLabel) + '</a></p>'
-    : "";
-
-  const plainText = [
-    message.greeting,
-    "",
-    message.paragraphs.join("\n\n"),
-    message.buttonUrl ? "\n" + message.buttonLabel + ": " + message.buttonUrl : "",
-    "\n" + message.footer,
-    "\nExfinity Venture Partners",
-  ].join("\n");
-
-  return sendMailSafely_({
-    to: message.to,
-    replyTo: CONFIG.UPDATES_EMAIL,
-    name: CONFIG.SENDER_NAME,
-    subject: message.subject,
-    body: plainText,
-    htmlBody:
-      '<div style="margin:0;padding:24px 12px;background:#f3f6fc;font-family:Arial,Helvetica,sans-serif">' +
-      '<table role="presentation" cellpadding="0" cellspacing="0" style="width:100%;max-width:640px;margin:0 auto;overflow:hidden;border:1px solid #e0e6f0;border-radius:8px;background:#ffffff">' +
-      '<tr><td style="padding:30px;background:#000021;color:#ffffff">' +
-      '<p style="margin:0 0 14px;color:#8fb8ff;font-size:11px;letter-spacing:3px">' + escapeHtml_(message.eyebrow) + '</p>' +
-      '<h1 style="margin:0;font-size:25px;line-height:1.3;font-weight:500">' + escapeHtml_(message.title) + '</h1>' +
-      '</td></tr><tr><td style="padding:30px">' +
-      '<p style="margin:0 0 20px;color:#101c35;font-size:16px">' + escapeHtml_(message.greeting) + '</p>' +
-      paragraphs + button +
-      '<p style="margin:28px 0 0;padding-top:18px;border-top:1px solid #e4eaf3;color:#748096;font-size:12px;line-height:1.6">' + escapeHtml_(message.footer) + '</p>' +
-      '<p style="margin:18px 0 0;color:#101c35;font-size:13px">Exfinity Venture Partners</p>' +
-      '</td></tr></table></div>',
-  });
-}
-
 function throwPublicError_(code) {
   throw new Error(code);
 }
@@ -608,7 +545,7 @@ function jsonResponse_(data) {
 /** Send a readable HTML notification, with a plain-text alternative. */
 function sendEntryNotification_(entry) {
   const sheetUrl = "https://docs.google.com/spreadsheets/d/" + encodeURIComponent(entry.spreadsheetId) +
-    "/edit#gid=" + encodeURIComponent(entry.sheetId) + "&range=A" + entry.rowNumber + ":" + entry.endColumn + entry.rowNumber;
+    "/edit#gid=" + encodeURIComponent(entry.sheetId) + "&range=A" + entry.rowNumber + ":G" + entry.rowNumber;
   const rows = entry.details.map(function (detail, index) {
     return '<tr style="background:' + (index % 2 ? '#ffffff' : '#f5f8ff') + '">' +
       '<td style="padding:12px 16px;width:35%;vertical-align:top;color:#526078;font-size:13px;border-bottom:1px solid #e4eaf3">' + escapeHtml_(detail[0]) + '</td>' +
