@@ -206,7 +206,7 @@ export const teamDirectoryContent: TeamDirectoryContent = {
       portfolioCompanyIds: [],
       linkedinUrl: "https://www.linkedin.com/in/afreed-faizan/",
       biography: [
-        "Afreed is an Aerospace Engineering graduate from RV College of Engineering, Bangalore, currently focused on investments across DeepTech, AI, and SaaS. Prior to Exfinity, he worked with Golden Sparrow VC and First Cheque (IndiaQuotient’s pre-seed fund), where he evaluated emerging technology startups and supported investments across DeepTech and AI-native software startups. He also worked at the Indian Institute of Science (IISc), Bangalore, where he led research initiatives in Urban Air Mobility and eVTOL systems, at Stratagen Defence on next-generation defence technologies, and at Neuralzome Cybernetics on autonomous robotics and AI systems.",
+        "Afreed is an Aerospace Engineering graduate from RV College of Engineering, Bangalore, currently focused on investments across DeepTech, AI, and SaaS. Prior to Exfinity, he worked with Golden Sparrow VC and First Cheque (IndiaQuotient’s pre-seed fund), where he evaluated emerging technology startups and supported investments across DeepTech and AI-Native software startups. He also worked at the Indian Institute of Science (IISc), Bangalore, where he led research initiatives in Urban Air Mobility and eVTOL systems, at Stratagen Defence on next-generation defence technologies, and at Neuralzome Cybernetics on autonomous robotics and AI systems.",
         "In his free time, he enjoys playing Counter-Strike 2 and competitive Chess Blitz.",
       ],
     },

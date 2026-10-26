@@ -8,7 +8,7 @@ import { createMetadata } from "@/lib/seo";
 
 export const metadata: Metadata = createMetadata({
   title: "Portfolio",
-  description: "Explore the DeepTech, AI-native software and B2B platform companies backed by Exfinity Venture Partners.",
+  description: "Explore the DeepTech, AI-Native software and B2B platform companies backed by Exfinity Venture Partners.",
   path: "/portfolio",
 });
 

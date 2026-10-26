@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 export const siteUrl = "https://www.exfinityventures.com";
 export const siteName = "Exfinity Venture Partners";
 export const defaultDescription =
-  "Exfinity Venture Partners backs globally ambitious founders building category-defining DeepTech, AI-native software and B2B platforms from India.";
+  "Exfinity Venture Partners backs globally ambitious founders building category-defining DeepTech, AI-Native software and B2B platforms from India.";
 export const socialImage = "/videos/hero-poster.jpg";
 
 export function createMetadata({

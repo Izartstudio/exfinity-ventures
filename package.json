@@ -15,6 +15,7 @@
     "cms:import": "sanity exec scripts/import-site.ts --with-user-token",
     "cms:audit": "sanity exec scripts/audit-site-content.ts",
     "cms:verify": "sanity exec scripts/verify-cms.ts --with-user-token",
+    "cms:normalize-ai": "sanity exec scripts/normalize-ai-native.ts --with-user-token",
     "test:cms": "node --test scripts/cms-content.test.mjs",
     "news:import": "sanity exec scripts/import-news.mjs --with-user-token",
     "news:verify": "sanity exec scripts/verify-news.mjs --with-user-token",
