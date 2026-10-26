@@ -85,7 +85,7 @@ export function Footer() {
         <div className="footer-bottom">
           <div className="footer-brand">
             <Image src="/brand/exfinity-footer.svg" alt="Exfinity" width={552} height={127} />
-            <p>©2026 Exfinity All Right Reserved</p>
+            <p>©2026 Exfinity All Rights Reserved</p>
           </div>
 
           <address className="footer-contact">

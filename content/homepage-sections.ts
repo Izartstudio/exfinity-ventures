@@ -32,7 +32,7 @@ export const fallbackCards = [
   },
   {
     id: "ai-native",
-    title: "AI Native Software",
+    title: "AI-Native Software",
     image: "/what-we-back/ai-native.png",
     aboutLead: "Software that learns the business it serves",
     copy: "Products where intelligence is the core, using AI models and proprietary data to automate decisions and uncover insights at scale. Their moat grows with every use, as better data builds better models and deeper customer lock-in. The stack that helps build these self-learning products is also a part of this thesis.",
@@ -52,7 +52,7 @@ export const fallbackCards = [
     image: "/what-we-back/b2b-platforms.png",
     aboutLead: "The rails on which industries run",
     copy: "Platforms that bring fragmented businesses together or provide a unique product, with deep domain know-how and operational expertise built into every workflow. Their moat combines network effects with institutional knowledge that competitors can't copy.",
-    themes: ["Industrial Platforms", "Health Technology", "AI Native Services"],
+    themes: ["Industrial Platforms", "Health Technology", "AI-Native Services"],
     companies: [
       { name: "Zyla", logo: "/companies/vector/zyla.svg", logoWhite: "/companies/vector/zyla-white.svg", href: "/portfolio/zyla-health" },
       { name: "Autoverse", logo: "/companies/vector/autoverse.svg", logoWhite: "/companies/vector/autoverse-white.svg", href: "/portfolio/autoverse" },
@@ -64,7 +64,7 @@ export const fallbackCards = [
 
 export const companiesDefaults = {
   heading: "Companies We Back",
-  description: "From DeepTech to AI Native Softwares, these are companies we believed in at the earliest stage; now building for global markets",
+  description: "From DeepTech to AI-Native Softwares, these are companies we believed in at the earliest stage; now building for global markets",
   ctaLabel: "View Portfolio", ctaHref: "/portfolio", companies: fallbackCompanies,
 };
 export const backingDefaults = {

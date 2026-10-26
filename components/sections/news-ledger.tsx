@@ -5,7 +5,7 @@ import Link from "next/link";
 import { useMemo, useState } from "react";
 import type { NewsCategory, NewsItem } from "@/content/news";
 
-const filters = ["All", "Social", "News", "Newsletters"] as const;
+const filters = ["All", "Social", "News"] as const;
 type Filter = (typeof filters)[number];
 
 export function NewsLedger({ items }: { items: NewsItem[] }) {
