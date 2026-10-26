@@ -41,6 +41,11 @@ export const portfolioPage = {
               fields: [{ name: "alt", title: "Alternative text", type: "string" }],
             },
             {
+              name: "logoWhite", title: "White logo (hover)", type: "image",
+              options: { hotspot: false },
+            },
+            { name: "additionalFunds", title: "Additional funds", type: "array", of: [{ type: "string" }] },
+            {
               name: "fund",
               title: "Fund",
               description: "For example: Fund I, Fund II or Fund III. Leave blank if unspecified.",
@@ -61,6 +66,7 @@ export const portfolioPage = {
                 list: [
                   { title: "Active", value: "Active" },
                   { title: "Exited", value: "Exited" },
+                  { title: "Partially Exited", value: "Partially Exited" },
                 ],
                 layout: "radio",
               },

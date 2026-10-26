@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import type { TeamMember } from "@/content/team";
-import { portfolioCompanies, type PortfolioCompany } from "@/content/portfolio";
+import type { PortfolioCompany } from "@/content/portfolio";
 
 function biographyFor(member: TeamMember) {
   if (member.biography?.length) return member.biography;
@@ -11,7 +11,7 @@ function biographyFor(member: TeamMember) {
   ];
 }
 
-function companiesFor(member: TeamMember): PortfolioCompany[] {
+function companiesFor(member: TeamMember, portfolioCompanies: PortfolioCompany[]): PortfolioCompany[] {
   if (member.portfolioCompanyIds) {
     const explicitlyMappedIds = new Set(member.portfolioCompanyIds);
     return portfolioCompanies.filter((company) => explicitlyMappedIds.has(company.id));
@@ -23,8 +23,8 @@ function companiesFor(member: TeamMember): PortfolioCompany[] {
   );
 }
 
-export function TeamProfile({ member, showFunds = false, companiesTitle = "Companies", companiesDescription = "A selection of companies they work closely with, bringing investment experience, strategic guidance and operational perspective to their growth" }: { member: TeamMember; showFunds?: boolean; companiesTitle?: string; companiesDescription?: string }) {
-  const companies = companiesFor(member);
+export function TeamProfile({ member, portfolioCompanies, showFunds = false, companiesTitle = "Companies", companiesDescription = "A selection of companies they work closely with, bringing investment experience, strategic guidance and operational perspective to their growth" }: { member: TeamMember; portfolioCompanies: PortfolioCompany[]; showFunds?: boolean; companiesTitle?: string; companiesDescription?: string }) {
+  const companies = companiesFor(member, portfolioCompanies);
   const fundNumbers: Record<string, string> = { I: "1", II: "2", III: "3", IV: "4" };
   const funds = [...new Set((member.funds ?? "").split(",").map((fund) => fund.trim().replace(/^fund\s+/i, "")).filter(Boolean))];
   const isAdvisorProfile = /Advisor|TAC Member|Venture Partner|Chairman/.test(member.role);

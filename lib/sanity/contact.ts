@@ -5,6 +5,6 @@ export type ContactFaqSection = { kicker: string; heading: string; faqs: { quest
 export async function getContactFaqs(): Promise<ContactFaqSection> {
   const data = await getPublishedSection<ContactFaqSection>("contactFaqs", "kicker,heading,faqs[]{question,answer}");
   const fallback = defaults as ContactFaqSection;
-  if (!data?.faqs?.length || !data.faqs.every((faq) => faq.question && faq.answer?.length)) return fallback;
-  return { ...data, kicker: data.kicker || fallback.kicker, heading: data.heading || fallback.heading };
+  if (!data) return fallback;
+  return { ...data, faqs: (data.faqs ?? []).filter((faq) => faq.question && faq.answer?.length), kicker: data.kicker ?? fallback.kicker, heading: data.heading ?? fallback.heading };
 }

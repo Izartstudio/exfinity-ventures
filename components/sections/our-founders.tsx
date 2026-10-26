@@ -29,7 +29,7 @@ export function OurFounders({ content }: { content: HomepageFoundersSection }) {
   }, []);
 
   useEffect(() => {
-    if (!entered || isPaused || window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    if (!founders.length || !entered || isPaused || window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
     const timer = window.setTimeout(() => {
       setActive((current) => (current + 1) % founders.length);
     }, 3500);
@@ -37,6 +37,7 @@ export function OurFounders({ content }: { content: HomepageFoundersSection }) {
   }, [active, entered, founders.length, isPaused]);
 
   const activeFounder = founders[active];
+  if (!activeFounder) return null;
 
   return (
     <section

@@ -38,7 +38,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     ...team.investmentTeam,
     ...team.tacTeam,
     ...team.founders,
-  ].map((member) => [teamMemberSlug(member.name), member])).keys());
+  ].map((member) => [member.slug || teamMemberSlug(member.name), member])).keys());
 
   const teamRoutes: MetadataRoute.Sitemap = teamMembers.map((slug) => ({
     url: `${siteUrl}/team/${slug}`,

@@ -12,7 +12,7 @@ function TeamGrid({ members, label, activeTab }: { members: TeamMember[]; label:
   return (
     <div className="team-member-grid" aria-label={label}>
       {members.map((member) => (
-        <Link className="team-member-card" href={{ pathname: `/team/${teamMemberSlug(member.name)}`, query: { from: activeTab } }} key={member.name} aria-label={`View ${member.name}'s profile`}>
+        <Link className="team-member-card" href={{ pathname: `/team/${member.slug || teamMemberSlug(member.name)}`, query: { from: activeTab } }} key={member.name} aria-label={`View ${member.name}'s profile`}>
           <div className="team-member-image">
             <Image
               fill

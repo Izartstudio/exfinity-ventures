@@ -11,7 +11,7 @@ const teamMember = {
     {
       name: "hideFromTeamPage",
       title: "Hide from this team tab",
-      description: "Turn on to remove this member from the team-page tab. Their direct profile remains available.",
+      description: "Turn on to hide this member from the team tab, direct profile, and sitemap.",
       type: "boolean",
       initialValue: false,
     },

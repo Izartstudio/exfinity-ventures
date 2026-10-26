@@ -1,6 +1,6 @@
 import { teamDirectoryContent, teamMemberSlug, type TeamDirectoryContent, type TeamMember, type TeamOffice } from "@/content/team";
 
-type TeamPageResponse = { result?: TeamDirectoryContent };
+import { getPublishedSection } from "./sections";
 
 const defaultOffices: TeamOffice[] = [
   { city: "Bangalore", country: "India", image: "/team/offices/bangalore.jpg" },
@@ -10,7 +10,7 @@ const defaultOffices: TeamOffice[] = [
 
 const groups = ["partners", "founders", "investmentTeam", "tacTeam"] as const;
 
-function fallbackTeamPage(): TeamDirectoryContent {
+export function fallbackTeamPage(): TeamDirectoryContent {
   return {
     ...teamDirectoryContent,
     heroTitleLines: ["Experience that", "Goes Beyond Capital"],
@@ -24,17 +24,14 @@ function fallbackTeamPage(): TeamDirectoryContent {
 }
 
 async function fetchTeamPage(): Promise<TeamDirectoryContent> {
-  const projectId = process.env.NEXT_PUBLIC_SANITY_PROJECT_ID;
-  const dataset = process.env.NEXT_PUBLIC_SANITY_DATASET;
   const fallback = fallbackTeamPage();
-  if (!projectId || !dataset) return fallback;
 
   const memberProjection = `{
     name, "slug": slug.current, role, region, funds, hideFromTeamPage,
     "image": image.asset->url, "profileImage": profileImage.asset->url,
     imagePosition, biography, portfolioCompanyIds, linkedinUrl
   }`;
-  const query = `*[_type == "teamPage" && !(_id in path("drafts.**"))][0]{
+  const projection = `
     heroTitleLines, sectionLabel, partnersTitle, foundersTitle, investmentTitle, tacTitle,
     "partners": partners[]${memberProjection},
     "founders": founders[]${memberProjection},
@@ -42,41 +39,15 @@ async function fetchTeamPage(): Promise<TeamDirectoryContent> {
     "tacTeam": tacTeam[]${memberProjection},
     officesLabel, officesTitle, profileCompaniesTitle, profileCompaniesDescription,
     "offices": offices[]{city,country,"image": image.asset->url,imagePosition}
-  }`;
-  const url = new URL(`https://${projectId}.api.sanity.io/v2026-10-01/data/query/${dataset}`);
-  url.searchParams.set("query", query);
-  url.searchParams.set("perspective", "published");
-
-  try {
-    const response = await fetch(url, { cache: "no-store" });
-    if (!response.ok) return fallback;
-    const data = (await response.json()) as TeamPageResponse;
-    if (!data.result) return fallback;
-
-    const result = { ...fallback, ...data.result };
-    for (const group of groups) {
-      if (!Array.isArray(data.result[group])) result[group] = fallback[group];
-      result[group] = result[group].map((member) => {
-        const original = fallback[group].find((fallbackMember) =>
-          teamMemberSlug(fallbackMember.name) === teamMemberSlug(member.name)
-        );
-        return {
-          ...member,
-          hideFromTeamPage: member.hideFromTeamPage ?? original?.hideFromTeamPage ?? false,
-        };
-      });
-    }
-    result.partners = result.partners.map((member) => ({
-      ...member,
-      funds: member.funds ?? fallback.partners.find((original) =>
-        teamMemberSlug(original.name) === teamMemberSlug(member.name)
-      )?.funds,
-    }));
-    if (!Array.isArray(data.result.offices)) result.offices = fallback.offices;
-    return result;
-  } catch {
-    return fallback;
+  `;
+  const data = await getPublishedSection<TeamDirectoryContent>("teamPage", projection);
+  if (!data) return fallback;
+  const result = { ...fallback, ...Object.fromEntries(Object.entries(data).filter(([, value]) => value != null)) } as TeamDirectoryContent;
+  for (const group of groups) {
+    result[group] = (data[group] ?? []).filter((member) => member.name && member.role && member.image);
   }
+  result.offices = (data.offices ?? []).filter((office) => office.city && office.image);
+  return result;
 }
 
 export async function getTeamPage(): Promise<TeamDirectoryContent> {
