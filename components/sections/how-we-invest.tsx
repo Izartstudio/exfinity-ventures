@@ -5,19 +5,19 @@ const principles = [
     heading:
       "We invest $2–3M at entry",
     description:
-      "Half of the investible corpus is reserved for follow ons",
+      "Half of the investible corpus is reserved for follow-ons",
   },
   {
     number: "02",
     title: "Lead",
-    heading: "We Lead/Co-Lead early rounds with conviction",
+    heading: "We Lead or Co-Lead early rounds with conviction",
     description:
       "We lead or co-lead Seed, Pre-Series A & Series A rounds, backing companies as their technology and market ambition take shape",
   },
   {
     number: "03",
     title: "Board Participation",
-    heading: "We take board seat as we invest",
+    heading: "We take a board seat when we invest.",
     description:
       "A Partner stays directly engaged, taking a board seat and working alongside the founding team",
   },
